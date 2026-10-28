@@ -1,100 +1,206 @@
-# Documento de Referência (Blueprint) - SaaS de Gestão de Projetos BIM e Alocação de Equipes
+# SaaS de Planejamento BIM
 
-## 1. Visão Geral do Projeto
-A aplicação é um **SaaS (Software as a Service) Web full-stack** focado na gestão interativa de cronogramas e controle de capacidade produtiva (Capacity Planning) para equipes multidisciplinares, com forte aderência ao setor de Arquitetura, Engenharia e Construção (AEC) e projetos BIM.
+Plataforma web para **planejamento de cronogramas e capacidade de
+equipes em projetos AEC/BIM**. A proposta é reunir tarefas, prazos,
+dependências e disponibilidade da equipe em um único ambiente,
+permitindo visualizar o cronograma em um gráfico de Gantt e entender
+como alterações afetam a carga semanal de trabalho.
 
-**Objetivo Principal:**
-Fornecer uma plataforma centralizada e autônoma (Single Source of Truth) onde gestores possam planejar projetos, arrastar prazos em um Gráfico de Gantt altamente interativo e visualizar instantaneamente o impacto dessas mudanças na carga de trabalho (horas/semana) da equipe de modeladores e engenheiros.
+> **Status do projeto:** em planejamento e desenvolvimento. As
+> funcionalidades descritas neste README representam o escopo proposto e
+> podem ainda não estar implementadas.
 
-**Diferencial:**
-Independe de importações periódicas de arquivos CSV, MS Project ou integrações diretas com APIs de autoria (como pyRevit). É uma plataforma standalone, atualizada em tempo real via interface web.
+## Objetivo
 
----
+Facilitar o planejamento e o acompanhamento de projetos
+multidisciplinares de arquitetura, engenharia e construção, reduzindo a
+dependência de controles isolados e melhorando a visibilidade sobre
+prazos e sobrecarga da equipe.
 
-## 2. Sugestões de Naming (Marca)
-Conceitos baseados na união de "Gantt" + "Interatividade":
-*   **LiveGantt:** Enfatiza o cronograma "vivo" e em tempo real.
-*   **DynamiGantt:** Foco na dinamicidade e fluidez.
-*   **GanttFlow:** Remete ao fluxo contínuo de trabalho entre disciplinas.
-*   **GanttX:** Apelo moderno e focado em UX (User Experience).
-*   **ActiveGantt:** Enfatiza a ação e gestão proativa.
+## Funcionalidades planejadas
 
----
+### Cronograma e tarefas
 
-## 3. Arquitetura e Stack Tecnológica
-A arquitetura segue o modelo Cliente-Servidor (Client-Server) acoplado via API RESTful.
+-   Organização de projetos por disciplinas ou estrutura WBS.
+-   Visualização de tarefas em gráfico de Gantt.
+-   Criação e edição de tarefas, datas, progresso e esforço estimado.
+-   Alteração de datas diretamente no cronograma.
+-   Representação de dependências entre tarefas.
+-   Persistência das alterações realizadas.
 
-### 3.1. Frontend (Interface e Interatividade)
-*   **Framework:** **Next.js** (React) - Escolhido pela performance, roteamento e padrão de mercado para SaaS.
-*   **Biblioteca Gantt:** **DHTMLX Gantt** (corporativo/robusto) ou **Frappe Gantt** (MVP/leve) - Para manipulação de SVG/Canvas interativo.
-*   **Estilização:** **Tailwind CSS + Shadcn UI** - Para componentes UI rápidos e responsivos.
-*   **Estado Global:** **Zustand** - Para atualizar visualmente gráficos de capacidade instantaneamente (Optimistic UI) ao arrastar tarefas.
-*   **Gráficos/Dashboards:** **Apache ECharts** ou **Chart.js**.
+### Planejamento de capacidade
 
-### 3.2. Backend (API e Regras de Negócio)
-*   **Linguagem/Framework:** **Python + FastAPI** - Alta performance, assíncrono, documentação automática (Swagger).
-*   **Validação de Dados:** **Pydantic** - Garantia de tipagem e integridade do payload recebido do frontend.
-*   **ORM:** **SQLAlchemy** - Comunicação orientada a objetos com o banco de dados.
-*   **Autenticação:** **OAuth2 com JWT** - Controle de acesso (Gestor vs. Modelador).
+-   Cadastro de integrantes e capacidade semanal em horas.
+-   Cálculo da carga alocada por semana.
+-   Visualização de horas disponíveis, horas planejadas e percentual de
+    utilização.
+-   Identificação de semanas com utilização superior a 100% da
+    capacidade configurada.
+-   Atualização da capacidade após mudanças relevantes nas tarefas.
 
-### 3.3. Banco de Dados e Infraestrutura
-*   **Banco de Dados:** **PostgreSQL** - Relacional, ideal para estrutura hierárquica e integridade de restrições (Foreign Keys).
-*   **Containerização:** **Docker** - Garantia de paridade entre ambiente de desenvolvimento e produção.
-*   **Hospedagem (Cloud/PaaS):** **Railway**, **Render** ou AWS - Para deploy automatizado (CI/CD) conectado ao GitHub.
+### Evoluções previstas
 
----
+-   Painel de indicadores do projeto.
+-   Análise de gargalos por disciplina.
+-   Curva S planejada versus realizada.
+-   Indicadores de desempenho, como SPI, após definição da metodologia
+    de cálculo.
+-   Exportações e possíveis integrações com ferramentas externas.
 
-## 4. Funcionalidades Principais (Core Features)
+## Arquitetura e tecnologias propostas
 
-### A. Gantt Dinâmico Interativo (CRUD Visual)
-*   Visualização em linha do tempo (dias, semanas, meses).
-*   **Drag-and-Drop:** Arrastar tarefas para alterar data de início/fim e progressão (% de conclusão).
-*   Gestão de dependências (setas ligando o fim de uma disciplina ao início de outra).
-*   Painel lateral (*drawer*) ao dar duplo clique em uma barra para editar responsáveis e adicionar anotações.
+A seleção final das tecnologias deve considerar os requisitos, os
+custos, a manutenção e o licenciamento das bibliotecas escolhidas.
 
-### B. Módulo de Capacidade e Alocação (Capacity Planning)
-*   Cadastro da capacidade semanal de cada membro (ex: 40h/semana).
-*   Matriz visual (Heatmap) que cruza a duração da tarefa no Gantt com o esforço em horas.
-*   Alertas visuais de superalocação (ex: Célula vermelha se a alocação passar de 100%).
+  -----------------------------------------------------------------------
+  Camada                  Tecnologia proposta     Uso previsto
+  ----------------------- ----------------------- -----------------------
+  Frontend                Next.js e React         Interface web
 
-### C. Estrutura Hierárquica de Dados
-*   **Nível 1:** Projetos (ex: Edifício Alpha).
-*   **Nível 2:** Disciplinas / Pacotes de Trabalho (ex: SDAI, Hidráulica, Estrutura).
-*   **Nível 3:** Tarefas (ex: Modelagem de Tubulação Nível 1).
+  UI                      Tailwind CSS e          Estilização e
+                          shadcn/ui               componentes
 
-### D. Dashboards de Business Intelligence (BI)
-*   Curva S (Planejado vs. Realizado).
-*   Métricas de Gargalo: Identificação de qual disciplina possui mais tarefas em atraso.
-*   Indicadores de Prazo (SPI - Schedule Performance Index).
+  Cronograma              DHTMLX Gantt ou Frappe  Visualização e edição
+                          Gantt                   do Gantt
 
----
+  Estado da interface     Zustand                 Estado compartilhado no
+                                                  frontend
 
-## 5. Fluxo de Dados e Interação (Data Flow Exemplo)
-Como o sistema se comporta quando o usuário interage:
+  Gráficos                Apache ECharts ou       Indicadores e
+                          Chart.js                visualizações
 
-1.  **Ação (UI):** O gestor arrasta a extremidade da tarefa "Modelagem de Dutos" no Gantt para aumentar o prazo em 3 dias.
-2.  **Frontend (React/Zustand):** O componente Gantt dispara o evento `on_date_change`. A interface (barra do Gantt e Heatmap do modelador) atualiza localmente para fornecer feedback visual instantâneo.
-3.  **Requisição (Next.js):** O frontend faz um `PATCH /api/tarefas/{id}` enviando a nova `data_fim` em JSON.
-4.  **Processamento (FastAPI + Pydantic):** A API recebe, valida as datas e checa regras de negócio (ex: se empurrou o prazo, tarefas dependentes também precisam ser recalculadas).
-5.  **Persistência (PostgreSQL via SQLAlchemy):** O banco de dados atualiza o registro da tarefa.
-6.  **Resposta:** O backend devolve um `200 OK` (com as tarefas dependentes recalculadas, se houver). O frontend consolida a interface.
+  Backend                 Python e FastAPI        API e regras de negócio
 
----
+  Validação               Pydantic                Validação de dados
 
-## 6. Modelagem de Dados Base (Esquema Conceitual)
-Tabelas essenciais para o PostgreSQL:
+  Persistência            SQLAlchemy e PostgreSQL Modelagem e
+                                                  armazenamento
 
-*   **Users/Members:** `id`, `name`, `role` (Admin/User), `weekly_capacity_hours`.
-*   **Projects:** `id`, `name`, `status`, `start_date`, `end_date`.
-*   **Disciplines/WBS:** `id`, `project_id`, `name` (SDAI, Telecom, etc.), `color`.
-*   **Tasks:** `id`, `discipline_id`, `assigned_to`, `name`, `start_date`, `end_date`, `progress`, `estimated_hours`.
-*   **Dependencies:** `id`, `source_task_id`, `target_task_id`, `type` (Finish-to-Start).
+  Ambiente                Docker                  Reprodutibilidade do
+                                                  ambiente
 
----
+  CI/CD                   GitHub Actions ou       Testes e automação de
+                          equivalente             entrega
+  -----------------------------------------------------------------------
 
-## 7. Próximos Passos Sugeridos para Desenvolvimento
-Ao iniciar o trabalho com outra IA, sugere-se seguir a seguinte ordem (Roadmap):
-1.  **Fase 1:** Geração dos modelos Pydantic e SQLAlchemy baseados no esquema relacional e criação do CRUD básico no FastAPI.
-2.  **Fase 2:** Inicialização do frontend em Next.js e integração da biblioteca de Gantt com *mock data* (dados falsos estáticos).
-3.  **Fase 3:** Integração da API (fetch) aos eventos de clique e arraste do Gantt.
-4.  **Fase 4:** Desenvolvimento do algoritmo e interface do *Capacity Planning* (cálculo de horas alocadas por dia/semana).
+**Observação:** as tecnologias listadas são candidatas arquiteturais,
+não necessariamente dependências já configuradas no repositório. A
+biblioteca de Gantt deverá ser selecionada após avaliação de
+funcionalidades e licenciamento.
+
+## Visão geral do funcionamento
+
+1.  O usuário cria um projeto e organiza suas disciplinas.
+2.  As tarefas são cadastradas com datas, esforço estimado, progresso e
+    responsável, conforme as regras definidas.
+3.  O cronograma é exibido no Gantt.
+4.  Ao alterar uma tarefa, a aplicação envia a atualização para a API.
+5.  O backend valida os dados e as dependências e persiste a alteração
+    no banco.
+6.  O planejamento de capacidade é recalculado para os períodos
+    afetados.
+7.  A interface apresenta a carga semanal e destaca possíveis
+    sobrecargas.
+
+As regras de negócio devem ser validadas no backend. A interface não
+deve ser a única responsável pela integridade dos dados.
+
+## Documentação
+
+A documentação de planejamento está organizada na pasta
+[`docs/`](docs/).
+
+  ------------------------------------------------------------------------------------
+  Documento                                        Descrição
+  ------------------------------------------------ -----------------------------------
+  [Visão do produto](docs/01-visao-do-produto.md)  Objetivos, público e escopo
+
+  [Requisitos](docs/02-requisitos.md)              Requisitos funcionais e não
+                                                   funcionais
+
+  [Backlog e                                       Escopo do MVP e evoluções
+  prioridades](docs/03-backlog-e-prioridades.md)   
+
+  [Regras de negócio e                             Regras, fórmulas e critérios de
+  aceite](docs/04-regras-de-negocio-e-aceite.md)   aceitação
+
+  [Fluxos de                                       Jornadas e operações principais
+  usuário](docs/05-fluxos-de-usuario.md)           
+
+  [Arquitetura                                     Componentes e tecnologias propostas
+  técnica](docs/06-arquitetura-tecnica.md)         
+
+  [Modelo de dados](docs/07-modelo-de-dados.md)    Entidades e relacionamentos
+
+  [Contrato da API](docs/08-contrato-da-api.md)    Endpoints e formatos de resposta
+                                                   propostos
+
+  [Plano de                                        Fases e tarefas de desenvolvimento
+  execução](docs/09-plano-de-execucao.md)          
+
+  [Plano de testes](docs/10-plano-de-testes.md)    Testes e critérios de aceite
+
+  [Deploy e                                        Implantação, segurança e operação
+  operação](docs/11-deploy-e-operacao.md)          
+
+  [Decisões                                        Hipóteses que precisam de
+  pendentes](docs/12-decisoes-pendentes.md)        confirmação
+  ------------------------------------------------------------------------------------
+
+Consulte também o [índice da documentação](docs/README.md).
+
+## Escopo inicial (MVP)
+
+O MVP prioriza o fluxo essencial de planejamento:
+
+-   Autenticação e controle de acesso.
+-   Cadastro de projetos, disciplinas, tarefas e integrantes.
+-   Gantt interativo com alterações persistidas.
+-   Dependências entre tarefas.
+-   Capacidade semanal e sinalização de sobrecarga.
+-   Testes das regras críticas e preparação para implantação.
+
+Funcionalidades de análise avançada e integrações externas ficam
+previstas para etapas posteriores, salvo revisão explícita do escopo.
+
+## Status do desenvolvimento
+
+-   [x] Estrutura inicial de documentação do produto
+-   [ ] Confirmação das decisões pendentes
+-   [ ] Definição final da arquitetura e das bibliotecas
+-   [ ] Configuração do repositório e do ambiente de desenvolvimento
+-   [ ] Implementação do backend e do modelo de dados
+-   [ ] Implementação da interface e integração com o Gantt
+-   [ ] Implementação do planejamento de capacidade
+-   [ ] Testes de aceitação e implantação do MVP
+
+Atualize esta lista conforme o desenvolvimento avançar.
+
+## Como executar
+
+As instruções de instalação e execução serão adicionadas quando a
+estrutura de frontend, backend, dependências e configurações de ambiente
+estiver definida. Até lá, consulte a documentação em [`docs/`](docs/)
+para entender o escopo e as decisões técnicas propostas.
+
+Não adicione credenciais reais ao repositório. Quando a configuração do
+ambiente estiver implementada, disponibilize um arquivo `.env.example`
+com nomes de variáveis e valores ilustrativos, sem segredos.
+
+## Contribuição e decisões
+
+Antes de implementar uma funcionalidade que altere o modelo de dados, as
+permissões ou o cálculo de capacidade:
+
+1.  Consulte os requisitos e as regras de negócio.
+2.  Verifique as decisões pendentes.
+3.  Registre impactos no modelo de dados, na API, na interface e nos
+    testes.
+4.  Atualize a documentação quando uma decisão for aprovada.
+
+## Licença
+
+A licença do projeto ainda não foi definida. Antes de publicar ou
+distribuir o software, escolha uma licença para o repositório e confirme
+a compatibilidade das dependências, especialmente das bibliotecas de
+terceiros utilizadas no Gantt.
