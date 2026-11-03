@@ -1,0 +1,2772 @@
+{
+ "escolas": [
+  {
+   "id": "esc-ago",
+   "codigo": "AGO",
+   "nome": "AGO",
+   "cor": "#b13333"
+  },
+  {
+   "id": "esc-bim",
+   "codigo": "BIM",
+   "nome": "BIM",
+   "cor": "#3358b1"
+  },
+  {
+   "id": "esc-bor",
+   "codigo": "BOR",
+   "nome": "BOR",
+   "cor": "#7db133"
+  },
+  {
+   "id": "esc-bos",
+   "codigo": "BOS",
+   "nome": "BOS",
+   "cor": "#b133a2"
+  },
+  {
+   "id": "esc-cel",
+   "codigo": "CEL",
+   "nome": "CEL",
+   "cor": "#33b19c"
+  },
+  {
+   "id": "esc-con",
+   "codigo": "CON",
+   "nome": "CON",
+   "cor": "#b17733"
+  },
+  {
+   "id": "esc-edu",
+   "codigo": "EDU",
+   "nome": "EDU",
+   "cor": "#5333b1"
+  },
+  {
+   "id": "esc-eun",
+   "codigo": "EUN",
+   "nome": "EUN",
+   "cor": "#39b133"
+  },
+  {
+   "id": "esc-fra",
+   "codigo": "FRA",
+   "nome": "FRA",
+   "cor": "#b1335d"
+  },
+  {
+   "id": "esc-hil",
+   "codigo": "HIL",
+   "nome": "HIL",
+   "cor": "#3382b1"
+  },
+  {
+   "id": "esc-ing",
+   "codigo": "ING",
+   "nome": "ING",
+   "cor": "#a7b133"
+  },
+  {
+   "id": "esc-jad",
+   "codigo": "JAD",
+   "nome": "JAD",
+   "cor": "#9733b1"
+  },
+  {
+   "id": "esc-jsa",
+   "codigo": "JSA",
+   "nome": "JSA",
+   "cor": "#33b172"
+  },
+  {
+   "id": "esc-mar",
+   "codigo": "MAR",
+   "nome": "MAR",
+   "cor": "#b14d33"
+  },
+  {
+   "id": "esc-nor",
+   "codigo": "NOR",
+   "nome": "NOR",
+   "cor": "#333eb1"
+  },
+  {
+   "id": "esc-oli",
+   "codigo": "OLI",
+   "nome": "OLI",
+   "cor": "#63b133"
+  },
+  {
+   "id": "esc-one",
+   "codigo": "ONE",
+   "nome": "ONE",
+   "cor": "#b13388"
+  },
+  {
+   "id": "esc-pol",
+   "codigo": "POL",
+   "nome": "POL",
+   "cor": "#33acb1"
+  },
+  {
+   "id": "esc-ros",
+   "codigo": "ROS",
+   "nome": "ROS",
+   "cor": "#b19133"
+  },
+  {
+   "id": "esc-sfe",
+   "codigo": "SFE",
+   "nome": "SFE",
+   "cor": "#6d33b1"
+  },
+  {
+   "id": "esc-slu",
+   "codigo": "SLU",
+   "nome": "SLU",
+   "cor": "#33b148"
+  },
+  {
+   "id": "esc-ver",
+   "codigo": "VER",
+   "nome": "VER",
+   "cor": "#b13343"
+  },
+  {
+   "id": "esc-zen",
+   "codigo": "ZEN",
+   "nome": "ZEN",
+   "cor": "#3368b1"
+  }
+ ],
+ "disciplinas": [
+  {
+   "id": "dis-arq",
+   "sigla": "ARQ",
+   "nome": "ARQ"
+  },
+  {
+   "id": "dis-est",
+   "sigla": "EST",
+   "nome": "EST"
+  },
+  {
+   "id": "dis-hid",
+   "sigla": "HID",
+   "nome": "HID"
+  },
+  {
+   "id": "dis-lum-ele-spd",
+   "sigla": "LUM-ELE-SPD",
+   "nome": "LUM-ELE-SPD"
+  },
+  {
+   "id": "dis-cli",
+   "sigla": "CLI",
+   "nome": "CLI"
+  },
+  {
+   "id": "dis-tel",
+   "sigla": "TEL",
+   "nome": "TEL"
+  },
+  {
+   "id": "dis-inc",
+   "sigla": "INC",
+   "nome": "INC"
+  },
+  {
+   "id": "dis-glp",
+   "sigla": "GLP",
+   "nome": "GLP"
+  },
+  {
+   "id": "dis-orc",
+   "sigla": "ORC",
+   "nome": "ORC"
+  }
+ ],
+ "equipes": [
+  {
+   "id": "eq-allan-freires",
+   "nome": "ALLAN FREIRES",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-mateus-duarte",
+   "nome": "MATEUS DUARTE",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-brenda-lucena",
+   "nome": "BRENDA LUCENA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-edgar-coroa",
+   "nome": "EDGAR COROA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-andrey-martins",
+   "nome": "ANDREY MARTINS",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-elis-almeida",
+   "nome": "ELIS ALMEIDA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-aurea-pimentel",
+   "nome": "ÁUREA PIMENTEL",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-taina-veiga",
+   "nome": "TAINÁ VEIGA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-dan-arnaud",
+   "nome": "DAN ARNAUD",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-erika-fernanda",
+   "nome": "ERIKA FERNANDA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-jessica-gabrielle",
+   "nome": "JÉSSICA GABRIELLE",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-maycon-macedo",
+   "nome": "MAYCON MACEDO",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-hugo-pessoa",
+   "nome": "HUGO PESSOA",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-luzia-favacho",
+   "nome": "LUZIA FAVACHO",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-ricardo-strauss",
+   "nome": "RICARDO STRAUSS",
+   "disciplinaId": "dis-arq"
+  },
+  {
+   "id": "eq-est-1",
+   "nome": "EST-1",
+   "disciplinaId": "dis-est"
+  },
+  {
+   "id": "eq-hid-1",
+   "nome": "HID-1",
+   "disciplinaId": "dis-hid"
+  },
+  {
+   "id": "eq-lum-ele-spd-1",
+   "nome": "LUM-ELE-SPD-1",
+   "disciplinaId": "dis-lum-ele-spd"
+  },
+  {
+   "id": "eq-cli-1",
+   "nome": "CLI-1",
+   "disciplinaId": "dis-cli"
+  },
+  {
+   "id": "eq-tel-1",
+   "nome": "TEL-1",
+   "disciplinaId": "dis-tel"
+  },
+  {
+   "id": "eq-inc-1",
+   "nome": "INC-1",
+   "disciplinaId": "dis-inc"
+  },
+  {
+   "id": "eq-glp-1",
+   "nome": "GLP-1",
+   "disciplinaId": "dis-glp"
+  },
+  {
+   "id": "eq-orc-1",
+   "nome": "ORÇ-1",
+   "disciplinaId": "dis-orc"
+  },
+  {
+   "id": "eq-est-2",
+   "nome": "EST-2",
+   "disciplinaId": "dis-est"
+  },
+  {
+   "id": "eq-hid-2",
+   "nome": "HID-2",
+   "disciplinaId": "dis-hid"
+  },
+  {
+   "id": "eq-lum-ele-spd-2",
+   "nome": "LUM-ELE-SPD-2",
+   "disciplinaId": "dis-lum-ele-spd"
+  },
+  {
+   "id": "eq-cli-2",
+   "nome": "CLI-2",
+   "disciplinaId": "dis-cli"
+  },
+  {
+   "id": "eq-tel-2",
+   "nome": "TEL-2",
+   "disciplinaId": "dis-tel"
+  },
+  {
+   "id": "eq-inc-2",
+   "nome": "INC-2",
+   "disciplinaId": "dis-inc"
+  },
+  {
+   "id": "eq-glp-2",
+   "nome": "GLP-2",
+   "disciplinaId": "dis-glp"
+  },
+  {
+   "id": "eq-orc-2",
+   "nome": "ORÇ-2",
+   "disciplinaId": "dis-orc"
+  }
+ ],
+ "pessoas": [
+  {
+   "id": "pe-1",
+   "nome": "ALICE",
+   "funcao": "EST",
+   "equipeId": "eq-est-1"
+  },
+  {
+   "id": "pe-2",
+   "nome": "ALLAN",
+   "funcao": "ARQ",
+   "equipeId": "eq-allan-freires"
+  },
+  {
+   "id": "pe-3",
+   "nome": "ALYSSON",
+   "funcao": "TEC",
+   "equipeId": "eq-hid-1"
+  },
+  {
+   "id": "pe-4",
+   "nome": "ANDRÉ ARAUJO",
+   "funcao": "TEC",
+   "equipeId": "eq-est-2"
+  },
+  {
+   "id": "pe-5",
+   "nome": "ANDRÉ TAVARES",
+   "funcao": "ENG",
+   "equipeId": "eq-cli-2"
+  },
+  {
+   "id": "pe-6",
+   "nome": "ÉRIKA",
+   "funcao": "TEC",
+   "equipeId": "eq-erika-fernanda"
+  },
+  {
+   "id": "pe-7",
+   "nome": "JÉSSICA",
+   "funcao": "TEC",
+   "equipeId": "eq-jessica-gabrielle"
+  },
+  {
+   "id": "pe-8",
+   "nome": "CAIO CARDOSO",
+   "funcao": "TEC",
+   "equipeId": "eq-lum-ele-spd-1"
+  },
+  {
+   "id": "pe-9",
+   "nome": "CAIO CÉSAR",
+   "funcao": "ENG",
+   "equipeId": "eq-tel-2"
+  },
+  {
+   "id": "pe-10",
+   "nome": "CARLO",
+   "funcao": "ENG",
+   "equipeId": "eq-est-1"
+  },
+  {
+   "id": "pe-11",
+   "nome": "MATEUS",
+   "funcao": "ARQ",
+   "equipeId": "eq-mateus-duarte"
+  },
+  {
+   "id": "pe-12",
+   "nome": "DANIEL",
+   "funcao": "TEC",
+   "equipeId": "eq-lum-ele-spd-2"
+  },
+  {
+   "id": "pe-13",
+   "nome": "EDUARDA",
+   "funcao": "EST",
+   "equipeId": "eq-lum-ele-spd-2"
+  },
+  {
+   "id": "pe-14",
+   "nome": "HUGO",
+   "funcao": "ARQ",
+   "equipeId": "eq-hugo-pessoa"
+  },
+  {
+   "id": "pe-15",
+   "nome": "ÉRICKA BARBOSA",
+   "funcao": "TEC",
+   "equipeId": "eq-inc-2"
+  },
+  {
+   "id": "pe-16",
+   "nome": "ÁUREA",
+   "funcao": "ARQ",
+   "equipeId": "eq-aurea-pimentel"
+  },
+  {
+   "id": "pe-17",
+   "nome": "EVELYN",
+   "funcao": "TEC",
+   "equipeId": "eq-lum-ele-spd-2"
+  },
+  {
+   "id": "pe-18",
+   "nome": "FABIANE",
+   "funcao": "ENG",
+   "equipeId": "eq-est-2"
+  },
+  {
+   "id": "pe-19",
+   "nome": "FILIPPE",
+   "funcao": "ENG",
+   "equipeId": "eq-hid-1"
+  },
+  {
+   "id": "pe-20",
+   "nome": "GIOVANE",
+   "funcao": "TEC",
+   "equipeId": "eq-lum-ele-spd-1"
+  },
+  {
+   "id": "pe-21",
+   "nome": "TAINÁ",
+   "funcao": "ARQ",
+   "equipeId": "eq-taina-veiga"
+  },
+  {
+   "id": "pe-22",
+   "nome": "HUGO",
+   "funcao": "ENG",
+   "equipeId": "eq-est-1"
+  },
+  {
+   "id": "pe-23",
+   "nome": "IURI SOUSA",
+   "funcao": "ENG",
+   "equipeId": "eq-inc-1"
+  },
+  {
+   "id": "pe-24",
+   "nome": "JACKQUELINE",
+   "funcao": "TEC",
+   "equipeId": "eq-orc-2"
+  },
+  {
+   "id": "pe-25",
+   "nome": "DAN ARNAUD",
+   "funcao": "ARQ",
+   "equipeId": "eq-dan-arnaud"
+  },
+  {
+   "id": "pe-26",
+   "nome": "JHAMES",
+   "funcao": "TEC",
+   "equipeId": "eq-orc-1"
+  },
+  {
+   "id": "pe-27",
+   "nome": "LUCAS",
+   "funcao": "TEC",
+   "equipeId": "eq-lum-ele-spd-2"
+  },
+  {
+   "id": "pe-28",
+   "nome": "LUIGI",
+   "funcao": "ENG",
+   "equipeId": "eq-hid-2"
+  },
+  {
+   "id": "pe-29",
+   "nome": "RICARDO",
+   "funcao": "EST",
+   "equipeId": "eq-ricardo-strauss"
+  },
+  {
+   "id": "pe-30",
+   "nome": "MARCOS",
+   "funcao": "TEC",
+   "equipeId": "eq-tel-1"
+  },
+  {
+   "id": "pe-31",
+   "nome": "LUZIA",
+   "funcao": "TEC",
+   "equipeId": "eq-luzia-favacho"
+  },
+  {
+   "id": "pe-32",
+   "nome": "MATEUS",
+   "funcao": "ENG",
+   "equipeId": "eq-lum-ele-spd-1"
+  },
+  {
+   "id": "pe-33",
+   "nome": "PAULO",
+   "funcao": "EST",
+   "equipeId": "eq-hid-1"
+  },
+  {
+   "id": "pe-34",
+   "nome": "REBECA",
+   "funcao": "EST",
+   "equipeId": "eq-lum-ele-spd-2"
+  },
+  {
+   "id": "pe-35",
+   "nome": "REBEKAH",
+   "funcao": "EST",
+   "equipeId": "eq-est-2"
+  },
+  {
+   "id": "pe-36",
+   "nome": "ROGÉRIO MATNI",
+   "funcao": "ENG",
+   "equipeId": "eq-cli-1"
+  },
+  {
+   "id": "pe-37",
+   "nome": "ROGÉRIO MATNI",
+   "funcao": "ENG",
+   "equipeId": "eq-glp-1"
+  },
+  {
+   "id": "pe-38",
+   "nome": "RUAN",
+   "funcao": "TEC",
+   "equipeId": "eq-hid-1"
+  },
+  {
+   "id": "pe-39",
+   "nome": "SÉRGIO SILVA",
+   "funcao": "ENG",
+   "equipeId": "eq-hid-2"
+  },
+  {
+   "id": "pe-40",
+   "nome": "SHINJI",
+   "funcao": "TEC",
+   "equipeId": "eq-tel-2"
+  },
+  {
+   "id": "pe-41",
+   "nome": "TAUAN",
+   "funcao": "EST",
+   "equipeId": "eq-hid-2"
+  },
+  {
+   "id": "pe-42",
+   "nome": "VITOR",
+   "funcao": "ENG",
+   "equipeId": "eq-lum-ele-spd-1"
+  },
+  {
+   "id": "pe-43",
+   "nome": "VITOR RIBEIRO",
+   "funcao": "TEC",
+   "equipeId": "eq-hid-2"
+  },
+  {
+   "id": "pe-44",
+   "nome": "WALBER",
+   "funcao": "TEC",
+   "equipeId": "eq-tel-1"
+  },
+  {
+   "id": "pe-45",
+   "nome": "YAN",
+   "funcao": "EST",
+   "equipeId": "eq-lum-ele-spd-1"
+  }
+ ],
+ "atividades": [
+  {
+   "id": "at-1",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-2",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-22",
+   "descricao": ""
+  },
+  {
+   "id": "at-3",
+   "escolaId": "esc-con",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-05-25",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-4",
+   "escolaId": "esc-con",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-5",
+   "escolaId": "esc-con",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-08-03",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-6",
+   "escolaId": "esc-bor",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-23",
+   "descricao": ""
+  },
+  {
+   "id": "at-7",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-allan-freires",
+   "inicio": "2026-10-26",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-8",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-9",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-22",
+   "descricao": ""
+  },
+  {
+   "id": "at-10",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-05-25",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-11",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-12",
+   "escolaId": "esc-pol",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-13",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-mateus-duarte",
+   "inicio": "2026-08-10",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-14",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-brenda-lucena",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-15",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-brenda-lucena",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-16",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-brenda-lucena",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-17",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-brenda-lucena",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-18",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-brenda-lucena",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-21",
+   "descricao": ""
+  },
+  {
+   "id": "at-19",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-20",
+   "escolaId": "esc-slu",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-04-20",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-21",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-22",
+   "escolaId": "esc-slu",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-05-11",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-23",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-24",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-edgar-coroa",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-25",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-andrey-martins",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-26",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-andrey-martins",
+   "inicio": "2026-05-04",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-27",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-andrey-martins",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-28",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-andrey-martins",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-29",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-andrey-martins",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-30",
+   "escolaId": "esc-ago",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-31",
+   "escolaId": "esc-ago",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-32",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-33",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-34",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-35",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-elis-almeida",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-36",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-04-13",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-37",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-38",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-39",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-40",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-08-03",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-41",
+   "escolaId": "esc-ago",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-42",
+   "escolaId": "esc-jsa",
+   "equipeId": "eq-aurea-pimentel",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-43",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-44",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-05-04",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-45",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-46",
+   "escolaId": "esc-pol",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-21",
+   "descricao": ""
+  },
+  {
+   "id": "at-47",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-08-24",
+   "fim": "2026-09-25",
+   "descricao": ""
+  },
+  {
+   "id": "at-48",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-taina-veiga",
+   "inicio": "2026-09-28",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-49",
+   "escolaId": "esc-bim",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-50",
+   "escolaId": "esc-pol",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-51",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-29",
+   "descricao": ""
+  },
+  {
+   "id": "at-52",
+   "escolaId": "esc-bim",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-06-01",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-53",
+   "escolaId": "esc-bim",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-10",
+   "descricao": ""
+  },
+  {
+   "id": "at-54",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-07-13",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-55",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-08-03",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-56",
+   "escolaId": "esc-nor",
+   "equipeId": "eq-dan-arnaud",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-57",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-erika-fernanda",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-58",
+   "escolaId": "esc-zen",
+   "equipeId": "eq-erika-fernanda",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-25",
+   "descricao": ""
+  },
+  {
+   "id": "at-59",
+   "escolaId": "esc-bor",
+   "equipeId": "eq-erika-fernanda",
+   "inicio": "2026-09-28",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-60",
+   "escolaId": "esc-one",
+   "equipeId": "eq-erika-fernanda",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-61",
+   "escolaId": "esc-mar",
+   "equipeId": "eq-jessica-gabrielle",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-23",
+   "descricao": ""
+  },
+  {
+   "id": "at-62",
+   "escolaId": "esc-ago",
+   "equipeId": "eq-maycon-macedo",
+   "inicio": "2026-08-03",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-63",
+   "escolaId": "esc-pol",
+   "equipeId": "eq-hugo-pessoa",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-64",
+   "escolaId": "esc-edu",
+   "equipeId": "eq-hugo-pessoa",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-65",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-22",
+   "descricao": ""
+  },
+  {
+   "id": "at-66",
+   "escolaId": "esc-pol",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-05-25",
+   "fim": "2026-06-19",
+   "descricao": ""
+  },
+  {
+   "id": "at-67",
+   "escolaId": "esc-ros",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-06-22",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-68",
+   "escolaId": "esc-ros",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-10",
+   "descricao": ""
+  },
+  {
+   "id": "at-69",
+   "escolaId": "esc-con",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-07-13",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-70",
+   "escolaId": "esc-con",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-71",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-08-17",
+   "fim": "2026-09-25",
+   "descricao": ""
+  },
+  {
+   "id": "at-72",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-luzia-favacho",
+   "inicio": "2026-09-28",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-73",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-74",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-75",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-76",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-77",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-10",
+   "descricao": ""
+  },
+  {
+   "id": "at-78",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-07-13",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-79",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-80",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-81",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-82",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-83",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-09",
+   "descricao": ""
+  },
+  {
+   "id": "at-84",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-85",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-est-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-86",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-87",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-88",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-89",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-90",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-91",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-92",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-93",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-94",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-95",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-96",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-hid-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-97",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-98",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-99",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-19",
+   "descricao": ""
+  },
+  {
+   "id": "at-100",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-06-22",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-101",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-102",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-103",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-104",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-105",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-106",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-107",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-108",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-109",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-lum-ele-spd-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-110",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-111",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-112",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-113",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-114",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-115",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-116",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-117",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-118",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-119",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-120",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-121",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-122",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-cli-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-123",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-124",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-125",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-19",
+   "descricao": ""
+  },
+  {
+   "id": "at-126",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-06-22",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-127",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-128",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-129",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-130",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-131",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-132",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-133",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-134",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-135",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-tel-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-136",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-137",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-138",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-05-22",
+   "descricao": ""
+  },
+  {
+   "id": "at-139",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-05-25",
+   "fim": "2026-06-19",
+   "descricao": ""
+  },
+  {
+   "id": "at-140",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-06-22",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-141",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-142",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-143",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-144",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-145",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-146",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-147",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-148",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-149",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-inc-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-150",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-151",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-152",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-12",
+   "descricao": ""
+  },
+  {
+   "id": "at-153",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-154",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-155",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-156",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-157",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-158",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-159",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-160",
+   "escolaId": "esc-oli",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-161",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-162",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-glp-1",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-163",
+   "escolaId": "esc-fra",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-04-01",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-164",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-15",
+   "descricao": ""
+  },
+  {
+   "id": "at-165",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-166",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-167",
+   "escolaId": "esc-hil",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-10",
+   "descricao": ""
+  },
+  {
+   "id": "at-168",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-07-13",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-169",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-170",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-171",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-172",
+   "escolaId": "esc-eun",
+   "equipeId": "eq-orc-1",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-173",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-174",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-175",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-06-01",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-176",
+   "escolaId": "esc-con",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-177",
+   "escolaId": "esc-con",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-178",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-179",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-180",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-181",
+   "escolaId": "esc-con",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-182",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-183",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-184",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-est-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-185",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-186",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-187",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-188",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-189",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-190",
+   "escolaId": "esc-con",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-191",
+   "escolaId": "esc-con",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-192",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-193",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-194",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-195",
+   "escolaId": "esc-con",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-196",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-197",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-198",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-hid-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-199",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-200",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-201",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-202",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-203",
+   "escolaId": "esc-con",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-204",
+   "escolaId": "esc-con",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-205",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-206",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-207",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-208",
+   "escolaId": "esc-con",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-209",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-210",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-211",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-lum-ele-spd-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-212",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-213",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-214",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-215",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-216",
+   "escolaId": "esc-con",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-217",
+   "escolaId": "esc-con",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-218",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-219",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-220",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-221",
+   "escolaId": "esc-con",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-222",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-223",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-224",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-cli-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-225",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-226",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-05-04",
+   "fim": "2026-05-08",
+   "descricao": ""
+  },
+  {
+   "id": "at-227",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-05-11",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-228",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-229",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-230",
+   "escolaId": "esc-con",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-231",
+   "escolaId": "esc-con",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-232",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-233",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-234",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-235",
+   "escolaId": "esc-con",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-236",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-237",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-238",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-tel-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-239",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-240",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-241",
+   "escolaId": "esc-con",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-242",
+   "escolaId": "esc-con",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-243",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-244",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-245",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-246",
+   "escolaId": "esc-con",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-247",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-248",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-249",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-inc-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-250",
+   "escolaId": "esc-sfe",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-04-06",
+   "fim": "2026-04-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-251",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-05-18",
+   "fim": "2026-06-05",
+   "descricao": ""
+  },
+  {
+   "id": "at-252",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-06-08",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-253",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-254",
+   "escolaId": "esc-con",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-255",
+   "escolaId": "esc-con",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-07",
+   "descricao": ""
+  },
+  {
+   "id": "at-256",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-08-10",
+   "fim": "2026-08-28",
+   "descricao": ""
+  },
+  {
+   "id": "at-257",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-09-01",
+   "fim": "2026-09-11",
+   "descricao": ""
+  },
+  {
+   "id": "at-258",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-09-14",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-259",
+   "escolaId": "esc-con",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-260",
+   "escolaId": "esc-ver",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-10-01",
+   "fim": "2026-10-02",
+   "descricao": ""
+  },
+  {
+   "id": "at-261",
+   "escolaId": "esc-jad",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-10-13",
+   "fim": "2026-10-16",
+   "descricao": ""
+  },
+  {
+   "id": "at-262",
+   "escolaId": "esc-cel",
+   "equipeId": "eq-glp-2",
+   "inicio": "2026-10-19",
+   "fim": "2026-10-30",
+   "descricao": ""
+  },
+  {
+   "id": "at-263",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-06-15",
+   "fim": "2026-06-26",
+   "descricao": ""
+  },
+  {
+   "id": "at-264",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-07-01",
+   "fim": "2026-07-03",
+   "descricao": ""
+  },
+  {
+   "id": "at-265",
+   "escolaId": "esc-bos",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-07-06",
+   "fim": "2026-07-17",
+   "descricao": ""
+  },
+  {
+   "id": "at-266",
+   "escolaId": "esc-con",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-07-20",
+   "fim": "2026-07-24",
+   "descricao": ""
+  },
+  {
+   "id": "at-267",
+   "escolaId": "esc-con",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-08-03",
+   "fim": "2026-08-14",
+   "descricao": ""
+  },
+  {
+   "id": "at-268",
+   "escolaId": "esc-ing",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-08-17",
+   "fim": "2026-09-18",
+   "descricao": ""
+  },
+  {
+   "id": "at-269",
+   "escolaId": "esc-con",
+   "equipeId": "eq-orc-2",
+   "inicio": "2026-09-21",
+   "fim": "2026-09-30",
+   "descricao": ""
+  }
+ ]
+}
