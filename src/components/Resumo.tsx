@@ -6,12 +6,18 @@ import { diasUteis, sobrepoe } from '../lib/datas'
 interface Props {
   dados: Dados
   atividades: Atividade[] // já filtradas
+  periodo: { inicio: string; fim: string }
 }
 
-export function Resumo({ dados, atividades }: Props) {
+export function Resumo({ dados, atividades, periodo }: Props) {
   const analise = useMemo(() => {
+    const delimitadas = atividades.map((a) => ({
+      ...a,
+      inicio: periodo.inicio && a.inicio < periodo.inicio ? periodo.inicio : a.inicio,
+      fim: periodo.fim && a.fim > periodo.fim ? periodo.fim : a.fim,
+    }))
     const porEquipe = dados.equipes.map((e) => {
-      const lista = atividades.filter((a) => a.equipeId === e.id)
+      const lista = delimitadas.filter((a) => a.equipeId === e.id)
       const dias = lista.reduce((soma, a) => soma + diasUteis(a.inicio, a.fim, feriados), 0)
       let conflitos = 0
       for (let i = 0; i < lista.length; i++)
@@ -25,7 +31,7 @@ export function Resumo({ dados, atividades }: Props) {
       conflitos: porEquipe.reduce((s, x) => s + x.conflitos, 0),
       escolas: new Set(atividades.map((a) => a.escolaId)).size,
     }
-  }, [dados.equipes, atividades])
+  }, [dados.equipes, atividades, periodo.inicio, periodo.fim])
 
   return (
     <section className="resumo">
@@ -36,7 +42,7 @@ export function Resumo({ dados, atividades }: Props) {
         <div className={'cartao' + (analise.conflitos ? ' alerta' : '')}><b>{analise.conflitos}</b><span>sobreposições na mesma equipe</span></div>
       </div>
 
-      <h3>Carga por equipe (dias úteis alocados)</h3>
+      <h3>Carga por equipe (dias úteis alocados no intervalo)</h3>
       <div className="carga">
         {analise.porEquipe.map(({ equipe, dias, conflitos }) => (
           <div key={equipe.id} className="carga-linha">

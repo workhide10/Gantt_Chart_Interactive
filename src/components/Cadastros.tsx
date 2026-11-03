@@ -42,7 +42,8 @@ export function Cadastros({ dados, onChange }: Props) {
           criarNovo={() => ({ id: novoId(), codigo: '', nome: '', cor: '#3b82f6' })}
           motivoBloqueio={(e) => {
             const n = dados.atividades.filter((a) => a.escolaId === e.id).length
-            return n ? `Esta escola tem ${n} atividade(s). Exclua as atividades primeiro.` : null
+            const m = (dados.marcos ?? []).filter((marco) => marco.escolaId === e.id).length
+            return n || m ? `Este projeto tem ${n} atividade(s) e ${m} marco(s). Remova os registros associados antes de excluir.` : null
           }}
         />
       )}

@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import type { Atividade, Dados, Filtros } from '../types'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import type { Atividade, Dados, Filtros, MarcoProjeto } from '../types'
 import { feriados } from '../data/inicial'
 import { difDias, formatarBR, hojeISO, nomeMes, segundaDe, somarDias } from '../lib/datas'
 import { empacotar } from '../lib/gantt'
@@ -11,71 +11,98 @@ const FOLGA = 3
 const MARGEM = 6
 
 type Agrupar = 'equipe' | 'escola'
+type EscalaTemporal = 'semanas' | 'meses' | 'trimestres'
 
 interface Linha {
   id: string
   rotulo: string
   cor?: string
   atividades: Atividade[]
+  marcos?: MarcoProjeto[]
 }
 
 interface Props {
   dados: Dados
   filtros: Filtros
+  marcos: MarcoProjeto[]
   onEditar: (a: Atividade) => void
   onNova: (preset: Partial<Atividade>) => void
+  onEditarMarco: (marco: MarcoProjeto) => void
 }
 
-export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
+export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
-  const [pxDia, setPxDia] = useState(6) // zoom: pixels por dia
+  const [escala, setEscala] = useState<EscalaTemporal>('meses')
+  const ganttRef = useRef<HTMLDivElement>(null)
+  const [larguraVisivel, setLarguraVisivel] = useState(0)
 
   const visiveis = useMemo(() => filtrarAtividades(dados, filtros), [dados, filtros])
 
   // Período mostrado: da primeira à última atividade cadastrada (sempre em semanas completas).
   const { inicio, totalDias } = useMemo(() => {
-    const todas = dados.atividades
-    const menor = todas.length ? todas.reduce((m, a) => (a.inicio < m ? a.inicio : m), todas[0].inicio) : hojeISO()
-    const maior = todas.length ? todas.reduce((m, a) => (a.fim > m ? a.fim : m), todas[0].fim) : somarDias(hojeISO(), 60)
+    const datas = [...dados.atividades.flatMap((a) => [a.inicio, a.fim]), ...marcos.map((m) => m.data)]
+    const menor = datas.length ? datas.reduce((m, d) => d < m ? d : m, datas[0]) : hojeISO()
+    const maior = datas.length ? datas.reduce((m, d) => d > m ? d : m, datas[0]) : somarDias(hojeISO(), 60)
     const ini = segundaDe(menor)
     const fim = somarDias(segundaDe(maior), 6)
     return { inicio: ini, totalDias: difDias(ini, fim) + 1 }
-  }, [dados.atividades])
+  }, [dados.atividades, marcos])
 
+  useEffect(() => {
+    const area = ganttRef.current
+    if (!area) return
+    const observarLargura = () => setLarguraVisivel(area.clientWidth)
+    const observer = new ResizeObserver(observarLargura)
+    observer.observe(area)
+    observarLargura()
+    return () => observer.disconnect()
+  }, [])
+
+  const escalaBase = escala === 'semanas' ? 14 : escala === 'meses' ? 5 : 2
+  const pxDia = Math.max(escalaBase, larguraVisivel > 0 ? (larguraVisivel - LARGURA_ROTULO) / totalDias : escalaBase)
   const larguraTrilha = totalDias * pxDia
 
-  // Cabeçalho: meses e semanas
-  const meses = useMemo(() => {
-    const lista: { rotulo: string; esq: number; larg: number }[] = []
-    for (let i = 0; i < totalDias; i++) {
-      const dia = somarDias(inicio, i)
-      const rotulo = nomeMes(dia)
-      const ultimo = lista[lista.length - 1]
-      if (ultimo && ultimo.rotulo === rotulo) ultimo.larg += pxDia
-      else lista.push({ rotulo, esq: i * pxDia, larg: pxDia })
+  // Cada escala altera a largura diária e os rótulos do eixo, sem mudar as datas dos registros.
+  const { periodosMaiores, periodosMenores } = useMemo(() => {
+    type Segmento = { chave: string; rotulo: string; esq: number; larg: number }
+    const agruparPeriodo = (unidade: 'mes' | 'ano' | 'trimestre'): Segmento[] => {
+      const lista: Segmento[] = []
+      for (let i = 0; i < totalDias; i++) {
+        const dia = somarDias(inicio, i)
+        const ano = dia.slice(0, 4)
+        const mes = dia.slice(5, 7)
+        const trimestre = Math.floor((Number(mes) - 1) / 3) + 1
+        const chave = unidade === 'ano' ? ano : unidade === 'trimestre' ? `${ano}-T${trimestre}` : `${ano}-${mes}`
+        const rotulo = unidade === 'ano' ? ano : unidade === 'trimestre' ? `${trimestre}º tri` : nomeMes(dia)
+        const ultimo = lista[lista.length - 1]
+        if (ultimo && ultimo.chave === chave) ultimo.larg += pxDia
+        else lista.push({ chave, rotulo, esq: i * pxDia, larg: pxDia })
+      }
+      return lista
     }
-    return lista
-  }, [inicio, totalDias, pxDia])
-
-  const semanas = useMemo(() => {
-    const lista: { rotulo: string; esq: number }[] = []
-    for (let i = 0; i < totalDias; i += 7) {
-      lista.push({ rotulo: formatarBR(somarDias(inicio, i)).slice(0, 5), esq: i * pxDia })
-    }
-    return lista
-  }, [inicio, totalDias, pxDia])
+    const maiores = agruparPeriodo(escala === 'semanas' ? 'mes' : 'ano')
+    const menores: Segmento[] = escala === 'semanas'
+      ? Array.from({ length: Math.ceil(totalDias / 7) }, (_, n) => {
+          const i = n * 7
+          return { chave: String(i), rotulo: formatarBR(somarDias(inicio, i)).slice(0, 5), esq: i * pxDia, larg: Math.min(7, totalDias - i) * pxDia }
+        })
+      : agruparPeriodo(escala === 'meses' ? 'mes' : 'trimestre')
+    return { periodosMaiores: maiores, periodosMenores: menores }
+  }, [escala, inicio, totalDias, pxDia])
 
   // Linhas conforme o agrupamento escolhido
   const linhas: Linha[] = useMemo(() => {
+    const marcosProjeto = marcos.filter((m) => !filtros.escolaId || m.escolaId === filtros.escolaId)
     if (agrupar === 'equipe') {
       return dados.equipes
         .filter((e) => (!filtros.equipeId || e.id === filtros.equipeId) && (!filtros.disciplinaId || e.disciplinaId === filtros.disciplinaId))
         .map((e) => ({ id: e.id, rotulo: e.nome, atividades: visiveis.filter((a) => a.equipeId === e.id) }))
     }
     return dados.escolas
-      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: visiveis.filter((a) => a.escolaId === s.id) }))
-      .filter((l) => l.atividades.length > 0)
-  }, [agrupar, dados.equipes, dados.escolas, filtros.equipeId, filtros.disciplinaId, visiveis])
+      .filter((s) => !filtros.escolaId || s.id === filtros.escolaId)
+      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: visiveis.filter((a) => a.escolaId === s.id), marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
+      .filter((l) => l.atividades.length > 0 || (l.marcos?.length ?? 0) > 0)
+  }, [agrupar, dados.equipes, dados.escolas, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos, visiveis])
 
   const escola = (id: string) => dados.escolas.find((e) => e.id === id)
   const equipe = (id: string) => dados.equipes.find((e) => e.id === id)
@@ -94,7 +121,7 @@ export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
     </>
   )
 
-  const escolasNaTela = [...new Set(visiveis.map((a) => a.escolaId))].map(escola).filter(Boolean)
+  const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.map((m) => m.escolaId)])].map(escola).filter(Boolean)
 
   return (
     <section>
@@ -103,11 +130,18 @@ export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>
           <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por escola</button>
         </div>
-        <label className="zoom">
-          Zoom
-          <input type="range" min={2} max={16} value={pxDia} onChange={(e) => setPxDia(Number(e.target.value))} />
-        </label>
-        <span className="dica">Clique numa barra para editar, ou numa área vazia para criar.</span>
+        <div className="seg escala-temporal" aria-label="Escala temporal do Gantt">
+          <button onClick={() => {
+            const area = ganttRef.current
+            if (!area) return
+            const posicaoHoje = difDias(inicio, hojeISO()) * pxDia
+            area.scrollTo({ left: Math.max(0, posicaoHoje - (area.clientWidth - LARGURA_ROTULO) / 2), behavior: 'smooth' })
+          }}>Hoje</button>
+          <button className={escala === 'semanas' ? 'ativo' : ''} onClick={() => setEscala('semanas')}>Semanas</button>
+          <button className={escala === 'meses' ? 'ativo' : ''} onClick={() => setEscala('meses')}>Meses</button>
+          <button className={escala === 'trimestres' ? 'ativo' : ''} onClick={() => setEscala('trimestres')}>Trimestres</button>
+        </div>
+        <span className="dica">Clique numa barra para editar; no agrupamento por projeto, ◆ identifica um marco concluído.</span>
       </div>
 
       <div className="legenda">
@@ -118,19 +152,19 @@ export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
         ))}
       </div>
 
-      <div className="gantt-rolagem">
+      <div className="gantt-rolagem" ref={ganttRef}>
         <div className="gantt" style={{ width: LARGURA_ROTULO + larguraTrilha }}>
           <div className="gantt-cab">
             <div className="rotulo" style={{ width: LARGURA_ROTULO }}>{agrupar === 'equipe' ? 'Equipe' : 'Escola'}</div>
             <div className="cab-trilha" style={{ width: larguraTrilha }}>
               <div className="cab-linha">
-                {meses.map((m) => (
+                {periodosMaiores.map((m) => (
                   <div key={m.esq} className="cab-mes" style={{ left: m.esq, width: m.larg }}>{m.rotulo}</div>
                 ))}
               </div>
               <div className="cab-linha">
-                {semanas.map((s) => (
-                  <div key={s.esq} className="cab-semana" style={{ left: s.esq }}>{s.rotulo}</div>
+                {periodosMenores.map((s) => (
+                  <div key={s.esq} className="cab-semana" style={{ left: s.esq, width: s.larg }}>{s.rotulo}</div>
                 ))}
               </div>
             </div>
@@ -159,6 +193,17 @@ export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
                   }}
                 >
                   {marcadores}
+                  {agrupar === 'escola' && linha.marcos?.map((marco) => (
+                    <button
+                      key={marco.id}
+                      type="button"
+                      className="marco-gantt"
+                      style={{ left: difDias(inicio, marco.data) * pxDia, top: 2 }}
+                      title={`${marco.titulo} · ${formatarBR(marco.data)}${marco.observacao ? `\n${marco.observacao}` : ''}`}
+                      aria-label={`Editar marco ${marco.titulo}, ${formatarBR(marco.data)}`}
+                      onClick={(e) => { e.stopPropagation(); onEditarMarco(marco) }}
+                    >◆</button>
+                  ))}
                   {itens.map(({ atividade: a, faixa, conflito }) => {
                     const s = escola(a.escolaId)
                     const eq = equipe(a.equipeId)
@@ -180,7 +225,7 @@ export function Gantt({ dados, filtros, onEditar, onNova }: Props) {
                           onEditar(a)
                         }}
                       >
-                        {texto}
+                        <span className="barra-codigo">{texto}</span>
                       </div>
                     )
                   })}

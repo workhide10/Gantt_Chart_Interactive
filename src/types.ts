@@ -38,6 +38,14 @@ export interface Atividade {
   descricao: string
 }
 
+export interface MarcoProjeto {
+  id: ID
+  escolaId: ID
+  data: string // data ISO "AAAA-MM-DD"
+  titulo: string
+  observacao: string // registro do resultado ou contexto para análise
+}
+
 // Tudo o que é salvo no navegador fica dentro deste objeto.
 export interface Dados {
   escolas: Escola[]
@@ -45,6 +53,8 @@ export interface Dados {
   equipes: Equipe[]
   pessoas: Pessoa[]
   atividades: Atividade[]
+  // Opcional para migrar automaticamente dados e backups da versão anterior.
+  marcos?: MarcoProjeto[]
 }
 
 export interface Filtros {
