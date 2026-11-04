@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import type { Atividade, Dados, Filtros, MarcoProjeto } from '../types'
 import { feriados } from '../data/inicial'
 import { difDias, formatarBR, hojeISO, nomeMes, segundaDe, somarDias } from '../lib/datas'
 import { empacotar } from '../lib/gantt'
 import { filtrarAtividades } from '../lib/filtrar'
+import { integrantesNaAtividade } from '../lib/composicao'
 
 const LARGURA_ROTULO = 150
 const ALTURA_BARRA = 22
@@ -12,6 +13,15 @@ const MARGEM = 6
 
 type Agrupar = 'equipe' | 'escola'
 type EscalaTemporal = 'semanas' | 'meses' | 'trimestres'
+type Extremidade = 'inicio' | 'fim'
+
+interface SessaoRedimensionamento {
+  pointerId: number
+  extremidade: Extremidade
+  xInicial: number
+  atividade: Atividade
+  previa: Atividade
+}
 
 interface Linha {
   id: string
@@ -28,13 +38,16 @@ interface Props {
   onEditar: (a: Atividade) => void
   onNova: (preset: Partial<Atividade>) => void
   onEditarMarco: (marco: MarcoProjeto) => void
+  onRedimensionar: (atividade: Atividade) => void
 }
 
-export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco }: Props) {
+export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco, onRedimensionar }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
   const [escala, setEscala] = useState<EscalaTemporal>('meses')
   const ganttRef = useRef<HTMLDivElement>(null)
   const [larguraVisivel, setLarguraVisivel] = useState(0)
+  const [redimensionamento, setRedimensionamento] = useState<SessaoRedimensionamento | null>(null)
+  const redimensionamentoRef = useRef<SessaoRedimensionamento | null>(null)
 
   const visiveis = useMemo(() => filtrarAtividades(dados, filtros), [dados, filtros])
 
@@ -58,9 +71,55 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco 
     return () => observer.disconnect()
   }, [])
 
-  const escalaBase = escala === 'semanas' ? 14 : escala === 'meses' ? 5 : 2
+  // Mantém mais espaço por dia nas três escalas; períodos curtos ainda se expandem para preencher a área.
+  const escalaBase = escala === 'semanas' ? 18 : escala === 'meses' ? 7 : 4
   const pxDia = Math.max(escalaBase, larguraVisivel > 0 ? (larguraVisivel - LARGURA_ROTULO) / totalDias : escalaBase)
   const larguraTrilha = totalDias * pxDia
+
+  const calcularPrevia = (sessao: SessaoRedimensionamento, x: number): Atividade => {
+    const deslocamento = Math.round((x - sessao.xInicial) / pxDia)
+    if (sessao.extremidade === 'inicio') {
+      const inicioNovo = somarDias(sessao.atividade.inicio, deslocamento)
+      return { ...sessao.atividade, inicio: inicioNovo > sessao.atividade.fim ? sessao.atividade.fim : inicioNovo }
+    }
+    const fimNovo = somarDias(sessao.atividade.fim, deslocamento)
+    return { ...sessao.atividade, fim: fimNovo < sessao.atividade.inicio ? sessao.atividade.inicio : fimNovo }
+  }
+
+  const iniciarRedimensionamento = (e: ReactPointerEvent<HTMLButtonElement>, atividade: Atividade, extremidade: Extremidade) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const sessao: SessaoRedimensionamento = { pointerId: e.pointerId, extremidade, xInicial: e.clientX, atividade, previa: atividade }
+    redimensionamentoRef.current = sessao
+    setRedimensionamento(sessao)
+    e.currentTarget.setPointerCapture(e.pointerId)
+  }
+
+  const moverRedimensionamento = (e: ReactPointerEvent<HTMLButtonElement>) => {
+    const sessao = redimensionamentoRef.current
+    if (!sessao || sessao.pointerId !== e.pointerId) return
+    const proxima = { ...sessao, previa: calcularPrevia(sessao, e.clientX) }
+    redimensionamentoRef.current = proxima
+    setRedimensionamento(proxima)
+  }
+
+  const concluirRedimensionamento = (e: ReactPointerEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const sessao = redimensionamentoRef.current
+    if (!sessao || sessao.pointerId !== e.pointerId) return
+    const atividadeFinal = calcularPrevia(sessao, e.clientX)
+    redimensionamentoRef.current = null
+    setRedimensionamento(null)
+    if (atividadeFinal.inicio !== sessao.atividade.inicio || atividadeFinal.fim !== sessao.atividade.fim) onRedimensionar(atividadeFinal)
+  }
+
+  const cancelarRedimensionamento = (e: ReactPointerEvent<HTMLButtonElement>) => {
+    if (redimensionamentoRef.current?.pointerId === e.pointerId) {
+      redimensionamentoRef.current = null
+      setRedimensionamento(null)
+    }
+  }
 
   // Cada escala altera a largura diária e os rótulos do eixo, sem mudar as datas dos registros.
   const { periodosMaiores, periodosMenores } = useMemo(() => {
@@ -122,6 +181,9 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco 
   )
 
   const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.map((m) => m.escolaId)])].map(escola).filter(Boolean)
+  const diasDoEixo = escala === 'semanas'
+    ? Array.from({ length: totalDias }, (_, dia) => somarDias(inicio, dia))
+    : []
 
   return (
     <section>
@@ -167,6 +229,15 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco 
                   <div key={s.esq} className="cab-semana" style={{ left: s.esq, width: s.larg }}>{s.rotulo}</div>
                 ))}
               </div>
+              {escala === 'semanas' && (
+                <div className="cab-linha cab-linha-dias">
+                  {diasDoEixo.map((dia, indice) => {
+                    const diaSemana = new Date(`${dia}T00:00:00Z`).getUTCDay()
+                    const nomesDias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
+                    return <div key={dia} className="cab-dia" title={`${nomesDias[diaSemana]} ${formatarBR(dia)}`} style={{ left: indice * pxDia, width: pxDia }}>{dia.slice(8, 10)}</div>
+                  })}
+                </div>
+              )}
             </div>
           </div>
 
@@ -177,7 +248,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco 
               <div key={linha.id} className="gantt-linha" style={{ height: altura }}>
                 <div className="rotulo" style={{ width: LARGURA_ROTULO }} title={linha.rotulo}>
                   {linha.cor && <i className="bolinha" style={{ background: linha.cor }} />}
-                  {linha.rotulo}
+                  <span className="rotulo-equipe">{linha.rotulo}</span>
                 </div>
                 <div
                   className="trilha"
@@ -205,27 +276,58 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco 
                     >◆</button>
                   ))}
                   {itens.map(({ atividade: a, faixa, conflito }) => {
+                    const atividadeVisual = redimensionamento?.atividade.id === a.id ? redimensionamento.previa : a
                     const s = escola(a.escolaId)
                     const eq = equipe(a.equipeId)
                     const texto = agrupar === 'equipe' ? s?.codigo : eq?.nome
+                    const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual)
+                    const textoIntegrantes = integrantesNoPeriodo.length
+                      ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }) =>
+                          `• ${pessoa?.nome ?? 'Pessoa removida'}${pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · ${formatarBR(inicioVinculo)} a ${formatarBR(fimVinculo)}`,
+                        ).join('\n')
+                      : 'Nenhuma formação registrada para esta equipe neste período.'
+                    const legadosSemProjeto = (dados.vinculosEquipe ?? []).filter((v) => v.equipeId === a.equipeId && !v.projetoId).length
+                    const informacaoIntegrantes = `\nComposição registrada no período:\n${textoIntegrantes}${legadosSemProjeto ? `\nHá ${legadosSemProjeto} vínculo(s) legado(s) sem projeto para revisar em Cadastros → Pendências antigas.` : ''}`
                     return (
                       <div
                         key={a.id}
                         className={'barra' + (conflito && agrupar === 'equipe' ? ' conflito' : '')}
                         style={{
-                          left: difDias(inicio, a.inicio) * pxDia,
-                          width: (difDias(a.inicio, a.fim) + 1) * pxDia - 1,
+                          left: difDias(inicio, atividadeVisual.inicio) * pxDia,
+                          width: (difDias(atividadeVisual.inicio, atividadeVisual.fim) + 1) * pxDia - 1,
                           top: MARGEM + faixa * (ALTURA_BARRA + FOLGA),
                           height: ALTURA_BARRA,
                           background: s?.cor ?? '#888',
                         }}
-                        title={`${s?.nome ?? '?'} · ${eq?.nome ?? '?'}\n${formatarBR(a.inicio)} a ${formatarBR(a.fim)}${a.descricao ? '\n' + a.descricao : ''}${conflito && agrupar === 'equipe' ? '\n⚠ Sobrepõe outra atividade da equipe' : ''}`}
+                        title={`${s?.nome ?? '?'} · ${eq?.nome ?? '?'}${a.titulo ? `\n${a.titulo}` : ''}\n${formatarBR(atividadeVisual.inicio)} a ${formatarBR(atividadeVisual.fim)}${a.descricao ? '\n' + a.descricao : ''}${informacaoIntegrantes}${conflito && agrupar === 'equipe' ? '\n⚠ Sobrepõe outra atividade da equipe' : ''}`}
                         onClick={(e) => {
                           e.stopPropagation()
                           onEditar(a)
                         }}
                       >
                         <span className="barra-codigo">{texto}</span>
+                        <button
+                          type="button"
+                          className="barra-resize barra-resize-inicio"
+                          aria-label={`Ajustar início de ${texto ?? 'atividade'}`}
+                          title="Arraste para ajustar a data de início"
+                          onClick={(e) => e.stopPropagation()}
+                          onPointerDown={(e) => iniciarRedimensionamento(e, a, 'inicio')}
+                          onPointerMove={moverRedimensionamento}
+                          onPointerUp={concluirRedimensionamento}
+                          onPointerCancel={cancelarRedimensionamento}
+                        />
+                        <button
+                          type="button"
+                          className="barra-resize barra-resize-fim"
+                          aria-label={`Ajustar fim de ${texto ?? 'atividade'}`}
+                          title="Arraste para ajustar a data de fim"
+                          onClick={(e) => e.stopPropagation()}
+                          onPointerDown={(e) => iniciarRedimensionamento(e, a, 'fim')}
+                          onPointerMove={moverRedimensionamento}
+                          onPointerUp={concluirRedimensionamento}
+                          onPointerCancel={cancelarRedimensionamento}
+                        />
                       </div>
                     )
                   })}

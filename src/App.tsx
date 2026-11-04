@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { Atividade, Dados, Filtros, MarcoProjeto } from './types'
+import type { Atividade, ComposicaoEquipe, Dados, Filtros, IntegranteComposicaoEquipe, MarcoProjeto } from './types'
 import { useLocalStorage } from './hooks/useLocalStorage'
 import { dadosIniciais } from './data/inicial'
 import { filtrarAtividades } from './lib/filtrar'
@@ -12,8 +12,9 @@ import { FormAtividade } from './components/FormAtividade'
 import { Cadastros } from './components/Cadastros'
 import { FormMarco } from './components/FormMarco'
 import { ListaMarcos } from './components/ListaMarcos'
+import { ComposicoesEquipe } from './components/ComposicoesEquipe'
 
-type Aba = 'gantt' | 'atividades' | 'marcos' | 'analises' | 'cadastros'
+type Aba = 'gantt' | 'atividades' | 'marcos' | 'analises' | 'equipes' | 'cadastros'
 type IntervaloAnalise = { inicio: string; fim: string }
 
 export default function App() {
@@ -35,10 +36,78 @@ export default function App() {
     )
   }, [atividades, intervaloAnalise])
   const marcos = dados.marcos ?? []
-
-  // Migra silenciosamente os dados já salvos antes da inclusão dos marcos.
+  // Migra vínculos antigos para uma linha temporal global por equipe.
   useEffect(() => {
-    if (!Array.isArray(dados.marcos)) setDados({ ...dados, marcos: [] })
+    const fonteReferencia = 'alocacao-equipes-2026'
+    const fonteComposicoes = 'formacao-equipe-global-v2'
+    const fontes = dados.fontesImportadas ?? []
+    const importarReferencia = !fontes.includes(fonteReferencia)
+    const vinculosOriginais = Array.isArray(dados.vinculosEquipe) ? dados.vinculosEquipe : []
+    const vinculosExistentes = vinculosOriginais.map((v) => ({ ...v, projetoId: v.projetoId ?? null }))
+    const referencias = importarReferencia ? (dadosIniciais.vinculosEquipe ?? []) : []
+    const chavesVigencia = new Set(vinculosExistentes.map((v) => `${v.pessoaId}|${v.equipeId}|${v.projetoId}|${v.inicio}|${v.fim}`))
+    const referenciasNovas = referencias.filter((v) => !chavesVigencia.has(`${v.pessoaId}|${v.equipeId}|${v.projetoId}|${v.inicio}|${v.fim}`))
+    const vinculosTodos = [...vinculosExistentes, ...referenciasNovas]
+    const paresPessoaEquipe = new Set(vinculosTodos.map((v) => `${v.pessoaId}|${v.equipeId}`))
+    const legados = dados.pessoas.flatMap((pessoa) => !pessoa.equipeId || paresPessoaEquipe.has(`${pessoa.id}|${pessoa.equipeId}`) ? [] : [{
+      id: `legado-${pessoa.id}`, pessoaId: pessoa.id, equipeId: pessoa.equipeId, projetoId: null,
+      inicio: null, fim: null, origem: 'legado' as const,
+    }])
+    const vinculosComLegados = [...vinculosTodos, ...legados]
+    const pessoasDisponiveis = [...dados.pessoas, ...dadosIniciais.pessoas.filter((p) => !dados.pessoas.some((existente) => existente.id === p.id))]
+
+    const migrarGlobal = !fontes.includes(fonteComposicoes)
+    let composicoes: ComposicaoEquipe[] = Array.isArray(dados.composicoesEquipe) ? dados.composicoesEquipe : []
+    let integrantes: IntegranteComposicaoEquipe[] = Array.isArray(dados.integrantesComposicao) ? dados.integrantesComposicao : []
+    const idsMigrados = new Set<string>()
+    if (migrarGlobal) {
+      type RegistroOrigem = { id: string; equipeId: string; inicio: string; fim: string | null; pessoaId: string; origem?: 'manual' | 'legado' | 'planilha' }
+      const registros: RegistroOrigem[] = []
+      const elegiveis = vinculosComLegados.filter((v) => v.projetoId && v.inicio &&
+        dados.escolas.some((p) => p.id === v.projetoId) && dados.equipes.some((e) => e.id === v.equipeId) &&
+        pessoasDisponiveis.some((p) => p.id === v.pessoaId) && (!v.fim || v.fim >= v.inicio!))
+      for (const v of elegiveis) { registros.push({ id: v.id, equipeId: v.equipeId, inicio: v.inicio!, fim: v.fim, pessoaId: v.pessoaId, origem: v.origem }); idsMigrados.add(v.id) }
+
+      // Backups feitos pela versão anterior guardam projetoId na composição; ao consolidar,
+      // o projeto é descartado e os membros passam a compor a cronologia global da equipe.
+      const compsAntigas = (dados.composicoesEquipe ?? []) as (ComposicaoEquipe & { projetoId?: string })[]
+      for (const c of compsAntigas) for (const m of (dados.integrantesComposicao ?? []).filter((x) => x.composicaoId === c.id)) {
+        if (dados.equipes.some((e) => e.id === c.equipeId) && pessoasDisponiveis.some((p) => p.id === m.pessoaId)) registros.push({ id: `${c.id}-${m.pessoaId}`, equipeId: c.equipeId, inicio: c.inicio, fim: c.fim, pessoaId: m.pessoaId, origem: c.origem })
+      }
+      const porEquipe = new Map<string, RegistroOrigem[]>()
+      for (const r of registros) porEquipe.set(r.equipeId, [...(porEquipe.get(r.equipeId) ?? []), r])
+      composicoes = []; integrantes = []
+      for (const [equipeId, lista] of porEquipe) {
+        const porData = new Map<string, RegistroOrigem[]>()
+        for (const r of lista) porData.set(r.inicio, [...(porData.get(r.inicio) ?? []), r])
+        const snapshots = [...porData].sort(([a], [b]) => a.localeCompare(b)).map(([inicio, rs]) => ({ inicio, pessoas: [...new Set(rs.map((r) => r.pessoaId))].sort(), planilha: rs.every((r) => r.origem === 'planilha') }))
+        const assinaturas = new Set(snapshots.map((s) => s.pessoas.join('|')))
+        // A planilha é um retrato estático: quando a equipe tem uma única composição conhecida,
+        // ela vira uma formação-base aberta desde a primeira data observada.
+        const baseline = assinaturas.size === 1 && lista.every((r) => r.origem === 'planilha')
+        const versoes = baseline ? [{ inicio: snapshots[0].inicio, pessoas: snapshots[0].pessoas, fim: null as string | null, planilha: true }] : snapshots.map((s, i) => ({ ...s, fim: snapshots[i + 1]?.inicio ? new Date(new Date(`${snapshots[i + 1].inicio}T12:00:00`).getTime() - 86400000).toISOString().slice(0, 10) : null }))
+        for (const [i, v] of versoes.entries()) {
+          const id = `comp-global-${equipeId}-${v.inicio}-${i}`
+          composicoes.push({ id, equipeId, inicio: v.inicio, fim: v.fim, origem: v.planilha ? 'planilha' : 'manual' })
+          for (const pessoaId of v.pessoas) integrantes.push({ id: `${id}-${pessoaId}`, composicaoId: id, pessoaId })
+        }
+      }
+    }
+
+    const precisaMigrar = !Array.isArray(dados.marcos) || !Array.isArray(dados.vinculosEquipe) ||
+      dados.pessoas.some((pessoa) => pessoa.equipeId !== undefined) || importarReferencia || migrarGlobal
+    if (precisaMigrar) {
+      setDados({
+        ...dados,
+        pessoas: [...dados.pessoas, ...dadosIniciais.pessoas.filter((p) => !dados.pessoas.some((existente) => existente.id === p.id))]
+          .map(({ id, nome, funcao }) => ({ id, nome, funcao })),
+        marcos: Array.isArray(dados.marcos) ? dados.marcos : [],
+        vinculosEquipe: migrarGlobal ? vinculosComLegados.filter((v) => !idsMigrados.has(v.id)) : vinculosComLegados,
+        composicoesEquipe: composicoes,
+        integrantesComposicao: integrantes,
+        fontesImportadas: [...new Set([...fontes, ...(importarReferencia ? [fonteReferencia] : []), ...(migrarGlobal ? [fonteComposicoes] : [])])],
+      })
+    }
   }, [dados, setDados])
 
   const salvarAtividade = (a: Atividade) => {
@@ -48,6 +117,10 @@ export default function App() {
       atividades: existe ? dados.atividades.map((x) => (x.id === a.id ? a : x)) : [...dados.atividades, a],
     })
     setEditando(null)
+  }
+
+  const redimensionarAtividade = (atividade: Atividade) => {
+    setDados({ ...dados, atividades: dados.atividades.map((a) => a.id === atividade.id ? atividade : a) })
   }
 
   const excluirAtividade = (id: string) => {
@@ -84,6 +157,9 @@ export default function App() {
         const chaves: (keyof Dados)[] = ['escolas', 'disciplinas', 'equipes', 'pessoas', 'atividades']
         if (!chaves.every((k) => Array.isArray(lido[k]))) throw new Error('formato')
         if (lido.marcos !== undefined && !Array.isArray(lido.marcos)) throw new Error('formato')
+        if (lido.vinculosEquipe !== undefined && !Array.isArray(lido.vinculosEquipe)) throw new Error('formato')
+        if (lido.composicoesEquipe !== undefined && !Array.isArray(lido.composicoesEquipe)) throw new Error('formato')
+        if (lido.integrantesComposicao !== undefined && !Array.isArray(lido.integrantesComposicao)) throw new Error('formato')
         if (confirm('Substituir todos os dados atuais pelos do arquivo?')) setDados({ ...lido, marcos: lido.marcos ?? [] } as Dados)
       } catch {
         alert('Arquivo inválido. Use um arquivo exportado por este sistema.')
@@ -101,12 +177,15 @@ export default function App() {
           <button className={aba === 'atividades' ? 'ativo' : ''} onClick={() => setAba('atividades')}>Atividades</button>
           <button className={aba === 'marcos' ? 'ativo' : ''} onClick={() => setAba('marcos')}>Marcos</button>
           <button className={aba === 'analises' ? 'ativo' : ''} onClick={() => setAba('analises')}>Análises</button>
+          <button className={aba === 'equipes' ? 'ativo' : ''} onClick={() => setAba('equipes')}>Equipes</button>
           <button className={aba === 'cadastros' ? 'ativo' : ''} onClick={() => setAba('cadastros')}>Cadastros</button>
         </nav>
         <div className="header-acoes">
           {aba === 'marcos'
             ? <button className="primario" onClick={() => setMarcoEditando({})}>+ Novo marco</button>
-            : <button className="primario" onClick={() => setEditando({})}>+ Nova atividade</button>}
+            : aba === 'equipes'
+              ? null
+              : <button className="primario" onClick={() => setEditando({})}>+ Nova atividade</button>}
           <button onClick={exportar}>Exportar</button>
           <button onClick={() => arquivoRef.current?.click()}>Importar</button>
           <button
@@ -130,13 +209,14 @@ export default function App() {
       </header>
 
       <main>
-        {aba !== 'cadastros' && aba !== 'marcos' && <BarraFiltros dados={dados} filtros={filtros} onChange={setFiltros} />}
+        {aba !== 'cadastros' && aba !== 'marcos' && aba !== 'equipes' && <BarraFiltros dados={dados} filtros={filtros} onChange={setFiltros} />}
 
         {aba === 'gantt' && (
-          <Gantt dados={dados} filtros={filtros} marcos={marcos} onEditar={setEditando} onNova={setEditando} onEditarMarco={setMarcoEditando} />
+          <Gantt dados={dados} filtros={filtros} marcos={marcos} onEditar={setEditando} onNova={setEditando} onEditarMarco={setMarcoEditando} onRedimensionar={redimensionarAtividade} />
         )}
         {aba === 'atividades' && <ListaAtividades dados={dados} atividades={atividades} onEditar={setEditando} />}
         {aba === 'marcos' && <ListaMarcos dados={dados} marcos={marcos} onEditar={setMarcoEditando} onExcluir={excluirMarco} />}
+        {aba === 'equipes' && <ComposicoesEquipe dados={dados} onChange={setDados} />}
         {aba === 'analises' && (
           <section className="pagina-analises">
             <div className="analises-cabecalho">
@@ -158,6 +238,7 @@ export default function App() {
 
       {editando && (
         <FormAtividade
+          key={editando.id ?? 'nova'}
           dados={dados}
           inicial={editando}
           onSalvar={salvarAtividade}
