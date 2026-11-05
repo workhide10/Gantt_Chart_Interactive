@@ -613,6 +613,36 @@
    "nome": "YAN",
    "funcao": "EST",
    "equipeId": "eq-lum-ele-spd-1"
+  },
+  {
+   "id": "pe-ref-brenda-lucena",
+   "nome": "BRENDA LUCENA",
+   "funcao": "",
+   "equipeId": "eq-brenda-lucena"
+  },
+  {
+   "id": "pe-ref-edgar-coroa",
+   "nome": "EDGAR COROA",
+   "funcao": "",
+   "equipeId": "eq-edgar-coroa"
+  },
+  {
+   "id": "pe-ref-andrey-martins",
+   "nome": "ANDREY MARTINS",
+   "funcao": "",
+   "equipeId": "eq-andrey-martins"
+  },
+  {
+   "id": "pe-ref-elis-almeida",
+   "nome": "ELIS ALMEIDA",
+   "funcao": "",
+   "equipeId": "eq-elis-almeida"
+  },
+  {
+   "id": "pe-ref-maycon-macedo",
+   "nome": "MAYCON MACEDO",
+   "funcao": "",
+   "equipeId": "eq-maycon-macedo"
   }
  ],
  "atividades": [

@@ -1,6 +1,7 @@
 import type { Atividade, Dados } from '../types'
 import { feriados } from '../data/inicial'
 import { diasUteis, formatarBR } from '../lib/datas'
+import { integrantesNaAtividade } from '../lib/composicao'
 
 interface Props {
   dados: Dados
@@ -14,21 +15,26 @@ export function ListaAtividades({ dados, atividades, onEditar }: Props) {
     <div className="tabela-rolagem">
       <table>
         <thead>
-          <tr><th>Escola</th><th>Equipe</th><th>Disciplina</th><th>Início</th><th>Fim</th><th>Dias úteis</th><th>Descrição</th><th></th></tr>
+          <tr><th>Projeto</th><th>Etapa / atividade</th><th>Equipe</th><th>Disciplina</th><th>Início</th><th>Fim</th><th>Dias úteis</th><th>Participantes</th><th>Observações</th><th></th></tr>
         </thead>
         <tbody>
           {ordenadas.map((a) => {
             const escola = dados.escolas.find((s) => s.id === a.escolaId)
             const equipe = dados.equipes.find((q) => q.id === a.equipeId)
             const disc = dados.disciplinas.find((d) => d.id === equipe?.disciplinaId)
+            const nomesIntegrantes = [...new Set(integrantesNaAtividade(dados, a).map((i) =>
+              i.pessoa ? `${i.pessoa.nome} (${formatarBR(i.inicio)}–${formatarBR(i.fim)})` : undefined,
+            ).filter(Boolean))]
             return (
               <tr key={a.id}>
                 <td><i className="bolinha" style={{ background: escola?.cor }} /> {escola?.codigo}</td>
+                <td>{a.titulo || '—'}</td>
                 <td>{equipe?.nome}</td>
                 <td>{disc?.sigla}</td>
                 <td>{formatarBR(a.inicio)}</td>
                 <td>{formatarBR(a.fim)}</td>
                 <td>{diasUteis(a.inicio, a.fim, feriados)}</td>
+                <td>{nomesIntegrantes.join(', ') || 'Nenhum associado'}</td>
                 <td>{a.descricao}</td>
                 <td><button onClick={() => onEditar(a)}>Editar</button></td>
               </tr>

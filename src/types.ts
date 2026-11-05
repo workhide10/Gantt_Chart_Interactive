@@ -26,13 +26,39 @@ export interface Pessoa {
   id: ID
   nome: string
   funcao: string // ex.: "ENG", "TEC", "ARQ", "EST"
-  equipeId: ID | null
+  /** @deprecated Compatibilidade com dados antigos; a composição atual é derivada de VinculoPessoaEquipe. */
+  equipeId?: ID | null
+}
+
+export interface VinculoPessoaEquipe {
+  id: ID
+  pessoaId: ID // chave estrangeira para Pessoa
+  equipeId: ID // chave estrangeira para Equipe
+  projetoId: ID | null // chave estrangeira para Escola (projeto); null apenas em registros antigos a classificar
+  inicio: string | null // null = data de início desconhecida em registro migrado
+  fim: string | null // null = vínculo ainda aberto
+  origem?: 'manual' | 'legado' | 'planilha'
+}
+
+export interface ComposicaoEquipe {
+  id: ID
+  equipeId: ID
+  inicio: string
+  fim: string | null // null = formação ainda vigente
+  origem?: 'manual' | 'planilha'
+}
+
+export interface IntegranteComposicaoEquipe {
+  id: ID
+  composicaoId: ID
+  pessoaId: ID
 }
 
 export interface Atividade {
   id: ID
   escolaId: ID
   equipeId: ID
+  titulo?: string // etapa ou atividade concluída
   inicio: string // data ISO "AAAA-MM-DD"
   fim: string // data ISO "AAAA-MM-DD" (inclusive)
   descricao: string
@@ -55,6 +81,13 @@ export interface Dados {
   atividades: Atividade[]
   // Opcional para migrar automaticamente dados e backups da versão anterior.
   marcos?: MarcoProjeto[]
+  // Registros antigos mantidos para migração/revisão; o histórico atual usa ComposicaoEquipe.
+  vinculosEquipe?: VinculoPessoaEquipe[]
+  // Formação versionada por equipe e vigência, independente do projeto e das atividades.
+  composicoesEquipe?: ComposicaoEquipe[]
+  integrantesComposicao?: IntegranteComposicaoEquipe[]
+  // Controle de migrações de dados de referência executadas uma única vez.
+  fontesImportadas?: string[]
 }
 
 export interface Filtros {

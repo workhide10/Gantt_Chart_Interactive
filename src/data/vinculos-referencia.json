@@ -1,0 +1,4610 @@
+[
+  {
+    "id": "ref-vinc-esc-ago-eq-aurea-pimentel-pe-16-2026-09-21",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-ago",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ago-eq-elis-almeida-pe-ref-elis-almeida-2026-04-01",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-ago",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ago-eq-elis-almeida-pe-ref-elis-almeida-2026-05-04",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-ago",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ago-eq-maycon-macedo-pe-ref-maycon-macedo-2026-08-03",
+    "pessoaId": "pe-ref-maycon-macedo",
+    "equipeId": "eq-maycon-macedo",
+    "projetoId": "esc-ago",
+    "inicio": "2026-08-03",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bim-eq-dan-arnaud-pe-25-2026-04-01",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-bim",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bim-eq-dan-arnaud-pe-25-2026-06-01",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-bim",
+    "inicio": "2026-06-01",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bim-eq-dan-arnaud-pe-25-2026-07-01",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-bim",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bor-eq-allan-freires-pe-2-2026-10-01",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-bor",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-23",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bor-eq-erika-fernanda-pe-6-2026-09-28",
+    "pessoaId": "pe-6",
+    "equipeId": "eq-erika-fernanda",
+    "projetoId": "esc-bor",
+    "inicio": "2026-09-28",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-aurea-pimentel-pe-16-2026-05-18",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-bos",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-aurea-pimentel-pe-16-2026-07-01",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-aurea-pimentel-pe-16-2026-08-03",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-bos",
+    "inicio": "2026-08-03",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-cli-1-pe-36-2026-06-15",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-cli-1-pe-36-2026-07-01",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-cli-1-pe-36-2026-09-01",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-erika-fernanda-pe-6-2026-05-18",
+    "pessoaId": "pe-6",
+    "equipeId": "eq-erika-fernanda",
+    "projetoId": "esc-bos",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-1-2026-06-15",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-10-2026-06-15",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-22-2026-06-15",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-1-2026-07-01",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-10-2026-07-01",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-22-2026-07-01",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-1-2026-09-01",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-10-2026-09-01",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-est-1-pe-22-2026-09-01",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-glp-1-pe-37-2026-06-15",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-glp-1-pe-37-2026-07-01",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-glp-1-pe-37-2026-09-01",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-19-2026-07-01",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-3-2026-07-01",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-33-2026-07-01",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-38-2026-07-01",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-19-2026-09-01",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-3-2026-09-01",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-33-2026-09-01",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-hid-1-pe-38-2026-09-01",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-inc-1-pe-23-2026-06-22",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-inc-1-pe-23-2026-07-01",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-inc-1-pe-23-2026-09-01",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-20-2026-06-22",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-32-2026-06-22",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-42-2026-06-22",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-45-2026-06-22",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-8-2026-06-22",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-20-2026-07-01",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-32-2026-07-01",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-42-2026-07-01",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-45-2026-07-01",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-8-2026-07-01",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-20-2026-09-01",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-32-2026-09-01",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-42-2026-09-01",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-45-2026-09-01",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-lum-ele-spd-1-pe-8-2026-09-01",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-orc-1-pe-26-2026-07-13",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-orc-1-pe-26-2026-08-03",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-orc-2-pe-24-2026-07-06",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-30-2026-06-22",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-44-2026-06-22",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-30-2026-07-01",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-44-2026-07-01",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-30-2026-09-01",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-bos-eq-tel-1-pe-44-2026-09-01",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-bos",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-allan-freires-pe-2-2026-10-26",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-26",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-andrey-martins-pe-ref-andrey-martins-2026-04-01",
+    "pessoaId": "pe-ref-andrey-martins",
+    "equipeId": "eq-andrey-martins",
+    "projetoId": "esc-cel",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-andrey-martins-pe-ref-andrey-martins-2026-05-04",
+    "pessoaId": "pe-ref-andrey-martins",
+    "equipeId": "eq-andrey-martins",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-04",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-andrey-martins-pe-ref-andrey-martins-2026-08-03",
+    "pessoaId": "pe-ref-andrey-martins",
+    "equipeId": "eq-andrey-martins",
+    "projetoId": "esc-cel",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-cli-2-pe-5-2026-05-11",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-cli-2-pe-5-2026-10-19",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-dan-arnaud-pe-25-2026-05-04",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-29",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-elis-almeida-pe-ref-elis-almeida-2026-05-11",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-est-2-pe-18-2026-10-19",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-est-2-pe-35-2026-10-19",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-est-2-pe-4-2026-10-19",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-28-2026-05-11",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-39-2026-05-11",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-41-2026-05-11",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-43-2026-05-11",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-28-2026-10-19",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-39-2026-10-19",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-41-2026-10-19",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-hid-2-pe-43-2026-10-19",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-inc-1-pe-23-2026-05-18",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-18",
+    "fim": "2026-05-22",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-inc-2-pe-15-2026-10-19",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-12-2026-05-11",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-13-2026-05-11",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-17-2026-05-11",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-27-2026-05-11",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-34-2026-05-11",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-12-2026-10-19",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-13-2026-10-19",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-17-2026-10-19",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-27-2026-10-19",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-lum-ele-spd-2-pe-34-2026-10-19",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-luzia-favacho-pe-31-2026-09-28",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-cel",
+    "inicio": "2026-09-28",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-orc-1-pe-26-2026-05-18",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-tel-2-pe-40-2026-05-11",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-tel-2-pe-9-2026-05-11",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-05",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-tel-2-pe-40-2026-10-19",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-cel-eq-tel-2-pe-9-2026-10-19",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-cel",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-allan-freires-pe-2-2026-05-25",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-con",
+    "inicio": "2026-05-25",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-allan-freires-pe-2-2026-07-01",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-allan-freires-pe-2-2026-08-03",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-cli-2-pe-5-2026-07-06",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-cli-2-pe-5-2026-08-03",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-cli-2-pe-5-2026-09-21",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-18-2026-07-01",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-35-2026-07-01",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-4-2026-07-01",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-18-2026-08-03",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-35-2026-08-03",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-4-2026-08-03",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-18-2026-09-21",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-35-2026-09-21",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-est-2-pe-4-2026-09-21",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-28-2026-07-06",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-39-2026-07-06",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-41-2026-07-06",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-43-2026-07-06",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-28-2026-08-03",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-39-2026-08-03",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-41-2026-08-03",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-43-2026-08-03",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-28-2026-09-21",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-39-2026-09-21",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-41-2026-09-21",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-hid-2-pe-43-2026-09-21",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-inc-2-pe-15-2026-07-06",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-inc-2-pe-15-2026-08-03",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-inc-2-pe-15-2026-09-21",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-12-2026-07-01",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-13-2026-07-01",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-17-2026-07-01",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-27-2026-07-01",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-34-2026-07-01",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-12-2026-08-03",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-13-2026-08-03",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-17-2026-08-03",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-27-2026-08-03",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-34-2026-08-03",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-12-2026-09-21",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-13-2026-09-21",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-17-2026-09-21",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-27-2026-09-21",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-lum-ele-spd-2-pe-34-2026-09-21",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-luzia-favacho-pe-31-2026-07-13",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-luzia-favacho-pe-31-2026-08-03",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-orc-2-pe-24-2026-07-20",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-orc-2-pe-24-2026-08-03",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-orc-2-pe-24-2026-09-21",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-40-2026-07-06",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-9-2026-07-06",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-40-2026-08-03",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-9-2026-08-03",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-14",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-40-2026-09-21",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-con-eq-tel-2-pe-9-2026-09-21",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-con",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-edu-eq-hugo-pessoa-pe-14-2026-10-01",
+    "pessoaId": "pe-14",
+    "equipeId": "eq-hugo-pessoa",
+    "projetoId": "esc-edu",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-cli-1-pe-36-2026-07-20",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-cli-1-pe-36-2026-08-03",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-cli-1-pe-36-2026-09-21",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-elis-almeida-pe-ref-elis-almeida-2026-06-15",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-eun",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-elis-almeida-pe-ref-elis-almeida-2026-07-01",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-elis-almeida-pe-ref-elis-almeida-2026-08-03",
+    "pessoaId": "pe-ref-elis-almeida",
+    "equipeId": "eq-elis-almeida",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-1-2026-07-13",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-10-2026-07-13",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-22-2026-07-13",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-1-2026-08-03",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-10-2026-08-03",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-22-2026-08-03",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-1-2026-09-21",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-10-2026-09-21",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-est-1-pe-22-2026-09-21",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-glp-1-pe-37-2026-07-20",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-glp-1-pe-37-2026-08-03",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-glp-1-pe-37-2026-09-21",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-19-2026-08-03",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-3-2026-08-03",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-33-2026-08-03",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-38-2026-08-03",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-19-2026-09-21",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-3-2026-09-21",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-33-2026-09-21",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-hid-1-pe-38-2026-09-21",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-inc-1-pe-23-2026-07-20",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-inc-1-pe-23-2026-08-03",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-inc-1-pe-23-2026-09-21",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-20-2026-07-20",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-32-2026-07-20",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-42-2026-07-20",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-45-2026-07-20",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-8-2026-07-20",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-20-2026-08-03",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-32-2026-08-03",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-42-2026-08-03",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-45-2026-08-03",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-8-2026-08-03",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-20-2026-09-21",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-32-2026-09-21",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-42-2026-09-21",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-45-2026-09-21",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-lum-ele-spd-1-pe-8-2026-09-21",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-orc-1-pe-26-2026-08-17",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-orc-1-pe-26-2026-09-14",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-taina-veiga-pe-21-2026-08-24",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-24",
+    "fim": "2026-09-25",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-30-2026-07-20",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-44-2026-07-20",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-07-20",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-30-2026-08-03",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-44-2026-08-03",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-30-2026-09-21",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-eun-eq-tel-1-pe-44-2026-09-21",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-eun",
+    "inicio": "2026-09-21",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-allan-freires-pe-2-2026-04-01",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-allan-freires-pe-2-2026-05-04",
+    "pessoaId": "pe-2",
+    "equipeId": "eq-allan-freires",
+    "projetoId": "esc-fra",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-22",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-brenda-lucena-pe-ref-brenda-lucena-2026-05-04",
+    "pessoaId": "pe-ref-brenda-lucena",
+    "equipeId": "eq-brenda-lucena",
+    "projetoId": "esc-fra",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-cli-1-pe-36-2026-04-01",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-edgar-coroa-pe-ref-edgar-coroa-2026-05-04",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-fra",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-est-1-pe-1-2026-04-01",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-est-1-pe-10-2026-04-01",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-est-1-pe-22-2026-04-01",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-glp-1-pe-37-2026-04-01",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-hid-1-pe-19-2026-04-01",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-hid-1-pe-3-2026-04-01",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-hid-1-pe-33-2026-04-01",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-hid-1-pe-38-2026-04-01",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-inc-1-pe-23-2026-04-01",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-lum-ele-spd-1-pe-20-2026-04-01",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-lum-ele-spd-1-pe-32-2026-04-01",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-lum-ele-spd-1-pe-42-2026-04-01",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-lum-ele-spd-1-pe-45-2026-04-01",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-lum-ele-spd-1-pe-8-2026-04-01",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-luzia-favacho-pe-31-2026-05-04",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-fra",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-22",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-orc-1-pe-26-2026-04-01",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-tel-1-pe-30-2026-04-01",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-fra-eq-tel-1-pe-44-2026-04-01",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-fra",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-cli-1-pe-36-2026-05-18",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-cli-1-pe-36-2026-09-14",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-1-2026-05-18",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-10-2026-05-18",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-22-2026-05-18",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-1-2026-09-14",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-10-2026-09-14",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-est-1-pe-22-2026-09-14",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-glp-1-pe-37-2026-05-18",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-12",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-glp-1-pe-37-2026-09-14",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-19-2026-05-18",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-3-2026-05-18",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-33-2026-05-18",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-38-2026-05-18",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-19-2026-09-14",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-3-2026-09-14",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-33-2026-09-14",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-hid-1-pe-38-2026-09-14",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-inc-1-pe-23-2026-05-25",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-25",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-inc-1-pe-23-2026-09-14",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-20-2026-05-18",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-32-2026-05-18",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-42-2026-05-18",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-45-2026-05-18",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-8-2026-05-18",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-20-2026-09-14",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-32-2026-09-14",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-42-2026-09-14",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-45-2026-09-14",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-lum-ele-spd-1-pe-8-2026-09-14",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-orc-1-pe-26-2026-06-08",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-orc-1-pe-26-2026-07-01",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-taina-veiga-pe-21-2026-04-06",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-hil",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-taina-veiga-pe-21-2026-05-04",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-04",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-taina-veiga-pe-21-2026-07-01",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-hil",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-tel-1-pe-30-2026-05-18",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-tel-1-pe-44-2026-05-18",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-tel-1-pe-30-2026-09-14",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-hil-eq-tel-1-pe-44-2026-09-14",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-hil",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-cli-2-pe-5-2026-06-08",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-cli-2-pe-5-2026-07-01",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-cli-2-pe-5-2026-09-01",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-dan-arnaud-pe-25-2026-07-13",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-13",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-dan-arnaud-pe-25-2026-08-03",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-ing",
+    "inicio": "2026-08-03",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-edgar-coroa-pe-ref-edgar-coroa-2026-04-01",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-ing",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-edgar-coroa-pe-ref-edgar-coroa-2026-05-18",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-ing",
+    "inicio": "2026-05-18",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-edgar-coroa-pe-ref-edgar-coroa-2026-07-01",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-18-2026-06-01",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-01",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-35-2026-06-01",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-01",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-4-2026-06-01",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-01",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-18-2026-09-01",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-35-2026-09-01",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-est-2-pe-4-2026-09-01",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-28-2026-06-08",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-39-2026-06-08",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-41-2026-06-08",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-43-2026-06-08",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-28-2026-07-01",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-39-2026-07-01",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-41-2026-07-01",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-43-2026-07-01",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-28-2026-09-01",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-39-2026-09-01",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-41-2026-09-01",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-hid-2-pe-43-2026-09-01",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-inc-2-pe-15-2026-06-08",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-inc-2-pe-15-2026-07-01",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-inc-2-pe-15-2026-09-01",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-12-2026-06-08",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-13-2026-06-08",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-17-2026-06-08",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-27-2026-06-08",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-34-2026-06-08",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-12-2026-09-01",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-13-2026-09-01",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-17-2026-09-01",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-27-2026-09-01",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-lum-ele-spd-2-pe-34-2026-09-01",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-luzia-favacho-pe-31-2026-08-17",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-ing",
+    "inicio": "2026-08-17",
+    "fim": "2026-09-25",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-orc-1-pe-26-2026-09-01",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-orc-2-pe-24-2026-06-15",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-orc-2-pe-24-2026-07-01",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-orc-2-pe-24-2026-08-17",
+    "pessoaId": "pe-24",
+    "equipeId": "eq-orc-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-08-17",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-40-2026-06-08",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-9-2026-06-08",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-06-08",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-40-2026-07-01",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-9-2026-07-01",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-40-2026-09-01",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ing-eq-tel-2-pe-9-2026-09-01",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ing",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-11",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-brenda-lucena-pe-ref-brenda-lucena-2026-04-01",
+    "pessoaId": "pe-ref-brenda-lucena",
+    "equipeId": "eq-brenda-lucena",
+    "projetoId": "esc-jad",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-brenda-lucena-pe-ref-brenda-lucena-2026-05-11",
+    "pessoaId": "pe-ref-brenda-lucena",
+    "equipeId": "eq-brenda-lucena",
+    "projetoId": "esc-jad",
+    "inicio": "2026-05-11",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-brenda-lucena-pe-ref-brenda-lucena-2026-07-01",
+    "pessoaId": "pe-ref-brenda-lucena",
+    "equipeId": "eq-brenda-lucena",
+    "projetoId": "esc-jad",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-brenda-lucena-pe-ref-brenda-lucena-2026-08-03",
+    "pessoaId": "pe-ref-brenda-lucena",
+    "equipeId": "eq-brenda-lucena",
+    "projetoId": "esc-jad",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-21",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-cli-1-pe-36-2026-10-13",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-cli-2-pe-5-2026-10-13",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-1-pe-1-2026-10-13",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-1-pe-10-2026-10-13",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-1-pe-22-2026-10-13",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-2-pe-18-2026-10-13",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-2-pe-35-2026-10-13",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-est-2-pe-4-2026-10-13",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-glp-1-pe-37-2026-10-13",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-1-pe-19-2026-10-13",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-1-pe-3-2026-10-13",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-1-pe-33-2026-10-13",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-1-pe-38-2026-10-13",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-2-pe-28-2026-10-13",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-2-pe-39-2026-10-13",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-2-pe-41-2026-10-13",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-hid-2-pe-43-2026-10-13",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-inc-1-pe-23-2026-10-13",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-inc-2-pe-15-2026-10-13",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-1-pe-20-2026-10-13",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-1-pe-32-2026-10-13",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-1-pe-42-2026-10-13",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-1-pe-45-2026-10-13",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-1-pe-8-2026-10-13",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-2-pe-12-2026-10-13",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-2-pe-13-2026-10-13",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-2-pe-17-2026-10-13",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-2-pe-27-2026-10-13",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-lum-ele-spd-2-pe-34-2026-10-13",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-taina-veiga-pe-21-2026-09-28",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-jad",
+    "inicio": "2026-09-28",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-tel-1-pe-30-2026-10-13",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-tel-1-pe-44-2026-10-13",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-tel-2-pe-40-2026-10-13",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jad-eq-tel-2-pe-9-2026-10-13",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-jad",
+    "inicio": "2026-10-13",
+    "fim": "2026-10-16",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-jsa-eq-aurea-pimentel-pe-16-2026-10-01",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-jsa",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-mar-eq-jessica-gabrielle-pe-7-2026-10-01",
+    "pessoaId": "pe-7",
+    "equipeId": "eq-jessica-gabrielle",
+    "projetoId": "esc-mar",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-23",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-nor-eq-dan-arnaud-pe-25-2026-10-01",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-nor",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-andrey-martins-pe-ref-andrey-martins-2026-06-15",
+    "pessoaId": "pe-ref-andrey-martins",
+    "equipeId": "eq-andrey-martins",
+    "projetoId": "esc-oli",
+    "inicio": "2026-06-15",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-andrey-martins-pe-ref-andrey-martins-2026-07-01",
+    "pessoaId": "pe-ref-andrey-martins",
+    "equipeId": "eq-andrey-martins",
+    "projetoId": "esc-oli",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-17",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-cli-1-pe-36-2026-10-01",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-est-1-pe-1-2026-10-01",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-09",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-est-1-pe-10-2026-10-01",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-09",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-est-1-pe-22-2026-10-01",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-09",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-glp-1-pe-37-2026-10-01",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-hid-1-pe-19-2026-10-01",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-hid-1-pe-3-2026-10-01",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-hid-1-pe-33-2026-10-01",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-hid-1-pe-38-2026-10-01",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-inc-1-pe-23-2026-10-01",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-lum-ele-spd-1-pe-20-2026-10-01",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-lum-ele-spd-1-pe-32-2026-10-01",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-lum-ele-spd-1-pe-42-2026-10-01",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-lum-ele-spd-1-pe-45-2026-10-01",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-lum-ele-spd-1-pe-8-2026-10-01",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-tel-1-pe-30-2026-10-01",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-oli-eq-tel-1-pe-44-2026-10-01",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-oli",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-one-eq-erika-fernanda-pe-6-2026-10-01",
+    "pessoaId": "pe-6",
+    "equipeId": "eq-erika-fernanda",
+    "projetoId": "esc-one",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-pol-eq-dan-arnaud-pe-25-2026-04-06",
+    "pessoaId": "pe-25",
+    "equipeId": "eq-dan-arnaud",
+    "projetoId": "esc-pol",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-pol-eq-hugo-pessoa-pe-14-2026-09-01",
+    "pessoaId": "pe-14",
+    "equipeId": "eq-hugo-pessoa",
+    "projetoId": "esc-pol",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-pol-eq-luzia-favacho-pe-31-2026-05-25",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-pol",
+    "inicio": "2026-05-25",
+    "fim": "2026-06-19",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-pol-eq-mateus-duarte-pe-11-2026-07-06",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-pol",
+    "inicio": "2026-07-06",
+    "fim": "2026-07-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-pol-eq-taina-veiga-pe-21-2026-08-03",
+    "pessoaId": "pe-21",
+    "equipeId": "eq-taina-veiga",
+    "projetoId": "esc-pol",
+    "inicio": "2026-08-03",
+    "fim": "2026-08-21",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ros-eq-luzia-favacho-pe-31-2026-06-22",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-ros",
+    "inicio": "2026-06-22",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ros-eq-luzia-favacho-pe-31-2026-07-01",
+    "pessoaId": "pe-31",
+    "equipeId": "eq-luzia-favacho",
+    "projetoId": "esc-ros",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-10",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-cli-1-pe-36-2026-05-04",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-cli-2-pe-5-2026-04-06",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-1-pe-1-2026-05-04",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-1-pe-10-2026-05-04",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-1-pe-22-2026-05-04",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-18-2026-04-06",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-35-2026-04-06",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-4-2026-04-06",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-18-2026-05-04",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-35-2026-05-04",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-est-2-pe-4-2026-05-04",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-glp-1-pe-37-2026-05-04",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-1-pe-19-2026-05-04",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-1-pe-3-2026-05-04",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-1-pe-33-2026-05-04",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-1-pe-38-2026-05-04",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-28-2026-04-06",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-39-2026-04-06",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-41-2026-04-06",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-43-2026-04-06",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-28-2026-05-04",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-39-2026-05-04",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-41-2026-05-04",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-hid-2-pe-43-2026-05-04",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-inc-1-pe-23-2026-05-04",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-1-pe-20-2026-05-04",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-1-pe-32-2026-05-04",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-1-pe-42-2026-05-04",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-1-pe-45-2026-05-04",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-1-pe-8-2026-05-04",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-12-2026-04-06",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-13-2026-04-06",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-17-2026-04-06",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-27-2026-04-06",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-34-2026-04-06",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-12-2026-05-04",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-13-2026-05-04",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-17-2026-05-04",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-27-2026-05-04",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-lum-ele-spd-2-pe-34-2026-05-04",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-mateus-duarte-pe-11-2026-04-01",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-01",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-mateus-duarte-pe-11-2026-05-04",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-22",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-orc-1-pe-26-2026-05-04",
+    "pessoaId": "pe-26",
+    "equipeId": "eq-orc-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-1-pe-30-2026-05-04",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-1-pe-44-2026-05-04",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-2-pe-40-2026-04-06",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-2-pe-9-2026-04-06",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-04-06",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-2-pe-40-2026-05-04",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-sfe-eq-tel-2-pe-9-2026-05-04",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-sfe",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-08",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-slu-eq-edgar-coroa-pe-ref-edgar-coroa-2026-04-20",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-slu",
+    "inicio": "2026-04-20",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-slu-eq-edgar-coroa-pe-ref-edgar-coroa-2026-05-11",
+    "pessoaId": "pe-ref-edgar-coroa",
+    "equipeId": "eq-edgar-coroa",
+    "projetoId": "esc-slu",
+    "inicio": "2026-05-11",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-aurea-pimentel-pe-16-2026-04-13",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-ver",
+    "inicio": "2026-04-13",
+    "fim": "2026-04-24",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-aurea-pimentel-pe-16-2026-05-04",
+    "pessoaId": "pe-16",
+    "equipeId": "eq-aurea-pimentel",
+    "projetoId": "esc-ver",
+    "inicio": "2026-05-04",
+    "fim": "2026-05-15",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-cli-1-pe-36-2026-10-19",
+    "pessoaId": "pe-36",
+    "equipeId": "eq-cli-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-cli-2-pe-5-2026-08-17",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-cli-2-pe-5-2026-09-14",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-cli-2-pe-5-2026-10-01",
+    "pessoaId": "pe-5",
+    "equipeId": "eq-cli-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-1-pe-1-2026-10-19",
+    "pessoaId": "pe-1",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-1-pe-10-2026-10-19",
+    "pessoaId": "pe-10",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-1-pe-22-2026-10-19",
+    "pessoaId": "pe-22",
+    "equipeId": "eq-est-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-18-2026-08-17",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-35-2026-08-17",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-4-2026-08-17",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-18-2026-09-14",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-35-2026-09-14",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-4-2026-09-14",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-18-2026-10-01",
+    "pessoaId": "pe-18",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-35-2026-10-01",
+    "pessoaId": "pe-35",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-est-2-pe-4-2026-10-01",
+    "pessoaId": "pe-4",
+    "equipeId": "eq-est-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-glp-1-pe-37-2026-10-19",
+    "pessoaId": "pe-37",
+    "equipeId": "eq-glp-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-1-pe-19-2026-10-19",
+    "pessoaId": "pe-19",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-1-pe-3-2026-10-19",
+    "pessoaId": "pe-3",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-1-pe-33-2026-10-19",
+    "pessoaId": "pe-33",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-1-pe-38-2026-10-19",
+    "pessoaId": "pe-38",
+    "equipeId": "eq-hid-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-28-2026-08-17",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-39-2026-08-17",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-41-2026-08-17",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-43-2026-08-17",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-28-2026-09-14",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-39-2026-09-14",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-41-2026-09-14",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-43-2026-09-14",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-28-2026-10-01",
+    "pessoaId": "pe-28",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-39-2026-10-01",
+    "pessoaId": "pe-39",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-41-2026-10-01",
+    "pessoaId": "pe-41",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-hid-2-pe-43-2026-10-01",
+    "pessoaId": "pe-43",
+    "equipeId": "eq-hid-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-inc-1-pe-23-2026-10-19",
+    "pessoaId": "pe-23",
+    "equipeId": "eq-inc-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-inc-2-pe-15-2026-08-17",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-inc-2-pe-15-2026-09-14",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-inc-2-pe-15-2026-10-01",
+    "pessoaId": "pe-15",
+    "equipeId": "eq-inc-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-1-pe-20-2026-10-19",
+    "pessoaId": "pe-20",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-1-pe-32-2026-10-19",
+    "pessoaId": "pe-32",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-1-pe-42-2026-10-19",
+    "pessoaId": "pe-42",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-1-pe-45-2026-10-19",
+    "pessoaId": "pe-45",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-1-pe-8-2026-10-19",
+    "pessoaId": "pe-8",
+    "equipeId": "eq-lum-ele-spd-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-12-2026-08-17",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-13-2026-08-17",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-17-2026-08-17",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-27-2026-08-17",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-34-2026-08-17",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-12-2026-09-14",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-13-2026-09-14",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-17-2026-09-14",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-27-2026-09-14",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-34-2026-09-14",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-12-2026-10-01",
+    "pessoaId": "pe-12",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-13-2026-10-01",
+    "pessoaId": "pe-13",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-17-2026-10-01",
+    "pessoaId": "pe-17",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-27-2026-10-01",
+    "pessoaId": "pe-27",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-lum-ele-spd-2-pe-34-2026-10-01",
+    "pessoaId": "pe-34",
+    "equipeId": "eq-lum-ele-spd-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-mateus-duarte-pe-11-2026-05-25",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-ver",
+    "inicio": "2026-05-25",
+    "fim": "2026-06-26",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-mateus-duarte-pe-11-2026-07-01",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-ver",
+    "inicio": "2026-07-01",
+    "fim": "2026-07-03",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-mateus-duarte-pe-11-2026-08-10",
+    "pessoaId": "pe-11",
+    "equipeId": "eq-mateus-duarte",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-10",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-1-pe-30-2026-10-19",
+    "pessoaId": "pe-30",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-1-pe-44-2026-10-19",
+    "pessoaId": "pe-44",
+    "equipeId": "eq-tel-1",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-19",
+    "fim": "2026-10-30",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-40-2026-08-17",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-9-2026-08-17",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-08-17",
+    "fim": "2026-08-28",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-40-2026-09-14",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-9-2026-09-14",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-09-14",
+    "fim": "2026-09-18",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-40-2026-10-01",
+    "pessoaId": "pe-40",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-ver-eq-tel-2-pe-9-2026-10-01",
+    "pessoaId": "pe-9",
+    "equipeId": "eq-tel-2",
+    "projetoId": "esc-ver",
+    "inicio": "2026-10-01",
+    "fim": "2026-10-02",
+    "origem": "planilha"
+  },
+  {
+    "id": "ref-vinc-esc-zen-eq-erika-fernanda-pe-6-2026-09-01",
+    "pessoaId": "pe-6",
+    "equipeId": "eq-erika-fernanda",
+    "projetoId": "esc-zen",
+    "inicio": "2026-09-01",
+    "fim": "2026-09-25",
+    "origem": "planilha"
+  }
+]
