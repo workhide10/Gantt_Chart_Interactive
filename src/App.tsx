@@ -40,8 +40,10 @@ export default function App() {
   useEffect(() => {
     const fonteReferencia = 'alocacao-equipes-2026'
     const fonteComposicoes = 'formacao-equipe-global-v2'
+    const fonteNomesArq = 'equipes-arq-numeradas-v1'
     const fontes = dados.fontesImportadas ?? []
     const importarReferencia = !fontes.includes(fonteReferencia)
+    const renomearEquipesArq = !fontes.includes(fonteNomesArq)
     const vinculosOriginais = Array.isArray(dados.vinculosEquipe) ? dados.vinculosEquipe : []
     const vinculosExistentes = vinculosOriginais.map((v) => ({ ...v, projetoId: v.projetoId ?? null }))
     const referencias = importarReferencia ? (dadosIniciais.vinculosEquipe ?? []) : []
@@ -95,17 +97,22 @@ export default function App() {
     }
 
     const precisaMigrar = !Array.isArray(dados.marcos) || !Array.isArray(dados.vinculosEquipe) ||
-      dados.pessoas.some((pessoa) => pessoa.equipeId !== undefined) || importarReferencia || migrarGlobal
+      dados.pessoas.some((pessoa) => pessoa.equipeId !== undefined) || importarReferencia || migrarGlobal || renomearEquipesArq
     if (precisaMigrar) {
       setDados({
         ...dados,
+        equipes: renomearEquipesArq
+          ? dados.equipes.map((equipe, indice, lista) => equipe.disciplinaId === 'dis-arq'
+            ? { ...equipe, nome: `ARQ-${lista.slice(0, indice + 1).filter((item) => item.disciplinaId === 'dis-arq').length}` }
+            : equipe)
+          : dados.equipes,
         pessoas: [...dados.pessoas, ...dadosIniciais.pessoas.filter((p) => !dados.pessoas.some((existente) => existente.id === p.id))]
           .map(({ id, nome, funcao }) => ({ id, nome, funcao })),
         marcos: Array.isArray(dados.marcos) ? dados.marcos : [],
         vinculosEquipe: migrarGlobal ? vinculosComLegados.filter((v) => !idsMigrados.has(v.id)) : vinculosComLegados,
         composicoesEquipe: composicoes,
         integrantesComposicao: integrantes,
-        fontesImportadas: [...new Set([...fontes, ...(importarReferencia ? [fonteReferencia] : []), ...(migrarGlobal ? [fonteComposicoes] : [])])],
+        fontesImportadas: [...new Set([...fontes, ...(importarReferencia ? [fonteReferencia] : []), ...(migrarGlobal ? [fonteComposicoes] : []), ...(renomearEquipesArq ? [fonteNomesArq] : [])])],
       })
     }
   }, [dados, setDados])
@@ -160,7 +167,9 @@ export default function App() {
         if (lido.vinculosEquipe !== undefined && !Array.isArray(lido.vinculosEquipe)) throw new Error('formato')
         if (lido.composicoesEquipe !== undefined && !Array.isArray(lido.composicoesEquipe)) throw new Error('formato')
         if (lido.integrantesComposicao !== undefined && !Array.isArray(lido.integrantesComposicao)) throw new Error('formato')
-        if (confirm('Substituir todos os dados atuais pelos do arquivo?')) setDados({ ...lido, marcos: lido.marcos ?? [] } as Dados)
+        if (lido.eventosEquipe !== undefined && !Array.isArray(lido.eventosEquipe)) throw new Error('formato')
+        if (lido.movimentacoesEquipe !== undefined && !Array.isArray(lido.movimentacoesEquipe)) throw new Error('formato')
+        if (confirm('Substituir todos os dados atuais pelos do arquivo?')) setDados({ ...lido, marcos: lido.marcos ?? [], eventosEquipe: lido.eventosEquipe ?? [], movimentacoesEquipe: lido.movimentacoesEquipe ?? [] } as Dados)
       } catch {
         alert('Arquivo inválido. Use um arquivo exportado por este sistema.')
       }

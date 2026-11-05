@@ -32,15 +32,23 @@ datas de início e fim da atividade; a alteração é salva no armazenamento loc
 
 ## Formação temporal das equipes
 O cadastro de atividade permanece independente: projeto, equipe, etapa, datas e descrição, sem editar a
-composição da equipe. Na aba **Equipes**, use **Registrar mudança de equipe** para escolher equipe,
-data efetiva e integrantes. A formação é global para aquela equipe, independente do projeto. A formação
-anterior é carregada para facilitar a revisão; ao salvar, ela é encerrada na véspera e a nova formação
-passa a valer na data escolhida.
+composição da equipe. Na aba **Equipes**, a formação é global para aquela equipe, independente do projeto.
+Ao registrar uma nova versão, a anterior é encerrada na véspera e a composição passa a valer na data escolhida.
 
 O Gantt relaciona a composição à atividade pela equipe e pela sobreposição de datas. A disciplina é herdada
 da equipe selecionada; assim, atividades de diferentes projetos mostram a composição da equipe quando
 coincidem no período. Se a composição mudou durante a atividade, o tooltip apresenta os integrantes e as
-datas de cada versão. Alterações na composição não reescrevem as atividades.
+datas de cada versão. Na visão **Por equipe**, marcadores roxos identificam cada versão posterior e, ao
+passar o mouse, mostram a data, quem entrou e quem saiu. Alterações na composição não reescrevem as atividades.
+
+Use **Troca ou saída de integrante** para movimentar pessoas em lote. Escolha a disciplina, as duas equipes
+e a data do marco; selecione pessoas nas listas e use as setas para movê-las entre as equipes. Os nomes
+movidos ficam destacados no destino e a seta inversa desfaz a movimentação antes de salvar. Uma única
+operação cria um evento e os vínculos individuais, além de atualizar simultaneamente as composições de
+origem e destino. Para férias, desligamento ou outra saída sem destino, use a seta para preparar a saída,
+selecione uma ou mais pessoas e informe o motivo. O marco do Gantt mostra nome, destino ou motivo. Um
+retorno pode ser registrado em novo marco. **Ajustar composição** continua disponível para correções ou
+alterações da formação sem uma transferência formal.
 
 Na migração, os vínculos antigos com equipe, pessoa e datas suficientes são consolidados no histórico
 global da equipe. Como a planilha não informa mudanças de formação, conjuntos estáticos são registrados

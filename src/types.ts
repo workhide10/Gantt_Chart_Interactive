@@ -54,6 +54,23 @@ export interface IntegranteComposicaoEquipe {
   pessoaId: ID
 }
 
+/** Evento único que agrupa uma troca em lote ou saída de integrantes. */
+export interface EventoEquipe {
+  id: ID
+  disciplinaId: ID
+  data: string
+}
+
+/** Vínculo de movimentação de uma pessoa dentro do evento (destino null = saída). */
+export interface MovimentacaoIntegrante {
+  id: ID
+  eventoId: ID
+  pessoaId: ID
+  equipeOrigemId: ID
+  equipeDestinoId: ID | null
+  motivo?: string
+}
+
 export interface Atividade {
   id: ID
   escolaId: ID
@@ -86,6 +103,8 @@ export interface Dados {
   // Formação versionada por equipe e vigência, independente do projeto e das atividades.
   composicoesEquipe?: ComposicaoEquipe[]
   integrantesComposicao?: IntegranteComposicaoEquipe[]
+  eventosEquipe?: EventoEquipe[]
+  movimentacoesEquipe?: MovimentacaoIntegrante[]
   // Controle de migrações de dados de referência executadas uma única vez.
   fontesImportadas?: string[]
 }
