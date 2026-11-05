@@ -27,6 +27,11 @@ select, input[type=text], input[type=date], textarea { padding: 6px 8px; border:
 .escala-temporal { margin-left: auto; }
 .legenda { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .chip { font-size: 11px; background: var(--card); border: 1px solid var(--borda); border-radius: 99px; padding: 2px 8px; display: inline-flex; align-items: center; gap: 4px; }
+.chip-escola { color: var(--texto); cursor: pointer; transition: opacity .12s ease, background .12s ease; }
+.chip-escola:hover { background: #eef1f5; }
+.chip-escola:disabled { opacity: 1; cursor: default; }
+.chip-escola-oculta { opacity: .4; filter: grayscale(.75); text-decoration: line-through; }
+.legenda-ajuda { align-self: center; margin-left: 4px; }
 .chip i, .bolinha { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .bolinha { margin-right: 4px; }
 .gantt-rolagem { width: 100%; min-width: 0; overflow: auto; max-height: 68vh; background: var(--card); border: 1px solid var(--borda); border-radius: 8px; }

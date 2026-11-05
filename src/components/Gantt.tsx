@@ -54,6 +54,7 @@ interface Props {
 export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco, onRedimensionar }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
   const [escala, setEscala] = useState<EscalaTemporal>('meses')
+  const [escolasOcultas, setEscolasOcultas] = useState<Set<string>>(() => new Set())
   const ganttRef = useRef<HTMLDivElement>(null)
   const [larguraVisivel, setLarguraVisivel] = useState(0)
   const [redimensionamento, setRedimensionamento] = useState<SessaoRedimensionamento | null>(null)
@@ -94,6 +95,20 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
   useEffect(() => () => { if (tooltipTimer.current) clearTimeout(tooltipTimer.current) }, [])
 
   const visiveis = useMemo(() => filtrarAtividades(dados, filtros), [dados, filtros])
+  const atividadesDoDiagrama = useMemo(() => filtros.escolaId
+    ? visiveis
+    : visiveis.filter((atividade) => !escolasOcultas.has(atividade.escolaId)), [escolasOcultas, filtros.escolaId, visiveis])
+
+  useEffect(() => {
+    if (filtros.escolaId) setEscolasOcultas(new Set())
+  }, [filtros.escolaId])
+
+  const alternarEscola = (escolaId: string) => setEscolasOcultas((atuais) => {
+    const novas = new Set(atuais)
+    if (novas.has(escolaId)) novas.delete(escolaId)
+    else novas.add(escolaId)
+    return novas
+  })
 
   // Período mostrado: da primeira à última atividade cadastrada (sempre em semanas completas).
   const { inicio, totalDias } = useMemo(() => {
@@ -199,17 +214,17 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
 
   // Linhas conforme o agrupamento escolhido
   const linhas: Linha[] = useMemo(() => {
-    const marcosProjeto = marcos.filter((m) => !filtros.escolaId || m.escolaId === filtros.escolaId)
+    const marcosProjeto = marcos.filter((m) => (!filtros.escolaId || m.escolaId === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(m.escolaId)))
     if (agrupar === 'equipe') {
       return dados.equipes
         .filter((e) => (!filtros.equipeId || e.id === filtros.equipeId) && (!filtros.disciplinaId || e.disciplinaId === filtros.disciplinaId))
-        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: visiveis.filter((a) => a.equipeId === e.id), composicoes: (dados.composicoesEquipe ?? []).filter((c) => c.equipeId === e.id).sort((a, b) => a.inicio.localeCompare(b.inicio)), eventosEquipe: (dados.eventosEquipe ?? []).filter((evento) => (dados.movimentacoesEquipe ?? []).some((m) => m.eventoId === evento.id && (m.equipeOrigemId === e.id || m.equipeDestinoId === e.id))) }))
+        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: atividadesDoDiagrama.filter((a) => a.equipeId === e.id), composicoes: (dados.composicoesEquipe ?? []).filter((c) => c.equipeId === e.id).sort((a, b) => a.inicio.localeCompare(b.inicio)), eventosEquipe: (dados.eventosEquipe ?? []).filter((evento) => (dados.movimentacoesEquipe ?? []).some((m) => m.eventoId === evento.id && (m.equipeOrigemId === e.id || m.equipeDestinoId === e.id))) }))
     }
     return dados.escolas
-      .filter((s) => !filtros.escolaId || s.id === filtros.escolaId)
-      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: visiveis.filter((a) => a.escolaId === s.id), marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
+      .filter((s) => (!filtros.escolaId || s.id === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(s.id)))
+      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: atividadesDoDiagrama.filter((a) => a.escolaId === s.id), marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
       .filter((l) => l.atividades.length > 0 || (l.marcos?.length ?? 0) > 0)
-  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos, visiveis])
+  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesDoDiagrama, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
 
   const escola = (id: string) => dados.escolas.find((e) => e.id === id)
   const equipe = (id: string) => dados.equipes.find((e) => e.id === id)
@@ -228,7 +243,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
     </>
   )
 
-  const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.map((m) => m.escolaId)])].map(escola).filter(Boolean)
+  const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.filter((m) => !filtros.escolaId || m.escolaId === filtros.escolaId).map((m) => m.escolaId)])].map(escola).filter(Boolean)
   const diasDoEixo = escala === 'semanas'
     ? Array.from({ length: totalDias }, (_, dia) => somarDias(inicio, dia))
     : []
@@ -256,10 +271,11 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
 
       <div className="legenda">
         {escolasNaTela.map((s) => s && (
-          <span key={s.id} className="chip" title={s.nome}>
+          <button key={s.id} type="button" className={`chip chip-escola${!filtros.escolaId && escolasOcultas.has(s.id) ? ' chip-escola-oculta' : ''}`} title={!filtros.escolaId ? `${s.nome} — clique para ${escolasOcultas.has(s.id) ? 'exibir' : 'ocultar'}` : s.nome} aria-pressed={!filtros.escolaId ? !escolasOcultas.has(s.id) : true} disabled={Boolean(filtros.escolaId)} onClick={() => alternarEscola(s.id)}>
             <i style={{ background: s.cor }} /> {s.codigo}
-          </span>
+          </button>
         ))}
+        {!filtros.escolaId && <span className="dica legenda-ajuda">Clique nas siglas para ocultar ou exibir escolas.</span>}
       </div>
 
       <div className="gantt-rolagem" ref={ganttRef} onScroll={ocultarTooltip}>
