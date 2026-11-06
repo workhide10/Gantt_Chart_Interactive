@@ -1,4 +1,4 @@
-import type { Atividade, Dados, Pessoa } from '../types'
+import type { Atividade, ComposicaoEquipe, Dados, Pessoa } from '../types'
 
 export interface IntegranteNoPeriodo {
   pessoa: Pessoa | undefined
@@ -6,8 +6,31 @@ export interface IntegranteNoPeriodo {
   fim: string
 }
 
-export function integrantesNaAtividade(dados: Dados, atividade: Atividade): IntegranteNoPeriodo[] {
-  const composicoesDaEquipe = (dados.composicoesEquipe ?? []).filter((c) => c.equipeId === atividade.equipeId)
+export interface IndiceComposicoes {
+  porEquipe: Map<string, ComposicaoEquipe[]>
+  pessoaPorId: Map<string, Pessoa>
+  pessoaIdsPorComposicao: Map<string, string[]>
+}
+
+export function criarIndiceComposicoes(dados: Dados): IndiceComposicoes {
+  const porEquipe: IndiceComposicoes['porEquipe'] = new Map()
+  for (const composicao of dados.composicoesEquipe ?? []) {
+    const lista = porEquipe.get(composicao.equipeId) ?? []
+    lista.push(composicao)
+    porEquipe.set(composicao.equipeId, lista)
+  }
+  for (const lista of porEquipe.values()) lista.sort((a, b) => a.inicio.localeCompare(b.inicio))
+  const pessoaIdsPorComposicao = new Map<string, string[]>()
+  for (const membro of dados.integrantesComposicao ?? []) {
+    const lista = pessoaIdsPorComposicao.get(membro.composicaoId) ?? []
+    lista.push(membro.pessoaId)
+    pessoaIdsPorComposicao.set(membro.composicaoId, lista)
+  }
+  return { porEquipe, pessoaPorId: new Map(dados.pessoas.map((pessoa) => [pessoa.id, pessoa])), pessoaIdsPorComposicao }
+}
+
+export function integrantesNaAtividade(dados: Dados, atividade: Atividade, indice = criarIndiceComposicoes(dados)): IntegranteNoPeriodo[] {
+  const composicoesDaEquipe = indice.porEquipe.get(atividade.equipeId) ?? []
   const composicoesAtivas = composicoesDaEquipe.filter((c) =>
     c.inicio <= atividade.fim && (!c.fim || c.fim >= atividade.inicio),
   )
@@ -17,9 +40,8 @@ export function integrantesNaAtividade(dados: Dados, atividade: Atividade): Inte
       const inicio = composicao.inicio > atividade.inicio ? composicao.inicio : atividade.inicio
       const fim = composicao.fim && composicao.fim < atividade.fim ? composicao.fim : atividade.fim
       if (inicio > fim) return []
-      return (dados.integrantesComposicao ?? [])
-        .filter((membro) => membro.composicaoId === composicao.id)
-        .map((membro) => ({ pessoa: dados.pessoas.find((p) => p.id === membro.pessoaId), inicio, fim }))
+      return (indice.pessoaIdsPorComposicao.get(composicao.id) ?? [])
+        .map((pessoaId) => ({ pessoa: indice.pessoaPorId.get(pessoaId), inicio, fim }))
     })
   }
 

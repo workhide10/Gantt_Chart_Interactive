@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 import type { Atividade, Dados } from '../types'
 import { feriados } from '../data/inicial'
-import { diasUteis, sobrepoe } from '../lib/datas'
+import { diasUteis } from '../lib/datas'
+import { contarSobreposicoes } from '../lib/gantt'
 
 interface Props {
   dados: Dados
@@ -16,12 +17,16 @@ export function Resumo({ dados, atividades, periodo }: Props) {
       inicio: periodo.inicio && a.inicio < periodo.inicio ? periodo.inicio : a.inicio,
       fim: periodo.fim && a.fim > periodo.fim ? periodo.fim : a.fim,
     }))
+    const atividadesPorEquipe = new Map<string, typeof delimitadas>()
+    for (const atividade of delimitadas) {
+      const lista = atividadesPorEquipe.get(atividade.equipeId) ?? []
+      lista.push(atividade)
+      atividadesPorEquipe.set(atividade.equipeId, lista)
+    }
     const porEquipe = dados.equipes.map((e) => {
-      const lista = delimitadas.filter((a) => a.equipeId === e.id)
+      const lista = atividadesPorEquipe.get(e.id) ?? []
       const dias = lista.reduce((soma, a) => soma + diasUteis(a.inicio, a.fim, feriados), 0)
-      let conflitos = 0
-      for (let i = 0; i < lista.length; i++)
-        for (let j = i + 1; j < lista.length; j++) if (sobrepoe(lista[i], lista[j])) conflitos++
+      const conflitos = contarSobreposicoes(lista)
       return { equipe: e, atividades: lista.length, dias, conflitos }
     })
     const maior = Math.max(1, ...porEquipe.map((x) => x.dias))

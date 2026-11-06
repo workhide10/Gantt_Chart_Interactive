@@ -13,6 +13,7 @@ import { Cadastros } from './components/Cadastros'
 import { FormMarco } from './components/FormMarco'
 import { ListaMarcos } from './components/ListaMarcos'
 import { ComposicoesEquipe } from './components/ComposicoesEquipe'
+import { ExecucaoProjetos } from './components/ExecucaoProjetos'
 
 type Aba = 'gantt' | 'atividades' | 'marcos' | 'analises' | 'equipes' | 'cadastros'
 type IntervaloAnalise = { inicio: string; fim: string }
@@ -44,6 +45,11 @@ export default function App() {
     const fontes = dados.fontesImportadas ?? []
     const importarReferencia = !fontes.includes(fonteReferencia)
     const renomearEquipesArq = !fontes.includes(fonteNomesArq)
+    const migrarGlobal = !fontes.includes(fonteComposicoes)
+    // Evita reconstruir conjuntos e varrer os cadastros inteiros em cada alteração normal.
+    const migracaoNecessaria = !Array.isArray(dados.marcos) || !Array.isArray(dados.vinculosEquipe) ||
+      dados.pessoas.some((pessoa) => pessoa.equipeId !== undefined) || importarReferencia || migrarGlobal || renomearEquipesArq
+    if (!migracaoNecessaria) return
     const vinculosOriginais = Array.isArray(dados.vinculosEquipe) ? dados.vinculosEquipe : []
     const vinculosExistentes = vinculosOriginais.map((v) => ({ ...v, projetoId: v.projetoId ?? null }))
     const referencias = importarReferencia ? (dadosIniciais.vinculosEquipe ?? []) : []
@@ -58,7 +64,6 @@ export default function App() {
     const vinculosComLegados = [...vinculosTodos, ...legados]
     const pessoasDisponiveis = [...dados.pessoas, ...dadosIniciais.pessoas.filter((p) => !dados.pessoas.some((existente) => existente.id === p.id))]
 
-    const migrarGlobal = !fontes.includes(fonteComposicoes)
     let composicoes: ComposicaoEquipe[] = Array.isArray(dados.composicoesEquipe) ? dados.composicoesEquipe : []
     let integrantes: IntegranteComposicaoEquipe[] = Array.isArray(dados.integrantesComposicao) ? dados.integrantesComposicao : []
     const idsMigrados = new Set<string>()
@@ -240,6 +245,7 @@ export default function App() {
             </div>
             {intervaloAnalise.inicio && intervaloAnalise.fim && intervaloAnalise.inicio > intervaloAnalise.fim && <p className="erro-periodo">A data inicial precisa ser anterior ou igual à data final.</p>}
             <Resumo dados={dados} atividades={atividadesAnalise} periodo={intervaloAnalise} />
+            <ExecucaoProjetos dados={dados} escolaId={filtros.escolaId} />
           </section>
         )}
         {aba === 'cadastros' && <Cadastros dados={dados} onChange={setDados} />}

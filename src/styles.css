@@ -80,6 +80,13 @@ select, input[type=text], input[type=date], textarea { padding: 6px 8px; border:
 .analises-cabecalho { margin: 4px 0 12px; }
 .analises-cabecalho h2 { margin: 0; font-size: 18px; }
 .analises-cabecalho p { margin: 4px 0 0; color: var(--suave); font-size: 13px; }
+.execucao-projetos { margin-top: 24px; }
+.execucao-legenda { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 10px 12px; background: #eef2ff; border-radius: 8px; color: #475569; font-size: 11px; }
+.tabela-execucao { min-width: 980px; }
+.tabela-execucao td { vertical-align: top; }
+.tabela-execucao td small { color: var(--suave); }
+.execucao-pausas { margin: 0; padding-left: 16px; }
+.execucao-pausas li + li { margin-top: 3px; }
 .filtro-periodo { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px; padding: 12px; margin-bottom: 10px; background: var(--card); border: 1px solid var(--borda); border-radius: 8px; }
 .filtro-periodo-texto { display: flex; flex: 1 1 260px; flex-direction: column; gap: 3px; margin-right: auto; }
 .filtro-periodo-texto strong { font-size: 13px; }

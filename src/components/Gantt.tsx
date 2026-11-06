@@ -5,7 +5,7 @@ import { feriados } from '../data/inicial'
 import { difDias, formatarBR, hojeISO, nomeMes, segundaDe, somarDias } from '../lib/datas'
 import { empacotar } from '../lib/gantt'
 import { filtrarAtividades } from '../lib/filtrar'
-import { integrantesNaAtividade } from '../lib/composicao'
+import { criarIndiceComposicoes, integrantesNaAtividade } from '../lib/composicao'
 
 const LARGURA_ROTULO = 150
 const ALTURA_BARRA = 22
@@ -69,11 +69,11 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
     setTooltip(null)
   }
 
-  const agendarTooltip = (event: ReactMouseEvent<HTMLElement>, conteudo: ReactNode) => {
+  const agendarTooltip = (event: ReactMouseEvent<HTMLElement>, obterConteudo: ReactNode | (() => ReactNode)) => {
     if (tooltipTimer.current) clearTimeout(tooltipTimer.current)
     const elemento = event.currentTarget
     tooltipTimer.current = setTimeout(() => {
-      setTooltip({ conteudo, ancora: elemento.getBoundingClientRect(), left: 12, top: 12 })
+      setTooltip({ conteudo: typeof obterConteudo === 'function' ? obterConteudo() : obterConteudo, ancora: elemento.getBoundingClientRect(), left: 12, top: 12 })
     }, 650)
   }
 
@@ -98,6 +98,27 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
   const atividadesDoDiagrama = useMemo(() => filtros.escolaId
     ? visiveis
     : visiveis.filter((atividade) => !escolasOcultas.has(atividade.escolaId)), [escolasOcultas, filtros.escolaId, visiveis])
+  const indiceComposicoes = useMemo(() => criarIndiceComposicoes(dados), [dados.composicoesEquipe, dados.integrantesComposicao, dados.pessoas])
+  const atividadesPorEquipe = useMemo(() => {
+    const mapa = new Map<string, Atividade[]>()
+    for (const atividade of atividadesDoDiagrama) {
+      const lista = mapa.get(atividade.equipeId) ?? []
+      lista.push(atividade)
+      mapa.set(atividade.equipeId, lista)
+    }
+    return mapa
+  }, [atividadesDoDiagrama])
+  const atividadesPorEscola = useMemo(() => {
+    const mapa = new Map<string, Atividade[]>()
+    for (const atividade of atividadesDoDiagrama) {
+      const lista = mapa.get(atividade.escolaId) ?? []
+      lista.push(atividade)
+      mapa.set(atividade.escolaId, lista)
+    }
+    return mapa
+  }, [atividadesDoDiagrama])
+  const escolaPorId = useMemo(() => new Map(dados.escolas.map((item) => [item.id, item])), [dados.escolas])
+  const equipePorId = useMemo(() => new Map(dados.equipes.map((item) => [item.id, item])), [dados.equipes])
 
   useEffect(() => {
     if (filtros.escolaId) setEscolasOcultas(new Set())
@@ -216,18 +237,36 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
   const linhas: Linha[] = useMemo(() => {
     const marcosProjeto = marcos.filter((m) => (!filtros.escolaId || m.escolaId === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(m.escolaId)))
     if (agrupar === 'equipe') {
+      const composicoesPorEquipe = new Map<string, ComposicaoEquipe[]>()
+      for (const composicao of dados.composicoesEquipe ?? []) {
+        const lista = composicoesPorEquipe.get(composicao.equipeId) ?? []
+        lista.push(composicao)
+        composicoesPorEquipe.set(composicao.equipeId, lista)
+      }
+      for (const lista of composicoesPorEquipe.values()) lista.sort((a, b) => a.inicio.localeCompare(b.inicio))
+      const eventosPorEquipe = new Map<string, Set<string>>()
+      const eventoPorId = new Map((dados.eventosEquipe ?? []).map((evento) => [evento.id, evento]))
+      for (const movimento of dados.movimentacoesEquipe ?? []) {
+        const evento = eventoPorId.get(movimento.eventoId)
+        if (!evento) continue
+        for (const equipeId of [movimento.equipeOrigemId, movimento.equipeDestinoId].filter(Boolean) as string[]) {
+          const ids = eventosPorEquipe.get(equipeId) ?? new Set<string>()
+          ids.add(evento.id)
+          eventosPorEquipe.set(equipeId, ids)
+        }
+      }
       return dados.equipes
         .filter((e) => (!filtros.equipeId || e.id === filtros.equipeId) && (!filtros.disciplinaId || e.disciplinaId === filtros.disciplinaId))
-        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: atividadesDoDiagrama.filter((a) => a.equipeId === e.id), composicoes: (dados.composicoesEquipe ?? []).filter((c) => c.equipeId === e.id).sort((a, b) => a.inicio.localeCompare(b.inicio)), eventosEquipe: (dados.eventosEquipe ?? []).filter((evento) => (dados.movimentacoesEquipe ?? []).some((m) => m.eventoId === evento.id && (m.equipeOrigemId === e.id || m.equipeDestinoId === e.id))) }))
+        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: atividadesPorEquipe.get(e.id) ?? [], composicoes: composicoesPorEquipe.get(e.id) ?? [], eventosEquipe: [...(eventosPorEquipe.get(e.id) ?? [])].map((id) => eventoPorId.get(id)!).filter(Boolean) }))
     }
     return dados.escolas
       .filter((s) => (!filtros.escolaId || s.id === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(s.id)))
-      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: atividadesDoDiagrama.filter((a) => a.escolaId === s.id), marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
+      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: atividadesPorEscola.get(s.id) ?? [], marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
       .filter((l) => l.atividades.length > 0 || (l.marcos?.length ?? 0) > 0)
-  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesDoDiagrama, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
+  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesPorEquipe, atividadesPorEscola, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
 
-  const escola = (id: string) => dados.escolas.find((e) => e.id === id)
-  const equipe = (id: string) => dados.equipes.find((e) => e.id === id)
+  const escola = (id: string) => escolaPorId.get(id)
+  const equipe = (id: string) => equipePorId.get(id)
 
   const hoje = hojeISO()
   const marcadores = (
@@ -368,19 +407,21 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                     const s = escola(a.escolaId)
                     const eq = equipe(a.equipeId)
                     const texto = agrupar === 'equipe' ? s?.codigo : eq?.nome
-                    const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual)
-                    const legadosSemProjeto = (dados.vinculosEquipe ?? []).filter((v) => v.equipeId === a.equipeId && !v.projetoId).length
-                    const conteudoTooltip = <>
-                      <strong>{s?.nome ?? '?'} · {eq?.nome ?? '?'}</strong>
-                      {a.titulo && <div className="gantt-tooltip-etapa">{a.titulo}</div>}
-                      <div>{formatarBR(atividadeVisual.inicio)} a {formatarBR(atividadeVisual.fim)}</div>
-                      {a.descricao && <div className="gantt-tooltip-descricao">{a.descricao}</div>}
-                      <div className="gantt-tooltip-grupo"><b>Composição no período</b>
-                        {integrantesNoPeriodo.length ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }, i) => <div key={`${pessoa?.id ?? 'removida'}-${i}`}>• {pessoa?.nome ?? 'Pessoa removida'}{pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · {formatarBR(inicioVinculo)} a {formatarBR(fimVinculo)}</div>) : <div>Nenhuma formação registrada nesta equipe no período.</div>}
-                        {legadosSemProjeto > 0 && <small>{legadosSemProjeto} vínculo(s) antigo(s) para revisar em Cadastros → Pendências antigas.</small>}
-                      </div>
-                      {conflito && agrupar === 'equipe' && <div className="gantt-tooltip-alerta">⚠ Sobrepõe outra atividade da equipe</div>}
-                    </>
+                    const obterConteudoTooltip = () => {
+                      const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual, indiceComposicoes)
+                      const legadosSemProjeto = (dados.vinculosEquipe ?? []).filter((v) => v.equipeId === a.equipeId && !v.projetoId).length
+                      return <>
+                        <strong>{s?.nome ?? '?'} · {eq?.nome ?? '?'}</strong>
+                        {a.titulo && <div className="gantt-tooltip-etapa">{a.titulo}</div>}
+                        <div>{formatarBR(atividadeVisual.inicio)} a {formatarBR(atividadeVisual.fim)}</div>
+                        {a.descricao && <div className="gantt-tooltip-descricao">{a.descricao}</div>}
+                        <div className="gantt-tooltip-grupo"><b>Composição no período</b>
+                          {integrantesNoPeriodo.length ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }, i) => <div key={`${pessoa?.id ?? 'removida'}-${i}`}>• {pessoa?.nome ?? 'Pessoa removida'}{pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · {formatarBR(inicioVinculo)} a {formatarBR(fimVinculo)}</div>) : <div>Nenhuma formação registrada nesta equipe no período.</div>}
+                          {legadosSemProjeto > 0 && <small>{legadosSemProjeto} vínculo(s) antigo(s) para revisar em Cadastros → Pendências antigas.</small>}
+                        </div>
+                        {conflito && agrupar === 'equipe' && <div className="gantt-tooltip-alerta">⚠ Sobrepõe outra atividade da equipe</div>}
+                      </>
+                    }
                     return (
                       <div
                         key={a.id}
@@ -392,7 +433,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                           height: ALTURA_BARRA,
                           background: s?.cor ?? '#888',
                         }}
-                        onMouseEnter={(e) => agendarTooltip(e, conteudoTooltip)}
+                        onMouseEnter={(e) => agendarTooltip(e, obterConteudoTooltip)}
                         onMouseLeave={ocultarTooltip}
                         onClick={(e) => {
                           e.stopPropagation()

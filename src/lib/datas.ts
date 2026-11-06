@@ -34,12 +34,24 @@ export const sobrepoe = (
 
 // Dias úteis (seg–sex, sem feriados) entre duas datas, inclusive.
 export const diasUteis = (inicio: string, fim: string, feriados: string[]): number => {
-  let total = 0
-  for (let d = inicio; d <= fim; d = somarDias(d, 1)) {
-    const dow = paraDate(d).getUTCDay()
-    if (dow !== 0 && dow !== 6 && !feriados.includes(d)) total++
+  const dias = difDias(inicio, fim) + 1
+  if (dias <= 0) return 0
+  const semanas = Math.floor(dias / 7)
+  let uteis = semanas * 5
+  const resto = dias % 7
+  const primeiroDia = paraDate(inicio).getUTCDay()
+  for (let i = 0; i < resto; i++) {
+    const diaSemana = (primeiroDia + i) % 7
+    if (diaSemana !== 0 && diaSemana !== 6) uteis++
   }
-  return total
+  const conjuntoFeriados = new Set(feriados)
+  for (const feriado of conjuntoFeriados) {
+    if (feriado >= inicio && feriado <= fim) {
+      const diaSemana = paraDate(feriado).getUTCDay()
+      if (diaSemana !== 0 && diaSemana !== 6) uteis--
+    }
+  }
+  return uteis
 }
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']

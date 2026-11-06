@@ -30,6 +30,12 @@ a borda visível do gráfico sem ultrapassar o intervalo da própria barra. Na e
 linha identifica cada dia. Arraste as alças nas extremidades das barras para alterar diretamente as
 datas de início e fim da atividade; a alteração é salva no armazenamento local do navegador.
 
+Na aba **Análises**, **Tempo de execução dos projetos** usa todas as disciplinas e calcula a união dos
+intervalos de calendário das atividades de cada projeto. Cada data coberta conta uma vez, mesmo quando há
+tarefas simultâneas. O quadro mostra dias de execução, janela entre a primeira e última atividade e as
+pausas sem atividades. O filtro de projeto é respeitado, enquanto filtros de disciplina, equipe e período
+não recortam esse indicador de execução completa.
+
 ## Formação temporal das equipes
 O cadastro de atividade permanece independente: projeto, equipe, etapa, datas e descrição, sem editar a
 composição da equipe. Na aba **Equipes**, a formação é global para aquela equipe, independente do projeto.
