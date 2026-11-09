@@ -14,9 +14,9 @@ export function BarraFiltros({ dados, filtros, onChange }: Props) {
   return (
     <div className="filtros">
       <label>
-        Escola
+        Projeto
         <select value={filtros.escolaId} onChange={(e) => onChange({ ...filtros, escolaId: e.target.value })}>
-          <option value="">Todas</option>
+          <option value="">Todos os projetos</option>
           {dados.escolas.map((x) => (
             <option key={x.id} value={x.id}>{x.codigo} – {x.nome}</option>
           ))}
@@ -28,7 +28,7 @@ export function BarraFiltros({ dados, filtros, onChange }: Props) {
           value={filtros.disciplinaId}
           onChange={(e) => onChange({ ...filtros, disciplinaId: e.target.value, equipeId: '' })}
         >
-          <option value="">Todas</option>
+          <option value="">Todas as disciplinas</option>
           {dados.disciplinas.map((x) => (
             <option key={x.id} value={x.id}>{x.sigla}</option>
           ))}
@@ -37,13 +37,13 @@ export function BarraFiltros({ dados, filtros, onChange }: Props) {
       <label>
         Equipe
         <select value={filtros.equipeId} onChange={(e) => onChange({ ...filtros, equipeId: e.target.value })}>
-          <option value="">Todas</option>
+          <option value="">Todas as equipes</option>
           {equipesVisiveis.map((x) => (
             <option key={x.id} value={x.id}>{x.nome}</option>
           ))}
         </select>
       </label>
-      <button onClick={() => onChange({ escolaId: '', disciplinaId: '', equipeId: '' })}>Limpar</button>
+      <button disabled={!filtros.escolaId && !filtros.disciplinaId && !filtros.equipeId} onClick={() => onChange({ escolaId: '', disciplinaId: '', equipeId: '' })}>Limpar filtros</button>
     </div>
   )
 }

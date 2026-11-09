@@ -143,7 +143,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
     const ini = segundaDe(menor)
     const fim = somarDias(segundaDe(maior), 6)
     return { inicio: ini, totalDias: difDias(ini, fim) + 1 }
-  }, [agrupar, dados.atividades, dados.composicoesEquipe, marcos])
+  }, [agrupar, dados.atividades, dados.composicoesEquipe, dados.eventosEquipe, marcos])
 
   useEffect(() => {
     const area = ganttRef.current
@@ -292,7 +292,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
       <div className="gantt-controles">
         <div className="seg">
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>
-          <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por escola</button>
+          <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por projeto</button>
         </div>
         <div className="seg escala-temporal" aria-label="Escala temporal do Gantt">
           <button onClick={() => {
@@ -305,7 +305,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
           <button className={escala === 'meses' ? 'ativo' : ''} onClick={() => setEscala('meses')}>Meses</button>
           <button className={escala === 'trimestres' ? 'ativo' : ''} onClick={() => setEscala('trimestres')}>Trimestres</button>
         </div>
-        <span className="dica">{agrupar === 'equipe' ? 'Clique numa barra para editar; os marcadores roxos indicam mudanças de composição.' : 'Clique numa barra para editar; ◆ identifica um marco concluído.'}</span>
+        <span className="dica">Clique no espaço livre para criar uma atividade na data escolhida. Clique em uma barra para editar ou arraste suas extremidades para ajustar o período. {agrupar === 'equipe' ? 'Os marcadores roxos indicam mudanças de composição.' : '◆ identifica um marco concluído.'}</span>
       </div>
 
       <div className="legenda">
@@ -314,13 +314,14 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
             <i style={{ background: s.cor }} /> {s.codigo}
           </button>
         ))}
-        {!filtros.escolaId && <span className="dica legenda-ajuda">Clique nas siglas para ocultar ou exibir escolas.</span>}
+        {!filtros.escolaId && <span className="dica legenda-ajuda">Clique nas siglas para ocultar ou exibir projetos.</span>}
+        {!filtros.escolaId && escolasOcultas.size > 0 && <button className="chip" onClick={() => setEscolasOcultas(new Set())}>Exibir todos os projetos</button>}
       </div>
 
       <div className="gantt-rolagem" ref={ganttRef} onScroll={ocultarTooltip}>
         <div className="gantt" style={{ width: LARGURA_ROTULO + larguraTrilha }}>
           <div className="gantt-cab">
-            <div className="rotulo" style={{ width: LARGURA_ROTULO }}>{agrupar === 'equipe' ? 'Equipe' : 'Escola'}</div>
+            <div className="rotulo" style={{ width: LARGURA_ROTULO }}>{agrupar === 'equipe' ? 'Equipe' : 'Projeto'}</div>
             <div className="cab-trilha" style={{ width: larguraTrilha }}>
               <div className="cab-linha">
                 {periodosMaiores.map((m) => (
@@ -409,7 +410,6 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                     const texto = agrupar === 'equipe' ? s?.codigo : eq?.nome
                     const obterConteudoTooltip = () => {
                       const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual, indiceComposicoes)
-                      const legadosSemProjeto = (dados.vinculosEquipe ?? []).filter((v) => v.equipeId === a.equipeId && !v.projetoId).length
                       return <>
                         <strong>{s?.nome ?? '?'} · {eq?.nome ?? '?'}</strong>
                         {a.titulo && <div className="gantt-tooltip-etapa">{a.titulo}</div>}
@@ -417,7 +417,6 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                         {a.descricao && <div className="gantt-tooltip-descricao">{a.descricao}</div>}
                         <div className="gantt-tooltip-grupo"><b>Composição no período</b>
                           {integrantesNoPeriodo.length ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }, i) => <div key={`${pessoa?.id ?? 'removida'}-${i}`}>• {pessoa?.nome ?? 'Pessoa removida'}{pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · {formatarBR(inicioVinculo)} a {formatarBR(fimVinculo)}</div>) : <div>Nenhuma formação registrada nesta equipe no período.</div>}
-                          {legadosSemProjeto > 0 && <small>{legadosSemProjeto} vínculo(s) antigo(s) para revisar em Cadastros → Pendências antigas.</small>}
                         </div>
                         {conflito && agrupar === 'equipe' && <div className="gantt-tooltip-alerta">⚠ Sobrepõe outra atividade da equipe</div>}
                       </>
@@ -425,6 +424,9 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                     return (
                       <div
                         key={a.id}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Editar atividade ${a.titulo || s?.codigo || ''}, ${eq?.nome ?? ''}, de ${formatarBR(a.inicio)} a ${formatarBR(a.fim)}`}
                         className={'barra' + (conflito && agrupar === 'equipe' ? ' conflito' : '')}
                         style={{
                           left: difDias(inicio, atividadeVisual.inicio) * pxDia,
@@ -435,6 +437,10 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                         }}
                         onMouseEnter={(e) => agendarTooltip(e, obterConteudoTooltip)}
                         onMouseLeave={ocultarTooltip}
+                        onKeyDown={(e) => {
+                          if (e.target !== e.currentTarget) return
+                          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); ocultarTooltip(); onEditar(a) }
+                        }}
                         onClick={(e) => {
                           e.stopPropagation()
                           ocultarTooltip()

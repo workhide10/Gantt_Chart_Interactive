@@ -25,7 +25,15 @@ export const segundaDe = (iso: string): string => {
 
 export const formatarBR = (iso: string): string => iso.split('-').reverse().join('/')
 
-export const hojeISO = (): string => paraISO(new Date())
+// A data civil do usuário pode ser diferente da data UTC após as 21h no Brasil.
+export const hojeISO = (agora = new Date()): string =>
+  `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`
+
+export const dataISOValida = (valor: unknown): valor is string => {
+  if (typeof valor !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(valor)) return false
+  const data = paraDate(valor)
+  return Number.isFinite(data.getTime()) && paraISO(data) === valor
+}
 
 export const sobrepoe = (
   a: { inicio: string; fim: string },

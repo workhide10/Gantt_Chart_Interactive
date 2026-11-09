@@ -1,69 +1,28 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import type { Dados } from '../types'
-import { difDias, formatarBR, somarDias } from '../lib/datas'
+import { formatarBR } from '../lib/datas'
+import { analisarExecucaoProjetos } from '../lib/analises'
 
-interface Props { dados: Dados; escolaId: string }
-interface Periodo { inicio: string; fim: string }
-interface Pausa extends Periodo { dias: number }
+interface Props { dados: Dados; escolaId: string; onSelecionar: (id: string) => void }
 
-export function ExecucaoProjetos({ dados, escolaId }: Props) {
-  const projetos = useMemo(() => {
-    const ids = [...new Set(dados.atividades.map((a) => a.escolaId))]
-      .filter((id) => !escolaId || id === escolaId)
-    return ids.map((id) => {
-      const escola = dados.escolas.find((e) => e.id === id)
-      const atividades = dados.atividades.filter((a) => a.escolaId === id).sort((a, b) => a.inicio.localeCompare(b.inicio) || a.fim.localeCompare(b.fim))
-      if (!atividades.length) return null
+export function ExecucaoProjetos({ dados, escolaId, onSelecionar }: Props) {
+  const projetos = useMemo(() => analisarExecucaoProjetos(dados, escolaId), [dados.atividades, dados.escolas, escolaId])
+  const [ordem, setOrdem] = useState<'pausas' | 'duracao'>('pausas')
+  const [todos, setTodos] = useState(false)
+  const ordenados = [...projetos].sort((a, b) => ordem === 'pausas' ? b.diasPausados - a.diasPausados || b.diasJanela - a.diasJanela : b.diasJanela - a.diasJanela)
 
-      const periodos: Periodo[] = []
-      const pausas: Pausa[] = []
-      let atual: Periodo = { inicio: atividades[0].inicio, fim: atividades[0].fim }
-      for (const atividade of atividades.slice(1)) {
-        if (atividade.inicio <= atual.fim) {
-          if (atividade.fim > atual.fim) atual = { ...atual, fim: atividade.fim }
-          continue
-        }
-        const inicioPausa = somarDias(atual.fim, 1)
-        const fimPausa = somarDias(atividade.inicio, -1)
-        const diasPausa = difDias(inicioPausa, fimPausa) + 1
-        if (diasPausa > 0) {
-          periodos.push(atual)
-          pausas.push({ inicio: inicioPausa, fim: fimPausa, dias: diasPausa })
-          atual = { inicio: atividade.inicio, fim: atividade.fim }
-        } else {
-          // Intervalos sobrepostos ou adjacentes formam um trecho contínuo de execução.
-          atual = { inicio: atual.inicio, fim: atividade.fim > atual.fim ? atividade.fim : atual.fim }
-        }
-      }
-      periodos.push(atual)
-
-      const inicio = periodos[0].inicio
-      const fim = periodos[periodos.length - 1].fim
-      const diasAtivos = periodos.reduce((total, periodo) => total + difDias(periodo.inicio, periodo.fim) + 1, 0)
-      const diasJanela = difDias(inicio, fim) + 1
-      return {
-        id,
-        codigo: escola?.codigo ?? 'Projeto removido',
-        nome: escola?.nome ?? '',
-        cor: escola?.cor ?? '#94a3b8',
-        inicio,
-        fim,
-        diasAtivos,
-        diasJanela,
-        diasPausados: Math.max(0, diasJanela - diasAtivos),
-        periodos,
-        pausas,
-      }
-    }).filter((projeto): projeto is NonNullable<typeof projeto> => Boolean(projeto))
-      .sort((a, b) => b.diasAtivos - a.diasAtivos || a.codigo.localeCompare(b.codigo, 'pt-BR'))
-  }, [dados.atividades, dados.escolas, escolaId])
-
-  return <section className="execucao-projetos">
-    <div className="analises-cabecalho">
-      <h2>Tempo de execução dos projetos</h2>
-      <p>Considera todas as disciplinas e calcula a união dos intervalos das barras. Cada data coberta por pelo menos uma atividade conta uma vez, mesmo com atividades simultâneas; datas entre intervalos sem atividade são pausas.</p>
+  return <section className="execucao-projetos painel-grafico">
+    <div className="painel-cabecalho"><div><span className="dashboard-sobretitulo">CONTEXTO COMPLETO DO PROJETO</span><h3>Execução e pausas</h3><p>Compare o tempo com atividades e os intervalos sem registros ao longo da janela de cada projeto.</p></div>
+      <label className="ordenacao-execucao">Ordenar por<select value={ordem} onChange={(e) => setOrdem(e.target.value as typeof ordem)}><option value="pausas">Mais dias de pausa</option><option value="duracao">Maior janela de execução</option></select></label>
     </div>
-    <div className="execucao-legenda"><span><b>Dias de execução</b>: datas da união dos intervalos das atividades</span><span><b>Janela</b>: dias corridos da primeira à última atividade, incluindo pausas</span><span>Fins de semana e feriados contam quando estão dentro de um intervalo de atividade ou de pausa</span></div>
+    <p className="escopo-execucao">Respeita o filtro de projeto. Considera todas as disciplinas, equipes e datas para preservar a linha do tempo completa.</p>
+    <div className="legenda-execucao"><span><i />Dias com atividades</span><span><i />Dias de pausa</span><small>Dias corridos · valores comparáveis por linha</small></div>
+    <div className="ranking-projetos">{(todos ? ordenados : ordenados.slice(0, 6)).map((p) => <button key={p.id} className="execucao-linha" onClick={() => onSelecionar(p.id)} aria-label={`Filtrar projeto ${p.codigo}, ${p.diasAtivos} dias com atividades, ${p.diasPausados} dias de pausa, janela de ${p.diasJanela} dias`}>
+      <strong><i className="bolinha" style={{ background: p.cor }} />{p.codigo}</strong><span className="execucao-trilho"><i style={{ width: `${p.diasAtivos / p.diasJanela * 100}%` }} /><i style={{ width: `${p.diasPausados / p.diasJanela * 100}%` }} /></span><span className="execucao-valores"><b>{p.diasAtivos}</b> execução <span>·</span> <b>{p.diasPausados}</b> pausa <small>{p.diasJanela} dias de janela</small></span>
+    </button>)}</div>
+    {projetos.length > 6 && <button className="botao-discreto" onClick={() => setTodos(!todos)}>{todos ? 'Mostrar os 6 primeiros' : `Ver todos os ${projetos.length} projetos`}</button>}
+    {projetos.length === 0 && <p className="vazio">Nenhum projeto com atividades para exibir.</p>}
+    {projetos.length > 0 && <details className="dados-grafico"><summary>Ver detalhamento completo dos projetos</summary>
     <div className="tabela-rolagem">
       <table className="tabela-execucao">
         <thead><tr><th>Projeto</th><th>Primeira atividade</th><th>Última atividade</th><th>Dias de execução</th><th>Janela total</th><th>Pausas</th><th>Intervalos sem atividade</th></tr></thead>
@@ -77,6 +36,7 @@ export function ExecucaoProjetos({ dados, escolaId }: Props) {
         </tr>)}</tbody>
       </table>
       {projetos.length === 0 && <p className="vazio">Nenhum projeto com atividades concluídas para exibir.</p>}
-    </div>
+    </div></details>}
+    <p className="nota-grafico">Cada dia coberto conta uma vez, mesmo com atividades simultâneas. Fins de semana e feriados entram na janela e nas pausas. Clique em um projeto para filtrar o dashboard.</p>
   </section>
 }

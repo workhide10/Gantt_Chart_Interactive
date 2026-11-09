@@ -26,7 +26,7 @@ export interface Pessoa {
   id: ID
   nome: string
   funcao: string // ex.: "ENG", "TEC", "ARQ", "EST"
-  /** @deprecated Compatibilidade com dados antigos; a composição atual é derivada de VinculoPessoaEquipe. */
+  /** @deprecated Compatibilidade com dados antigos; a formação atual usa ComposicaoEquipe e IntegranteComposicaoEquipe. */
   equipeId?: ID | null
 }
 
@@ -98,7 +98,7 @@ export interface Dados {
   atividades: Atividade[]
   // Opcional para migrar automaticamente dados e backups da versão anterior.
   marcos?: MarcoProjeto[]
-  // Registros antigos mantidos para migração/revisão; o histórico atual usa ComposicaoEquipe.
+  // Arquivo de compatibilidade para migração e backups; sem módulo de edição na interface.
   vinculosEquipe?: VinculoPessoaEquipe[]
   // Formação versionada por equipe e vigência, independente do projeto e das atividades.
   composicoesEquipe?: ComposicaoEquipe[]
