@@ -185,8 +185,11 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Gantt de Equipes</h1>
-        <nav className="seg">
+        <div className="marca">
+          <span className="marca-icone" aria-hidden="true"><i /><i /><i /></span>
+          <div><span className="marca-contexto">PLANEJAMENTO & GESTÃO</span><h1>Gantt de Equipes</h1></div>
+        </div>
+        <nav className="seg navegacao" aria-label="Navegação principal">
           <button className={aba === 'gantt' ? 'ativo' : ''} onClick={() => setAba('gantt')}>Gantt</button>
           <button className={aba === 'atividades' ? 'ativo' : ''} onClick={() => setAba('atividades')}>Atividades</button>
           <button className={aba === 'marcos' ? 'ativo' : ''} onClick={() => setAba('marcos')}>Marcos</button>
