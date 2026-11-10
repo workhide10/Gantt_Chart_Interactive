@@ -26,7 +26,7 @@ export interface Pessoa {
   id: ID
   nome: string
   funcao: string // ex.: "ENG", "TEC", "ARQ", "EST"
-  /** @deprecated Compatibilidade com dados antigos; a composição atual é derivada de VinculoPessoaEquipe. */
+  /** @deprecated Compatibilidade com dados antigos; a formação atual usa ComposicaoEquipe e IntegranteComposicaoEquipe. */
   equipeId?: ID | null
 }
 
@@ -52,6 +52,23 @@ export interface IntegranteComposicaoEquipe {
   id: ID
   composicaoId: ID
   pessoaId: ID
+}
+
+/** Evento único que agrupa uma troca em lote ou saída de integrantes. */
+export interface EventoEquipe {
+  id: ID
+  disciplinaId: ID
+  data: string
+}
+
+/** Vínculo de movimentação de uma pessoa dentro do evento (destino null = saída). */
+export interface MovimentacaoIntegrante {
+  id: ID
+  eventoId: ID
+  pessoaId: ID
+  equipeOrigemId: ID
+  equipeDestinoId: ID | null
+  motivo?: string
 }
 
 export interface Atividade {
@@ -81,11 +98,13 @@ export interface Dados {
   atividades: Atividade[]
   // Opcional para migrar automaticamente dados e backups da versão anterior.
   marcos?: MarcoProjeto[]
-  // Registros antigos mantidos para migração/revisão; o histórico atual usa ComposicaoEquipe.
+  // Arquivo de compatibilidade para migração e backups; sem módulo de edição na interface.
   vinculosEquipe?: VinculoPessoaEquipe[]
   // Formação versionada por equipe e vigência, independente do projeto e das atividades.
   composicoesEquipe?: ComposicaoEquipe[]
   integrantesComposicao?: IntegranteComposicaoEquipe[]
+  eventosEquipe?: EventoEquipe[]
+  movimentacoesEquipe?: MovimentacaoIntegrante[]
   // Controle de migrações de dados de referência executadas uma única vez.
   fontesImportadas?: string[]
 }

@@ -25,7 +25,15 @@ export const segundaDe = (iso: string): string => {
 
 export const formatarBR = (iso: string): string => iso.split('-').reverse().join('/')
 
-export const hojeISO = (): string => paraISO(new Date())
+// A data civil do usuário pode ser diferente da data UTC após as 21h no Brasil.
+export const hojeISO = (agora = new Date()): string =>
+  `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`
+
+export const dataISOValida = (valor: unknown): valor is string => {
+  if (typeof valor !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(valor)) return false
+  const data = paraDate(valor)
+  return Number.isFinite(data.getTime()) && paraISO(data) === valor
+}
 
 export const sobrepoe = (
   a: { inicio: string; fim: string },
@@ -34,12 +42,24 @@ export const sobrepoe = (
 
 // Dias úteis (seg–sex, sem feriados) entre duas datas, inclusive.
 export const diasUteis = (inicio: string, fim: string, feriados: string[]): number => {
-  let total = 0
-  for (let d = inicio; d <= fim; d = somarDias(d, 1)) {
-    const dow = paraDate(d).getUTCDay()
-    if (dow !== 0 && dow !== 6 && !feriados.includes(d)) total++
+  const dias = difDias(inicio, fim) + 1
+  if (dias <= 0) return 0
+  const semanas = Math.floor(dias / 7)
+  let uteis = semanas * 5
+  const resto = dias % 7
+  const primeiroDia = paraDate(inicio).getUTCDay()
+  for (let i = 0; i < resto; i++) {
+    const diaSemana = (primeiroDia + i) % 7
+    if (diaSemana !== 0 && diaSemana !== 6) uteis++
   }
-  return total
+  const conjuntoFeriados = new Set(feriados)
+  for (const feriado of conjuntoFeriados) {
+    if (feriado >= inicio && feriado <= fim) {
+      const diaSemana = paraDate(feriado).getUTCDay()
+      if (diaSemana !== 0 && diaSemana !== 6) uteis--
+    }
+  }
+  return uteis
 }
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']

@@ -1,3 +1,5 @@
+import { useLayoutEffect, useRef, useState } from 'react'
+
 // Tabela genérica para cadastrar/editar/excluir registros (Escola, Disciplina, Equipe, Pessoa).
 // O "<T extends { id: string }>" significa: funciona para qualquer tipo que tenha um campo id.
 
@@ -15,10 +17,25 @@ interface Props<T extends { id: string }> {
   onChange: (novos: T[]) => void
   criarNovo: () => T
   motivoBloqueio: (item: T) => string | null // se devolver texto, a exclusão é bloqueada
+  bloqueioAdicionar?: string
 }
 
-export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onChange, criarNovo, motivoBloqueio }: Props<T>) {
-  const alterar = (id: string, chave: string, valor: string | null) =>
+export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onChange, criarNovo, motivoBloqueio, bloqueioAdicionar }: Props<T>) {
+  const tabelaRef = useRef<HTMLDivElement>(null)
+  const [novoId, setNovoId] = useState<string | null>(null)
+  useLayoutEffect(() => {
+    if (!novoId) return
+    const linha = Array.from(tabelaRef.current?.querySelectorAll<HTMLTableRowElement>('tr[data-id]') ?? []).find((elemento) => elemento.dataset.id === novoId)
+    linha?.querySelector<HTMLElement>('input, select')?.focus()
+    linha?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [novoId])
+  const adicionar = () => {
+    if (bloqueioAdicionar) return
+    const novo = criarNovo()
+    onChange([...itens, novo])
+    setNovoId(novo.id)
+  }
+  const alterar = (id: string, chave: keyof T & string, valor: string | null) =>
     onChange(itens.map((i) => (i.id === id ? ({ ...i, [chave]: valor } as T) : i)))
 
   const excluir = (item: T) => {
@@ -28,7 +45,9 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
   }
 
   return (
-    <div className="tabela-rolagem">
+    <div ref={tabelaRef}>
+      <div className="lista-ferramentas"><p className="dica">{bloqueioAdicionar || 'Edite diretamente nos campos. As alterações são salvas automaticamente neste navegador.'}</p><button className="primario" disabled={Boolean(bloqueioAdicionar)} title={bloqueioAdicionar} onClick={adicionar}>+ Adicionar</button></div>
+      <div className="tabela-rolagem">
       <table>
         <thead>
           <tr>
@@ -38,13 +57,13 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
         </thead>
         <tbody>
           {itens.map((item) => (
-            <tr key={item.id}>
+            <tr key={item.id} data-id={item.id}>
               {colunas.map((c) => {
                 const valor = String(item[c.chave] ?? '')
                 return (
                   <td key={c.chave}>
                     {c.tipo === 'select' ? (
-                      <select value={valor} onChange={(e) => alterar(item.id, c.chave, e.target.value === '' && c.permiteVazio ? null : e.target.value)}>
+                      <select aria-label={c.titulo} value={valor} onChange={(e) => alterar(item.id, c.chave, e.target.value === '' && c.permiteVazio ? null : e.target.value)}>
                         {c.permiteVazio && <option value="">—</option>}
                         {c.opcoes?.map((o) => <option key={o.valor} value={o.valor}>{o.rotulo}</option>)}
                       </select>
@@ -52,6 +71,7 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
                       <input
                         type={c.tipo === 'cor' ? 'color' : 'text'}
                         value={valor}
+                        aria-label={c.titulo}
                         onChange={(e) => alterar(item.id, c.chave, e.target.value)}
                       />
                     )}
@@ -63,7 +83,8 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
           ))}
         </tbody>
       </table>
-      <button className="primario" style={{ marginTop: 8 }} onClick={() => onChange([...itens, criarNovo()])}>+ Adicionar</button>
+      {itens.length === 0 && <p className="vazio">Nenhum registro. Use “Adicionar” para começar.</p>}
+      </div>
     </div>
   )
 }

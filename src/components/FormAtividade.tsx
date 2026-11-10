@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Atividade, Dados } from '../types'
-import { formatarBR, sobrepoe } from '../lib/datas'
+import { dataISOValida, diasUteis, formatarBR, hojeISO, sobrepoe } from '../lib/datas'
+import { feriados } from '../data/inicial'
 
 interface Props {
   dados: Dados
   inicial: Partial<Atividade>
-  onSalvar: (atividade: Atividade) => void
+  onSalvar: (atividade: Atividade, continuar?: boolean) => void
   onExcluir: (id: string) => void
   onCancelar: () => void
 }
@@ -13,72 +14,102 @@ interface Props {
 export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar }: Props) {
   const [escolaId, setEscolaId] = useState(inicial.escolaId ?? '')
   const [equipeId, setEquipeId] = useState(inicial.equipeId ?? '')
-  const [inicio, setInicio] = useState(inicial.inicio ?? '')
-  const [fim, setFim] = useState(inicial.fim ?? '')
+  const [inicio, setInicio] = useState(inicial.inicio ?? hojeISO())
+  const [fim, setFim] = useState(inicial.fim ?? inicial.inicio ?? hojeISO())
   const [titulo, setTitulo] = useState(inicial.titulo ?? '')
   const [descricao, setDescricao] = useState(inicial.descricao ?? '')
+  const [salvo, setSalvo] = useState(false)
+  const dialogoRef = useRef<HTMLDialogElement>(null)
+  const tituloRef = useRef<HTMLInputElement>(null)
   const edicao = Boolean(inicial.id)
-  const erro =
-    !escolaId || !equipeId ? 'Escolha o projeto e a equipe.'
-    : !inicio || !fim ? 'Informe as datas de início e fim.'
-    : fim < inicio ? 'A data final não pode ser antes da inicial.'
+  const valores = JSON.stringify({ escolaId, equipeId, inicio, fim, titulo, descricao })
+  const referencia = useRef(valores)
+
+  useEffect(() => {
+    const dialogo = dialogoRef.current
+    dialogo?.showModal()
+    return () => dialogo?.close()
+  }, [])
+
+  const cancelar = () => {
+    if (valores !== referencia.current && !confirm('Descartar as alterações desta atividade?')) return
+    onCancelar()
+  }
+  const erro = !dados.escolas.some((p) => p.id === escolaId) ? 'Selecione um projeto.'
+    : !dados.equipes.some((e) => e.id === equipeId) ? 'Selecione uma equipe.'
+    : !dataISOValida(inicio) || !dataISOValida(fim) ? 'Informe datas válidas de início e fim.'
+    : fim < inicio ? 'A data final não pode ser anterior à inicial.'
     : ''
   const conflitos = erro ? [] : dados.atividades.filter((a) =>
     a.id !== inicial.id && a.equipeId === equipeId && sobrepoe(a, { inicio, fim }),
   )
+  const equipe = dados.equipes.find((e) => e.id === equipeId)
+  const disciplina = dados.disciplinas.find((d) => d.id === equipe?.disciplinaId)
 
-  const salvar = () => {
-    if (erro) return
-    onSalvar({
-      id: inicial.id ?? crypto.randomUUID(),
-      escolaId,
-      equipeId,
-      inicio,
-      fim,
-      titulo: titulo.trim(),
-      descricao: descricao.trim(),
-    })
+  const salvar = (continuar = false) => {
+    if (erro || salvo) return
+    onSalvar({ id: inicial.id ?? crypto.randomUUID(), escolaId, equipeId, inicio, fim,
+      titulo: titulo.trim(), descricao: descricao.trim() }, continuar)
+    if (continuar) {
+      setTitulo('')
+      setDescricao('')
+      setSalvo(true)
+      referencia.current = JSON.stringify({ escolaId, equipeId, inicio, fim, titulo: '', descricao: '' })
+      tituloRef.current?.focus()
+    }
   }
 
   return (
-    <div className="modal-fundo" onClick={onCancelar}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h2>{edicao ? 'Editar atividade concluída' : 'Nova atividade concluída'}</h2>
-        <label>Projeto
-          <select value={escolaId} onChange={(e) => setEscolaId(e.target.value)}>
-            <option value="">Selecione…</option>
-            {dados.escolas.map((p) => <option key={p.id} value={p.id}>{p.codigo} – {p.nome}</option>)}
-          </select>
-        </label>
-        <label>Equipe
-          <select value={equipeId} onChange={(e) => setEquipeId(e.target.value)}>
-            <option value="">Selecione…</option>
-            {dados.equipes.map((q) => <option key={q.id} value={q.id}>{q.nome}</option>)}
-          </select>
-        </label>
+    <dialog ref={dialogoRef} className="modal-fundo dialogo-nativo" aria-labelledby="atividade-titulo"
+      onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }}
+      onCancel={(e) => { e.preventDefault(); cancelar() }}
+      onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}>
+      <form className="modal" onSubmit={(e) => { e.preventDefault(); salvar() }} onChange={() => setSalvo(false)}>
+        <div className="modal-cabecalho"><div>
+          <h2 id="atividade-titulo">{edicao ? 'Editar atividade' : 'Nova atividade'}</h2>
+          <p className="texto-suave">Projeto, equipe e período definem a atividade. Os demais campos são opcionais.</p>
+        </div><button type="button" className="fechar-modal" onClick={cancelar} aria-label="Fechar atividade">×</button></div>
+        <div className="duas-colunas">
+          <label>Projeto
+            <select required autoFocus={!escolaId} value={escolaId} onChange={(e) => setEscolaId(e.target.value)}>
+              <option value="">Selecione…</option>
+              {dados.escolas.map((p) => <option key={p.id} value={p.id}>{p.codigo} – {p.nome}</option>)}
+            </select>
+          </label>
+          <label>Equipe
+            <select required autoFocus={Boolean(escolaId) && !equipeId} value={equipeId} onChange={(e) => setEquipeId(e.target.value)}>
+              <option value="">Selecione…</option>
+              {dados.equipes.map((q) => <option key={q.id} value={q.id}>{q.nome}</option>)}
+            </select>
+          </label>
+        </div>
+        {disciplina && <p className="texto-suave">Disciplina da equipe: <strong>{disciplina.sigla}</strong></p>}
         <label>Etapa / atividade (opcional)
-          <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Ex.: Compatibilização" />
+          <input ref={tituloRef} autoFocus={Boolean(escolaId && equipeId)} type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Ex.: Compatibilização" />
         </label>
         <div className="duas-colunas">
           <label>Início
-            <input type="date" value={inicio} onChange={(e) => { setInicio(e.target.value); if (!fim || fim < e.target.value) setFim(e.target.value) }} />
+            <input required type="date" value={inicio} onChange={(e) => { setInicio(e.target.value); if (!fim || fim < e.target.value) setFim(e.target.value) }} />
           </label>
           <label>Fim
-            <input type="date" value={fim} min={inicio} onChange={(e) => setFim(e.target.value)} />
+            <input required type="date" value={fim} min={inicio} onChange={(e) => setFim(e.target.value)} />
           </label>
         </div>
+        {!erro && <p className="texto-suave">Duração: <strong>{diasUteis(inicio, fim, feriados)} dia(s) útil(eis)</strong>. A composição da equipe é consultada automaticamente pelo período.</p>}
         <label>Descrição (opcional)
           <textarea rows={2} value={descricao} onChange={(e) => setDescricao(e.target.value)} />
         </label>
-        {erro && <p className="erro">{erro}</p>}
-        {conflitos.length > 0 && <p className="aviso">Esta equipe já possui {conflitos.length} atividade(s) sobreposta(s): {conflitos.map((a) => `${dados.escolas.find((p) => p.id === a.escolaId)?.codigo} (${formatarBR(a.inicio)}–${formatarBR(a.fim)})`).join(', ')}</p>}
+        {erro && <p className="orientacao" aria-live="polite">{erro}</p>}
+        {conflitos.length > 0 && <p className="aviso">Há {conflitos.length} atividade(s) sobreposta(s) nesta equipe. Você pode salvar mesmo assim: {conflitos.map((a) => `${dados.escolas.find((p) => p.id === a.escolaId)?.codigo} (${formatarBR(a.inicio)}–${formatarBR(a.fim)})`).join(', ')}</p>}
+        {salvo && <p className="sucesso" role="status">Atividade salva. Projeto, equipe e datas foram mantidos para o próximo registro.</p>}
         <div className="acoes">
-          {edicao && <button className="perigo" onClick={() => { if (confirm('Excluir esta atividade?')) onExcluir(inicial.id!) }}>Excluir</button>}
+          {edicao && <button type="button" className="perigo" onClick={() => { if (confirm('Excluir esta atividade?')) onExcluir(inicial.id!) }}>Excluir</button>}
           <span style={{ flex: 1 }} />
-          <button onClick={onCancelar}>Cancelar</button>
-          <button className="primario" disabled={Boolean(erro)} onClick={salvar}>Salvar atividade</button>
+          <button type="button" onClick={cancelar}>{salvo ? 'Concluir' : 'Cancelar'}</button>
+          {!edicao && <button type="button" disabled={Boolean(erro) || salvo} onClick={() => salvar(true)}>Salvar e criar outra</button>}
+          <button type="submit" className="primario" disabled={Boolean(erro) || salvo}>Salvar atividade</button>
         </div>
-      </div>
-    </div>
+      </form>
+    </dialog>
   )
 }

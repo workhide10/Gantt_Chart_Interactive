@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
-import type { Atividade, Dados, Filtros, MarcoProjeto } from '../types'
+import { createPortal } from 'react-dom'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
+import type { Atividade, ComposicaoEquipe, Dados, EventoEquipe, Filtros, MarcoProjeto } from '../types'
 import { feriados } from '../data/inicial'
 import { difDias, formatarBR, hojeISO, nomeMes, segundaDe, somarDias } from '../lib/datas'
 import { empacotar } from '../lib/gantt'
 import { filtrarAtividades } from '../lib/filtrar'
-import { integrantesNaAtividade } from '../lib/composicao'
+import { criarIndiceComposicoes, integrantesNaAtividade } from '../lib/composicao'
 
 const LARGURA_ROTULO = 150
 const ALTURA_BARRA = 22
@@ -23,12 +24,21 @@ interface SessaoRedimensionamento {
   previa: Atividade
 }
 
+interface TooltipFlutuante {
+  conteudo: ReactNode
+  ancora: DOMRect
+  left: number
+  top: number
+}
+
 interface Linha {
   id: string
   rotulo: string
   cor?: string
   atividades: Atividade[]
   marcos?: MarcoProjeto[]
+  composicoes?: ComposicaoEquipe[]
+  eventosEquipe?: EventoEquipe[]
 }
 
 interface Props {
@@ -44,22 +54,96 @@ interface Props {
 export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco, onRedimensionar }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
   const [escala, setEscala] = useState<EscalaTemporal>('meses')
+  const [escolasOcultas, setEscolasOcultas] = useState<Set<string>>(() => new Set())
   const ganttRef = useRef<HTMLDivElement>(null)
   const [larguraVisivel, setLarguraVisivel] = useState(0)
   const [redimensionamento, setRedimensionamento] = useState<SessaoRedimensionamento | null>(null)
   const redimensionamentoRef = useRef<SessaoRedimensionamento | null>(null)
+  const [tooltip, setTooltip] = useState<TooltipFlutuante | null>(null)
+  const tooltipRef = useRef<HTMLDivElement>(null)
+  const tooltipTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const ocultarTooltip = () => {
+    if (tooltipTimer.current) clearTimeout(tooltipTimer.current)
+    tooltipTimer.current = null
+    setTooltip(null)
+  }
+
+  const agendarTooltip = (event: ReactMouseEvent<HTMLElement>, obterConteudo: ReactNode | (() => ReactNode)) => {
+    if (tooltipTimer.current) clearTimeout(tooltipTimer.current)
+    const elemento = event.currentTarget
+    tooltipTimer.current = setTimeout(() => {
+      setTooltip({ conteudo: typeof obterConteudo === 'function' ? obterConteudo() : obterConteudo, ancora: elemento.getBoundingClientRect(), left: 12, top: 12 })
+    }, 650)
+  }
+
+  useLayoutEffect(() => {
+    if (!tooltip || !tooltipRef.current) return
+    const caixa = tooltipRef.current.getBoundingClientRect()
+    const margem = 10
+    const larguraViewport = window.innerWidth
+    const alturaViewport = window.innerHeight
+    let left = tooltip.ancora.left + tooltip.ancora.width / 2 - caixa.width / 2
+    if (left + caixa.width > larguraViewport - margem) left = tooltip.ancora.right - caixa.width
+    left = Math.max(margem, Math.min(left, larguraViewport - caixa.width - margem))
+    let top = tooltip.ancora.bottom + 8
+    if (top + caixa.height > alturaViewport - margem) top = tooltip.ancora.top - caixa.height - 8
+    top = Math.max(margem, Math.min(top, alturaViewport - caixa.height - margem))
+    if (left !== tooltip.left || top !== tooltip.top) setTooltip((atual) => atual ? { ...atual, left, top } : atual)
+  }, [tooltip?.ancora])
+
+  useEffect(() => () => { if (tooltipTimer.current) clearTimeout(tooltipTimer.current) }, [])
 
   const visiveis = useMemo(() => filtrarAtividades(dados, filtros), [dados, filtros])
+  const atividadesDoDiagrama = useMemo(() => filtros.escolaId
+    ? visiveis
+    : visiveis.filter((atividade) => !escolasOcultas.has(atividade.escolaId)), [escolasOcultas, filtros.escolaId, visiveis])
+  const indiceComposicoes = useMemo(() => criarIndiceComposicoes(dados), [dados.composicoesEquipe, dados.integrantesComposicao, dados.pessoas])
+  const atividadesPorEquipe = useMemo(() => {
+    const mapa = new Map<string, Atividade[]>()
+    for (const atividade of atividadesDoDiagrama) {
+      const lista = mapa.get(atividade.equipeId) ?? []
+      lista.push(atividade)
+      mapa.set(atividade.equipeId, lista)
+    }
+    return mapa
+  }, [atividadesDoDiagrama])
+  const atividadesPorEscola = useMemo(() => {
+    const mapa = new Map<string, Atividade[]>()
+    for (const atividade of atividadesDoDiagrama) {
+      const lista = mapa.get(atividade.escolaId) ?? []
+      lista.push(atividade)
+      mapa.set(atividade.escolaId, lista)
+    }
+    return mapa
+  }, [atividadesDoDiagrama])
+  const escolaPorId = useMemo(() => new Map(dados.escolas.map((item) => [item.id, item])), [dados.escolas])
+  const equipePorId = useMemo(() => new Map(dados.equipes.map((item) => [item.id, item])), [dados.equipes])
+
+  useEffect(() => {
+    if (filtros.escolaId) setEscolasOcultas(new Set())
+  }, [filtros.escolaId])
+
+  const alternarEscola = (escolaId: string) => setEscolasOcultas((atuais) => {
+    const novas = new Set(atuais)
+    if (novas.has(escolaId)) novas.delete(escolaId)
+    else novas.add(escolaId)
+    return novas
+  })
 
   // Período mostrado: da primeira à última atividade cadastrada (sempre em semanas completas).
   const { inicio, totalDias } = useMemo(() => {
-    const datas = [...dados.atividades.flatMap((a) => [a.inicio, a.fim]), ...marcos.map((m) => m.data)]
+    const datas = [...dados.atividades.flatMap((a) => [a.inicio, a.fim]), ...marcos.map((m) => m.data),
+      ...(agrupar === 'equipe' ? [
+        ...(dados.composicoesEquipe ?? []).flatMap((c) => [c.inicio, ...(c.fim ? [c.fim] : [])]),
+        ...(dados.eventosEquipe ?? []).map((evento) => evento.data),
+      ] : [])]
     const menor = datas.length ? datas.reduce((m, d) => d < m ? d : m, datas[0]) : hojeISO()
     const maior = datas.length ? datas.reduce((m, d) => d > m ? d : m, datas[0]) : somarDias(hojeISO(), 60)
     const ini = segundaDe(menor)
     const fim = somarDias(segundaDe(maior), 6)
     return { inicio: ini, totalDias: difDias(ini, fim) + 1 }
-  }, [dados.atividades, marcos])
+  }, [agrupar, dados.atividades, dados.composicoesEquipe, dados.eventosEquipe, marcos])
 
   useEffect(() => {
     const area = ganttRef.current
@@ -151,20 +235,38 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
 
   // Linhas conforme o agrupamento escolhido
   const linhas: Linha[] = useMemo(() => {
-    const marcosProjeto = marcos.filter((m) => !filtros.escolaId || m.escolaId === filtros.escolaId)
+    const marcosProjeto = marcos.filter((m) => (!filtros.escolaId || m.escolaId === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(m.escolaId)))
     if (agrupar === 'equipe') {
+      const composicoesPorEquipe = new Map<string, ComposicaoEquipe[]>()
+      for (const composicao of dados.composicoesEquipe ?? []) {
+        const lista = composicoesPorEquipe.get(composicao.equipeId) ?? []
+        lista.push(composicao)
+        composicoesPorEquipe.set(composicao.equipeId, lista)
+      }
+      for (const lista of composicoesPorEquipe.values()) lista.sort((a, b) => a.inicio.localeCompare(b.inicio))
+      const eventosPorEquipe = new Map<string, Set<string>>()
+      const eventoPorId = new Map((dados.eventosEquipe ?? []).map((evento) => [evento.id, evento]))
+      for (const movimento of dados.movimentacoesEquipe ?? []) {
+        const evento = eventoPorId.get(movimento.eventoId)
+        if (!evento) continue
+        for (const equipeId of [movimento.equipeOrigemId, movimento.equipeDestinoId].filter(Boolean) as string[]) {
+          const ids = eventosPorEquipe.get(equipeId) ?? new Set<string>()
+          ids.add(evento.id)
+          eventosPorEquipe.set(equipeId, ids)
+        }
+      }
       return dados.equipes
         .filter((e) => (!filtros.equipeId || e.id === filtros.equipeId) && (!filtros.disciplinaId || e.disciplinaId === filtros.disciplinaId))
-        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: visiveis.filter((a) => a.equipeId === e.id) }))
+        .map((e) => ({ id: e.id, rotulo: e.nome, atividades: atividadesPorEquipe.get(e.id) ?? [], composicoes: composicoesPorEquipe.get(e.id) ?? [], eventosEquipe: [...(eventosPorEquipe.get(e.id) ?? [])].map((id) => eventoPorId.get(id)!).filter(Boolean) }))
     }
     return dados.escolas
-      .filter((s) => !filtros.escolaId || s.id === filtros.escolaId)
-      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: visiveis.filter((a) => a.escolaId === s.id), marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
+      .filter((s) => (!filtros.escolaId || s.id === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(s.id)))
+      .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: atividadesPorEscola.get(s.id) ?? [], marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
       .filter((l) => l.atividades.length > 0 || (l.marcos?.length ?? 0) > 0)
-  }, [agrupar, dados.equipes, dados.escolas, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos, visiveis])
+  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesPorEquipe, atividadesPorEscola, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
 
-  const escola = (id: string) => dados.escolas.find((e) => e.id === id)
-  const equipe = (id: string) => dados.equipes.find((e) => e.id === id)
+  const escola = (id: string) => escolaPorId.get(id)
+  const equipe = (id: string) => equipePorId.get(id)
 
   const hoje = hojeISO()
   const marcadores = (
@@ -180,7 +282,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
     </>
   )
 
-  const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.map((m) => m.escolaId)])].map(escola).filter(Boolean)
+  const escolasNaTela = [...new Set([...visiveis.map((a) => a.escolaId), ...marcos.filter((m) => !filtros.escolaId || m.escolaId === filtros.escolaId).map((m) => m.escolaId)])].map(escola).filter(Boolean)
   const diasDoEixo = escala === 'semanas'
     ? Array.from({ length: totalDias }, (_, dia) => somarDias(inicio, dia))
     : []
@@ -190,7 +292,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
       <div className="gantt-controles">
         <div className="seg">
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>
-          <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por escola</button>
+          <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por projeto</button>
         </div>
         <div className="seg escala-temporal" aria-label="Escala temporal do Gantt">
           <button onClick={() => {
@@ -203,21 +305,23 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
           <button className={escala === 'meses' ? 'ativo' : ''} onClick={() => setEscala('meses')}>Meses</button>
           <button className={escala === 'trimestres' ? 'ativo' : ''} onClick={() => setEscala('trimestres')}>Trimestres</button>
         </div>
-        <span className="dica">Clique numa barra para editar; no agrupamento por projeto, ◆ identifica um marco concluído.</span>
+        <span className="dica">Clique no espaço livre para criar uma atividade na data escolhida. Clique em uma barra para editar ou arraste suas extremidades para ajustar o período. {agrupar === 'equipe' ? 'Os marcadores roxos indicam mudanças de composição.' : '◆ identifica um marco concluído.'}</span>
       </div>
 
       <div className="legenda">
         {escolasNaTela.map((s) => s && (
-          <span key={s.id} className="chip" title={s.nome}>
+          <button key={s.id} type="button" className={`chip chip-escola${!filtros.escolaId && escolasOcultas.has(s.id) ? ' chip-escola-oculta' : ''}`} title={!filtros.escolaId ? `${s.nome} — clique para ${escolasOcultas.has(s.id) ? 'exibir' : 'ocultar'}` : s.nome} aria-pressed={!filtros.escolaId ? !escolasOcultas.has(s.id) : true} disabled={Boolean(filtros.escolaId)} onClick={() => alternarEscola(s.id)}>
             <i style={{ background: s.cor }} /> {s.codigo}
-          </span>
+          </button>
         ))}
+        {!filtros.escolaId && <span className="dica legenda-ajuda">Clique nas siglas para ocultar ou exibir projetos.</span>}
+        {!filtros.escolaId && escolasOcultas.size > 0 && <button className="chip" onClick={() => setEscolasOcultas(new Set())}>Exibir todos os projetos</button>}
       </div>
 
-      <div className="gantt-rolagem" ref={ganttRef}>
+      <div className="gantt-rolagem" ref={ganttRef} onScroll={ocultarTooltip}>
         <div className="gantt" style={{ width: LARGURA_ROTULO + larguraTrilha }}>
           <div className="gantt-cab">
-            <div className="rotulo" style={{ width: LARGURA_ROTULO }}>{agrupar === 'equipe' ? 'Equipe' : 'Escola'}</div>
+            <div className="rotulo" style={{ width: LARGURA_ROTULO }}>{agrupar === 'equipe' ? 'Equipe' : 'Projeto'}</div>
             <div className="cab-trilha" style={{ width: larguraTrilha }}>
               <div className="cab-linha">
                 {periodosMaiores.map((m) => (
@@ -270,27 +374,59 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                       type="button"
                       className="marco-gantt"
                       style={{ left: difDias(inicio, marco.data) * pxDia, top: 2 }}
-                      title={`${marco.titulo} · ${formatarBR(marco.data)}${marco.observacao ? `\n${marco.observacao}` : ''}`}
                       aria-label={`Editar marco ${marco.titulo}, ${formatarBR(marco.data)}`}
-                      onClick={(e) => { e.stopPropagation(); onEditarMarco(marco) }}
+                      onMouseEnter={(e) => agendarTooltip(e, <><strong>{marco.titulo}</strong><div>Data: {formatarBR(marco.data)}</div>{marco.observacao && <div>{marco.observacao}</div>}<small>Clique para editar o marco</small></>)}
+                      onMouseLeave={ocultarTooltip}
+                      onClick={(e) => { e.stopPropagation(); ocultarTooltip(); onEditarMarco(marco) }}
                     >◆</button>
                   ))}
+                  {agrupar === 'equipe' && [...new Set([...(linha.composicoes?.slice(1).map((c) => c.inicio) ?? []), ...(linha.eventosEquipe?.map((e) => e.data) ?? [])])].map((data) => {
+                    const composicao = linha.composicoes?.find((c) => c.inicio === data)
+                    const indice = composicao ? linha.composicoes?.findIndex((c) => c.id === composicao.id) ?? -1 : -1
+                    const anterior = indice > 0 ? linha.composicoes?.[indice - 1] : undefined
+                    const antes = new Set((dados.integrantesComposicao ?? []).filter((m) => m.composicaoId === anterior?.id).map((m) => m.pessoaId))
+                    const depois = new Set((dados.integrantesComposicao ?? []).filter((m) => m.composicaoId === composicao?.id).map((m) => m.pessoaId))
+                    const entraram = [...depois].filter((id) => !antes.has(id)).map((id) => dados.pessoas.find((p) => p.id === id)?.nome ?? 'Pessoa removida')
+                    const sairam = [...antes].filter((id) => !depois.has(id)).map((id) => dados.pessoas.find((p) => p.id === id)?.nome ?? 'Pessoa removida')
+                    const eventos = (linha.eventosEquipe ?? []).filter((e) => e.data === data)
+                    const movimentacoes = (dados.movimentacoesEquipe ?? []).filter((m) => eventos.some((e) => e.id === m.eventoId))
+                    const detalhesEventos = movimentacoes.map((m) => {
+                      const pessoa = dados.pessoas.find((p) => p.id === m.pessoaId)?.nome ?? 'Pessoa removida'
+                      const origem = dados.equipes.find((e) => e.id === m.equipeOrigemId)?.nome ?? 'Equipe removida'
+                      const destino = m.equipeDestinoId ? dados.equipes.find((e) => e.id === m.equipeDestinoId)?.nome ?? 'Equipe removida' : null
+                      return destino ? `${pessoa}: ${origem} → ${destino}` : `${pessoa} saiu de ${origem}${m.motivo ? ` · Motivo: ${m.motivo}` : ''}`
+                    })
+                    const delta = [entraram.length ? `Entraram: ${entraram.join(', ')}` : '', sairam.length ? `Saíram: ${sairam.join(', ')}` : ''].filter(Boolean).join('\n')
+                    const detalhe = [...detalhesEventos, ...(!detalhesEventos.length && delta ? [delta] : [])].join('\n') || 'Mudança de composição registrada.'
+                    const linhasDetalhe = detalhe.split('\n')
+                    return <span key={`${linha.id}-${data}`} className="marco-equipe-gantt" style={{ left: difDias(inicio, data) * pxDia, height: '100%' }}>
+                      <i aria-label={`Movimentação de equipe em ${formatarBR(data)}: ${detalhe.replace(/\n/g, '; ')}`} onMouseEnter={(e) => agendarTooltip(e, <><strong>Movimentação · {formatarBR(data)}</strong>{linhasDetalhe.map((linhaTexto, i) => <div key={i}>{linhaTexto}</div>)}</>)} onMouseLeave={ocultarTooltip} onClick={(e) => e.stopPropagation()} />
+                    </span>
+                  })}
                   {itens.map(({ atividade: a, faixa, conflito }) => {
                     const atividadeVisual = redimensionamento?.atividade.id === a.id ? redimensionamento.previa : a
                     const s = escola(a.escolaId)
                     const eq = equipe(a.equipeId)
                     const texto = agrupar === 'equipe' ? s?.codigo : eq?.nome
-                    const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual)
-                    const textoIntegrantes = integrantesNoPeriodo.length
-                      ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }) =>
-                          `• ${pessoa?.nome ?? 'Pessoa removida'}${pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · ${formatarBR(inicioVinculo)} a ${formatarBR(fimVinculo)}`,
-                        ).join('\n')
-                      : 'Nenhuma formação registrada para esta equipe neste período.'
-                    const legadosSemProjeto = (dados.vinculosEquipe ?? []).filter((v) => v.equipeId === a.equipeId && !v.projetoId).length
-                    const informacaoIntegrantes = `\nComposição registrada no período:\n${textoIntegrantes}${legadosSemProjeto ? `\nHá ${legadosSemProjeto} vínculo(s) legado(s) sem projeto para revisar em Cadastros → Pendências antigas.` : ''}`
+                    const obterConteudoTooltip = () => {
+                      const integrantesNoPeriodo = integrantesNaAtividade(dados, atividadeVisual, indiceComposicoes)
+                      return <>
+                        <strong>{s?.nome ?? '?'} · {eq?.nome ?? '?'}</strong>
+                        {a.titulo && <div className="gantt-tooltip-etapa">{a.titulo}</div>}
+                        <div>{formatarBR(atividadeVisual.inicio)} a {formatarBR(atividadeVisual.fim)}</div>
+                        {a.descricao && <div className="gantt-tooltip-descricao">{a.descricao}</div>}
+                        <div className="gantt-tooltip-grupo"><b>Composição no período</b>
+                          {integrantesNoPeriodo.length ? integrantesNoPeriodo.map(({ pessoa, inicio: inicioVinculo, fim: fimVinculo }, i) => <div key={`${pessoa?.id ?? 'removida'}-${i}`}>• {pessoa?.nome ?? 'Pessoa removida'}{pessoa?.funcao ? ` (${pessoa.funcao})` : ''} · {formatarBR(inicioVinculo)} a {formatarBR(fimVinculo)}</div>) : <div>Nenhuma formação registrada nesta equipe no período.</div>}
+                        </div>
+                        {conflito && agrupar === 'equipe' && <div className="gantt-tooltip-alerta">⚠ Sobrepõe outra atividade da equipe</div>}
+                      </>
+                    }
                     return (
                       <div
                         key={a.id}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Editar atividade ${a.titulo || s?.codigo || ''}, ${eq?.nome ?? ''}, de ${formatarBR(a.inicio)} a ${formatarBR(a.fim)}`}
                         className={'barra' + (conflito && agrupar === 'equipe' ? ' conflito' : '')}
                         style={{
                           left: difDias(inicio, atividadeVisual.inicio) * pxDia,
@@ -299,9 +435,15 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                           height: ALTURA_BARRA,
                           background: s?.cor ?? '#888',
                         }}
-                        title={`${s?.nome ?? '?'} · ${eq?.nome ?? '?'}${a.titulo ? `\n${a.titulo}` : ''}\n${formatarBR(atividadeVisual.inicio)} a ${formatarBR(atividadeVisual.fim)}${a.descricao ? '\n' + a.descricao : ''}${informacaoIntegrantes}${conflito && agrupar === 'equipe' ? '\n⚠ Sobrepõe outra atividade da equipe' : ''}`}
+                        onMouseEnter={(e) => agendarTooltip(e, obterConteudoTooltip)}
+                        onMouseLeave={ocultarTooltip}
+                        onKeyDown={(e) => {
+                          if (e.target !== e.currentTarget) return
+                          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); ocultarTooltip(); onEditar(a) }
+                        }}
                         onClick={(e) => {
                           e.stopPropagation()
+                          ocultarTooltip()
                           onEditar(a)
                         }}
                       >
@@ -310,7 +452,6 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                           type="button"
                           className="barra-resize barra-resize-inicio"
                           aria-label={`Ajustar início de ${texto ?? 'atividade'}`}
-                          title="Arraste para ajustar a data de início"
                           onClick={(e) => e.stopPropagation()}
                           onPointerDown={(e) => iniciarRedimensionamento(e, a, 'inicio')}
                           onPointerMove={moverRedimensionamento}
@@ -321,7 +462,6 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                           type="button"
                           className="barra-resize barra-resize-fim"
                           aria-label={`Ajustar fim de ${texto ?? 'atividade'}`}
-                          title="Arraste para ajustar a data de fim"
                           onClick={(e) => e.stopPropagation()}
                           onPointerDown={(e) => iniciarRedimensionamento(e, a, 'fim')}
                           onPointerMove={moverRedimensionamento}
@@ -338,6 +478,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
           {linhas.length === 0 && <p className="vazio">Nenhuma atividade para os filtros escolhidos.</p>}
         </div>
       </div>
+      {tooltip && createPortal(<div ref={tooltipRef} className="gantt-tooltip" style={{ left: tooltip.left, top: tooltip.top }} role="tooltip">{tooltip.conteudo}</div>, document.body)}
     </section>
   )
 }
