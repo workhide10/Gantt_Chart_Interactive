@@ -64,3 +64,7 @@ export const diasUteis = (inicio: string, fim: string, feriados: string[]): numb
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
 export const nomeMes = (iso: string): string => `${MESES[paraDate(iso).getUTCMonth()]}/${iso.slice(2, 4)}`
+
+// Dias úteis depois da primeira data até a segunda, inclusive.
+export const diasUteisEntreMarcos = (inicio: string, fim: string, feriados: string[]): number =>
+  inicio >= fim ? 0 : diasUteis(somarDias(inicio, 1), fim, feriados)

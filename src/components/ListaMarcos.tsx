@@ -1,6 +1,9 @@
 import { useMemo } from 'react'
 import type { Dados, MarcoProjeto } from '../types'
-import { difDias, formatarBR } from '../lib/datas'
+import { diasUteisEntreMarcos, formatarBR } from '../lib/datas'
+import { feriados } from '../data/inicial'
+
+const intervaloMarcos = (inicio: string, fim: string) => diasUteisEntreMarcos(inicio, fim, feriados)
 
 interface Props {
   dados: Dados
@@ -23,7 +26,7 @@ export function ListaMarcos({ dados, marcos, onEditar, onExcluir }: Props) {
       return { marco, anterior }
     })
   }, [dados.escolas, marcos])
-  const intervalos = linhas.flatMap((linha) => linha.anterior ? [difDias(linha.anterior.data, linha.marco.data)] : [])
+  const intervalos = linhas.flatMap((linha) => linha.anterior ? [intervaloMarcos(linha.anterior.data, linha.marco.data)] : [])
   const media = intervalos.length ? Math.round(intervalos.reduce((s, d) => s + d, 0) / intervalos.length) : null
   const projetosComMarcos = new Set(marcos.map((m) => m.escolaId)).size
 
@@ -32,7 +35,7 @@ export function ListaMarcos({ dados, marcos, onEditar, onExcluir }: Props) {
       <div className="cartoes">
         <div className="cartao"><b>{marcos.length}</b><span>marcos concluídos</span></div>
         <div className="cartao"><b>{projetosComMarcos}</b><span>projetos com marcos</span></div>
-        <div className="cartao"><b>{media === null ? '—' : `${media} dias`}</b><span>intervalo médio entre marcos do mesmo projeto</span></div>
+        <div className="cartao"><b>{media === null ? '—' : `${media} dias úteis`}</b><span>intervalo médio entre marcos do mesmo projeto</span></div>
       </div>
       <div className="tabela-rolagem">
         <table>
@@ -45,7 +48,7 @@ export function ListaMarcos({ dados, marcos, onEditar, onExcluir }: Props) {
                   <td><i className="bolinha" style={{ background: projeto?.cor }} />{projeto?.codigo ?? 'Projeto removido'}</td>
                   <td><strong>{marco.titulo}</strong></td>
                   <td>{formatarBR(marco.data)}</td>
-                  <td>{anterior ? `${difDias(anterior.data, marco.data)} dias` : 'Primeiro marco do projeto'}</td>
+                  <td>{anterior ? `${intervaloMarcos(anterior.data, marco.data)} dias úteis` : 'Primeiro marco do projeto'}</td>
                   <td className="marco-observacao">{marco.observacao || '—'}</td>
                   <td><div className="marco-acoes"><button onClick={() => onEditar(marco)}>Editar</button><button className="perigo" onClick={() => { if (confirm(`Remover o marco “${marco.titulo}”?`)) onExcluir(marco.id) }}>Remover</button></div></td>
                 </tr>
@@ -55,7 +58,7 @@ export function ListaMarcos({ dados, marcos, onEditar, onExcluir }: Props) {
         </table>
         {linhas.length === 0 && <p className="vazio">Nenhum marco cadastrado. Adicione marcos concluídos para comparar o tempo entre as etapas.</p>}
       </div>
-      <p className="dica">O intervalo é contado em dias corridos entre datas de conclusão consecutivas dentro do mesmo projeto. As observações ficam registradas junto a cada marco para apoiar a análise das causas.</p>
+      <p className="dica">O intervalo conta dias úteis após o marco anterior até o marco atual, inclusive, desconsiderando finais de semana e feriados cadastrados. As observações ficam registradas junto a cada marco para apoiar a análise das causas.</p>
     </section>
   )
 }
