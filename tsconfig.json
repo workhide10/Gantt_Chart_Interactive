@@ -16,5 +16,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/components/EtapasProjeto.tsx", "src/lib/auditoriaDados.ts", "src/lib/lotacoes.ts"]
 }

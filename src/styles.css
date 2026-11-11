@@ -329,6 +329,7 @@ button:disabled { opacity: .5; }
 .indicador-atencao { background: linear-gradient(145deg, #fff, #fff8f4); border-color: #f1e2d5; }
 .indicador-atencao b { color: #b37536; }
 .dashboard-grade { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.dashboard-grade > .painel-evolucao { grid-column: 1 / -1; }
 .painel-grafico { min-width: 0; padding: 22px; border: 1px solid #e4eaf4; border-radius: 15px; background: #fff; box-shadow: 0 3px 14px #23365904; }
 .painel-cabecalho { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
 .painel-cabecalho h3 { margin: 0; color: #2b3e5c; font-size: 15px; font-weight: 650; letter-spacing: -.2px; }
@@ -406,3 +407,20 @@ button:disabled { opacity: .5; }
 @media (max-width: 1100px) { .indicadores-dashboard { grid-template-columns: repeat(3, minmax(0, 1fr)); } .dashboard-grade { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .painel-grafico { padding: 18px; } .ranking-linha { grid-template-columns: 90px minmax(20px, 1fr) 28px 60px; gap: 7px; } }
 @media (max-width: 850px) { .dashboard-grade { grid-template-columns: minmax(0, 1fr); } .dashboard-leituras { grid-template-columns: 1fr; gap: 12px; } .distribuicao-disciplinas { gap: 24px; } .legenda-disciplinas { max-width: 350px; } .execucao-linha { grid-template-columns: 52px minmax(0, 1fr) 175px; gap: 12px; } }
 @media (max-width: 520px) { .dashboard { gap: 18px; } .dashboard-cabecalho h2 { font-size: 23px; } .indicadores-dashboard { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; } .indicador { padding: 14px; gap: 10px; } .indicador b { font-size: 28px; } .indicador > span { font-size: 10px; } .painel-grafico { padding: 16px; } .execucao-linha { grid-template-columns: 45px minmax(0, 1fr); gap: 10px; } .execucao-valores { grid-column: 2; text-align: left; } .legenda-execucao small { margin-left: 0; } .histograma { gap: 8px; } .ranking-linha { grid-template-columns: 76px minmax(20px, 1fr) 26px 55px; gap: 5px; font-size: 10px; } .selo-conflito { font-size: 8px; padding: 4px; } .distribuicao-disciplinas { gap: 8px; } .grafico-rosca { width: 150px; height: 150px; } }
+
+.simultaneidade-legenda { display: flex; align-items: center; justify-content: flex-end; gap: 8px; color: #64748b; font-size: 12px; margin: 10px 0; }
+.simultaneidade-legenda i { width: 70px; height: 9px; border-radius: 5px; background: linear-gradient(90deg, rgba(66,99,220,.15), rgba(66,99,220,.9)); }
+.simultaneidade-tabela { width: 100%; min-width: 650px; border-collapse: separate; border-spacing: 3px; }
+.simultaneidade-tabela th, .simultaneidade-tabela td { text-align: center; padding: 2px; }
+.simultaneidade-tabela th:first-child { text-align: left; white-space: nowrap; }
+.simultaneidade-celula { display: block; min-width: 32px; padding: 8px 3px; border-radius: 5px; background: #f1f5f9; color: #94a3b8; font-weight: 600; }
+
+
+.tempo-disciplinas-referencia { color: #64748b; font-size: 12px; margin: 12px 0; }
+.tempo-disciplinas-lista { display: grid; gap: 7px; }
+.tempo-disciplina-linha { display: grid; grid-template-columns: minmax(45px, 65px) minmax(60px, 1fr) 65px 52px; align-items: center; gap: 8px; width: 100%; text-align: left; border: 0; padding: 6px 3px; background: transparent; cursor: pointer; }
+.tempo-disciplina-linha:hover { background: #f1f5ff; border-radius: 6px; }
+.tempo-disciplina-nome { font-weight: 600; }
+.tempo-disciplina-trilho { height: 12px; border-radius: 8px; background: #edf1f7; overflow: hidden; }
+.tempo-disciplina-trilho i { display: block; height: 100%; border-radius: inherit; }
+.tempo-disciplina-linha strong, .tempo-disciplina-linha > span:last-child { text-align: right; font-size: 12px; }

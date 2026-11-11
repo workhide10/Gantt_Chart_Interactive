@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { analisarAtividades, analisarExecucao, analisarExecucaoProjetos } from '../src/lib/analises.ts'
+import { analisarAtividades, analisarExecucao, analisarExecucaoProjetos, simultaneidadeMensal, projetosMensaisPorDisciplina, janelaGlobalAtividades } from '../src/lib/analises.ts'
+import { diasUteisEntreMarcos } from '../src/lib/datas.ts'
 import { validarDados } from '../src/lib/validacao.ts'
 import { lerBackup } from '../src/lib/backups.ts'
 import { migrarDados } from '../src/lib/migracoes.ts'
@@ -20,10 +21,10 @@ const dadosExemplo = () => ({
   fontesImportadas: ['alocacao-equipes-2026', 'formacao-equipe-global-v2', 'equipes-arq-numeradas-v1'],
 })
 
-test('dashboard soma dias de alocação e mantém sobreposições por equipe', () => {
+test('dashboard une dias úteis e mantém sobreposições por equipe', () => {
   const dados = dadosExemplo(), copia = structuredClone(dados)
   const a = analisarAtividades(dados, filtros, periodo, [])
-  assert.equal(a.dias, 8)
+  assert.equal(a.dias, 7)
   assert.equal(a.conflitos, 1)
   assert.equal(a.mediana, 3)
   assert.equal(a.meses[0].conclusoes, 3)
@@ -35,7 +36,7 @@ test('dashboard soma dias de alocação e mantém sobreposições por equipe', (
 test('recorte de datas não transforma atividade que atravessa o período em conclusão', () => {
   const a = analisarAtividades(dadosExemplo(), filtros, { inicio: '2026-01-05', fim: '2026-01-06' }, [])
   assert.equal(a.atividades.length, 2)
-  assert.equal(a.dias, 3)
+  assert.equal(a.dias, 2)
   assert.equal(a.meses[0].conclusoes, 1)
   assert.equal(a.mediana, 3) // A duração integral não é encurtada pelo recorte.
 })
@@ -62,11 +63,11 @@ test('período invertido, filtros sem resultados e finais de semana não produze
 test('execução usa a união dos intervalos e distingue dias ativos de pausas', () => {
   const dados = dadosExemplo(), copia = structuredClone(dados)
   const a = analisarExecucao(dados.atividades)
-  assert.equal(a.diasAtivos, 9)
-  assert.equal(a.diasJanela, 13)
-  assert.equal(a.diasPausados, 4)
-  assert.deepEqual(a.pausas, [{ inicio: '2026-01-08', fim: '2026-01-11', dias: 4 }])
-  assert.equal(analisarExecucaoProjetos(dados, 'p1')[0].diasAtivos, 9)
+  assert.equal(a.diasAtivos, 7)
+  assert.equal(a.diasJanela, 9)
+  assert.equal(a.diasPausados, 2)
+  assert.deepEqual(a.pausas, [{ inicio: '2026-01-08', fim: '2026-01-11', dias: 2 }])
+  assert.equal(analisarExecucaoProjetos(dados, 'p1')[0].diasAtivos, 7)
   assert.equal(analisarAtividades(dados, { ...filtros, disciplinaId: 'd1' }, periodo, []).atividades.length, 2)
   assert.deepEqual(dados, copia)
   assert.equal(analisarExecucao([]).diasPausados, 0)
@@ -154,4 +155,62 @@ test('movimentação rejeita troca entre disciplinas e evento repetido', () => {
   dados.equipes[1].disciplinaId = 'd1'
   dados.eventosEquipe = [evento]
   assert.throws(() => registrarMovimentacao(dados, evento, movimentos, atualizacoes))
+})
+
+ test('execução e marcos excluem finais de semana e feriados', () => {
+  const feriados = ['2026-04-21']
+  const a = analisarExecucao([atividade('a', '2026-04-17', '2026-04-17'), atividade('b', '2026-04-22', '2026-04-22')], feriados)
+  assert.equal(a.diasAtivos, 2)
+  assert.equal(a.diasJanela, 3)
+  assert.equal(a.diasPausados, 1)
+  assert.equal(a.pausas[0].dias, 1)
+  assert.equal(diasUteisEntreMarcos('2026-04-17', '2026-04-22', feriados), 2)
+  assert.equal(diasUteisEntreMarcos('2026-04-17', '2026-04-17', feriados), 0)
+  assert.equal(analisarExecucao([atividade('a', '2026-04-17', '2026-04-17'), atividade('b', '2026-04-20', '2026-04-20')]).pausas.length, 0)
+})
+
+test('sobreposição apenas em fim de semana ou feriado não entra na análise', () => {
+  const d = dadosExemplo()
+  d.atividades = [atividade('a', '2026-04-17', '2026-04-19'), atividade('b', '2026-04-18', '2026-04-21')]
+  assert.equal(analisarAtividades(d, filtros, periodo, ['2026-04-21']).conflitos, 0)
+  d.atividades[0].fim = '2026-04-20'
+  assert.equal(analisarAtividades(d, filtros, periodo, ['2026-04-21']).conflitos, 1)
+})
+
+test('união evita duplicação entre equipes e simultaneidade conta projetos distintos', () => {
+ const d = dadosExemplo()
+ d.equipes[1].disciplinaId = 'd1'
+ d.atividades = [atividade('a', '2026-04-20', '2026-04-22'), {...atividade('b', '2026-04-20', '2026-04-22'), escolaId:'p2'}, atividade('c', '2026-04-20', '2026-04-22', 'e2'), {...atividade('d', '2026-04-20', '2026-04-22'), escolaId:'p2'}]
+ const resultado = analisarAtividades(d, filtros, periodo, ['2026-04-21'])
+ assert.equal(resultado.dias, 2)
+ assert.equal(resultado.disciplinas[0].dias, 2)
+ assert.equal(resultado.equipes[0].dias, 2)
+ assert.equal(resultado.meses[0].dias, 2)
+ const picos = simultaneidadeMensal(d.atividades, 2026, ['2026-04-21'])
+ assert.equal(picos.get('e1')[3], 2)
+ assert.equal(picos.get('e2')[3], 1)
+})
+
+test('projetos mensais por disciplina não duplicam projetos entre equipes ou intervalos', () => {
+ const d = dadosExemplo()
+ d.equipes[1].disciplinaId = 'd1'
+ d.atividades = [atividade('a', '2026-04-20', '2026-04-20'), atividade('b', '2026-04-20', '2026-04-22', 'e2'), {...atividade('c', '2026-04-27', '2026-05-04'), escolaId: 'p2'}, atividade('d', '2026-04-21', '2026-04-21')]
+ const mensal = projetosMensaisPorDisciplina(d.atividades, d.equipes, 2026, ['2026-04-21'])
+ assert.equal(mensal.get('d1')[3], 2)
+ assert.equal(mensal.get('d1')[4], 1)
+ assert.equal(mensal.get('d1')[2], 0)
+ const soFeriado = projetosMensaisPorDisciplina([atividade('x', '2026-04-21', '2026-04-21')], d.equipes, 2026, ['2026-04-21'])
+ assert.equal(soFeriado.size, 0)
+})
+
+test('janela global inclui pausas úteis e disciplina une dias de equipes simultâneas', () => {
+ const d = dadosExemplo()
+ d.equipes[1].disciplinaId = 'd1'
+ d.atividades = [atividade('a','2026-04-17','2026-04-20'), atividade('b','2026-04-20','2026-04-22','e2'), atividade('c','2026-04-27','2026-04-27')]
+ const feriados = ['2026-04-21']
+ assert.deepEqual(janelaGlobalAtividades(d.atividades, feriados), { inicio:'2026-04-17', fim:'2026-04-27', dias:6 })
+ const a = analisarAtividades(d, filtros, periodo, feriados)
+ assert.equal(a.disciplinas[0].dias, 4)
+ assert.equal(analisarAtividades(d, filtros, { inicio:'2026-04-20', fim:'2026-04-22' }, feriados).disciplinas[0].dias, 2)
+ assert.equal(janelaGlobalAtividades([], feriados).dias, 0)
 })
