@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import type { Atividade, Dados } from '../types'
-import { feriados } from '../data/inicial'
-import { diasUteis } from '../lib/datas'
+import { analisarExecucao } from '../lib/analises'
 import { contarSobreposicoes } from '../lib/gantt'
 
 interface Props {
@@ -25,7 +24,7 @@ export function Resumo({ dados, atividades, periodo }: Props) {
     }
     const porEquipe = dados.equipes.map((e) => {
       const lista = atividadesPorEquipe.get(e.id) ?? []
-      const dias = lista.reduce((soma, a) => soma + diasUteis(a.inicio, a.fim, feriados), 0)
+      const dias = analisarExecucao(lista.filter((a) => a.inicio <= a.fim)).diasAtivos
       const conflitos = contarSobreposicoes(lista)
       return { equipe: e, atividades: lista.length, dias, conflitos }
     })
@@ -47,7 +46,7 @@ export function Resumo({ dados, atividades, periodo }: Props) {
         <div className={'cartao' + (analise.conflitos ? ' alerta' : '')}><b>{analise.conflitos}</b><span>sobreposições na mesma equipe</span></div>
       </div>
 
-      <h3>Carga por equipe (dias úteis alocados no intervalo)</h3>
+      <h3>Carga por equipe (dias corridos com registros no intervalo)</h3>
       <div className="carga">
         {analise.porEquipe.map(({ equipe, dias, conflitos }) => (
           <div key={equipe.id} className="carga-linha">
@@ -57,7 +56,7 @@ export function Resumo({ dados, atividades, periodo }: Props) {
           </div>
         ))}
       </div>
-      <p className="dica">Dias úteis = segunda a sexta, descontando os feriados da planilha. Atividades sobrepostas na mesma equipe contam em dobro.</p>
+      <p className="dica">Dias corridos incluem fins de semana e feriados. Atividades sobrepostas na mesma equipe contam uma vez por dia.</p>
     </section>
   )
 }

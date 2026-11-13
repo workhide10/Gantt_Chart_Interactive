@@ -5,6 +5,7 @@ import { baixarArquivo, lerBackup } from './lib/backups'
 import { filtrarAtividades } from './lib/filtrar'
 import { hojeISO } from './lib/datas'
 import { Gantt } from './components/Gantt'
+import { CentralRegistros } from './components/CentralRegistros'
 import { DashboardAnalises } from './components/DashboardAnalises'
 import { BarraFiltros } from './components/BarraFiltros'
 import { ListaAtividades } from './components/ListaAtividades'
@@ -24,6 +25,7 @@ export default function App() {
   const { dados, setDados, armazenamento } = operacoes
   const [aba, setAba] = useState<Aba>('gantt')
   const [filtros, setFiltros] = useState<Filtros>({ escolaId: '', disciplinaId: '', equipeId: '' })
+  const [central, setCentral] = useState<Partial<Atividade> | null>(null)
   const [editando, setEditando] = useState<Partial<Atividade> | null>(null) // null = modal fechado
   const [marcoEditando, setMarcoEditando] = useState<Partial<MarcoProjeto> | null>(null)
   const [intervaloAnalise, setIntervaloAnalise] = useState<IntervaloAnalise>({ inicio: '', fim: '' })
@@ -95,11 +97,6 @@ export default function App() {
           <button className={aba === 'cadastros' ? 'ativo' : ''} onClick={() => setAba('cadastros')}>Cadastros</button>
         </nav>
         <div className="header-acoes">
-          {aba === 'marcos'
-            ? <button className="primario" onClick={() => setMarcoEditando({})}>+ Novo marco</button>
-            : aba === 'equipes'
-              ? null
-              : <button className="primario" onClick={() => novaAtividade()}>+ Nova atividade</button>}
           <button onClick={exportar}>Exportar</button>
           <button onClick={() => arquivoRef.current?.click()}>Importar</button>
           <button
@@ -126,18 +123,19 @@ export default function App() {
         {armazenamento.erro && <div className="aviso" role="alert">{armazenamento.erro} <button onClick={exportar}>Exportar dados desta sessão</button>
           {armazenamento.bloqueado && armazenamento.original !== null && <button onClick={() => baixarArquivo(armazenamento.original!, `gantt-equipes-recuperacao-${hojeISO()}.json`)}>Baixar conteúdo original</button>}
         </div>}
-        {aba !== 'cadastros' && aba !== 'marcos' && aba !== 'equipes' && <BarraFiltros dados={dados} filtros={filtros} onChange={setFiltros} />}
+        {aba !== 'cadastros' && aba !== 'equipes' && <BarraFiltros dados={dados} filtros={filtros} onChange={setFiltros} somenteProjeto={aba === 'marcos'} acao={aba === 'atividades' ? <button className="primario" onClick={() => novaAtividade()}>+ Nova atividade</button> : aba === 'marcos' ? <button className="primario" onClick={() => setMarcoEditando({ escolaId: filtros.escolaId || undefined })}>+ Novo marco</button> : undefined} />}
 
         {aba === 'gantt' && (
-          <Gantt dados={dados} filtros={filtros} marcos={marcos} onEditar={setEditando} onNova={novaAtividade} onEditarMarco={setMarcoEditando} onRedimensionar={redimensionarAtividade} />
+          <Gantt dados={dados} filtros={filtros} marcos={marcos} onEditar={setEditando} onNova={setCentral} onAbrirCentral={() => setCentral({})} onEditarMarco={setMarcoEditando} onRedimensionar={redimensionarAtividade} />
         )}
         {aba === 'atividades' && <ListaAtividades dados={dados} atividades={atividades} onEditar={setEditando} onDuplicar={(atividade) => { const { id: _id, ...copia } = atividade; novaAtividade(copia) }} />}
-        {aba === 'marcos' && <ListaMarcos dados={dados} marcos={marcos} onEditar={setMarcoEditando} onExcluir={excluirMarco} />}
+        {aba === 'marcos' && <ListaMarcos dados={dados} marcos={filtros.escolaId ? marcos.filter((m) => m.escolaId === filtros.escolaId) : marcos} onEditar={setMarcoEditando} onExcluir={excluirMarco} />}
         {aba === 'equipes' && <ComposicoesEquipe dados={dados} onChange={setDados} />}
         {aba === 'analises' && <DashboardAnalises dados={dados} filtros={filtros} periodo={intervaloAnalise} onPeriodoChange={setIntervaloAnalise} onFiltrosChange={setFiltros} />}
         {aba === 'cadastros' && <Cadastros dados={dados} onChange={setDados} />}
       </main>
 
+      {central && <CentralRegistros dados={dados} filtros={filtros} contexto={central} onFechar={() => setCentral(null)} onSalvarAtividade={salvarAtividade} onExcluirAtividade={excluirAtividade} onSalvarMarco={salvarMarco} onExcluirMarco={excluirMarco} onDadosChange={setDados} />}
       {editando && (
         <FormAtividade
           key={editando.id ?? 'nova'}
@@ -152,7 +150,6 @@ export default function App() {
         <FormMarco
           key={marcoEditando.id ?? 'novo-marco'}
           dados={dados}
-          marcos={marcos}
           inicial={marcoEditando}
           onSalvar={salvarMarco}
           onExcluir={excluirMarco}

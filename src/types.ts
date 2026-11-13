@@ -55,7 +55,13 @@ export interface IntegranteComposicaoEquipe {
 }
 
 /** Evento único que agrupa uma troca em lote ou saída de integrantes. */
+export type SimboloProjeto = 'losango' | 'circulo' | 'generico'
+export type SimboloEquipe = 'setas' | 'marcador'
+
 export interface EventoEquipe {
+  equipeAdicaoId?: ID
+  pessoasAdicionadas?: ID[]
+  simbolo?: SimboloEquipe
   id: ID
   disciplinaId: ID
   data: string
@@ -82,6 +88,7 @@ export interface Atividade {
 }
 
 export interface MarcoProjeto {
+  simbolo?: SimboloProjeto
   id: ID
   escolaId: ID
   data: string // data ISO "AAAA-MM-DD"

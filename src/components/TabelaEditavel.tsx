@@ -1,3 +1,4 @@
+import { SeletorCor } from './SeletorCor'
 import { useLayoutEffect, useRef, useState } from 'react'
 
 // Tabela genérica para cadastrar/editar/excluir registros (Escola, Disciplina, Equipe, Pessoa).
@@ -12,6 +13,7 @@ export interface Coluna<T> {
 }
 
 interface Props<T extends { id: string }> {
+  ocultarAdicionar?: boolean
   itens: T[]
   colunas: Coluna<T>[]
   onChange: (novos: T[]) => void
@@ -20,7 +22,7 @@ interface Props<T extends { id: string }> {
   bloqueioAdicionar?: string
 }
 
-export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onChange, criarNovo, motivoBloqueio, bloqueioAdicionar }: Props<T>) {
+export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onChange, criarNovo, motivoBloqueio, bloqueioAdicionar, ocultarAdicionar }: Props<T>) {
   const tabelaRef = useRef<HTMLDivElement>(null)
   const [novoId, setNovoId] = useState<string | null>(null)
   useLayoutEffect(() => {
@@ -46,7 +48,7 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
 
   return (
     <div ref={tabelaRef}>
-      <div className="lista-ferramentas"><p className="dica">{bloqueioAdicionar || 'Edite diretamente nos campos. As alterações são salvas automaticamente neste navegador.'}</p><button className="primario" disabled={Boolean(bloqueioAdicionar)} title={bloqueioAdicionar} onClick={adicionar}>+ Adicionar</button></div>
+      <div className="lista-ferramentas"><p className="dica">{bloqueioAdicionar || 'Edite diretamente nos campos. As alterações são salvas automaticamente neste navegador.'}</p>{!ocultarAdicionar && <button className="primario" disabled={Boolean(bloqueioAdicionar)} title={bloqueioAdicionar} onClick={adicionar}>+ Adicionar</button>}</div>
       <div className="tabela-rolagem">
       <table>
         <thead>
@@ -67,9 +69,11 @@ export function TabelaEditavel<T extends { id: string }>({ itens, colunas, onCha
                         {c.permiteVazio && <option value="">—</option>}
                         {c.opcoes?.map((o) => <option key={o.valor} value={o.valor}>{o.rotulo}</option>)}
                       </select>
+                    ) : c.tipo === 'cor' ? (
+                      <SeletorCor valor={valor} onChange={(cor) => alterar(item.id, c.chave, cor)} />
                     ) : (
                       <input
-                        type={c.tipo === 'cor' ? 'color' : 'text'}
+                        type="text"
                         value={valor}
                         aria-label={c.titulo}
                         onChange={(e) => alterar(item.id, c.chave, e.target.value)}

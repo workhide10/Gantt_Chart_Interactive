@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { Atividade, Dados } from '../types'
-import { feriados } from '../data/inicial'
-import { diasUteis, formatarBR } from '../lib/datas'
+import { diasCorridos, formatarBR } from '../lib/datas'
 import { criarIndiceComposicoes, integrantesNaAtividade } from '../lib/composicao'
 
 interface Props {
@@ -50,7 +49,7 @@ export function ListaAtividades({ dados, atividades, onEditar, onDuplicar }: Pro
       <div className="tabela-rolagem">
         <table>
           <thead>
-            <tr><th>Projeto</th><th>Etapa / atividade</th><th>Equipe</th><th>Disciplina</th><th>Início</th><th>Fim</th><th>Dias úteis</th><th>Participantes</th><th>Observações</th><th>Ações</th></tr>
+            <tr><th>Projeto</th><th>Etapa / atividade</th><th>Equipe</th><th>Disciplina</th><th>Início</th><th>Fim</th><th>Dias corridos</th><th>Participantes</th><th>Observações</th><th>Ações</th></tr>
           </thead>
           <tbody>
             {visiveis.map(({ atividade: a, projeto, equipe, disciplina, participantes }) => (
@@ -61,7 +60,7 @@ export function ListaAtividades({ dados, atividades, onEditar, onDuplicar }: Pro
                 <td>{disciplina?.sigla ?? '—'}</td>
                 <td className="data-tabela">{formatarBR(a.inicio)}</td>
                 <td className="data-tabela">{formatarBR(a.fim)}</td>
-                <td>{diasUteis(a.inicio, a.fim, feriados)}</td>
+                <td>{diasCorridos(a.inicio, a.fim)}</td>
                 <td>{participantes || 'Nenhum associado'}</td>
                 <td>{a.descricao || '—'}</td>
                 <td><div className="marco-acoes"><button onClick={() => onEditar(a)}>Editar</button><button onClick={() => onDuplicar(a)} title="Abre uma cópia para revisar antes de salvar">Duplicar</button></div></td>
