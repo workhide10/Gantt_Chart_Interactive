@@ -6,7 +6,7 @@ import { validarDados } from '../src/lib/validacao.ts'
 import { lerBackup } from '../src/lib/backups.ts'
 import { migrarDados } from '../src/lib/migracoes.ts'
 import { ajustarPeriodoAtividade, motivoBloqueioExclusao, registrarAtividade } from '../src/lib/registros.ts'
-import { registrarComposicao, registrarMovimentacao } from '../src/lib/equipes.ts'
+import { registrarComposicao, registrarMovimentacao, adicionarIntegrantes } from '../src/lib/equipes.ts'
 
 const filtros = { escolaId: '', disciplinaId: '', equipeId: '' }
 const periodo = { inicio: '', fim: '' }
@@ -213,4 +213,38 @@ test('janela global inclui pausas úteis e disciplina une dias de equipes simult
  assert.equal(a.disciplinas[0].dias, 4)
  assert.equal(analisarAtividades(d, filtros, { inicio:'2026-04-20', fim:'2026-04-22' }, feriados).disciplinas[0].dias, 2)
  assert.equal(janelaGlobalAtividades([], feriados).dias, 0)
+})
+
+test('adicionar integrante preserva formação e impede transferência silenciosa', () => {
+ const d = dadosExemplo()
+ d.pessoas.push({ id:'pes2', nome:'Bia', funcao:'' }, { id:'pes3', nome:'Cris', funcao:'' })
+ d.composicoesEquipe = [{ id:'c1', equipeId:'e1', inicio:'2026-01-01', fim:null }, { id:'c2', equipeId:'e2', inicio:'2026-01-01', fim:null }]
+ d.integrantesComposicao = [{ id:'i1', composicaoId:'c1', pessoaId:'pes1' }, { id:'i2', composicaoId:'c2', pessoaId:'pes3' }]
+ let n=0; const novoId=() => `novo-${++n}`
+ const atualizado=adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes2'], novoId)
+ const nova=atualizado.composicoesEquipe.find((c) => c.equipeId === 'e1' && c.inicio === '2026-01-05')
+ assert.equal(atualizado.composicoesEquipe.find((c) => c.id === 'c1').fim, '2026-01-04')
+ assert.deepEqual(atualizado.integrantesComposicao.filter((i) => i.composicaoId === nova.id).map((i) => i.pessoaId).sort(), ['pes1','pes2'])
+ assert.throws(() => adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes3'], novoId), /Transferir/)
+ assert.throws(() => adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes1'], novoId), /já pertencem/)
+ const mesmoDia=adicionarIntegrantes(d, 'e1', '2026-01-01', ['pes2'], novoId)
+ assert.equal(mesmoDia.composicoesEquipe.filter((c) => c.equipeId === 'e1').length, 1)
+ assert.equal(mesmoDia.integrantesComposicao.filter((i) => i.composicaoId === 'c1').length, 2)
+})
+
+test('adição, saída e transferência registram símbolos correspondentes', () => {
+ const d=dadosExemplo(); d.equipes[1].disciplinaId='d1'
+ d.composicoesEquipe=[{id:'c',equipeId:'e1',inicio:'2026-01-01',fim:null}]
+ d.integrantesComposicao=[{id:'i',composicaoId:'c',pessoaId:'pes1'}]
+ d.pessoas.push({id:'pes2',nome:'Bia',funcao:''})
+ let n=0; const id=()=>`novo-${++n}`
+ const adicao=adicionarIntegrantes(d,'e1','2026-01-02',['pes2'],id)
+ assert.equal(adicao.eventosEquipe[0].simbolo,'marcador')
+ assert.deepEqual(adicao.eventosEquipe[0].pessoasAdicionadas,['pes2'])
+ assert.equal(validarDados(adicao),true)
+ const ev={id:'ev',disciplinaId:'d1',data:'2026-01-03',simbolo:'setas'}
+ const saida=registrarMovimentacao(d,ev,[{id:'m',eventoId:'ev',pessoaId:'pes1',equipeOrigemId:'e1',equipeDestinoId:null,motivo:'Férias'}],[{equipeId:'e1',pessoaIds:[]}],id)
+ assert.equal(saida.eventosEquipe[0].simbolo,'marcador')
+ const troca=registrarMovimentacao(d,{...ev,simbolo:'marcador'},[{id:'m',eventoId:'ev',pessoaId:'pes1',equipeOrigemId:'e1',equipeDestinoId:'e2'}],[{equipeId:'e1',pessoaIds:[]},{equipeId:'e2',pessoaIds:['pes1']}],id)
+ assert.equal(troca.eventosEquipe[0].simbolo,'setas')
 })

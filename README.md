@@ -117,3 +117,7 @@ A execução, as pausas e os intervalos entre marcos consideram dias úteis (seg
 O projeto contém arquivos de etapas, lotações e auditoria de uma implementação incompleta que não são usados pela aplicação atual. Eles foram excluídos da compilação até serem integrados ao modelo de dados.
 
 O gráfico de projetos por disciplina mostra, a cada mês, a quantidade de projetos distintos com registro em pelo menos um dia útil. Um projeto com várias equipes ou intervalos na mesma disciplina conta uma vez no mês; os projetos não precisam ter ocorrido simultaneamente. O gráfico respeita os filtros e o período escolhidos. A duração média dos projetos usa a janela em dias úteis entre o primeiro e o último registro de cada projeto, incluindo pausas; usa o histórico completo e não representa prazo contratual ou conclusão.
+
+## Ações de integrantes
+
+Na aba Equipes, use Adicionar integrante para entrada ou retorno; Transferir integrante para movimentação entre equipes da mesma disciplina; Registrar ausência ou saída para saída com motivo; e Corrigir registro anterior para localizar e corrigir a formação no histórico. A correção de formação não edita eventos de movimentação. A inclusão preserva os integrantes existentes, vale até a próxima formação e não transfere pessoas silenciosamente. Ausências não têm retorno automático: registre-o pela ação Adicionar integrante.

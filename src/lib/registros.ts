@@ -38,6 +38,7 @@ export function removerMarco(dados: Dados, id: string): Dados {
 
 export function motivoBloqueioExclusao(dados: Dados, tipo: 'projeto' | 'disciplina' | 'equipe' | 'pessoa', id: string): string | null {
   const movimentos = dados.movimentacoesEquipe ?? []
+  const eventos = dados.eventosEquipe ?? []
   const composicoes = dados.composicoesEquipe ?? []
   const integrantes = dados.integrantesComposicao ?? []
   const emUso = tipo === 'projeto'
@@ -45,7 +46,7 @@ export function motivoBloqueioExclusao(dados: Dados, tipo: 'projeto' | 'discipli
     : tipo === 'disciplina'
       ? dados.equipes.some((e) => e.disciplinaId === id) || (dados.eventosEquipe ?? []).some((e) => e.disciplinaId === id)
       : tipo === 'equipe'
-        ? dados.atividades.some((a) => a.equipeId === id) || composicoes.some((c) => c.equipeId === id) || movimentos.some((m) => m.equipeOrigemId === id || m.equipeDestinoId === id)
-        : integrantes.some((i) => i.pessoaId === id) || movimentos.some((m) => m.pessoaId === id)
+        ? dados.atividades.some((a) => a.equipeId === id) || eventos.some((e) => e.equipeAdicaoId === id) || composicoes.some((c) => c.equipeId === id) || movimentos.some((m) => m.equipeOrigemId === id || m.equipeDestinoId === id)
+        : eventos.some((e) => e.pessoasAdicionadas?.includes(id)) || integrantes.some((i) => i.pessoaId === id) || movimentos.some((m) => m.pessoaId === id)
   return emUso ? 'Este registro está associado a atividades, marcos ou ao histórico das equipes e não pode ser excluído.' : null
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Dados, MarcoProjeto } from '../types'
+import type { Dados, MarcoProjeto, SimboloProjeto } from '../types'
 import { dataISOValida, difDias, formatarBR, hojeISO } from '../lib/datas'
 
 interface Props {
@@ -15,10 +15,11 @@ export function FormMarco({ dados, marcos, inicial, onSalvar, onExcluir, onCance
   const [escolaId, setEscolaId] = useState(inicial.escolaId ?? '')
   const [data, setData] = useState(inicial.data ?? hojeISO())
   const [titulo, setTitulo] = useState(inicial.titulo ?? '')
+  const [simbolo, setSimbolo] = useState<SimboloProjeto>(inicial.simbolo ?? 'losango')
   const [observacao, setObservacao] = useState(inicial.observacao ?? '')
   const edicao = Boolean(inicial.id)
   const dialogoRef = useRef<HTMLDialogElement>(null)
-  const valores = JSON.stringify({ escolaId, data, titulo, observacao })
+  const valores = JSON.stringify({ escolaId, data, titulo, observacao, simbolo })
   const referencia = useRef(valores)
   useEffect(() => {
     const dialogo = dialogoRef.current
@@ -42,7 +43,7 @@ export function FormMarco({ dados, marcos, inicial, onSalvar, onExcluir, onCance
 
   const salvar = () => {
     if (erro) return
-    onSalvar({ id: inicial.id ?? crypto.randomUUID(), escolaId, data, titulo: titulo.trim(), observacao: observacao.trim() })
+    onSalvar({ id: inicial.id ?? crypto.randomUUID(), escolaId, data, titulo: titulo.trim(), observacao: observacao.trim(), simbolo })
   }
 
   return (
@@ -64,6 +65,7 @@ export function FormMarco({ dados, marcos, inicial, onSalvar, onExcluir, onCance
           <input required type="date" max={hojeISO()} value={data} onChange={(e) => setData(e.target.value)} />
         </label>
         {anterior && <p className="marco-intervalo">Intervalo desde o marco anterior em {projeto?.codigo}: <strong>{difDias(anterior.data, data)} dias</strong> (último marco: {formatarBR(anterior.data)}).</p>}
+        <fieldset className="opcoes-simbolo"><legend>Símbolo no Gantt</legend><label><input type="radio" name="simbolo-projeto" value="losango" checked={simbolo === 'losango'} onChange={() => setSimbolo('losango')} /> <span aria-hidden="true">◆</span> Entrega</label><label><input type="radio" name="simbolo-projeto" value="circulo" checked={simbolo === 'circulo'} onChange={() => setSimbolo('circulo')} /> <span aria-hidden="true">●</span> Análise</label></fieldset>
         <label>Observações para análise (opcional)
           <textarea rows={3} value={observacao} onChange={(e) => setObservacao(e.target.value)} placeholder="Resultado, atraso ou contexto que ajude a analisar as causas" />
         </label>

@@ -1,3 +1,4 @@
+import { IconeEquipe } from './IconeEquipe'
 import { createPortal } from 'react-dom'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import type { Atividade, ComposicaoEquipe, Dados, EventoEquipe, Filtros, MarcoProjeto } from '../types'
@@ -246,6 +247,12 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
       for (const lista of composicoesPorEquipe.values()) lista.sort((a, b) => a.inicio.localeCompare(b.inicio))
       const eventosPorEquipe = new Map<string, Set<string>>()
       const eventoPorId = new Map((dados.eventosEquipe ?? []).map((evento) => [evento.id, evento]))
+      for (const evento of dados.eventosEquipe ?? []) {
+        if (!evento.equipeAdicaoId) continue
+        const ids = eventosPorEquipe.get(evento.equipeAdicaoId) ?? new Set<string>()
+        ids.add(evento.id)
+        eventosPorEquipe.set(evento.equipeAdicaoId, ids)
+      }
       for (const movimento of dados.movimentacoesEquipe ?? []) {
         const evento = eventoPorId.get(movimento.eventoId)
         if (!evento) continue
@@ -329,8 +336,8 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                 ))}
               </div>
               <div className="cab-linha">
-                {periodosMenores.map((s) => (
-                  <div key={s.esq} className="cab-semana" style={{ left: s.esq, width: s.larg }}>{s.rotulo}</div>
+                {periodosMenores.map((s, indice) => (
+                  <div key={s.esq} className={`cab-semana cab-periodo ${indice % 2 ? "cab-periodo-alternado" : ""}`} style={{ left: s.esq, width: s.larg }}>{s.rotulo}</div>
                 ))}
               </div>
               {escala === 'semanas' && (
@@ -367,6 +374,9 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                     )
                   }}
                 >
+                  {periodosMenores.map((periodo, indice) => (
+                    <div key={periodo.chave} aria-hidden="true" className={`gantt-faixa-periodo ${indice % 2 ? 'gantt-faixa-alternada' : ''}`} style={{ left: periodo.esq, width: periodo.larg }} />
+                  ))}
                   {marcadores}
                   {agrupar === 'escola' && linha.marcos?.map((marco) => (
                     <button
@@ -378,7 +388,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                       onMouseEnter={(e) => agendarTooltip(e, <><strong>{marco.titulo}</strong><div>Data: {formatarBR(marco.data)}</div>{marco.observacao && <div>{marco.observacao}</div>}<small>Clique para editar o marco</small></>)}
                       onMouseLeave={ocultarTooltip}
                       onClick={(e) => { e.stopPropagation(); ocultarTooltip(); onEditarMarco(marco) }}
-                    >◆</button>
+                    >{marco.simbolo === 'circulo' ? '●' : '◆'}</button>
                   ))}
                   {agrupar === 'equipe' && [...new Set([...(linha.composicoes?.slice(1).map((c) => c.inicio) ?? []), ...(linha.eventosEquipe?.map((e) => e.data) ?? [])])].map((data) => {
                     const composicao = linha.composicoes?.find((c) => c.inicio === data)
@@ -396,11 +406,16 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                       const destino = m.equipeDestinoId ? dados.equipes.find((e) => e.id === m.equipeDestinoId)?.nome ?? 'Equipe removida' : null
                       return destino ? `${pessoa}: ${origem} → ${destino}` : `${pessoa} saiu de ${origem}${m.motivo ? ` · Motivo: ${m.motivo}` : ''}`
                     })
+                    const adicoes = eventos.flatMap((evento) => evento.equipeAdicaoId === linha.id ? (evento.pessoasAdicionadas ?? []).map((id) => `${dados.pessoas.find((p) => p.id === id)?.nome ?? 'Pessoa removida'} entrou na equipe`) : [])
+                    const simbolos = new Set<'setas' | 'marcador' | 'antigo'>()
+                    if (movimentacoes.some((m) => m.equipeDestinoId !== null)) simbolos.add('setas')
+                    if (movimentacoes.some((m) => m.equipeDestinoId === null) || adicoes.length) simbolos.add('marcador')
+                    if (!simbolos.size) simbolos.add('antigo')
                     const delta = [entraram.length ? `Entraram: ${entraram.join(', ')}` : '', sairam.length ? `Saíram: ${sairam.join(', ')}` : ''].filter(Boolean).join('\n')
-                    const detalhe = [...detalhesEventos, ...(!detalhesEventos.length && delta ? [delta] : [])].join('\n') || 'Mudança de composição registrada.'
+                    const detalhe = [...detalhesEventos, ...adicoes, ...(!detalhesEventos.length && !adicoes.length && delta ? [delta] : [])].join('\n') || 'Mudança de composição registrada.'
                     const linhasDetalhe = detalhe.split('\n')
                     return <span key={`${linha.id}-${data}`} className="marco-equipe-gantt" style={{ left: difDias(inicio, data) * pxDia, height: '100%' }}>
-                      <i aria-label={`Movimentação de equipe em ${formatarBR(data)}: ${detalhe.replace(/\n/g, '; ')}`} onMouseEnter={(e) => agendarTooltip(e, <><strong>Movimentação · {formatarBR(data)}</strong>{linhasDetalhe.map((linhaTexto, i) => <div key={i}>{linhaTexto}</div>)}</>)} onMouseLeave={ocultarTooltip} onClick={(e) => e.stopPropagation()} />
+                      <span className="marco-equipe-simbolos" aria-label={`Movimentação de equipe em ${formatarBR(data)}: ${detalhe.replace(/\n/g, '; ')}`}  onMouseEnter={(e) => agendarTooltip(e, <><strong>Movimentação · {formatarBR(data)}</strong>{linhasDetalhe.map((linhaTexto, i) => <div key={i}>{linhaTexto}</div>)}</>)} onMouseLeave={ocultarTooltip} onClick={(e) => e.stopPropagation()}>{[...simbolos].map((tipo) => <IconeEquipe key={tipo} tipo={tipo} />)}</span>
                     </span>
                   })}
                   {itens.map(({ atividade: a, faixa, conflito }) => {

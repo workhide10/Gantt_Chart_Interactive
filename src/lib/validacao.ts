@@ -27,11 +27,11 @@ export function validarDados(valor: unknown): valor is Dados {
     !colecao('equipes', true, (e) => texto(e.nome) && texto(e.disciplinaId)) ||
     !colecao('pessoas', true, (p) => texto(p.nome) && texto(p.funcao) && (p.equipeId == null || texto(p.equipeId))) ||
     !colecao('atividades', true, (a) => texto(a.escolaId) && texto(a.equipeId) && opcional(a.titulo) && texto(a.descricao) && dataISOValida(a.inicio) && dataISOValida(a.fim) && a.inicio <= a.fim) ||
-    !colecao('marcos', false, (m) => texto(m.escolaId) && texto(m.titulo) && texto(m.observacao) && dataISOValida(m.data)) ||
+    !colecao('marcos', false, (m) => texto(m.escolaId) && texto(m.titulo) && texto(m.observacao) && dataISOValida(m.data) && (m.simbolo === undefined || m.simbolo === 'losango' || m.simbolo === 'circulo')) ||
     !colecao('vinculosEquipe', false, (v) => texto(v.pessoaId) && texto(v.equipeId) && (v.projetoId == null || texto(v.projetoId)) && dataNula(v.inicio) && dataNula(v.fim) && (!v.inicio || !v.fim || String(v.inicio) <= String(v.fim)) && (origem(v.origem) || v.origem === 'legado')) ||
     !colecao('composicoesEquipe', false, (c) => texto(c.equipeId) && dataISOValida(c.inicio) && dataNula(c.fim) && (!c.fim || c.inicio <= String(c.fim)) && origem(c.origem)) ||
     !colecao('integrantesComposicao', false, (i) => texto(i.composicaoId) && texto(i.pessoaId)) ||
-    !colecao('eventosEquipe', false, (e) => texto(e.disciplinaId) && dataISOValida(e.data)) ||
+    !colecao('eventosEquipe', false, (e) => texto(e.disciplinaId) && dataISOValida(e.data) && (e.simbolo === undefined || e.simbolo === 'setas' || e.simbolo === 'marcador') && (e.equipeAdicaoId === undefined || texto(e.equipeAdicaoId)) && (e.pessoasAdicionadas === undefined || (Array.isArray(e.pessoasAdicionadas) && e.pessoasAdicionadas.every(texto))) && ((e.equipeAdicaoId === undefined) === (e.pessoasAdicionadas === undefined))) ||
     !colecao('movimentacoesEquipe', false, (m) => texto(m.eventoId) && texto(m.pessoaId) && texto(m.equipeOrigemId) && (m.equipeDestinoId === null || texto(m.equipeDestinoId)) && opcional(m.motivo)) ||
     (fonte.fontesImportadas !== undefined && (!Array.isArray(fonte.fontesImportadas) || !fonte.fontesImportadas.every(texto)))) return false
 
@@ -47,7 +47,7 @@ export function validarDados(valor: unknown): valor is Dados {
     (dados.marcos ?? []).every((m) => projetos.has(m.escolaId)) &&
     (dados.composicoesEquipe ?? []).every((c) => equipes.has(c.equipeId)) &&
     (dados.integrantesComposicao ?? []).every((i) => composicoes.has(i.composicaoId) && pessoas.has(i.pessoaId)) &&
-    (dados.eventosEquipe ?? []).every((e) => disciplinas.has(e.disciplinaId)) &&
+    (dados.eventosEquipe ?? []).every((e) => disciplinas.has(e.disciplinaId) && (!e.equipeAdicaoId || (equipes.has(e.equipeAdicaoId) && dados.equipes.some((q) => q.id === e.equipeAdicaoId && q.disciplinaId === e.disciplinaId))) && (!e.pessoasAdicionadas || e.pessoasAdicionadas.every((id) => pessoas.has(id)))) &&
     (dados.movimentacoesEquipe ?? []).every((m) => eventos.has(m.eventoId) && pessoas.has(m.pessoaId) && equipes.has(m.equipeOrigemId) && (m.equipeDestinoId === null || equipes.has(m.equipeDestinoId)))
 }
 

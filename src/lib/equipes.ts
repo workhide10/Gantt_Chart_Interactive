@@ -85,5 +85,22 @@ export function registrarMovimentacao(dados: Dados, evento: EventoEquipe, movime
     integrantesAtualizados.push(...atualizacao.pessoaIds.map((pessoaId) => ({ id: novoId(), composicaoId, pessoaId })))
   }
   return { ...dados, composicoesEquipe: composicoesAtualizadas, integrantesComposicao: integrantesAtualizados,
-    eventosEquipe: [...(dados.eventosEquipe ?? []), evento], movimentacoesEquipe: [...(dados.movimentacoesEquipe ?? []), ...movimentos] }
+    eventosEquipe: [...(dados.eventosEquipe ?? []), { ...evento, simbolo: movimentos.some((m) => m.equipeDestinoId !== null) ? 'setas' : 'marcador' }], movimentacoesEquipe: [...(dados.movimentacoesEquipe ?? []), ...movimentos] }
+}
+
+// Acrescenta pessoas à formação vigente sem remover ninguém nem transferir silenciosamente.
+export function adicionarIntegrantes(dados: Dados, equipeId: string, data: string, pessoaIds: string[], novoId: NovoId = () => crypto.randomUUID()): Dados {
+  if (!dataISOValida(data) || !dados.equipes.some((e) => e.id === equipeId) || !pessoaIds.length || new Set(pessoaIds).size !== pessoaIds.length || pessoaIds.some((id) => !dados.pessoas.some((p) => p.id === id))) throw new Error('Selecione equipe, data e integrantes válidos.')
+  const composicoes = dados.composicoesEquipe ?? []
+  const integrantes = dados.integrantesComposicao ?? []
+  const vigente = composicoes.find((c) => c.equipeId === equipeId && c.inicio <= data && (!c.fim || c.fim >= data))
+  const atuais = integrantes.filter((i) => i.composicaoId === vigente?.id).map((i) => i.pessoaId)
+  if (pessoaIds.some((id) => atuais.includes(id))) throw new Error('Há integrantes que já pertencem à equipe nessa data.')
+  const emOutraEquipe = composicoes.some((c) => c.equipeId !== equipeId && c.inicio <= data && (!c.fim || c.fim >= data) && integrantes.some((i) => i.composicaoId === c.id && pessoaIds.includes(i.pessoaId)))
+  if (emOutraEquipe) throw new Error('Há integrante em outra equipe nessa data. Use Transferir integrante para registrar a mudança.')
+  const composicao: ComposicaoEquipe = vigente?.inicio === data ? vigente : { id: novoId(), equipeId, inicio: data, fim: null, origem: 'manual' }
+  const atualizado = registrarComposicao(dados, composicao, [...atuais, ...pessoaIds], novoId)
+  const equipe = dados.equipes.find((e) => e.id === equipeId)!
+  const evento: EventoEquipe = { id: novoId(), disciplinaId: equipe.disciplinaId, data, simbolo: 'marcador', equipeAdicaoId: equipeId, pessoasAdicionadas: [...pessoaIds] }
+  return { ...atualizado, eventosEquipe: [...(atualizado.eventosEquipe ?? []), evento] }
 }
