@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Atividade, Dados } from '../types'
-import { dataISOValida, diasUteis, formatarBR, hojeISO, sobrepoe } from '../lib/datas'
-import { feriados } from '../data/inicial'
+import { dataISOValida, diasCorridos, formatarBR, hojeISO, sobrepoe } from '../lib/datas'
 
 interface Props {
+  inline?: boolean
   dados: Dados
   inicial: Partial<Atividade>
   onSalvar: (atividade: Atividade, continuar?: boolean) => void
@@ -11,7 +11,7 @@ interface Props {
   onCancelar: () => void
 }
 
-export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar }: Props) {
+export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar, inline = false }: Props) {
   const [escolaId, setEscolaId] = useState(inicial.escolaId ?? '')
   const [equipeId, setEquipeId] = useState(inicial.equipeId ?? '')
   const [inicio, setInicio] = useState(inicial.inicio ?? hojeISO())
@@ -27,8 +27,8 @@ export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar 
 
   useEffect(() => {
     const dialogo = dialogoRef.current
-    dialogo?.showModal()
-    return () => dialogo?.close()
+    if (!inline) dialogo?.showModal()
+    return () => { if (!inline && dialogo?.open) dialogo.close() }
   }, [])
 
   const cancelar = () => {
@@ -60,7 +60,7 @@ export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar 
   }
 
   return (
-    <dialog ref={dialogoRef} className="modal-fundo dialogo-nativo" aria-labelledby="atividade-titulo"
+    <dialog ref={dialogoRef} open={inline || undefined} className={inline ? 'central-formulario' : 'modal-fundo dialogo-nativo'} aria-labelledby="atividade-titulo"
       onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }}
       onCancel={(e) => { e.preventDefault(); cancelar() }}
       onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}>
@@ -95,7 +95,7 @@ export function FormAtividade({ dados, inicial, onSalvar, onExcluir, onCancelar 
             <input required type="date" value={fim} min={inicio} onChange={(e) => setFim(e.target.value)} />
           </label>
         </div>
-        {!erro && <p className="texto-suave">Duração: <strong>{diasUteis(inicio, fim, feriados)} dia(s) útil(eis)</strong>. A composição da equipe é consultada automaticamente pelo período.</p>}
+        {!erro && <p className="texto-suave">Duração: <strong>{diasCorridos(inicio, fim)} dia(s) corrido(s)</strong>. A composição da equipe é consultada automaticamente pelo período.</p>}
         <label>Descrição (opcional)
           <textarea rows={2} value={descricao} onChange={(e) => setDescricao(e.target.value)} />
         </label>

@@ -4,6 +4,7 @@ import { dataISOValida, hojeISO } from '../lib/datas'
 
 import type { AtualizacaoEquipe } from '../lib/equipes'
 interface Props {
+  inline?: boolean
   dados: Dados
   equipeInicialId: string
   tipoInicial: 'troca' | 'saida'
@@ -18,7 +19,7 @@ function integrantesNaData(dados: Dados, equipeId: string, data: string): string
   return composicao ? [...new Set((dados.integrantesComposicao ?? []).filter((i) => i.composicaoId === composicao.id).map((i) => i.pessoaId))] : []
 }
 
-export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar, onCancelar }: Props) {
+export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar, onCancelar, inline = false }: Props) {
   const [tipo] = useState<'troca' | 'saida'>(tipoInicial)
   const [disciplinaId, setDisciplinaId] = useState(dados.equipes.find((e) => e.id === equipeInicialId)?.disciplinaId ?? '')
   const [equipeAId, setEquipeAId] = useState(equipeInicialId)
@@ -34,8 +35,8 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
   const dialogoRef = useRef<HTMLDialogElement>(null)
   useEffect(() => {
     const dialogo = dialogoRef.current
-    dialogo?.showModal()
-    return () => dialogo?.close()
+    if (!inline) dialogo?.showModal()
+    return () => { if (!inline && dialogo?.open) dialogo.close() }
   }, [])
   const cancelar = () => {
     if ((movidosAParaB.length || movidosBParaA.length || saidasPendentes.length || motivo.trim()) && !confirm('Descartar as movimentações preparadas?')) return
@@ -111,7 +112,7 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
       })}{pessoaIds.length === 0 && <p className="vazio">Nenhum integrante registrado nesta equipe para a data selecionada.</p>}</div></fieldset>
   }
 
-  return <dialog ref={dialogoRef} className="modal-fundo dialogo-nativo" aria-labelledby="movimentacao-titulo" onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }} onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}><div className="modal modal-movimentacao">
+  return <dialog ref={dialogoRef} open={inline || undefined} className={inline ? 'central-formulario' : 'modal-fundo dialogo-nativo'} aria-labelledby="movimentacao-titulo" onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }} onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}><div className="modal modal-movimentacao">
     <div className="modal-cabecalho"><h2 id="movimentacao-titulo">{tipo === 'troca' ? 'Transferir integrante' : 'Registrar ausência ou saída'}</h2><button type="button" className="fechar-modal" onClick={cancelar} aria-label="Fechar movimentação">×</button></div><p className="texto-suave">Selecione as pessoas e use as setas para preparar as movimentações. O evento registra todas as alterações em conjunto.</p>
     <div className="duas-colunas"><label>Disciplina<select value={disciplinaId} onChange={(e) => { setDisciplinaId(e.target.value); setEquipeAId(''); setEquipeBId(''); redefinirTrocas(); setSaidasPendentes([]); setSelecionadosSaida([]) }}><option value="">Selecione…</option>{dados.disciplinas.map((d) => <option key={d.id} value={d.id}>{d.sigla} – {d.nome}</option>)}</select></label><label>Data do marco<input type="date" value={data} max={hojeISO()} onChange={(e) => { setData(e.target.value); redefinirTrocas(); setSaidasPendentes([]); setSelecionadosSaida([]) }} /></label></div>
     {tipo === 'troca' ? <>

@@ -4,10 +4,11 @@ import { dataISOValida, formatarBR, hojeISO, somarDias } from '../lib/datas'
 import { adicionarIntegrantes, registrarComposicao, registrarMovimentacao, type AtualizacaoEquipe } from '../lib/equipes'
 import { AdicionarIntegrante } from './AdicionarIntegrante'
 import { MovimentarEquipe } from './MovimentarEquipe'
+import { criarIndiceComposicoes } from '../lib/composicao'
 
-interface Props { dados: Dados; onChange: (dados: Dados) => void }
+interface Props { dados: Dados; inline?: boolean; onChange: (dados: Dados) => void }
 
-export function ComposicoesEquipe({ dados, onChange }: Props) {
+export function ComposicoesEquipe({ dados, onChange, inline = false }: Props) {
   const [equipeFiltro, setEquipeFiltro] = useState('')
   const [formulario, setFormulario] = useState(false)
   const [movimentacao, setMovimentacao] = useState<'troca' | 'saida' | null>(null)
@@ -46,13 +47,32 @@ export function ComposicoesEquipe({ dados, onChange }: Props) {
   return <section className="pagina-composicoes">
     <div className="composicoes-cabecalho"><div><h2>Integrantes das equipes</h2><p>Escolha o que aconteceu. As formações são atualizadas pela data e o histórico permanece disponível abaixo.</p></div><div className="acoes-cabecalho"><button className="primario" onClick={() => setAdicionando(true)}>+ Adicionar integrante</button><button onClick={() => setMovimentacao('troca')}>Transferir integrante</button><button onClick={() => setMovimentacao('saida')}>Registrar ausência ou saída</button><button onClick={() => historicoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>Corrigir registro anterior</button></div></div>
     <div className="composicoes-filtros"><label>Equipe<select value={equipeFiltro} onChange={(e) => setEquipeFiltro(e.target.value)}><option value="">Todas</option>{dados.equipes.map((e) => <option key={e.id} value={e.id}>{e.nome}</option>)}</select></label></div>
+    <FormacaoAtual dados={dados} equipeFiltro={equipeFiltro} />
+    {equipesSemComposicao.length > 0 && <p className="aviso">Há {equipesSemComposicao.length} equipe(s) com atividades sem composição registrada no período: {equipesSemComposicao.map((id) => dados.equipes.find((e) => e.id === id)?.nome ?? 'Equipe removida').join(', ')}.</p>}
+    <div ref={historicoRef} className="tabela-rolagem"><h3>Histórico de formações</h3><p className="dica">Para corrigir integrantes de uma formação existente, selecione “Corrigir composição” na linha correspondente. Eventos de movimentação não são editados por esta ação.</p><table><thead><tr><th>Disciplina</th><th>Equipe</th><th>Vigência</th><th>Integrantes</th><th>Origem</th><th></th></tr></thead><tbody>
+      {ordenadas.map((c) => { const equipe = dados.equipes.find((e) => e.id === c.equipeId); const disciplina = dados.disciplinas.find((d) => d.id === equipe?.disciplinaId); const pessoas = integrantes.filter((i) => i.composicaoId === c.id).map((i) => dados.pessoas.find((p) => p.id === i.pessoaId)?.nome).filter(Boolean)
+        return <tr key={c.id}><td>{disciplina?.sigla ?? '—'}</td><td>{equipe?.nome ?? 'Equipe removida'}</td><td>{formatarBR(c.inicio)} – {c.fim ? formatarBR(c.fim) : 'Em aberto'}</td><td>{pessoas.join(', ') || 'Nenhum integrante'}</td><td>{c.origem === 'planilha' ? 'Planilha / referência' : 'Manual'}</td><td className="vinculo-acoes"><button onClick={() => { setEditando(c); setFormulario(true) }}>Corrigir composição</button><button className="perigo" onClick={() => remover(c)}>Remover</button></td></tr> })}
+    </tbody></table>{ordenadas.length === 0 && <p className="vazio">Nenhuma formação registrada para os filtros escolhidos. Use “Adicionar integrante” para iniciar o histórico.</p>}</div>
+    {formulario && <FormularioComposicao inline={inline} key={editando?.id ?? 'nova-composicao'} dados={dados} inicial={editando} equipeInicialId={equipeFiltro} onSalvar={salvar} onCancelar={() => { setFormulario(false); setEditando(null) }} />}
+    {adicionando && <AdicionarIntegrante inline={inline} dados={dados} equipeInicialId={equipeFiltro} onCancelar={() => setAdicionando(false)} onSalvar={(equipeId, data, pessoas) => { try { onChange(adicionarIntegrantes(dados, equipeId, data, pessoas)); setAdicionando(false); return null } catch (erro) { return erro instanceof Error ? erro.message : "Não foi possível adicionar." } }} />}
+    {movimentacao && <MovimentarEquipe inline={inline} dados={dados} tipoInicial={movimentacao} equipeInicialId={equipeFiltro} onSalvar={salvarMovimentacao} onCancelar={() => setMovimentacao(null)} />}
+  </section>
+}
+
+export function FormacaoAtual({ dados, equipeFiltro = '', exibirFiltro = false }: { dados: Dados; equipeFiltro?: string; exibirFiltro?: boolean }) {
+  const [filtroLocal, setFiltroLocal] = useState('')
+  const equipeSelecionada = exibirFiltro ? filtroLocal : equipeFiltro
+  const hoje = hojeISO()
+  const indice = useMemo(() => criarIndiceComposicoes(dados), [dados.composicoesEquipe, dados.integrantesComposicao, dados.pessoas])
+  const disciplinas = useMemo(() => new Map(dados.disciplinas.map((d) => [d.id, d])), [dados.disciplinas])
+  return <>
+    {exibirFiltro && <div className="composicoes-filtros"><label>Equipe<select value={filtroLocal} onChange={(e) => setFiltroLocal(e.target.value)}><option value="">Todas</option>{dados.equipes.map((e) => <option key={e.id} value={e.id}>{e.nome}</option>)}</select></label></div>}
     <section className="equipes-atuais" aria-labelledby="equipes-atuais-titulo">
-      <div className="equipes-atuais-cabecalho"><div><h3 id="equipes-atuais-titulo">Formação atual das equipes</h3><p>Integrantes na data de hoje, {formatarBR(hojeISO())}.</p></div></div>
-      <div className="equipes-cards">{dados.equipes.filter((e) => !equipeFiltro || e.id === equipeFiltro).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')).map((equipe) => {
-        const hoje = hojeISO()
-        const composicao = composicoes.filter((c) => c.equipeId === equipe.id && c.inicio <= hoje && (!c.fim || c.fim >= hoje)).sort((a, b) => b.inicio.localeCompare(a.inicio))[0]
-        const pessoas = composicao ? integrantes.filter((i) => i.composicaoId === composicao.id).map((i) => dados.pessoas.find((p) => p.id === i.pessoaId)).filter((p) => p !== undefined).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')) : []
-        const disciplina = dados.disciplinas.find((d) => d.id === equipe.disciplinaId)
+      <div className="equipes-atuais-cabecalho"><div><h3 id="equipes-atuais-titulo">Formação atual das equipes</h3><p>Integrantes na data de hoje, {formatarBR(hoje)}.</p></div></div>
+      <div className="equipes-cards">{dados.equipes.filter((e) => !equipeSelecionada || e.id === equipeSelecionada).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')).map((equipe) => {
+        const composicao = (indice.porEquipe.get(equipe.id) ?? []).reduce<ComposicaoEquipe | undefined>((melhor, c) => c.inicio <= hoje && (!c.fim || c.fim >= hoje) && (!melhor || c.inicio > melhor.inicio) ? c : melhor, undefined)
+        const pessoas = composicao ? (indice.pessoaIdsPorComposicao.get(composicao.id) ?? []).map((id) => indice.pessoaPorId.get(id)).filter((p) => p !== undefined).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')) : []
+        const disciplina = disciplinas.get(equipe.disciplinaId)
         return <article className="equipe-card" key={equipe.id}><div className="equipe-card-topo"><div><span className="equipe-card-disciplina">{disciplina?.sigla ?? 'Sem disciplina'}</span><h4>{equipe.nome || 'Equipe sem nome'}</h4></div><span className="equipe-card-total">{pessoas.length} {pessoas.length === 1 ? 'integrante' : 'integrantes'}</span></div>
           {!composicao ? <p className="equipe-card-vazio">Sem formação registrada para hoje.</p> : pessoas.length === 0 ? <p className="equipe-card-vazio">Nenhum integrante na formação atual.</p> : <ul className="equipe-card-pessoas">{pessoas.map((pessoa) => <li key={pessoa.id}><span>{pessoa.nome}</span>{pessoa.funcao && <small>{pessoa.funcao}</small>}</li>)}</ul>}
           {composicao && <p className="equipe-card-vigencia">Formação vigente desde {formatarBR(composicao.inicio)}</p>}
@@ -60,19 +80,11 @@ export function ComposicoesEquipe({ dados, onChange }: Props) {
       })}</div>
       {dados.equipes.length === 0 && <p className="vazio">Nenhuma equipe cadastrada. Adicione equipes em Cadastros.</p>}
     </section>
-    {equipesSemComposicao.length > 0 && <p className="aviso">Há {equipesSemComposicao.length} equipe(s) com atividades sem composição registrada no período: {equipesSemComposicao.map((id) => dados.equipes.find((e) => e.id === id)?.nome ?? 'Equipe removida').join(', ')}.</p>}
-    <div ref={historicoRef} className="tabela-rolagem"><h3>Histórico de formações</h3><p className="dica">Para corrigir integrantes de uma formação existente, selecione “Corrigir composição” na linha correspondente. Eventos de movimentação não são editados por esta ação.</p><table><thead><tr><th>Disciplina</th><th>Equipe</th><th>Vigência</th><th>Integrantes</th><th>Origem</th><th></th></tr></thead><tbody>
-      {ordenadas.map((c) => { const equipe = dados.equipes.find((e) => e.id === c.equipeId); const disciplina = dados.disciplinas.find((d) => d.id === equipe?.disciplinaId); const pessoas = integrantes.filter((i) => i.composicaoId === c.id).map((i) => dados.pessoas.find((p) => p.id === i.pessoaId)?.nome).filter(Boolean)
-        return <tr key={c.id}><td>{disciplina?.sigla ?? '—'}</td><td>{equipe?.nome ?? 'Equipe removida'}</td><td>{formatarBR(c.inicio)} – {c.fim ? formatarBR(c.fim) : 'Em aberto'}</td><td>{pessoas.join(', ') || 'Nenhum integrante'}</td><td>{c.origem === 'planilha' ? 'Planilha / referência' : 'Manual'}</td><td className="vinculo-acoes"><button onClick={() => { setEditando(c); setFormulario(true) }}>Corrigir composição</button><button className="perigo" onClick={() => remover(c)}>Remover</button></td></tr> })}
-    </tbody></table>{ordenadas.length === 0 && <p className="vazio">Nenhuma formação registrada para os filtros escolhidos. Use “Adicionar integrante” para iniciar o histórico.</p>}</div>
-    {formulario && <FormularioComposicao key={editando?.id ?? 'nova-composicao'} dados={dados} inicial={editando} equipeInicialId={equipeFiltro} onSalvar={salvar} onCancelar={() => { setFormulario(false); setEditando(null) }} />}
-    {adicionando && <AdicionarIntegrante dados={dados} equipeInicialId={equipeFiltro} onCancelar={() => setAdicionando(false)} onSalvar={(equipeId, data, pessoas) => { try { onChange(adicionarIntegrantes(dados, equipeId, data, pessoas)); setAdicionando(false); return null } catch (erro) { return erro instanceof Error ? erro.message : "Não foi possível adicionar." } }} />}
-    {movimentacao && <MovimentarEquipe dados={dados} tipoInicial={movimentacao} equipeInicialId={equipeFiltro} onSalvar={salvarMovimentacao} onCancelar={() => setMovimentacao(null)} />}
-  </section>
+  </>
 }
 
-interface FormularioProps { dados: Dados; inicial: ComposicaoEquipe | null; equipeInicialId: string; onSalvar: (composicao: ComposicaoEquipe, pessoaIds: string[]) => string | null; onCancelar: () => void }
-function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCancelar }: FormularioProps) {
+interface FormularioProps { inline?: boolean; dados: Dados; inicial: ComposicaoEquipe | null; equipeInicialId: string; onSalvar: (composicao: ComposicaoEquipe, pessoaIds: string[]) => string | null; onCancelar: () => void }
+function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCancelar, inline = false }: FormularioProps) {
   const [equipeId, setEquipeId] = useState(inicial?.equipeId ?? equipeInicialId)
   const [inicio, setInicio] = useState(inicial?.inicio ?? hojeISO())
   const [pessoaIds, setPessoaIds] = useState<string[]>(() => inicial ? (dados.integrantesComposicao ?? []).filter((i) => i.composicaoId === inicial.id).map((i) => i.pessoaId) : [])
@@ -83,8 +95,8 @@ function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCan
   const [alterado, setAlterado] = useState(false)
   useEffect(() => {
     const dialogo = dialogoRef.current
-    dialogo?.showModal()
-    return () => dialogo?.close()
+    if (!inline) dialogo?.showModal()
+    return () => { if (!inline && dialogo?.open) dialogo.close() }
   }, [])
   const cancelar = () => {
     if (alterado && !confirm('Descartar as alterações desta composição?')) return
@@ -109,7 +121,7 @@ function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCan
   const erro = !equipeId ? 'Selecione uma equipe.' : !dataISOValida(inicio) ? 'Informe uma data válida para a formação.' : inicio > hojeISO() ? 'Esta plataforma registra apenas alterações históricas.' : !inicial && composicoes.some((c) => c.equipeId === equipeId && c.inicio === inicio) ? 'Já existe uma composição com essa data. Use “Corrigir composição” na lista.' : inicial && movimentosUnicos.length > 0 ? 'Para transferir integrantes entre equipes, use “Troca ou saída de integrante” com a data efetiva da troca.' : !pessoaIds.length ? 'Selecione ao menos um integrante.' : ''
   const salvar = () => { if (erro) return; const resultado = onSalvar({ id: inicial?.id ?? crypto.randomUUID(), equipeId, inicio, fim: inicial?.fim ?? null, origem: 'manual' }, pessoaIds); if (resultado) setErroSalvar(resultado) }
   const pessoasVisiveis = dados.pessoas.filter((p) => `${p.nome} ${p.funcao}`.toLocaleLowerCase('pt-BR').includes(busca.toLocaleLowerCase('pt-BR'))).sort((a, b) => Number(jaNaEquipe(b.id)) - Number(jaNaEquipe(a.id)) || a.nome.localeCompare(b.nome, 'pt-BR'))
-  return <dialog ref={dialogoRef} className="modal-fundo dialogo-nativo" aria-labelledby="composicao-titulo" onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }} onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}><form className="modal modal-composicao" onSubmit={(e) => { e.preventDefault(); salvar() }}>
+  return <dialog ref={dialogoRef} open={inline || undefined} className={inline ? 'central-formulario' : 'modal-fundo dialogo-nativo'} aria-labelledby="composicao-titulo" onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }} onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}><form className="modal modal-composicao" onSubmit={(e) => { e.preventDefault(); salvar() }}>
     <div className="modal-cabecalho"><h2 id="composicao-titulo">{inicial ? 'Corrigir formação da equipe' : 'Registrar formação da equipe'}</h2><button type="button" className="fechar-modal" onClick={cancelar} aria-label="Fechar composição">×</button></div><p className="texto-suave">{inicial ? 'A correção ajusta os integrantes desta versão, mantendo sua vigência.' : 'A nova formação vale a partir da data escolhida. A versão anterior será encerrada na véspera.'}</p>
     <label>Equipe<select disabled={Boolean(inicial)} value={equipeId} autoFocus={!inicial} onChange={(e) => { setEquipeId(e.target.value); setAlterado(true); setErroSalvar('') }}><option value="">Selecione…</option>{dados.equipes.map((e) => <option key={e.id} value={e.id}>{e.nome}</option>)}</select></label>
     {equipe && <p className="texto-suave">Disciplina: {dados.disciplinas.find((d) => d.id === equipe.disciplinaId)?.sigla ?? '—'}</p>}

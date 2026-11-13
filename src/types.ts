@@ -55,7 +55,7 @@ export interface IntegranteComposicaoEquipe {
 }
 
 /** Evento único que agrupa uma troca em lote ou saída de integrantes. */
-export type SimboloProjeto = 'losango' | 'circulo'
+export type SimboloProjeto = 'losango' | 'circulo' | 'generico'
 export type SimboloEquipe = 'setas' | 'marcador'
 
 export interface EventoEquipe {

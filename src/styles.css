@@ -477,3 +477,31 @@ button:disabled { opacity: .5; }
 .paleta-personalizada { display: flex; gap: 8px; align-items: end; margin-top: 14px; }
 .paleta-personalizada label { display: flex; flex-direction: column; gap: 5px; font-size: 11px; flex: 1; }
 .paleta-personalizada input { width: 100%; }
+
+.central-dialogo { position: fixed; inset: 0; width: 100%; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 20px; border: 0; background: #16243d70; color: var(--texto); }
+.central-dialogo::backdrop { background: transparent; }
+.central-pagina { width: min(1400px, 100%); height: 100%; margin: auto; display: flex; flex-direction: column; background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px #13223e40; }
+.central-cabecalho { margin: 0; display: flex; flex: none; justify-content: space-between; align-items: flex-start; padding: 20px 24px; border-bottom: 1px solid #e7edf6; background: #f8faff; }
+.central-cabecalho span { font-size: 10px; font-weight: 700; color: #7184a5; letter-spacing: .08em; }
+.central-cabecalho h2 { margin: 4px 0; color: #263b5c; }
+.central-cabecalho p, .central-titulo-secao p { margin: 3px 0; color: #71809a; font-size: 12px; }
+.central-corpo { min-height: 0; flex: 1; display: flex; }
+.central-menu { width: 205px; flex: none; display: flex; flex-direction: column; gap: 5px; padding: 16px 10px; background: #f5f8fc; border-right: 1px solid #e7edf6; overflow: auto; }
+.central-menu button { display: flex; flex-direction: column; text-align: left; gap: 4px; padding: 12px; border: 0; background: transparent; color: #435572; }
+.central-menu button.ativo { background: #e7eeff; color: #3055c4; }
+.central-menu small { font-size: 10px; color: #71809a; }
+.central-conteudo { flex: 1; min-width: 0; overflow: auto; padding: 22px; }
+.central-titulo-secao { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+.central-titulo-secao h3 { margin: 0; }
+.central-contexto { padding: 10px 12px; border-radius: 8px; background: #f0f5ff; color: #435572; font-size: 12px; }
+@media (max-width: 700px) { .central-dialogo { padding: 6px; } .central-corpo { flex-direction: column; } .central-menu { width: auto; flex-direction: row; border-right: 0; border-bottom: 1px solid #e7edf6; padding: 6px; } .central-menu button { flex: 1 0 auto; } .central-menu small { display: none; } .central-conteudo { padding: 14px; } }
+
+.central-grupo { display: flex; flex-direction: column; gap: 2px; margin-bottom: 14px; }
+.central-grupo > strong { padding: 8px 12px 4px; color: #7184a5; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.central-grupo button { padding: 9px 12px; font-size: 12px; }
+.central-formulario { position: static; display: block; width: 100%; max-width: 850px; max-height: none; margin: 0 auto; padding: 0; border: 0; background: transparent; color: inherit; }
+.central-formulario .modal { width: 100%; max-height: none; border: 1px solid #e1e8f3; box-shadow: none; }
+.central-formulario .modal-movimentacao, .central-formulario .modal-composicao { width: 100%; max-width: none; }
+.central-boas-vindas { padding: 24px; border: 1px solid #e1e8f3; border-radius: 14px; background: #f8faff; }
+.central-boas-vindas p { color: #71809a; margin: 10px 0 18px; }
+@media (max-width: 700px) { .central-menu { align-items: flex-start; } .central-grupo { flex-direction: column; flex: 0 0 auto; margin: 0; } .central-grupo > strong { padding: 4px 8px; } .central-grupo button { padding: 6px 8px; } }

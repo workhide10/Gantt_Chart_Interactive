@@ -1,11 +1,12 @@
 import type { Atividade, Dados, Filtros } from '../types'
-import { dataISOValida, diasUteis, difDias, somarDias } from './datas.ts'
+import { dataISOValida, diasCorridos, difDias, somarDias } from './datas.ts'
 import { filtrarAtividades } from './filtrar.ts'
+import { contarSobreposicoes } from './gantt.ts'
 
 export interface IntervaloAnalise { inicio: string; fim: string }
 interface Periodo { inicio: string; fim: string }
 
-export function analisarExecucao(atividades: Periodo[], feriados: string[] = []) {
+export function analisarExecucao(atividades: Periodo[]) {
   const ordenadas = [...atividades].sort((a, b) => a.inicio.localeCompare(b.inicio) || a.fim.localeCompare(b.fim))
   const periodos: Periodo[] = []
   for (const atividade of ordenadas) {
@@ -15,17 +16,17 @@ export function analisarExecucao(atividades: Periodo[], feriados: string[] = [])
     } else periodos.push({ inicio: atividade.inicio, fim: atividade.fim })
   }
   const pausas = periodos.slice(1).map((p, i) => ({
-    inicio: somarDias(periodos[i].fim, 1), fim: somarDias(p.inicio, -1), dias: diasUteis(somarDias(periodos[i].fim, 1), somarDias(p.inicio, -1), feriados),
+    inicio: somarDias(periodos[i].fim, 1), fim: somarDias(p.inicio, -1), dias: diasCorridos(somarDias(periodos[i].fim, 1), somarDias(p.inicio, -1)),
   })).filter((pausa) => pausa.dias > 0)
   const inicio = periodos[0]?.inicio ?? ''
   const fim = periodos[periodos.length - 1]?.fim ?? ''
-  const diasAtivos = periodos.reduce((total, p) => total + diasUteis(p.inicio, p.fim, feriados), 0)
-  const diasJanela = inicio ? diasUteis(inicio, fim, feriados) : 0
+  const diasAtivos = periodos.reduce((total, p) => total + diasCorridos(p.inicio, p.fim), 0)
+  const diasJanela = inicio ? diasCorridos(inicio, fim) : 0
   return { inicio, fim, periodos, pausas, diasAtivos, diasJanela, diasPausados: diasJanela - diasAtivos }
 }
 
 // Esta visão conserva a execução completa do projeto, independentemente da disciplina e do recorte de datas.
-export function analisarExecucaoProjetos(dados: Dados, escolaId: string, feriados: string[] = []) {
+export function analisarExecucaoProjetos(dados: Dados, escolaId: string) {
   const porProjeto = new Map<string, Atividade[]>()
   for (const a of dados.atividades) {
     if (escolaId && a.escolaId !== escolaId) continue
@@ -36,21 +37,11 @@ export function analisarExecucaoProjetos(dados: Dados, escolaId: string, feriado
   const projetos = new Map(dados.escolas.map((p) => [p.id, p]))
   return [...porProjeto].map(([id, atividades]) => {
     const projeto = projetos.get(id)
-    return { id, codigo: projeto?.codigo ?? 'Projeto removido', nome: projeto?.nome ?? '', cor: projeto?.cor ?? '#94a3b8', ...analisarExecucao(atividades, feriados) }
+    return { id, codigo: projeto?.codigo ?? 'Projeto removido', nome: projeto?.nome ?? '', cor: projeto?.cor ?? '#94a3b8', ...analisarExecucao(atividades) }
   }).sort((a, b) => b.diasAtivos - a.diasAtivos || a.codigo.localeCompare(b.codigo, 'pt-BR'))
 }
 
-function contarSobreposicoesUteis(atividades: Atividade[], feriados: string[]): number {
-  let total = 0
-  for (let i = 0; i < atividades.length; i++) for (let j = i + 1; j < atividades.length; j++) {
-    const inicio = atividades[i].inicio > atividades[j].inicio ? atividades[i].inicio : atividades[j].inicio
-    const fim = atividades[i].fim < atividades[j].fim ? atividades[i].fim : atividades[j].fim
-    if (inicio <= fim && diasUteis(inicio, fim, feriados) > 0) total++
-  }
-  return total
-}
-
-export function analisarAtividades(dados: Dados, filtros: Filtros, periodo: IntervaloAnalise, feriados: string[]) {
+export function analisarAtividades(dados: Dados, filtros: Filtros, periodo: IntervaloAnalise) {
   const periodoInvalido = Boolean((periodo.inicio && !dataISOValida(periodo.inicio)) || (periodo.fim && !dataISOValida(periodo.fim)) ||
     (periodo.inicio && periodo.fim && periodo.inicio > periodo.fim))
   const atividades = periodoInvalido ? [] : filtrarAtividades(dados, filtros).filter((a) =>
@@ -61,25 +52,40 @@ export function analisarAtividades(dados: Dados, filtros: Filtros, periodo: Inte
     fim: periodo.fim && periodo.fim < a.fim ? periodo.fim : a.fim,
   }))
   const porEquipe = new Map<string, Atividade[]>()
+  const porDisciplina = new Map<string, Atividade[]>()
+  const disciplinaPorEquipe = new Map(dados.equipes.map((e) => [e.id, e.disciplinaId]))
   for (const a of delimitadas) {
     const lista = porEquipe.get(a.equipeId) ?? []
     lista.push(a)
     porEquipe.set(a.equipeId, lista)
+    const disciplinaId = disciplinaPorEquipe.get(a.equipeId)
+    if (disciplinaId) {
+      const atividadesDisciplina = porDisciplina.get(disciplinaId) ?? []
+      atividadesDisciplina.push(a)
+      porDisciplina.set(disciplinaId, atividadesDisciplina)
+    }
   }
   const equipes = dados.equipes.flatMap((equipe) => {
     const lista = porEquipe.get(equipe.id)
     if (!lista?.length) return []
     return [{ id: equipe.id, nome: equipe.nome, disciplinaId: equipe.disciplinaId, atividades: lista.length,
-      dias: analisarExecucao(lista, feriados).diasAtivos, conflitos: contarSobreposicoesUteis(lista, feriados) }]
+      dias: analisarExecucao(lista).diasAtivos, conflitos: contarSobreposicoes(lista) }]
   }).sort((a, b) => b.dias - a.dias || a.nome.localeCompare(b.nome, 'pt-BR'))
   const disciplinas = dados.disciplinas.flatMap((d, indiceCor) => {
     const lista = equipes.filter((e) => e.disciplinaId === d.id)
-    return lista.length ? [{ id: d.id, nome: d.sigla, indiceCor, dias: analisarExecucao(delimitadas.filter((a) => lista.some((e) => e.id === a.equipeId)), feriados).diasAtivos, atividades: lista.reduce((s, e) => s + e.atividades, 0) }] : []
+    return lista.length ? [{ id: d.id, nome: d.sigla, indiceCor, dias: analisarExecucao(porDisciplina.get(d.id) ?? []).diasAtivos, atividades: lista.reduce((s, e) => s + e.atividades, 0) }] : []
   }).sort((a, b) => b.dias - a.dias || a.nome.localeCompare(b.nome, 'pt-BR'))
   const primeiro = delimitadas.reduce((min, a) => !min || a.inicio < min ? a.inicio : min, '')
   const ultimo = delimitadas.reduce((max, a) => a.fim > max ? a.fim : max, '')
   const inicio = periodo.inicio || primeiro
   const fim = periodo.fim || ultimo
+  const execucaoGeral = analisarExecucao(delimitadas)
+  const conclusoesPorMes = new Map<string, number>()
+  for (const atividade of atividades) {
+    if ((periodo.inicio && atividade.fim < periodo.inicio) || (periodo.fim && atividade.fim > periodo.fim)) continue
+    const mes = atividade.fim.slice(0, 7)
+    conclusoesPorMes.set(mes, (conclusoesPorMes.get(mes) ?? 0) + 1)
+  }
   const meses: { mes: string; conclusoes: number; dias: number }[] = []
   if (atividades.length && inicio && fim) {
     let mes = `${inicio.slice(0, 7)}-01`
@@ -88,30 +94,31 @@ export function analisarAtividades(dados: Dados, filtros: Filtros, periodo: Inte
       const proximo = `${numero === 12 ? ano + 1 : ano}-${String(numero === 12 ? 1 : numero + 1).padStart(2, '0')}-01`
       const fimMes = somarDias(proximo, -1)
       meses.push({ mes,
-        conclusoes: atividades.filter((a) => a.fim >= mes && a.fim <= fimMes && (!periodo.inicio || a.fim >= periodo.inicio) && (!periodo.fim || a.fim <= periodo.fim)).length,
-        dias: analisarExecucao(delimitadas.flatMap((a) => {
-          const de = a.inicio > mes ? a.inicio : mes, ate = a.fim < fimMes ? a.fim : fimMes
-          return de <= ate ? [{ inicio: de, fim: ate }] : []
-        }), feriados).diasAtivos,
+        conclusoes: conclusoesPorMes.get(mes.slice(0, 7)) ?? 0,
+        dias: execucaoGeral.periodos.reduce((total, intervalo) => {
+          const de = intervalo.inicio > mes ? intervalo.inicio : mes
+          const ate = intervalo.fim < fimMes ? intervalo.fim : fimMes
+          return total + (de <= ate ? diasCorridos(de, ate) : 0)
+        }, 0),
       })
       mes = proximo
     }
   }
   // Durações integrais para comparar o tamanho das atividades, sem encurtá-las pelo filtro.
-  const duracoes = atividades.map((a) => diasUteis(a.inicio, a.fim, feriados)).sort((a, b) => a - b)
+  const duracoes = atividades.map((a) => diasCorridos(a.inicio, a.fim)).sort((a, b) => a - b)
   const faixas = [
     { nome: 'Até 5 dias', min: 0, max: 5 }, { nome: '6 a 10 dias', min: 6, max: 10 },
     { nome: '11 a 20 dias', min: 11, max: 20 }, { nome: 'Mais de 20', min: 21, max: Infinity },
   ].map((f) => ({ nome: f.nome, quantidade: duracoes.filter((d) => d >= f.min && d <= f.max).length }))
   const meio = Math.floor(duracoes.length / 2)
   const mediana = duracoes.length ? (duracoes.length % 2 ? duracoes[meio] : (duracoes[meio - 1] + duracoes[meio]) / 2) : null
-  const dias = analisarExecucao(delimitadas, feriados).diasAtivos
+  const dias = execucaoGeral.diasAtivos
   return { periodoInvalido, atividades, inicio, fim, meses, equipes, disciplinas, faixas, mediana, dias,
     projetos: new Set(atividades.map((a) => a.escolaId)).size, conflitos: equipes.reduce((s, e) => s + e.conflitos, 0) }
 }
 
 // Pico diário de projetos distintos simultâneos, por equipe e mês.
-export function simultaneidadeMensal(atividades: Atividade[], ano: number, feriados: string[]) {
+export function simultaneidadeMensal(atividades: Atividade[], ano: number) {
   const resultado = new Map<string, number[]>()
   const porEquipe = new Map<string, Atividade[]>()
   for (const a of atividades) {
@@ -122,7 +129,6 @@ export function simultaneidadeMensal(atividades: Atividade[], ano: number, feria
     const picos = Array<number>(12).fill(0)
     const inicioAno = `${ano}-01-01`, fimAno = `${ano}-12-31`
     for (let dia = inicioAno; dia <= fimAno; dia = somarDias(dia, 1)) {
-      if (!diasUteis(dia, dia, feriados)) continue
       const projetos = new Set(lista.filter((a) => a.inicio <= dia && a.fim >= dia).map((a) => a.escolaId))
       const mes = Number(dia.slice(5, 7)) - 1
       picos[mes] = Math.max(picos[mes], projetos.size)
@@ -132,20 +138,16 @@ export function simultaneidadeMensal(atividades: Atividade[], ano: number, feria
   return resultado
 }
 
-// Projetos distintos com pelo menos um dia útil registrado em cada mês por disciplina.
-export function projetosMensaisPorDisciplina(atividades: Atividade[], equipes: Dados['equipes'], ano: number, feriados: string[]) {
+// Projetos distintos com pelo menos um dia registrado em cada mês por disciplina.
+export function projetosMensaisPorDisciplina(atividades: Atividade[], equipes: Dados['equipes'], ano: number) {
   const disciplinaPorEquipe = new Map(equipes.map((e) => [e.id, e.disciplinaId]))
   const agrupados = new Map<string, Set<string>[]>()
   for (const atividade of atividades) {
     const disciplinaId = disciplinaPorEquipe.get(atividade.equipeId)
     if (!disciplinaId) continue
     for (let mes = 1; mes <= 12; mes++) {
-      const inicioMes = `${ano}-${String(mes).padStart(2, '0')}-01`
-      const proximoMes = mes === 12 ? `${ano + 1}-01-01` : `${ano}-${String(mes + 1).padStart(2, '0')}-01`
-      const fimMes = mes === 12 ? `${ano}-12-31` : somarDias(proximoMes, -1)
-      const inicio = atividade.inicio > inicioMes ? atividade.inicio : inicioMes
-      const fim = atividade.fim < fimMes ? atividade.fim : fimMes
-      if (inicio > fim || diasUteis(inicio, fim, feriados) === 0) continue
+      const mesReferencia = `${ano}-${String(mes).padStart(2, '0')}`
+      if (atividade.inicio.slice(0, 7) > mesReferencia || atividade.fim.slice(0, 7) < mesReferencia) continue
       let meses = agrupados.get(disciplinaId)
       if (!meses) { meses = Array.from({ length: 12 }, () => new Set<string>()); agrupados.set(disciplinaId, meses) }
       meses[mes - 1].add(atividade.escolaId)
@@ -155,9 +157,14 @@ export function projetosMensaisPorDisciplina(atividades: Atividade[], equipes: D
 }
 
 // Janela global fixa, independente dos filtros, usando os primeiros e últimos registros.
-export function janelaGlobalAtividades(atividades: Atividade[], feriados: string[]) {
+export function janelaGlobalAtividades(atividades: Atividade[]) {
   if (!atividades.length) return { inicio: '', fim: '', dias: 0 }
   const inicio = atividades.reduce((menor, a) => a.inicio < menor ? a.inicio : menor, atividades[0].inicio)
   const fim = atividades.reduce((maior, a) => a.fim > maior ? a.fim : maior, atividades[0].fim)
-  return { inicio, fim, dias: diasUteis(inicio, fim, feriados) }
+  return { inicio, fim, dias: diasCorridos(inicio, fim) }
+}
+
+// Janela completa do projeto selecionado ou de toda a plataforma.
+export function janelaReferencia(dados: Dados, projetoId: string) {
+  return janelaGlobalAtividades(projetoId ? dados.atividades.filter((a) => a.escolaId === projetoId) : dados.atividades)
 }

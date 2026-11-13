@@ -68,3 +68,11 @@ export const nomeMes = (iso: string): string => `${MESES[paraDate(iso).getUTCMon
 // Dias úteis depois da primeira data até a segunda, inclusive.
 export const diasUteisEntreMarcos = (inicio: string, fim: string, feriados: string[]): number =>
   inicio >= fim ? 0 : diasUteis(somarDias(inicio, 1), fim, feriados)
+
+// Dias corridos de calendário, com ambas as datas incluídas.
+export const diasCorridos = (inicio: string, fim: string): number =>
+  Math.max(0, difDias(inicio, fim) + 1)
+
+// Intervalo entre marcos exclui a data do marco anterior.
+export const diasCorridosEntreMarcos = (inicio: string, fim: string): number =>
+  Math.max(0, difDias(inicio, fim))

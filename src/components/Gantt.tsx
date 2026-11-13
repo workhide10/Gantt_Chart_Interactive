@@ -48,11 +48,12 @@ interface Props {
   marcos: MarcoProjeto[]
   onEditar: (a: Atividade) => void
   onNova: (preset: Partial<Atividade>) => void
+  onAbrirCentral: () => void
   onEditarMarco: (marco: MarcoProjeto) => void
   onRedimensionar: (atividade: Atividade) => void
 }
 
-export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco, onRedimensionar }: Props) {
+export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral, onEditarMarco, onRedimensionar }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
   const [escala, setEscala] = useState<EscalaTemporal>('meses')
   const [escolasOcultas, setEscolasOcultas] = useState<Set<string>>(() => new Set())
@@ -297,6 +298,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
   return (
     <section>
       <div className="gantt-controles">
+        <button type="button" onClick={onAbrirCentral}>Registros</button>
         <div className="seg">
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>
           <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por projeto</button>
@@ -312,7 +314,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
           <button className={escala === 'meses' ? 'ativo' : ''} onClick={() => setEscala('meses')}>Meses</button>
           <button className={escala === 'trimestres' ? 'ativo' : ''} onClick={() => setEscala('trimestres')}>Trimestres</button>
         </div>
-        <span className="dica">Clique no espaço livre para criar uma atividade na data escolhida. Clique em uma barra para editar ou arraste suas extremidades para ajustar o período. {agrupar === 'equipe' ? 'Os marcadores roxos indicam mudanças de composição.' : '◆ identifica um marco concluído.'}</span>
+        <span className="dica">Clique no espaço livre para abrir os registros com a data escolhida. Clique em uma barra para editar ou arraste suas extremidades para ajustar o período. {agrupar === 'equipe' ? 'Os marcadores roxos indicam mudanças de composição.' : '◆ entrega · ● revisão · ■ marco genérico.'}</span>
       </div>
 
       <div className="legenda">
@@ -388,7 +390,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onEditarMarco,
                       onMouseEnter={(e) => agendarTooltip(e, <><strong>{marco.titulo}</strong><div>Data: {formatarBR(marco.data)}</div>{marco.observacao && <div>{marco.observacao}</div>}<small>Clique para editar o marco</small></>)}
                       onMouseLeave={ocultarTooltip}
                       onClick={(e) => { e.stopPropagation(); ocultarTooltip(); onEditarMarco(marco) }}
-                    >{marco.simbolo === 'circulo' ? '●' : '◆'}</button>
+                    >{marco.simbolo === 'circulo' ? '●' : marco.simbolo === 'generico' ? '■' : '◆'}</button>
                   ))}
                   {agrupar === 'equipe' && [...new Set([...(linha.composicoes?.slice(1).map((c) => c.inicio) ?? []), ...(linha.eventosEquipe?.map((e) => e.data) ?? [])])].map((data) => {
                     const composicao = linha.composicoes?.find((c) => c.inicio === data)

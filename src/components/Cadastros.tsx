@@ -92,7 +92,7 @@ export function Cadastros({ dados, onChange }: Props) {
   )
 }
 
-function NovoCadastro({ dados, inicial, onCancelar, onSalvar }: { dados: Dados; inicial: Aba; onCancelar: () => void; onSalvar: (tipo: Aba, dados: Dados) => void }) {
+export function NovoCadastro({ dados, inicial, onCancelar, onSalvar, inline = false }: { dados: Dados; inicial: Aba; onCancelar: () => void; onSalvar: (tipo: Aba, dados: Dados) => void; inline?: boolean }) {
   const [tipo, setTipo] = useState<Aba>(inicial)
   const [nome, setNome] = useState('')
   const [codigo, setCodigo] = useState('')
@@ -100,7 +100,7 @@ function NovoCadastro({ dados, inicial, onCancelar, onSalvar }: { dados: Dados; 
   const [disciplinaId, setDisciplinaId] = useState('')
   const [funcao, setFuncao] = useState('')
   const dialogo = useRef<HTMLDialogElement>(null)
-  useEffect(() => { const atual = dialogo.current; atual?.showModal(); return () => atual?.close() }, [])
+  useEffect(() => { const atual = dialogo.current; if (!inline) atual?.showModal(); return () => { if (!inline && atual?.open) atual.close() } }, [inline])
   const cancelar = () => { if ((nome.trim() || codigo.trim() || funcao.trim()) && !confirm('Descartar os dados deste cadastro?')) return; onCancelar() }
   const salvar = () => {
     if (!nome.trim() || ((tipo === 'escolas' || tipo === 'disciplinas') && !codigo.trim()) || (tipo === 'equipes' && !disciplinaId)) return
@@ -111,7 +111,7 @@ function NovoCadastro({ dados, inicial, onCancelar, onSalvar }: { dados: Dados; 
       : { ...dados, pessoas: [...dados.pessoas, { id, nome: nomeLimpo, funcao: funcao.trim() }] }
     onSalvar(tipo, atualizado)
   }
-  return <dialog ref={dialogo} className="modal-fundo dialogo-nativo" aria-labelledby="novo-cadastro-titulo" onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}>
+  return <dialog ref={dialogo} open={inline || undefined} className={inline ? 'central-formulario' : 'modal-fundo dialogo-nativo'} aria-labelledby="novo-cadastro-titulo" onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}>
     <form className="modal" onSubmit={(e) => { e.preventDefault(); salvar() }}>
       <div className="modal-cabecalho"><h2 id="novo-cadastro-titulo">Novo cadastro</h2><button type="button" className="fechar-modal" onClick={cancelar} aria-label="Fechar">×</button></div>
       <label>O que deseja cadastrar?<select value={tipo} onChange={(e) => { if ((nome.trim() || codigo.trim() || funcao.trim() || disciplinaId) && !confirm('Alterar o tipo e descartar os dados preenchidos?')) return; setTipo(e.target.value as Aba); setNome(''); setCodigo(''); setFuncao(''); setDisciplinaId('') }}>{ABAS.map((a) => <option value={a.id} key={a.id}>{a.titulo}</option>)}</select></label>

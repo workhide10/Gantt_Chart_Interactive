@@ -27,7 +27,7 @@ npm test
 npm run build
 ```
 
-Os testes cobrem datas no fuso local, datas inválidas, dias úteis, conflitos inclusivos, filtros combinados e mudanças de formação durante uma atividade.
+Os testes cobrem datas no fuso local, datas inválidas, dias corridos, conflitos inclusivos, filtros combinados e mudanças de formação durante uma atividade.
 
 ## Organização do código
 
@@ -43,10 +43,10 @@ Os testes cobrem datas no fuso local, datas inválidas, dias úteis, conflitos i
 
 A aba **Análises** oferece cinco indicadores e cinco painéis: ritmo mensal, distribuição por disciplina, carga por equipe, perfil de duração e execução versus pausas dos projetos. Clique nas disciplinas, equipes e projetos dos gráficos para filtrar. Há atalhos para todo o histórico, os últimos 90 dias e o ano corrente, além do intervalo personalizado.
 
-- A carga usa a união dos dias úteis dos registros dentro do recorte, por equipe; o mesmo dia conta uma vez por equipe. A distribuição por disciplina também usa a união entre suas equipes, e o total usa a união entre todas as equipes.
+- A carga usa a união dos dias corridos dos registros dentro do recorte, por equipe; o mesmo dia conta uma vez por equipe. A distribuição por disciplina também usa a união entre suas equipes, e o total usa a união entre todas as equipes.
 - A série de términos de intervalos considera a data final original; ela não indica conclusão do projeto. Uma atividade que atravessa o fim do recorte não vira uma conclusão artificial no último dia do filtro.
-- A duração mediana e o histograma usam a duração integral, em dias úteis, das atividades selecionadas.
-- **Execução e pausas** conserva o histórico completo do projeto. Respeita o filtro de projeto, mas não encurta a linha do tempo pelos filtros de disciplina, equipe e período. Intervalos sobrepostos ou adjacentes são unidos; as pausas são os dias úteis sem atividades entre os trechos registrados.
+- A duração mediana e o histograma usam a duração integral, em dias corridos, das atividades selecionadas.
+- **Execução e pausas** conserva o histórico completo do projeto. Respeita o filtro de projeto, mas não encurta a linha do tempo pelos filtros de disciplina, equipe e período. Intervalos sobrepostos ou adjacentes são unidos; as pausas são os dias corridos sem atividades entre os trechos registrados.
 - A base registra execução e não possui uma data de prazo planejado separada. O dashboard mostra concentração, duração e pausas observadas, sem inferir atraso contratual, capacidade, horas ou produtividade.
 
 ## Navegação e análises
@@ -99,12 +99,7 @@ dados já existentes, sem substituir cadastros ou atividades. Os cinco nomes que
 individuais no Gantt, mas não tinham pessoa cadastrada, foram adicionados sem função preenchida.
 
 ## Marcos de projeto
-Na aba **Marcos**, registre o projeto, a etapa, a data de conclusão e observações para análise.
-O sistema exibe o intervalo em dias úteis após o marco anterior do mesmo projeto, calcula o
-intervalo médio e mostra marcadores clicáveis no Gantt quando agrupado por projeto. Datas futuras
-são bloqueadas para manter o histórico focado em etapas concluídas. Projetos sem marcos continuam
-com o mesmo funcionamento anterior. Dados salvos por versões antigas recebem uma lista vazia de
-marcos automaticamente; a importação de backups antigos também continua aceita.
+Na aba **Marcos**, registre fatos do projeto como entrega, revisão ou marco genérico, com nome, data e descrição. A tela apresenta quantidades totais, de entregas e de revisões. O marco genérico pode contextualizar uma pausa; ele aparece no Gantt e no detalhamento de execução, sem modificar os cálculos das pausas. Dados e backups antigos continuam aceitos.
 
 ## Dados
 `src/data/seed.json` foi gerado da planilha. Use **Exportar** de vez em quando: o localStorage
@@ -112,12 +107,18 @@ some se o cache do navegador for limpo. **Restaurar** volta aos dados da planilh
 
 ## Calendário de trabalho e limitações
 
-A execução, as pausas e os intervalos entre marcos consideram dias úteis (segunda a sexta, descontando os feriados constantes em `src/data/feriados.json`). O calendário atual é parcial e contém apenas algumas datas de 2026; deve ser completado conforme a localidade e a política da organização antes de confiar nos indicadores. A contagem entre marcos exclui a data do marco anterior e inclui a do atual quando útil. Intervalos com apenas fins de semana ou feriados não são contabilizados como pausas úteis.
+As análises usam dias corridos, incluindo finais de semana e feriados. A contagem dos intervalos de atividades inclui as duas datas. Intervalos sem atividades, incluindo fins de semana e feriados, entram como pausas. O calendário de feriados continua visível no Gantt, mas não altera os cálculos.
 
 O projeto contém arquivos de etapas, lotações e auditoria de uma implementação incompleta que não são usados pela aplicação atual. Eles foram excluídos da compilação até serem integrados ao modelo de dados.
 
-O gráfico de projetos por disciplina mostra, a cada mês, a quantidade de projetos distintos com registro em pelo menos um dia útil. Um projeto com várias equipes ou intervalos na mesma disciplina conta uma vez no mês; os projetos não precisam ter ocorrido simultaneamente. O gráfico respeita os filtros e o período escolhidos. A duração média dos projetos usa a janela em dias úteis entre o primeiro e o último registro de cada projeto, incluindo pausas; usa o histórico completo e não representa prazo contratual ou conclusão.
+O gráfico de projetos por disciplina mostra, a cada mês, a quantidade de projetos distintos com registro em pelo menos um dia. Um projeto com várias equipes ou intervalos na mesma disciplina conta uma vez no mês; os projetos não precisam ter ocorrido simultaneamente. O gráfico respeita os filtros e o período escolhidos. A duração média dos projetos usa a janela em dias corridos entre o primeiro e o último registro de cada projeto, incluindo pausas; usa o histórico completo e não representa prazo contratual ou conclusão.
 
 ## Ações de integrantes
 
 Na aba Equipes, use Adicionar integrante para entrada ou retorno; Transferir integrante para movimentação entre equipes da mesma disciplina; Registrar ausência ou saída para saída com motivo; e Corrigir registro anterior para localizar e corrigir a formação no histórico. A correção de formação não edita eventos de movimentação. A inclusão preserva os integrantes existentes, vale até a próxima formação e não transfere pessoas silenciosamente. Ausências não têm retorno automático: registre-o pela ação Adicionar integrante.
+
+A janela de referência do gráfico Tempo de execução por disciplina usa o histórico completo do projeto selecionado; sem projeto, usa o histórico de toda a plataforma. Os filtros de data, disciplina e equipe continuam recortando os dias de trabalho, sem alterar essa janela.
+
+## Central de registros no Gantt
+
+O botão **Registros** e o clique em uma área livre do Gantt abrem a central com navegação lateral para atividades, marcos, equipes e cadastros. Ao criar uma atividade a partir de uma área livre, a data e a linha clicadas são sugeridas; um novo marco também pode aproveitar a data e o projeto disponíveis. Os formulários permanecem acessíveis sem sair do cronograma. As listas de atividades e marcos respeitam os filtros aplicáveis do Gantt.
