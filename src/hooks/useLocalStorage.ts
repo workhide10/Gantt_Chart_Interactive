@@ -11,7 +11,7 @@ export function useLocalStorage<T>(chave: string, inicial: T, validar?: (valor: 
       if (validar && !validar(salvo)) throw new Error('Dados incompatíveis')
       return { valor: salvo as T, original, erro: '', bloqueado: false }
     } catch {
-      return { valor: inicial, original, erro: 'Não foi possível carregar os dados salvos. O conteúdo original foi preservado; importe um backup válido ou restaure os dados de referência para voltar a salvar.', bloqueado: true }
+      return { valor: inicial, original, erro: 'Não foi possível carregar os dados salvos. O conteúdo original foi preservado; importe um backup válido ou limpe os dados para voltar a salvar.', bloqueado: true }
     }
   })
   const [valor, setValor] = useState<T>(leitura.valor)
