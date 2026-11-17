@@ -24,7 +24,7 @@ export function SeletorCor({ valor, onChange }: { valor: string; onChange: (cor:
       <div className="paleta-cabecalho"><strong id="paleta-titulo">Escolher cor</strong><button type="button" onClick={fechar} aria-label="Fechar paleta">×</button></div>
       <h3>Cores do tema</h3>{grade(tema, 'Cores do tema')}{grade(tonalidades, 'Tonalidades do tema')}
       <h3>Cores padrão</h3>{grade(padrao, 'Cores padrão')}
-      <div className="paleta-personalizada"><label>Cor personalizada <input value={personalizada} onChange={(e) => setPersonalizada(e.target.value)} placeholder="#RRGGBB" maxLength={7} aria-label="Cor personalizada em hexadecimal" /></label><button type="button" disabled={!/^#[0-9a-f]{6}$/i.test(personalizada)} onClick={() => escolher(personalizada)}>Aplicar</button></div>
+      <div className="paleta-personalizada"><label>Cor personalizada <input type="text" value={personalizada} onChange={(e) => setPersonalizada(e.target.value)} placeholder="#RRGGBB" maxLength={7} aria-label="Cor personalizada em hexadecimal" /></label><button type="button" disabled={!/^#[0-9a-f]{6}$/i.test(personalizada)} onClick={() => escolher(personalizada)}>Aplicar</button></div>
     </div></dialog>}
   </span>
 }

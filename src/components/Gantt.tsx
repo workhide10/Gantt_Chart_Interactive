@@ -313,8 +313,11 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral
 
   return (
     <section>
+      <div className="gantt-introducao">
+        <div><h2>Cronograma {agrupar === 'equipe' ? 'das equipes' : 'dos projetos'}</h2><p>Acompanhe períodos de atividade e movimentações.</p></div>
+      </div>
       <div className="gantt-controles">
-        <button type="button" onClick={onAbrirCentral}>Registros</button>
+        <button type="button" className="primario" onClick={onAbrirCentral}>Registros</button>
         {agrupar === 'equipe' && <button type="button" onClick={() => setOrdenacaoAberta(true)}>Ordenar equipes</button>}
         <div className="seg">
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>

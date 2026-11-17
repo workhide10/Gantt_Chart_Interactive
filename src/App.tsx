@@ -18,6 +18,14 @@ import { ComposicoesEquipe } from './components/ComposicoesEquipe'
 type Aba = 'gantt' | 'atividades' | 'marcos' | 'analises' | 'equipes' | 'cadastros'
 type IntervaloAnalise = { inicio: string; fim: string }
 
+const APRESENTACAO_ABAS: Record<Aba, { titulo: string; descricao: string }> = {
+  gantt: { titulo: 'Visão geral do cronograma', descricao: 'Acompanhe os projetos e organize o trabalho das equipes.' },
+  atividades: { titulo: 'Atividades', descricao: 'Consulte e gerencie os períodos de trabalho registrados.' },
+  marcos: { titulo: 'Marcos', descricao: 'Acompanhe entregas, análises e acontecimentos relevantes.' },
+  analises: { titulo: 'Análises', descricao: 'Indicadores para acompanhar a execução e a distribuição do trabalho.' },
+  equipes: { titulo: 'Equipes', descricao: 'Acompanhe a composição atual e os movimentos de cada equipe.' },
+  cadastros: { titulo: 'Cadastros', descricao: 'Mantenha os dados que são usados em toda a plataforma.' },
+}
 
 export default function App() {
   // Todos os dados do sistema ficam neste estado, salvo automaticamente no navegador.
@@ -120,11 +128,13 @@ export default function App() {
       </header>
 
       <main>
+        <div className="pagina-introducao"><h2>{APRESENTACAO_ABAS[aba].titulo}</h2><p>{APRESENTACAO_ABAS[aba].descricao}</p></div>
         {armazenamento.erro && <div className="aviso" role="alert">{armazenamento.erro} <button onClick={exportar}>Exportar dados desta sessão</button>
           {armazenamento.bloqueado && armazenamento.original !== null && <button onClick={() => baixarArquivo(armazenamento.original!, `gantt-equipes-recuperacao-${hojeISO()}.json`)}>Baixar conteúdo original</button>}
         </div>}
         {aba !== 'cadastros' && aba !== 'equipes' && <BarraFiltros dados={dados} filtros={filtros} onChange={setFiltros} somenteProjeto={aba === 'marcos'} acao={aba === 'atividades' ? <button className="primario" onClick={() => novaAtividade()}>+ Nova atividade</button> : aba === 'marcos' ? <button className="primario" onClick={() => setMarcoEditando({ escolaId: filtros.escolaId || undefined })}>+ Novo marco</button> : undefined} />}
 
+        <div className={`pagina-conteudo pagina-conteudo-${aba}`}>
         {aba === 'gantt' && (
           <Gantt dados={dados} filtros={filtros} marcos={marcos} onEditar={setEditando} onNova={setCentral} onAbrirCentral={() => setCentral({})} onEditarMarco={setMarcoEditando} onRedimensionar={redimensionarAtividade} />
         )}
@@ -133,6 +143,7 @@ export default function App() {
         {aba === 'equipes' && <ComposicoesEquipe dados={dados} onChange={setDados} />}
         {aba === 'analises' && <DashboardAnalises dados={dados} filtros={filtros} periodo={intervaloAnalise} onPeriodoChange={setIntervaloAnalise} onFiltrosChange={setFiltros} />}
         {aba === 'cadastros' && <Cadastros dados={dados} onChange={setDados} />}
+        </div>
       </main>
 
       {central && <CentralRegistros dados={dados} filtros={filtros} contexto={central} onFechar={() => setCentral(null)} onSalvarAtividade={salvarAtividade} onExcluirAtividade={excluirAtividade} onSalvarMarco={salvarMarco} onExcluirMarco={excluirMarco} onDadosChange={setDados} />}
