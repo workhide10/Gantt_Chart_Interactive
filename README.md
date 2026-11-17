@@ -16,7 +16,7 @@ npm run dev      # abre em http://localhost:5173
 - Os formulários de atividade e marco aceitam **Enter** para salvar. **Escape**, **Cancelar** e o botão de fechar pedem confirmação quando há alterações não salvas. Os diálogos mantêm o foco do teclado dentro do formulário.
 - Em **Cadastros**, os campos são salvos automaticamente e **Adicionar** posiciona o foco no novo registro. As exclusões respeitam também as referências do histórico de movimentações.
 - A importação verifica campos, datas, identificadores duplicados e referências antes de substituir os dados. Backups antigos com as coleções opcionais ausentes continuam aceitos.
-- Falhas de gravação são informadas na tela. Se o conteúdo salvo estiver ilegível ou incompatível, ele permanece preservado e pode ser baixado para recuperação; a gravação fica bloqueada até importar um backup válido ou restaurar os dados de referência.
+- Falhas de gravação são informadas na tela. Se o conteúdo salvo estiver ilegível ou incompatível, ele permanece preservado e pode ser baixado para recuperação; a gravação fica bloqueada até importar um backup válido ou limpar os dados.
 
 ## Verificação
 
@@ -91,7 +91,7 @@ global da equipe. Como a planilha não informa mudanças de formação, conjunto
 como uma formação de referência com início na primeira alocação conhecida e vigência aberta. Registros
 sem dados suficientes são mantidos apenas no arquivo de compatibilidade dos backups. O módulo de pendências foi removido da interface e esses registros arquivados não bloqueiam a exclusão de cadastros livres.
 
-Os vínculos de referência do cronograma anexado foram importados a partir das semanas preenchidas e da
+Historicamente, os vínculos de referência do cronograma anexado foram importados a partir das semanas preenchidas e da
 aba de integrantes por equipe, totalizando 512 relações de origem entre 49 pessoas, 29 equipes e 23
 projetos, no período de 01/04/2026 a 30/10/2026. A composição de GLP-2 não constava na aba de integrantes;
 permanece sem pessoas associadas até revisão do gestor. A importação é aplicada uma única vez também a
@@ -102,8 +102,8 @@ individuais no Gantt, mas não tinham pessoa cadastrada, foram adicionados sem f
 Na aba **Marcos**, registre fatos do projeto como entrega, revisão ou marco genérico, com nome, data e descrição. A tela apresenta quantidades totais, de entregas e de revisões. O marco genérico pode contextualizar uma pausa; ele aparece no Gantt e no detalhamento de execução, sem modificar os cálculos das pausas. Dados e backups antigos continuam aceitos.
 
 ## Dados
-`src/data/seed.json` foi gerado da planilha. Use **Exportar** de vez em quando: o localStorage
-some se o cache do navegador for limpo. **Restaurar** volta aos dados da planilha.
+A base inicial está vazia. Use **Exportar** de vez em quando: o localStorage
+some se o cache do navegador for limpo. **Limpar dados** reinicia a base atual vazia.
 
 ## Calendário de trabalho e limitações
 
@@ -122,3 +122,7 @@ A janela de referência do gráfico Tempo de execução por disciplina usa o his
 ## Central de registros no Gantt
 
 O botão **Registros** e o clique em uma área livre do Gantt abrem a central com navegação lateral para atividades, marcos, equipes e cadastros. Ao criar uma atividade a partir de uma área livre, a data e a linha clicadas são sugeridas; um novo marco também pode aproveitar a data e o projeto disponíveis. Os formulários permanecem acessíveis sem sair do cronograma. As listas de atividades e marcos respeitam os filtros aplicáveis do Gantt.
+
+## Início com base vazia
+
+A aplicação começa sem projetos, disciplinas, equipes, pessoas, atividades ou marcos. Os dados anteriores do navegador permanecem na chave antiga e não são carregados automaticamente. O botão Limpar dados reinicia a base atual vazia. Backups JSON antigos só são usados se importados explicitamente.

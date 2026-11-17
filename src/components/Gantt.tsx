@@ -7,6 +7,7 @@ import { difDias, formatarBR, hojeISO, nomeMes, segundaDe, somarDias } from '../
 import { empacotar } from '../lib/gantt'
 import { filtrarAtividades } from '../lib/filtrar'
 import { criarIndiceComposicoes, integrantesNaAtividade } from '../lib/composicao'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 const LARGURA_ROTULO = 150
 const ALTURA_BARRA = 22
@@ -55,6 +56,21 @@ interface Props {
 
 export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral, onEditarMarco, onRedimensionar }: Props) {
   const [agrupar, setAgrupar] = useState<Agrupar>('equipe')
+  const [ordenacaoAberta, setOrdenacaoAberta] = useState(false)
+  const [ordemSalva, setOrdemSalva, armazenamentoOrdem] = useLocalStorage<string[]>('gantt-equipes:ordem-gantt-v1', [], (valor): valor is string[] => Array.isArray(valor) && valor.every((id) => typeof id === 'string'))
+  const equipesOrdenadas = useMemo(() => {
+    const porId = new Map(dados.equipes.map((e) => [e.id, e]))
+    const ids = [...new Set(ordemSalva)]
+    const usadas = new Set(ids)
+    return [...ids.flatMap((id) => porId.has(id) ? [porId.get(id)!] : []), ...dados.equipes.filter((e) => !usadas.has(e.id))]
+  }, [dados.equipes, ordemSalva])
+  const moverEquipe = (indice: number, deslocamento: number) => {
+    const ids = equipesOrdenadas.map((e) => e.id)
+    const destino = indice + deslocamento
+    if (destino < 0 || destino >= ids.length) return
+    ;[ids[indice], ids[destino]] = [ids[destino], ids[indice]]
+    setOrdemSalva(ids)
+  }
   const [escala, setEscala] = useState<EscalaTemporal>('meses')
   const [escolasOcultas, setEscolasOcultas] = useState<Set<string>>(() => new Set())
   const ganttRef = useRef<HTMLDivElement>(null)
@@ -263,7 +279,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral
           eventosPorEquipe.set(equipeId, ids)
         }
       }
-      return dados.equipes
+      return equipesOrdenadas
         .filter((e) => (!filtros.equipeId || e.id === filtros.equipeId) && (!filtros.disciplinaId || e.disciplinaId === filtros.disciplinaId))
         .map((e) => ({ id: e.id, rotulo: e.nome, atividades: atividadesPorEquipe.get(e.id) ?? [], composicoes: composicoesPorEquipe.get(e.id) ?? [], eventosEquipe: [...(eventosPorEquipe.get(e.id) ?? [])].map((id) => eventoPorId.get(id)!).filter(Boolean) }))
     }
@@ -271,7 +287,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral
       .filter((s) => (!filtros.escolaId || s.id === filtros.escolaId) && (filtros.escolaId || !escolasOcultas.has(s.id)))
       .map((s) => ({ id: s.id, rotulo: `${s.codigo} – ${s.nome}`, cor: s.cor, atividades: atividadesPorEscola.get(s.id) ?? [], marcos: marcosProjeto.filter((m) => m.escolaId === s.id) }))
       .filter((l) => l.atividades.length > 0 || (l.marcos?.length ?? 0) > 0)
-  }, [agrupar, dados.equipes, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesPorEquipe, atividadesPorEscola, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
+  }, [agrupar, equipesOrdenadas, dados.escolas, dados.composicoesEquipe, dados.eventosEquipe, dados.movimentacoesEquipe, escolasOcultas, atividadesPorEquipe, atividadesPorEscola, filtros.equipeId, filtros.disciplinaId, filtros.escolaId, marcos])
 
   const escola = (id: string) => escolaPorId.get(id)
   const equipe = (id: string) => equipePorId.get(id)
@@ -299,6 +315,7 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral
     <section>
       <div className="gantt-controles">
         <button type="button" onClick={onAbrirCentral}>Registros</button>
+        {agrupar === 'equipe' && <button type="button" onClick={() => setOrdenacaoAberta(true)}>Ordenar equipes</button>}
         <div className="seg">
           <button className={agrupar === 'equipe' ? 'ativo' : ''} onClick={() => setAgrupar('equipe')}>Por equipe</button>
           <button className={agrupar === 'escola' ? 'ativo' : ''} onClick={() => setAgrupar('escola')}>Por projeto</button>
@@ -495,6 +512,17 @@ export function Gantt({ dados, filtros, marcos, onEditar, onNova, onAbrirCentral
           {linhas.length === 0 && <p className="vazio">Nenhuma atividade para os filtros escolhidos.</p>}
         </div>
       </div>
+      {ordenacaoAberta && createPortal(<div className="modal-fundo" onMouseDown={(e) => { if (e.target === e.currentTarget) setOrdenacaoAberta(false) }}>
+        <div className="modal ordem-gantt" role="dialog" aria-modal="true" aria-labelledby="ordem-gantt-titulo" onKeyDown={(e) => { if (e.key === 'Escape') setOrdenacaoAberta(false) }}>
+          <div className="modal-cabecalho"><div><h2 id="ordem-gantt-titulo">Ordem das equipes no Gantt</h2><p>Use as setas para organizar as equipes e suas disciplinas na ordem desejada. Os filtros não alteram esta lista.</p></div><button type="button" autoFocus className="fechar-modal" aria-label="Fechar" onClick={() => setOrdenacaoAberta(false)}>×</button></div>
+          {armazenamentoOrdem.erro && <p role="alert">Não foi possível salvar a ordem neste navegador. A alteração pode não permanecer após fechar a página.</p>}
+          {equipesOrdenadas.length ? <ol className="ordem-gantt-lista">{equipesOrdenadas.map((equipe, indice) => <li key={equipe.id}>
+            <span><strong>{equipe.nome}</strong><small>{dados.disciplinas.find((d) => d.id === equipe.disciplinaId)?.sigla ?? 'Disciplina removida'}</small></span>
+            <div className="ordem-gantt-acoes"><button type="button" disabled={indice === 0} onClick={() => moverEquipe(indice, -1)} aria-label={`Mover ${equipe.nome} para cima`}>↑</button><button type="button" disabled={indice === equipesOrdenadas.length - 1} onClick={() => moverEquipe(indice, 1)} aria-label={`Mover ${equipe.nome} para baixo`}>↓</button></div>
+          </li>)}</ol> : <p>Nenhuma equipe cadastrada.</p>}
+          <div className="acoes"><button type="button" onClick={() => setOrdemSalva([])}>Restaurar ordem de cadastro</button><button type="button" onClick={() => setOrdenacaoAberta(false)}>Concluir</button></div>
+        </div>
+      </div>, document.body)}
       {tooltip && createPortal(<div ref={tooltipRef} className="gantt-tooltip" style={{ left: tooltip.left, top: tooltip.top }} role="tooltip">{tooltip.conteudo}</div>, document.body)}
     </section>
   )

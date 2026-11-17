@@ -100,10 +100,10 @@ export default function App() {
           <button onClick={exportar}>Exportar</button>
           <button onClick={() => arquivoRef.current?.click()}>Importar</button>
           <button
-            title="Volta aos dados da planilha original"
-            onClick={() => { if (confirm('Apagar tudo e voltar aos dados da planilha?')) { operacoes.restaurarDados(); setFiltros({ escolaId: '', disciplinaId: '', equipeId: '' }) } }}
+            title="Limpa os dados e reinicia a base vazia"
+            onClick={() => { if (confirm('Apagar todos os dados registrados e começar com uma base vazia?')) { operacoes.restaurarDados(); setFiltros({ escolaId: '', disciplinaId: '', equipeId: '' }) } }}
           >
-            Restaurar
+            Limpar dados
           </button>
           <input
             ref={arquivoRef}

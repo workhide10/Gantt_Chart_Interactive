@@ -7,7 +7,7 @@ import { ajustarPeriodoAtividade, registrarAtividade, registrarMarco, removerAti
 import { useLocalStorage } from './useLocalStorage'
 
 export function useDados() {
-  const [dados, setDados, armazenamento] = useLocalStorage<Dados>('gantt-equipes:v1', dadosIniciais, validarDados)
+  const [dados, setDados, armazenamento] = useLocalStorage<Dados>('gantt-equipes:v2-base-vazia', dadosIniciais, validarDados)
 
   useEffect(() => {
     setDados((atuais) => migrarDados(atuais, dadosIniciais))
