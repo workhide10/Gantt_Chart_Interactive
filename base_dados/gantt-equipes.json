@@ -1,0 +1,3923 @@
+{
+  "escolas": [
+    {
+      "id": "proj-a839935c-8811-400d-84d8-d7c36449b4f8",
+      "codigo": "ACY",
+      "nome": "Acy de Jesus",
+      "cor": "#4263da"
+    },
+    {
+      "id": "proj-bba6bc9f-3821-4c3b-83c5-505610d6d483",
+      "codigo": "AGO",
+      "nome": "Agostinho Monteiro",
+      "cor": "#e19a11"
+    },
+    {
+      "id": "proj-384f0423-5e85-4174-a048-5043c41bb10b",
+      "codigo": "BIM",
+      "nome": "BIM",
+      "cor": "#38a088"
+    },
+    {
+      "id": "proj-bbe2e6df-e2ba-4817-b9a4-e468c6eaf6b4",
+      "codigo": "BOR",
+      "nome": "Bolivar Bordallo",
+      "cor": "#c55f68"
+    },
+    {
+      "id": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "codigo": "BOS",
+      "nome": "Dom Bosco",
+      "cor": "#7c65c1"
+    },
+    {
+      "id": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "codigo": "CEL",
+      "nome": "Celina Anglada",
+      "cor": "#4b95c6"
+    },
+    {
+      "id": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "codigo": "CON",
+      "nome": "Cônego Leitão",
+      "cor": "#bc8234"
+    },
+    {
+      "id": "proj-7e1a3007-5bf8-4d9d-a8a0-101626676815",
+      "codigo": "EDU",
+      "nome": "Eduardo Angelim - Barcarena",
+      "cor": "#628f42"
+    },
+    {
+      "id": "proj-353e623a-9bf4-4ebc-a65e-ce6652315f2a",
+      "codigo": "ELZ",
+      "nome": "Elza Maria",
+      "cor": "#b35c9d"
+    },
+    {
+      "id": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "codigo": "EUN",
+      "nome": "Eunice Weaver",
+      "cor": "#586a9b"
+    },
+    {
+      "id": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "codigo": "FRA",
+      "nome": "Francisco de Paula",
+      "cor": "#4263da"
+    },
+    {
+      "id": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "codigo": "HIL",
+      "nome": "Hilda Vieira",
+      "cor": "#e19a11"
+    },
+    {
+      "id": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "codigo": "ING",
+      "nome": "Inglês de Souza",
+      "cor": "#38a088"
+    },
+    {
+      "id": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "codigo": "JAD",
+      "nome": "Jader Barbalho",
+      "cor": "#c55f68"
+    },
+    {
+      "id": "proj-67ccfa78-d65c-4690-8d84-61bba36b0556",
+      "codigo": "JSA",
+      "nome": "João Santos",
+      "cor": "#7c65c1"
+    },
+    {
+      "id": "proj-b4405f83-d9d3-4030-81b5-675f02b2450e",
+      "codigo": "MAR",
+      "nome": "Maroja Neto - Sede",
+      "cor": "#4b95c6"
+    },
+    {
+      "id": "proj-c4d28f1f-b351-452f-a5d0-e50aaabd50f0",
+      "codigo": "NOR",
+      "nome": "Norma Guilhon",
+      "cor": "#bc8234"
+    },
+    {
+      "id": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "codigo": "OLI",
+      "nome": "Oliveira Brito",
+      "cor": "#628f42"
+    },
+    {
+      "id": "proj-8ba6a737-67b6-41e9-b1c7-ec13ec4ab537",
+      "codigo": "ONE",
+      "nome": "Onesima Pereira",
+      "cor": "#586a9b"
+    },
+    {
+      "id": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "codigo": "POL",
+      "nome": "Polivalente",
+      "cor": "#4263da"
+    },
+    {
+      "id": "proj-1e62a97c-c070-445e-8c00-097526b7c1e3",
+      "codigo": "ROS",
+      "nome": "Rosa Rocha Almeida",
+      "cor": "#e19a11"
+    },
+    {
+      "id": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "codigo": "SFE",
+      "nome": "São Felipe",
+      "cor": "#38a088"
+    },
+    {
+      "id": "proj-bb9717c3-8c45-4f0e-b85f-f7b8899618bb",
+      "codigo": "SLU",
+      "nome": "Santa Luzia",
+      "cor": "#c55f68"
+    },
+    {
+      "id": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "codigo": "VER",
+      "nome": "Olinda Veras",
+      "cor": "#7c65c1"
+    },
+    {
+      "id": "proj-0e82c8be-0ce0-435e-ba22-7d93b818dad0",
+      "codigo": "ZEN",
+      "nome": "Zenita Freitas",
+      "cor": "#4b95c6"
+    }
+  ],
+  "disciplinas": [
+    {
+      "id": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "sigla": "ARQ",
+      "nome": "Arquitetura"
+    },
+    {
+      "id": "dis-11c98f03-88c9-40eb-8548-be65d00ac684",
+      "sigla": "EST",
+      "nome": "Estruturas"
+    },
+    {
+      "id": "dis-23236c0d-3802-4539-b598-15530b6dc616",
+      "sigla": "HID",
+      "nome": "Hidrossanitário"
+    },
+    {
+      "id": "dis-53566f7f-04bc-4437-9c7e-069713a95a52",
+      "sigla": "LUM-ELE-SPD",
+      "nome": "Luminotécnica, elétrica e SPDA"
+    },
+    {
+      "id": "dis-7c724108-4e27-4b12-abb6-c22af3ed44a7",
+      "sigla": "CLI",
+      "nome": "Climatização"
+    },
+    {
+      "id": "dis-d3cc5896-7248-451d-89f8-6de76141d760",
+      "sigla": "TEL",
+      "nome": "Telecomunicações"
+    },
+    {
+      "id": "dis-f89167ea-01c7-4e4e-b8c9-f4dbecc5b42d",
+      "sigla": "INC",
+      "nome": "Incêndio"
+    },
+    {
+      "id": "dis-bee9e526-420f-4341-be46-67879a3c9efc",
+      "sigla": "GLP",
+      "nome": "GLP"
+    },
+    {
+      "id": "dis-dc908c54-57a9-45b1-962d-03f33ecd48ae",
+      "sigla": "ORÇ",
+      "nome": "Orçamento"
+    }
+  ],
+  "equipes": [
+    {
+      "id": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "nome": "ALLAN FREIRES",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "nome": "MATEUS DUARTE",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "nome": "BRENDA LUCENA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "nome": "EDGAR COROA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "nome": "ANDREY MARTINS",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "nome": "ELIS ALMEIDA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "nome": "ÁUREA PIMENTEL",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "nome": "TAINÁ VEIGA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "nome": "DAN ARNAUD",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "nome": "ÉRIKA FERNANDA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "nome": "JÉSSICA GABRIELLE",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-f86490eb-39e4-49e0-bddd-398b7a047046",
+      "nome": "MAYCON MACEDO",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "nome": "HUGO PESSOA",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "nome": "LUZIA FAVACHO",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "nome": "RICARDO STRAUSS",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57"
+    },
+    {
+      "id": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "nome": "EST-1",
+      "disciplinaId": "dis-11c98f03-88c9-40eb-8548-be65d00ac684"
+    },
+    {
+      "id": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "nome": "HID-1",
+      "disciplinaId": "dis-23236c0d-3802-4539-b598-15530b6dc616"
+    },
+    {
+      "id": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "nome": "LUM-ELE-SPD-1",
+      "disciplinaId": "dis-53566f7f-04bc-4437-9c7e-069713a95a52"
+    },
+    {
+      "id": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "nome": "CLI-1",
+      "disciplinaId": "dis-7c724108-4e27-4b12-abb6-c22af3ed44a7"
+    },
+    {
+      "id": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "nome": "TEL-1",
+      "disciplinaId": "dis-d3cc5896-7248-451d-89f8-6de76141d760"
+    },
+    {
+      "id": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "nome": "INC-1",
+      "disciplinaId": "dis-f89167ea-01c7-4e4e-b8c9-f4dbecc5b42d"
+    },
+    {
+      "id": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "nome": "GLP-1",
+      "disciplinaId": "dis-bee9e526-420f-4341-be46-67879a3c9efc"
+    },
+    {
+      "id": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "nome": "ORÇ-1",
+      "disciplinaId": "dis-dc908c54-57a9-45b1-962d-03f33ecd48ae"
+    },
+    {
+      "id": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "nome": "EST-2",
+      "disciplinaId": "dis-11c98f03-88c9-40eb-8548-be65d00ac684"
+    },
+    {
+      "id": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "nome": "HID-2",
+      "disciplinaId": "dis-23236c0d-3802-4539-b598-15530b6dc616"
+    },
+    {
+      "id": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "nome": "LUM-ELE-SPD-2",
+      "disciplinaId": "dis-53566f7f-04bc-4437-9c7e-069713a95a52"
+    },
+    {
+      "id": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "nome": "CLI-2",
+      "disciplinaId": "dis-7c724108-4e27-4b12-abb6-c22af3ed44a7"
+    },
+    {
+      "id": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "nome": "TEL-2",
+      "disciplinaId": "dis-d3cc5896-7248-451d-89f8-6de76141d760"
+    },
+    {
+      "id": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "nome": "INC-2",
+      "disciplinaId": "dis-f89167ea-01c7-4e4e-b8c9-f4dbecc5b42d"
+    },
+    {
+      "id": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "nome": "GLP-2",
+      "disciplinaId": "dis-bee9e526-420f-4341-be46-67879a3c9efc"
+    },
+    {
+      "id": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "nome": "ORÇ-2",
+      "disciplinaId": "dis-dc908c54-57a9-45b1-962d-03f33ecd48ae"
+    }
+  ],
+  "pessoas": [
+    {
+      "id": "pes-3dce880d-76ee-4655-bd45-fd6b5b3f43e5",
+      "nome": "ALLAN FREIRES",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-d6cf0e03-c3ea-44dc-be93-705844a963bc",
+      "nome": "MATEUS DUARTE",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-3eaab501-a100-4b96-a88d-0daedb9cf662",
+      "nome": "BRENDA LUCENA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-c86f733e-5f8b-40c4-803c-552efee214b7",
+      "nome": "EDGAR COROA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-69e8f4b5-5403-4876-95e4-547071e322df",
+      "nome": "ANDREY MARTINS",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-06fe86fd-6235-4277-9303-3a593092c902",
+      "nome": "ELIS ALMEIDA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-4b81c4b6-e099-4c92-a1d6-d903929ebf21",
+      "nome": "ÁUREA PIMENTEL",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-6fcea2c5-69b3-4b9d-a32f-fa8ecc52be30",
+      "nome": "TAINÁ VEIGA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-6d4328c9-e47d-41a9-b521-620c7ee64271",
+      "nome": "DAN ARNAUD",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-20886f2a-782a-45fd-bc0f-6dc7d4ac4193",
+      "nome": "ERIKA FERNANDA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-c9a928e5-62f2-4654-877d-74fb3abfca0f",
+      "nome": "JÉSSICA GABRIELLE",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-b04124cf-4bb1-42b2-9494-078c5c9bf6a2",
+      "nome": "MAYCON MACEDO",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-b78d4e96-0af1-4664-a8f7-c2cc25a8e06d",
+      "nome": "HUGO PESSOA",
+      "funcao": "ARQ"
+    },
+    {
+      "id": "pes-57f3eb0b-0846-412c-9042-3ffe172fe449",
+      "nome": "LUZIA FAVACHO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-a574b535-e851-4257-b12d-155978bf7af8",
+      "nome": "RICARDO STRAUSS",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-419942b3-5aa1-4a75-a3f2-1e5748dd81e0",
+      "nome": "ROGÉRIO MATNI",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-e88f6ec6-b3b4-429c-ad99-e8feb84127e5",
+      "nome": "ANDRÉ TAVARES",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-75d954ed-b382-4a74-b3f7-5064f7364433",
+      "nome": "ALICE TAKEDA",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-8baa26c8-23a0-43c7-8659-43545d533222",
+      "nome": "CARLO VITOR",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-484ce044-d940-4d54-9786-0248ade10c22",
+      "nome": "HUGO VITOR",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-fce4710a-1881-4cf1-be91-a79f71aa0361",
+      "nome": "ANDRÉ ARAUJO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-70b53268-1dd7-4073-a092-5d1d9232ea21",
+      "nome": "FABIANE LANDEIRO",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-10d18b01-efed-4ef3-9a93-e8a63c79bae8",
+      "nome": "REBEKAH OLIVEIRA",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-49e94167-3d6b-4d39-87d7-215314dc561d",
+      "nome": "ALYSSON MONTEIRO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-fb97a63a-911a-43d4-8e19-5b5d1fcd6b17",
+      "nome": "FILIPPE VILHENA",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-e4b92efb-0b8c-4551-bf4c-b5e80c05d14e",
+      "nome": "PAULO ESTAGIÁRIO",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-b4477a25-d33a-45b2-9e44-6c2646e53eb2",
+      "nome": "RUAN SANTOS",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-275cb88e-5971-41c4-a272-f7103a1118e3",
+      "nome": "LUIGI MONTEIRO",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-eae1cc90-c0d4-431d-b0b5-afd4e99d6944",
+      "nome": "SÉRGIO SILVA",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-bc5b7cb8-bb88-478a-9a90-28b392f3fae5",
+      "nome": "TAUAN COSTA",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-1bd79ec6-47b8-4741-9637-89d6ac6aeea2",
+      "nome": "VITOR RIBEIRO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-a33ca26f-b273-4e12-b23a-846c52e45a5a",
+      "nome": "IURI SOUSA",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-661d69d4-22ed-4f30-8a11-1dcced6622e1",
+      "nome": "ÉRICKA BARBOSA",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-78bde02b-5765-4062-a9f1-69cf3ef75e16",
+      "nome": "CAIO CARDOSO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-045d65d0-3ab5-46c7-80bc-a843c71fa480",
+      "nome": "GIOVANE RIBAMAR",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-946b9cf8-ee01-47a7-ac4c-2796b823c197",
+      "nome": "MATEUS BARBOSA",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-be697d76-e8f2-43cb-9941-9daac11f5399",
+      "nome": "VITOR SANTOS",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-6c898a4c-e5c8-4491-aed2-9cfc2d36bf65",
+      "nome": "YAN PAIXÃO",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-26d12ede-7446-4241-bb37-ba6508c7c14d",
+      "nome": "DANIEL SANTOS",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-63409f15-43ac-4f2d-8cf1-e73f6060eb0d",
+      "nome": "MARIA EDUARDA ",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-74563115-3c2f-4012-ac3d-37216fbeb1ea",
+      "nome": "EVELYN CASTRO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-84ed65b1-a4f4-469f-94da-e4c204700654",
+      "nome": "LUCAS ALMEIDA",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-83a62327-17aa-46d1-b4ed-4acb4c3ad56f",
+      "nome": "REBECA LÍVIA",
+      "funcao": "EST"
+    },
+    {
+      "id": "pes-44bc6a64-6f3a-4225-b660-db9200d66052",
+      "nome": "JHAMES MYRON",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-bd0d81d6-eff3-4f8c-a396-19295b4363a6",
+      "nome": "JACKQUELINE AZEVEDO",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-1d90dcdd-4027-4554-927d-03b117e78fe6",
+      "nome": "MARCOS CUNHA",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-1b8280e0-9c1b-4328-a66e-674013fe68d6",
+      "nome": "WALBER PAMPLONA",
+      "funcao": "TEC"
+    },
+    {
+      "id": "pes-23b6131a-6158-456b-aecf-a5f1aed394a0",
+      "nome": "CAIO CÉSAR",
+      "funcao": "ENG"
+    },
+    {
+      "id": "pes-2da9897b-75b7-4013-a7c8-b38151cdc6a3",
+      "nome": "JEAN SHINJI",
+      "funcao": "TEC"
+    }
+  ],
+  "atividades": [
+    {
+      "id": "ativ-df7fec90-91f3-4ec3-950a-d534e07b6312",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-608e917d-6b82-4a94-b300-17e81cb7d5e1",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-22",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-153f69fc-805c-4f08-be76-ea1162afbbaf",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-05-25",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f1e9d2e8-0402-4602-ab33-396c148c7ef8",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7ddabeb2-0b0f-4244-bd9a-0d86f9815229",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-08-03",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a621386f-7bbf-412c-8dd1-c358da8a4f9a",
+      "escolaId": "proj-bbe2e6df-e2ba-4817-b9a4-e468c6eaf6b4",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-23",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-548fd2dd-5799-47fe-a670-adbaf7754396",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-10-26",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9c2a7de5-30a5-46a1-b5ae-5cc91932bfce",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-998a9885-ee4d-4438-8564-9de61d7d364d",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-22",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-fd25648a-925b-44f7-a5ba-d450d847f0db",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-05-25",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5a53d85a-5f1f-46af-a3c1-5c7910ade57c",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-38359df5-1ada-466e-ab8c-72d279c89ea5",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-37e9b493-5c11-4676-bfb0-22dcd16a82df",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-08-10",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6a86fbdb-1dee-4f40-b849-feef7b2f173f",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-22a1344c-16f8-446f-831c-8959f49b7e06",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6ce19d6c-354d-4669-859b-c23e0149fea1",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b35da868-6416-42ad-b997-8d66e15279c0",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-716ba394-f313-4328-a150-f4080e4f4297",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-21",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ec18db1a-f55c-49e6-b31b-30f39b52a93a",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-adf6a805-209d-43a4-b3f9-3a0d39237e5f",
+      "escolaId": "proj-bb9717c3-8c45-4f0e-b85f-f7b8899618bb",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-04-20",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a48e0bc8-0440-499b-a483-dd6e7a502fe3",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-dedc6176-ed40-4c1c-a12c-ea7c32f5e6e9",
+      "escolaId": "proj-bb9717c3-8c45-4f0e-b85f-f7b8899618bb",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-05-11",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-150e1384-16ea-4d95-b3e1-eab50bdae304",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-63112e20-afc4-4f19-a029-61b3c512ddf4",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5d8bf34d-8caa-4d2e-916e-98b64646e22f",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cbc442e5-952f-4be2-b8fe-60fb92db013b",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-05-04",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9df0c0e0-0741-41fa-ae55-f29e764e5387",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-34660307-25de-4237-b0d5-6ba5f6a3e459",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a7c51ab2-0cb2-48cf-856d-ed2629a91ee8",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4a927a57-1cc5-4bf7-9309-4a768b0410d3",
+      "escolaId": "proj-bba6bc9f-3821-4c3b-83c5-505610d6d483",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-af13ff2e-ddd9-4cb4-951d-ba734b35fadb",
+      "escolaId": "proj-bba6bc9f-3821-4c3b-83c5-505610d6d483",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1d42cee4-aefe-449b-8e83-ebed97efc52f",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f4f862fc-e392-447e-805e-e64ed30a8483",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a59cd52b-2286-428a-98cd-3431270b6b06",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c7e3f813-522a-40e7-839d-3aa10764aa42",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8c270e4b-935b-42d7-91ba-ccb2e087d14b",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-04-13",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-18f9e041-89d3-4f8c-a24f-f96980bd5569",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-054cf8a5-c9c8-473d-854e-90a507a76307",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-0d6a0d8c-0179-4c78-9824-bb723c9ac70b",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-90a07e95-052b-4085-ad92-f0d17a949bbd",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-08-03",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-23cd6ef5-1ad9-4925-8408-fa12c98d2672",
+      "escolaId": "proj-bba6bc9f-3821-4c3b-83c5-505610d6d483",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9ea87e63-563c-42a2-9a52-964b99dc3a66",
+      "escolaId": "proj-67ccfa78-d65c-4690-8d84-61bba36b0556",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-10-01",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-357a25e9-bada-493e-b0b4-342fc088b294",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6b0e220e-93df-40e3-90f6-05acbea61aec",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-53c06b5a-a3c1-4ee8-9a13-5d6aecf009c8",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-05-04",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-694cfeea-17a1-47d6-987e-1403b7f33cc8",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9e3863c1-6275-4adc-aba7-c87651e23450",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-21",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7616bfd6-43e8-41dc-88ec-df01e310fb59",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-08-24",
+      "fim": "2026-09-25",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c6c44a1c-4e9b-4e49-86c4-fc3d962e8e17",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-09-28",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-692c6555-dcd0-4541-b3f5-24dc23b772a7",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c95a2114-2a11-448b-80bf-60f9d3912dc7",
+      "escolaId": "proj-384f0423-5e85-4174-a048-5043c41bb10b",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a708a529-d414-4a5b-b054-9e28461b643b",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2eb3e177-991a-44d8-8edd-14f914b8dcf5",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-29",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-45ce9922-503c-4dcf-a55c-c321aea0e86f",
+      "escolaId": "proj-384f0423-5e85-4174-a048-5043c41bb10b",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-06-01",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3f808a67-d607-4b66-9bf7-d0e79b8b583b",
+      "escolaId": "proj-384f0423-5e85-4174-a048-5043c41bb10b",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-10",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5cbfb3c9-5afb-4fa3-a32c-4290b4bf7ab2",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-07-13",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cdec894a-9fe3-4904-90f8-dd7ef3409ac3",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-08-03",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-80e22b6c-b728-4186-bf43-c4213bdb5eca",
+      "escolaId": "proj-c4d28f1f-b351-452f-a5d0-e50aaabd50f0",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-dcb41605-c909-43c0-a10a-b6af50b4b4cd",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e795c30d-f7a9-4589-b2a4-00411c87ab0c",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9fd79945-f404-41d1-a63c-b0d1c467e8e9",
+      "escolaId": "proj-0e82c8be-0ce0-435e-ba22-7d93b818dad0",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-25",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2011d377-c9b5-4aac-8094-acb9ac3178c9",
+      "escolaId": "proj-bbe2e6df-e2ba-4817-b9a4-e468c6eaf6b4",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-09-28",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7fac1c65-fad8-4537-8979-373c769005a7",
+      "escolaId": "proj-8ba6a737-67b6-41e9-b1c7-ec13ec4ab537",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-10-01",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d917457e-4375-4493-87ff-b47f46044e07",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cbe33c40-11f8-4368-aad5-dc811b1f0858",
+      "escolaId": "proj-b4405f83-d9d3-4030-81b5-675f02b2450e",
+      "equipeId": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-23",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-05242910-8a08-4ee9-b17e-f047d4948d3b",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "inicio": "2026-10-26",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f4b4aeaf-c40d-48a9-9fad-be6374d65a29",
+      "escolaId": "proj-a839935c-8811-400d-84d8-d7c36449b4f8",
+      "equipeId": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-fedfd8b8-d078-40d7-b4b9-037c47e9a87f",
+      "escolaId": "proj-bba6bc9f-3821-4c3b-83c5-505610d6d483",
+      "equipeId": "eq-f86490eb-39e4-49e0-bddd-398b7a047046",
+      "inicio": "2026-08-03",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1dd09c35-1f7a-4306-b25d-749304a8c70b",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-39143319-a0d7-4bc4-a6b8-f6dbd269a203",
+      "escolaId": "proj-7e1a3007-5bf8-4d9d-a8a0-101626676815",
+      "equipeId": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "inicio": "2026-10-01",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b5f07fb0-c318-44c9-8002-dfd41a7ef9ea",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4a0307a6-f3fa-4ddc-a864-50258b124b5b",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-22",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-dabac37f-e24a-4d27-9420-f77c7202677b",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-05-25",
+      "fim": "2026-06-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1d874426-cbdf-4a6b-aafa-ed18461c8f39",
+      "escolaId": "proj-1e62a97c-c070-445e-8c00-097526b7c1e3",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-06-22",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-542a473e-dea2-486c-80b6-4c935cb4e9e4",
+      "escolaId": "proj-1e62a97c-c070-445e-8c00-097526b7c1e3",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-10",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f82ec089-78ab-4246-ae09-7aa46b3d9a37",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-07-13",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-22862851-5163-4da0-b5d7-b98f0b01c027",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-df190be8-5e20-4c56-951b-54d1dc0df6c4",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-08-17",
+      "fim": "2026-09-25",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8c81878c-e979-4558-b937-23832730db8b",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-09-28",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d01e6485-9e6b-4b56-8794-3f9876f41694",
+      "escolaId": "proj-353e623a-9bf4-4ebc-a65e-ce6652315f2a",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c33d64d5-dc34-4ae1-aba0-fa919f496856",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-619b0a3b-976f-4c2a-8a0d-5bf6fb5572ef",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-18969ab8-9832-4657-8dd6-7be3ea624bc7",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e8da7182-64c6-4dde-9edd-ca6e8adfa000",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-da13c251-3ef1-436a-bc1c-a051113d590d",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b34b337d-7469-485f-a06a-4a8282cd4a47",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-72649933-45b2-4c70-aac3-dd58165ebdfb",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-136a3ac2-88c0-4ab9-84bd-50773cece21f",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-166671c3-57f6-4d75-9abd-7fbe06f80001",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-10",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bf6188df-e9c7-490b-a367-2a8c7f18472c",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-07-13",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7b0ecbb4-e26d-41cd-b387-3ae61c3d05e8",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6dc5e5ea-10a3-4af1-84f0-ca16d2f660de",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-aea4893d-cc5e-40b7-8682-96c32407c62e",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-165d1d87-c1d3-4c45-ae88-c7f0b469017b",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6e217044-dad1-4188-bade-89d8ff8dc7dc",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9e282972-375b-4ee0-a59f-00bcb06993ff",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2a6c2915-9642-4ea5-b581-662cd8d8992b",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f130f3db-8283-41a9-8175-1b8355185203",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-54e16afe-6223-4089-a00a-dda24780a13d",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4256dd77-83c6-4219-9a5f-e29bf24d55c5",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f1876e0f-54c7-434a-bf6b-3bcc7d6e8694",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4c64a443-9713-4509-9561-72203dfe89ef",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-61cd3a9f-793e-4b6b-8717-8d3d29445a67",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ac3fc048-5ca5-445c-9908-62976600b9ea",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-da7c0a8e-4f60-414b-bf23-bb075ac5f055",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a600ea0b-6861-42cc-a975-188c0e8d454d",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-508c2300-9e47-4671-b8ea-1105ddc399e6",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2d5cfa8d-141b-4493-93c6-1c7916b52db5",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8315046b-a05a-4ba1-bf2a-1bacfb206155",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f5920004-df0f-4713-9169-167cdd407157",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-194ef0b2-cea8-4db0-9b97-528a1b0b2ffb",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c80dd57d-b3bf-4623-8bb7-8aac8972ff94",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-54d0a52e-d80b-4b9f-b445-16e596040e48",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c3b8e796-1f47-435d-9bdd-fe9e42ce0444",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c317393b-17ce-4f34-8dd1-f04c8cedd146",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-099f9d4d-c097-406b-b897-decaa010ca4d",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f106bcae-112b-4003-a234-e719323443a7",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6f1b33a5-c3b5-4355-9be5-d46885f0f4b9",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-06-22",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e13ece72-e7cc-4bd6-914b-606bd7eced76",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1157511a-952a-498f-b227-1380bc446205",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f7b257a8-d3a8-4973-8a21-91d97b144de9",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-57b94cbf-dda8-47c9-8aa1-a1efad8313d0",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a736eebc-f468-433b-abb2-492288c7246a",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-be4d3265-01f9-40dd-a45d-0db69d60a104",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bd08f0da-694f-4080-82f1-a01de01d5475",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-af845e80-ee7d-4aec-bdc6-dfe7339f0328",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bb8692a9-fc51-4c8d-bf15-446c08029564",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e6475cc1-2e1c-4a96-935e-ca915fc6abae",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3c6a0035-dac2-49f2-9d32-47933d9643fe",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-80db11f1-f784-48c5-9048-41c4a4d38f28",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-50bcf18c-d44b-4726-bb20-c060e5bb70ae",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6915f4f4-55c1-415e-8db4-3d12bb236fad",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f0ba36b2-4bf3-4d00-810f-7ca842b2afce",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1bebb413-7b8f-4450-86f4-303795cccebf",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-078c1edc-e558-4782-a8f9-0479df925f38",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9d9c21bd-240e-47b9-9cb5-135afd6f8fcf",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9845afb2-bbc1-4441-b377-e646f8209e46",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2782c7a7-637b-4c2e-905a-ab5c75c20288",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-69431c73-b1fd-43dd-beda-579142c02390",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-0c702e45-0af2-406c-9dca-d81d89f1d8da",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6e628cf8-c708-4602-b666-ceb4387b4446",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-560f4544-7588-4485-a2dd-06427c7ecc46",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-72ee8f3a-d89e-4b3e-86a6-844232331540",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-524369db-8178-4a0e-aec3-adb42310607a",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-84610110-0b11-4b26-8634-676cc4689273",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-dda9bcd2-f66c-4183-8ba0-79b5d85d63c6",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-68c25773-96e1-4e44-b2b0-9abcb1c68766",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b504d1a2-4d55-4db7-bd7a-a55954ac07c3",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cfb51d3a-6c9b-468d-be8d-da3efd0f1e79",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ac609a4b-f068-4882-b5a2-2e05710891f2",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-06-22",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8e328995-8393-4812-8edc-9fbed26b202a",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-208cc88e-8b3f-49be-93e8-4f27a3247143",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f1280210-71b8-4e6e-af0c-42d999de9c75",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8b05253f-8a2d-411b-b04f-57c40f125c97",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8789f281-ac39-4eb0-bb0d-ef390c1a8c6c",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5da4221b-45e5-4e2e-a77a-7afc6d052da2",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-44ee0f07-5972-401e-95a7-816bd04a8c69",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8c3a5198-d59f-433a-922c-5a8960cf1df2",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b53f1b5a-4246-4c8b-bb4a-11ac58b3471d",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-162d19e5-7921-4b98-87aa-6822a2f7e8ad",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-40b5e71b-d124-48e3-9d73-22954f8d5530",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4f2485ac-e402-4403-bcb6-bea43c88fb0c",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e66b6b6a-0d8b-4ce0-9d41-8f0c9803ad6d",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-079c4ddb-25fa-4599-a484-bf72e2a86688",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f6ba30c7-8683-47af-b3c9-41f18c2973f7",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-05-18",
+      "fim": "2026-05-22",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6cbd336e-16f4-41d3-b176-9c115f435438",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-05-25",
+      "fim": "2026-06-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-254c3db6-c658-4ab4-9b4b-09672052b06b",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-06-22",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d9fdd182-02d2-44b1-933c-86ce9c093844",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a830bddb-226a-41ff-8ce3-e9b03654f972",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5ba11511-a8e8-45b6-b191-b16a587a4a13",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3e969504-d23c-4ad6-bc35-a4fa44d43f93",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7f92666e-2f94-42d5-8cce-e8070ccc8b44",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bdafe170-14cc-4fa0-b254-cf16df8dacd5",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7be7152a-cfcf-42dc-8325-eb7f4114b923",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-add7f86c-e009-4371-b206-3cfa6dd72254",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c1a31930-49cb-48f4-9a51-8fc868e10196",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f1bd328c-f9c6-4aa7-a5a5-6cde901443ec",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-873d6583-d1fd-49ca-92b3-fc1c9586fa1c",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c6fe7eb6-6ec4-42e4-b94f-034c0d8b2804",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3fde29a7-8735-466d-81b1-63bbc0193517",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-42cb6d0f-ddb2-49d5-85c4-a4b60502313a",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f2434dd6-dcec-4f31-9e55-10fda1cc45e4",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-12",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-905899a6-c11a-4069-aeb8-e3febd889264",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bb5757e8-cd86-4efa-a3ef-84c73f8e748a",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7f6b72e1-10f5-4d58-a33d-d01fde47f34c",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8b358a63-0666-4808-b644-4de0aa66f3f3",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-fded6d52-30ce-4c6f-9753-a71641ff6b6d",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-18bcc745-ded9-40f6-bbc8-c9779ae08e6c",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5466bb79-1806-410c-9220-aa653c948085",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5a68813f-590a-4606-b119-8fc5bba61f2e",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1d1cebae-c355-4938-bac3-e99bd02b6c6f",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e4286179-f3e9-4141-832d-6996b5449774",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-16",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e9ee2ffa-681f-4e81-8445-28b0ec3cb053",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-10-19",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-04e47e77-f3a8-4584-be02-4ff1f6ba2c04",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-daa2f7a3-f1d6-4e2d-a6f0-dbd4533f3ea8",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-aaec2331-5ac1-4970-95af-28062a3147f6",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-be982c22-2c76-44f3-86ef-b6b63c942e7f",
+      "escolaId": "proj-fa398167-236e-4e36-a0b0-b11be4631fff",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-04-01",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ae7f8c6c-3c95-4340-8835-d8f46b93ff25",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-15",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d3925a84-6235-42b0-9840-5d3158090f9e",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b04654ea-b2f3-40f1-a363-b027cada903b",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b9c5186a-6732-4638-b5fd-ae7e40221b1f",
+      "escolaId": "proj-d2b6d1ef-9224-46d5-8ba6-6ebb9ac1cd17",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-10",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-27468a15-f3f4-4f11-a8b9-64836c5733f3",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-07-13",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5c4b6f9b-b4b0-45fb-bf1c-56ad31690a12",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-00d27f31-bef7-408c-ab2c-f1b31dd93377",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-001c60da-6bfc-4f0a-8350-30abdc94cdf8",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-de20a239-dcf7-439c-af97-b1193b17d0e2",
+      "escolaId": "proj-3c0a7cba-351a-4a31-b687-3f07d6e36332",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5997c71e-6865-405d-a861-e51f8985a189",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-10-26",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-951fa9cd-fe34-4a09-85a2-9cf6d4aecfdb",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-fd372c10-437f-4a03-a842-813a8ed5b8e0",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b021aa4d-3060-444e-98c8-ad0fe8629689",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e979cc1d-d493-4aee-b94c-21a17c4dd70b",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ac60e616-c7ee-440f-bed8-7efe0978c394",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-06-01",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-517807f7-1d55-4e28-828d-f34682a481d3",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-62f6b9d3-4d29-42f8-b081-a7e5a0abbf2d",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6d2033dc-fdee-4663-bfcb-599f95b80c04",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8789bd4a-4941-4e0a-a69c-197bb324cf27",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-28cdce4b-f61b-46e1-b47b-2832ed280314",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a635ef33-cac5-4caf-9132-7089034199ef",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a0408f03-751e-42ff-8316-b04fb1482dbc",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9b0d5220-dbbf-4a91-a8fe-ffcaac2f7982",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-29c01b9f-bc73-4a97-93aa-267b72fabd43",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-10-13",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-580c8bf5-fc9f-4d1a-bea6-1fac8aa9b56f",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-20fef9dc-372d-4d74-b73d-2964ad908ed9",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-33325f48-c57b-476a-8612-744864bfee52",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4ecda655-30ac-4bed-9e7b-1bdc95b5b828",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-86ed8c22-eb51-4f08-b982-9b0fd9827d51",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c21715c1-fcce-4f84-b257-d71da72f3ff7",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-45a0718c-a313-4450-87be-1fd36bec90c4",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-91cb0f35-f795-481e-8c58-1333ce39f09c",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4e12a6d6-4bc1-4987-b05a-71ea711d4881",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bdd1e46f-50d8-4be1-9747-c116fcc3a412",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7087c0b7-12b3-476f-ad00-033cdfbebb70",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-87548691-870c-4637-b1d4-290825121af0",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-897da3e2-43dc-4378-8c46-a20faa6c279a",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d1124b5c-f573-4b99-9b9a-dd5fafcc2781",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ee82976e-5813-4d00-8abe-9037131b98ab",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-10-13",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-efcd69ff-db78-484a-8bba-a533b6ee320a",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8222b035-284c-4282-8583-bbf7144b870d",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1216ca79-8b68-4db4-b1f7-218c4455d0c5",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4490d5a1-da1f-4f1b-b0da-6875736a4f7d",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-c386a680-59e5-483b-b05c-b0241d123a18",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bb513b13-3195-4186-a7af-b46f73579c2c",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3faeb4a0-026f-4ec1-8584-1ae14635aed4",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-42862bf8-8686-4f06-8d5f-edfcfda2464d",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f9026c07-ba84-4670-a9a6-8f023db8c5df",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2a7792b4-d8b7-4f6d-b998-648232c81b25",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-29cb7451-f3ab-47f9-a052-b9eabb56ece1",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-08373ba1-ab03-46dd-9971-77578dde545e",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-84a95b51-fd5c-43ea-9d05-ba62b8272570",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6158c1a3-dd56-4c3d-9f3b-9a439f0d1ae0",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2b8512ef-619d-4f83-b40a-e10aac7f1307",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-744416eb-25be-437f-8f0e-30b29cb1bedc",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-eaf5ec6e-82fe-456f-8796-4a2bb2acf2cf",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1390b3f1-eef1-4ce4-956f-3ac790c2190e",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3f1a4e06-9e86-403d-a3a9-c4c74457a4d6",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3e2e38cc-373a-4d2f-8014-ec6532ea7d39",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cbabbc94-3aea-449f-9825-3a8c6da2e0e0",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3dd91eae-9ad2-40f2-8be1-ca819f37de20",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-db9665c5-c55e-4033-bb1a-c907cd240947",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e23cc613-f5d4-49e5-89c8-88e50705a69b",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-9a00dfb0-b10d-4537-a834-cef734ca0fe6",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-71869d63-4c40-4ebd-bcdc-3fcf5fade775",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-882ffbaf-0905-4f56-a980-7d3a09d8f123",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-93e5e5e7-64a1-4873-9e9d-7bb265d3d703",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-92f5cf25-24a7-41aa-b85a-5ffed98092c4",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a72ea0cb-5d46-4fb7-91ce-46e2a7a05c04",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-529d8bf0-7516-4cda-8a5c-bd956252df35",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-8e2a63ce-9f5b-4cf9-8e35-376acc4e821c",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-854615a0-cfe3-4572-8db6-2bd43cc38c27",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-05-04",
+      "fim": "2026-05-08",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1bd39169-7c66-49c1-b339-3a858b32d133",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-05-11",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6ad0fe10-c39f-4847-b95a-4f018a89aff1",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-045b5f56-aaed-4d26-8a27-9efa4d7075cd",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-11cdc5b5-3fca-4ebc-9b63-5f031a8035fd",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3769f288-bb20-47a3-9add-7f1b53c8a29e",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-25d18524-11dd-40d8-86a3-b34cd41ab46b",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4c219293-9ede-4807-bba5-78d04383a31d",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d053242a-6a74-41fc-9b5c-5e92c1c5638e",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-52ac97a7-a529-4537-913d-d279afc4262f",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-13e90160-c2c2-4625-9d61-2b9c329ca547",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-21bc3137-cd1d-4047-99a3-686451b88da1",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-091c663f-f1d2-4c42-971c-d9f8df671dcd",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2a1423ed-8252-4647-b5f1-3a431907c237",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-d54fbcd4-b6d7-4e1e-ba8d-3c90ffe5b5d3",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-4fadef51-b188-4e52-b0bf-fa92d9683731",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7926c86d-e9b9-40b7-a615-844f5178c8e3",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b690e476-c871-4706-936a-1e43c18c7258",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-6eef2408-8e90-488c-9da9-7947bcdbda62",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-df8c210e-f253-42e1-94db-2f93b28aff58",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-08-17",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-968641dd-d10c-4a6d-890a-933d4989867a",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-27c75521-0bbd-480b-baa4-f727cfd93c66",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-94294740-f2c8-4c2b-bccf-298c57ce4944",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-da23ab10-ca3c-4a73-bc81-7025d869f828",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-549c85ff-42cd-49f9-a539-7d2dff3c5244",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-f38e9bea-44d9-4b2f-9ef7-f872495fc654",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-10-13",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bef6659e-de8b-43ca-8354-4938cf38d20d",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-3244016f-f651-42f4-9f4b-fb0d92aa52e0",
+      "escolaId": "proj-42293bba-516f-4b0a-9e19-35d3e1213b18",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-04-06",
+      "fim": "2026-04-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-aa7fb2c1-6f3f-4a4e-9b0a-8cb6d0b95ba9",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-05-18",
+      "fim": "2026-06-05",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5f2a30e0-c72f-461d-a9e2-a9a7dbc6b039",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-06-08",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-19baf002-8c87-48c4-b2d1-c7f4cc4bd99f",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-abdce557-5c39-44d6-9bcc-3da95f4ebb51",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cec19569-045e-4cd9-8173-2445dce84fd8",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-07",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-2db96095-c9bb-44dd-b1f4-eb09f3762671",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-08-10",
+      "fim": "2026-08-28",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-e47bca85-15ea-4180-bf36-095d46fcbb78",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-09-01",
+      "fim": "2026-09-11",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-7eaf4ed3-1647-4f40-81f4-4a4810662d30",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-09-14",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-1d7f88fb-8757-40f7-b92c-83717712079f",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-ac18c4f4-273c-4092-9981-ce2595eca63c",
+      "escolaId": "proj-f2e6b3df-86c9-4ecf-becf-57b5bbedf0c8",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-10-01",
+      "fim": "2026-10-02",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a32e0cb3-5c59-4689-a571-1060c776d9a6",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-10-05",
+      "fim": "2026-10-09",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-18fe7f47-352b-47ed-9853-144d41be8b38",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-10-13",
+      "fim": "2026-10-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5dd4e2ea-2c5a-4b40-964a-0b36c1f8a02f",
+      "escolaId": "proj-af1bc0ea-f133-439b-b024-3dd57f4b6503",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-06",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-96fa2e7b-8e41-4c57-a0c8-ad3681665163",
+      "escolaId": "proj-b667d73e-d45c-4288-996c-32f781ef4b04",
+      "equipeId": "eq-94ec79f9-0156-4ea1-9bda-fa6c4087acd2",
+      "inicio": "2026-11-09",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-0d5fc2ba-8f40-4bd4-a039-b99d8f99e2aa",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-06-15",
+      "fim": "2026-06-26",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-5199ce66-09e0-49a3-a843-b6c65028715b",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-07-01",
+      "fim": "2026-07-03",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a645e21d-f301-4cbb-8cb2-50dd2425dc82",
+      "escolaId": "proj-edebebf1-ccb3-4ae5-8b65-bb075fcc18bc",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-07-06",
+      "fim": "2026-07-17",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bc9ccaf8-8245-4389-b533-2e59b1f56ad6",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-07-20",
+      "fim": "2026-07-24",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-45724868-11b2-4dce-af53-faeb2ee2753a",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-08-03",
+      "fim": "2026-08-14",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-a2581769-26f8-420e-adac-f8fa91dec5d1",
+      "escolaId": "proj-b17c9e39-cfc3-45c7-9a60-422797a9fd11",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-08-17",
+      "fim": "2026-09-18",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-b27eb511-fe8b-403b-a108-36b4d3ee45ff",
+      "escolaId": "proj-4eec3b47-232a-48f6-be47-50ef861e0fc1",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-09-21",
+      "fim": "2026-09-30",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-cd752922-beca-498e-91c5-a314f0be52da",
+      "escolaId": "proj-e6210ebb-d4cf-4c1e-8e08-60b2eef1a6c5",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-11-03",
+      "fim": "2026-11-13",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    },
+    {
+      "id": "ativ-bd60312c-90f3-4794-8636-025f30e37372",
+      "escolaId": "proj-f6e76dc5-eb01-4491-a408-a94f1990d24d",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-11-16",
+      "fim": "2026-11-19",
+      "descricao": "Intervalo formado por faixas consecutivas da planilha."
+    }
+  ],
+  "marcos": [],
+  "vinculosEquipe": [],
+  "composicoesEquipe": [
+    {
+      "id": "comp-99b34642-b6c3-4d0f-9282-03bf6989ed6c",
+      "equipeId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-52f0cd8b-060d-485a-8034-d717551eb5db",
+      "equipeId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-1a562913-965c-4ea4-879e-93b7e1bdd75f",
+      "equipeId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-8cd2ed6c-993e-478c-baa9-101c636cb6fc",
+      "equipeId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-5344e4f5-bfe7-4b53-b8cc-5248023f4ba2",
+      "equipeId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-5cf84b14-1748-47b2-801f-c4ff4db3d19d",
+      "equipeId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-f5c0c036-ed67-45a2-a555-b9bd88ade74d",
+      "equipeId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-077ca785-47b7-4986-bbec-27f33ec951b7",
+      "equipeId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-be851f9b-9254-4ef7-b250-99a1a0735882",
+      "equipeId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-e6e2ae42-6dc2-4b8c-98aa-b89d1555d824",
+      "equipeId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-0ffc5807-3e5e-4000-8b7f-d6140e1cf49b",
+      "equipeId": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-ab6e135b-3305-4409-ac76-acd76f7b4dee",
+      "equipeId": "eq-f86490eb-39e4-49e0-bddd-398b7a047046",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-b378ff5b-ebfd-40b4-a687-dd58384599ec",
+      "equipeId": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-8ae3ee59-0df2-4950-b59e-0530ab5d5c57",
+      "equipeId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-3c69c021-99ac-4d23-8ea8-1018a71b9b0c",
+      "equipeId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-668ea119-4dde-4726-971a-eafb4b0cd208",
+      "equipeId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-ea721d15-d9ba-4079-9c5f-1e06938f5730",
+      "equipeId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "equipeId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-93362044-2279-443d-a943-5d79bd3cca0f",
+      "equipeId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-9b9babc2-a45c-4ce0-bf38-794ef09b52e3",
+      "equipeId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-c876aeab-6e5c-444e-b1b8-fa2df6492e93",
+      "equipeId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-bf9d3fb1-7c9e-432d-b082-ce273f7a93d8",
+      "equipeId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-1c533e06-5971-405f-8e8a-6cf17b06dcf5",
+      "equipeId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-66b0a861-7cb6-4a12-9170-e721ed5f4282",
+      "equipeId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "equipeId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-84dd7cf4-a023-4d36-af0e-261c5b852d5c",
+      "equipeId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-6e7bf52b-27aa-4c5e-9be9-ea141e42fcb0",
+      "equipeId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-a170a54c-993a-47c4-9795-a11cd5cf8a4e",
+      "equipeId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    },
+    {
+      "id": "comp-2d5bebd9-b9a9-4f7d-9809-078d49f8fcfc",
+      "equipeId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "inicio": "2026-01-01",
+      "fim": null,
+      "origem": "planilha"
+    }
+  ],
+  "integrantesComposicao": [
+    {
+      "id": "int-44b51175-9137-4b6e-92ff-d84abe4262e3",
+      "composicaoId": "comp-99b34642-b6c3-4d0f-9282-03bf6989ed6c",
+      "pessoaId": "pes-3dce880d-76ee-4655-bd45-fd6b5b3f43e5"
+    },
+    {
+      "id": "int-ee143001-e60c-4063-a350-53ab1de5dcde",
+      "composicaoId": "comp-52f0cd8b-060d-485a-8034-d717551eb5db",
+      "pessoaId": "pes-d6cf0e03-c3ea-44dc-be93-705844a963bc"
+    },
+    {
+      "id": "int-1a8e2160-bd82-43c2-857a-a5bad96cc7b7",
+      "composicaoId": "comp-1a562913-965c-4ea4-879e-93b7e1bdd75f",
+      "pessoaId": "pes-3eaab501-a100-4b96-a88d-0daedb9cf662"
+    },
+    {
+      "id": "int-d5bca5af-749d-4e80-86bf-5fd3ab6ea4e0",
+      "composicaoId": "comp-8cd2ed6c-993e-478c-baa9-101c636cb6fc",
+      "pessoaId": "pes-c86f733e-5f8b-40c4-803c-552efee214b7"
+    },
+    {
+      "id": "int-8cf99059-b1cb-4ee6-a330-5016e524093d",
+      "composicaoId": "comp-5344e4f5-bfe7-4b53-b8cc-5248023f4ba2",
+      "pessoaId": "pes-69e8f4b5-5403-4876-95e4-547071e322df"
+    },
+    {
+      "id": "int-e2ffe2ad-0ec7-444a-8b30-8a84d93b10e5",
+      "composicaoId": "comp-5cf84b14-1748-47b2-801f-c4ff4db3d19d",
+      "pessoaId": "pes-06fe86fd-6235-4277-9303-3a593092c902"
+    },
+    {
+      "id": "int-4ff7fb68-4a7e-44a5-9a61-3b359df6d3f3",
+      "composicaoId": "comp-f5c0c036-ed67-45a2-a555-b9bd88ade74d",
+      "pessoaId": "pes-4b81c4b6-e099-4c92-a1d6-d903929ebf21"
+    },
+    {
+      "id": "int-4617d0ca-9ed1-44e4-b1f7-884984262b44",
+      "composicaoId": "comp-077ca785-47b7-4986-bbec-27f33ec951b7",
+      "pessoaId": "pes-6fcea2c5-69b3-4b9d-a32f-fa8ecc52be30"
+    },
+    {
+      "id": "int-d2a99f82-4d2b-4d45-a0c6-f6a42500c9c8",
+      "composicaoId": "comp-be851f9b-9254-4ef7-b250-99a1a0735882",
+      "pessoaId": "pes-6d4328c9-e47d-41a9-b521-620c7ee64271"
+    },
+    {
+      "id": "int-e0c5f21c-0e79-4ab2-b145-2c1edf3268f2",
+      "composicaoId": "comp-e6e2ae42-6dc2-4b8c-98aa-b89d1555d824",
+      "pessoaId": "pes-20886f2a-782a-45fd-bc0f-6dc7d4ac4193"
+    },
+    {
+      "id": "int-adf186d9-4c0b-4ee3-8e6a-a0bdcea64c6b",
+      "composicaoId": "comp-0ffc5807-3e5e-4000-8b7f-d6140e1cf49b",
+      "pessoaId": "pes-c9a928e5-62f2-4654-877d-74fb3abfca0f"
+    },
+    {
+      "id": "int-aed0519e-9662-4917-a5f2-9c3b5246339d",
+      "composicaoId": "comp-ab6e135b-3305-4409-ac76-acd76f7b4dee",
+      "pessoaId": "pes-b04124cf-4bb1-42b2-9494-078c5c9bf6a2"
+    },
+    {
+      "id": "int-e57d79b4-395d-4069-b801-eb729280e6ce",
+      "composicaoId": "comp-b378ff5b-ebfd-40b4-a687-dd58384599ec",
+      "pessoaId": "pes-b78d4e96-0af1-4664-a8f7-c2cc25a8e06d"
+    },
+    {
+      "id": "int-6f07fa3b-2ba7-41ba-8e10-d71758d36097",
+      "composicaoId": "comp-8ae3ee59-0df2-4950-b59e-0530ab5d5c57",
+      "pessoaId": "pes-57f3eb0b-0846-412c-9042-3ffe172fe449"
+    },
+    {
+      "id": "int-aa21f41d-a36e-4c31-87f1-609e77e30eae",
+      "composicaoId": "comp-3c69c021-99ac-4d23-8ea8-1018a71b9b0c",
+      "pessoaId": "pes-a574b535-e851-4257-b12d-155978bf7af8"
+    },
+    {
+      "id": "int-fca0df98-167a-4be6-aa39-2f34e0540d27",
+      "composicaoId": "comp-668ea119-4dde-4726-971a-eafb4b0cd208",
+      "pessoaId": "pes-484ce044-d940-4d54-9786-0248ade10c22"
+    },
+    {
+      "id": "int-29029758-be7e-4d27-acc2-0fe166da96d0",
+      "composicaoId": "comp-668ea119-4dde-4726-971a-eafb4b0cd208",
+      "pessoaId": "pes-75d954ed-b382-4a74-b3f7-5064f7364433"
+    },
+    {
+      "id": "int-dfc6b688-b7c8-4b1e-944d-a8833fb5d254",
+      "composicaoId": "comp-668ea119-4dde-4726-971a-eafb4b0cd208",
+      "pessoaId": "pes-8baa26c8-23a0-43c7-8659-43545d533222"
+    },
+    {
+      "id": "int-ea9d64b5-63bf-4db1-9451-0b8ad4a6790c",
+      "composicaoId": "comp-ea721d15-d9ba-4079-9c5f-1e06938f5730",
+      "pessoaId": "pes-49e94167-3d6b-4d39-87d7-215314dc561d"
+    },
+    {
+      "id": "int-a2124a70-0aa6-45fb-82ca-54938d2e95e4",
+      "composicaoId": "comp-ea721d15-d9ba-4079-9c5f-1e06938f5730",
+      "pessoaId": "pes-b4477a25-d33a-45b2-9e44-6c2646e53eb2"
+    },
+    {
+      "id": "int-d8cb050d-411b-47de-9f9e-8338e25e9e4f",
+      "composicaoId": "comp-ea721d15-d9ba-4079-9c5f-1e06938f5730",
+      "pessoaId": "pes-e4b92efb-0b8c-4551-bf4c-b5e80c05d14e"
+    },
+    {
+      "id": "int-4ece1a1a-a99c-4970-9c28-9b59ea680b91",
+      "composicaoId": "comp-ea721d15-d9ba-4079-9c5f-1e06938f5730",
+      "pessoaId": "pes-fb97a63a-911a-43d4-8e19-5b5d1fcd6b17"
+    },
+    {
+      "id": "int-6b2fbba1-04cd-406b-a356-4020bdcaa7de",
+      "composicaoId": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "pessoaId": "pes-045d65d0-3ab5-46c7-80bc-a843c71fa480"
+    },
+    {
+      "id": "int-070d1ee3-7328-4f70-a383-bb4376bacacf",
+      "composicaoId": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "pessoaId": "pes-6c898a4c-e5c8-4491-aed2-9cfc2d36bf65"
+    },
+    {
+      "id": "int-104ef060-5cdd-4fe2-b582-825056d80b0f",
+      "composicaoId": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "pessoaId": "pes-78bde02b-5765-4062-a9f1-69cf3ef75e16"
+    },
+    {
+      "id": "int-a5e47f06-3977-4ca8-95f9-1ba64f88ddd9",
+      "composicaoId": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "pessoaId": "pes-946b9cf8-ee01-47a7-ac4c-2796b823c197"
+    },
+    {
+      "id": "int-3e66dd81-40c2-48ae-a05a-05d91fd7810e",
+      "composicaoId": "comp-ef426e68-ebd1-4db2-9410-eb5c2a0aa33a",
+      "pessoaId": "pes-be697d76-e8f2-43cb-9941-9daac11f5399"
+    },
+    {
+      "id": "int-dcdc9050-fca5-420a-905b-21f29282e2b3",
+      "composicaoId": "comp-93362044-2279-443d-a943-5d79bd3cca0f",
+      "pessoaId": "pes-419942b3-5aa1-4a75-a3f2-1e5748dd81e0"
+    },
+    {
+      "id": "int-58a2e96e-6888-4fc9-8dfc-9c20a6eac08d",
+      "composicaoId": "comp-9b9babc2-a45c-4ce0-bf38-794ef09b52e3",
+      "pessoaId": "pes-1b8280e0-9c1b-4328-a66e-674013fe68d6"
+    },
+    {
+      "id": "int-9aa5ee30-9b85-4e28-b078-a71c6dd4e0fe",
+      "composicaoId": "comp-9b9babc2-a45c-4ce0-bf38-794ef09b52e3",
+      "pessoaId": "pes-1d90dcdd-4027-4554-927d-03b117e78fe6"
+    },
+    {
+      "id": "int-d507a13a-a196-4a2f-9f66-e7bb166da7c6",
+      "composicaoId": "comp-c876aeab-6e5c-444e-b1b8-fa2df6492e93",
+      "pessoaId": "pes-a33ca26f-b273-4e12-b23a-846c52e45a5a"
+    },
+    {
+      "id": "int-1449c209-9674-4780-9655-8d036a700733",
+      "composicaoId": "comp-bf9d3fb1-7c9e-432d-b082-ce273f7a93d8",
+      "pessoaId": "pes-44bc6a64-6f3a-4225-b660-db9200d66052"
+    },
+    {
+      "id": "int-b620244e-eb37-4e91-87c7-88ecc1c9b88f",
+      "composicaoId": "comp-1c533e06-5971-405f-8e8a-6cf17b06dcf5",
+      "pessoaId": "pes-10d18b01-efed-4ef3-9a93-e8a63c79bae8"
+    },
+    {
+      "id": "int-d05e392b-608f-4bea-ad64-57ce86608615",
+      "composicaoId": "comp-1c533e06-5971-405f-8e8a-6cf17b06dcf5",
+      "pessoaId": "pes-70b53268-1dd7-4073-a092-5d1d9232ea21"
+    },
+    {
+      "id": "int-28b68def-eff7-4e23-9b3c-26e09f311d22",
+      "composicaoId": "comp-1c533e06-5971-405f-8e8a-6cf17b06dcf5",
+      "pessoaId": "pes-fce4710a-1881-4cf1-be91-a79f71aa0361"
+    },
+    {
+      "id": "int-b03bd153-849e-4d66-a03f-966b6f1a184d",
+      "composicaoId": "comp-66b0a861-7cb6-4a12-9170-e721ed5f4282",
+      "pessoaId": "pes-1bd79ec6-47b8-4741-9637-89d6ac6aeea2"
+    },
+    {
+      "id": "int-3c72e5b1-c75a-4cf5-b175-474a0412a831",
+      "composicaoId": "comp-66b0a861-7cb6-4a12-9170-e721ed5f4282",
+      "pessoaId": "pes-275cb88e-5971-41c4-a272-f7103a1118e3"
+    },
+    {
+      "id": "int-315507ad-e85e-477d-87da-c3bdd06e39b5",
+      "composicaoId": "comp-66b0a861-7cb6-4a12-9170-e721ed5f4282",
+      "pessoaId": "pes-bc5b7cb8-bb88-478a-9a90-28b392f3fae5"
+    },
+    {
+      "id": "int-ab69b687-c334-448d-9acf-e33cd7e3398e",
+      "composicaoId": "comp-66b0a861-7cb6-4a12-9170-e721ed5f4282",
+      "pessoaId": "pes-eae1cc90-c0d4-431d-b0b5-afd4e99d6944"
+    },
+    {
+      "id": "int-7b01893d-d95a-44ae-a341-1b778ff90d87",
+      "composicaoId": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "pessoaId": "pes-26d12ede-7446-4241-bb37-ba6508c7c14d"
+    },
+    {
+      "id": "int-8635a516-5344-425c-a934-5590c1936567",
+      "composicaoId": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "pessoaId": "pes-63409f15-43ac-4f2d-8cf1-e73f6060eb0d"
+    },
+    {
+      "id": "int-c1f904b5-c921-49d8-92b4-dae27f2fd5cd",
+      "composicaoId": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "pessoaId": "pes-74563115-3c2f-4012-ac3d-37216fbeb1ea"
+    },
+    {
+      "id": "int-69c6bfa3-8e2d-474f-8b5e-699f888b093b",
+      "composicaoId": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "pessoaId": "pes-83a62327-17aa-46d1-b4ed-4acb4c3ad56f"
+    },
+    {
+      "id": "int-e0873d9f-6fb6-4003-98e9-bea0eb9881f6",
+      "composicaoId": "comp-874c5b1c-2ffa-4bed-91c5-f7fa7caea1f6",
+      "pessoaId": "pes-84ed65b1-a4f4-469f-94da-e4c204700654"
+    },
+    {
+      "id": "int-8f93812b-b74d-42ad-bafc-da26cdd5c82e",
+      "composicaoId": "comp-84dd7cf4-a023-4d36-af0e-261c5b852d5c",
+      "pessoaId": "pes-e88f6ec6-b3b4-429c-ad99-e8feb84127e5"
+    },
+    {
+      "id": "int-52c00686-8aa7-4341-956d-47f5947653e4",
+      "composicaoId": "comp-6e7bf52b-27aa-4c5e-9be9-ea141e42fcb0",
+      "pessoaId": "pes-23b6131a-6158-456b-aecf-a5f1aed394a0"
+    },
+    {
+      "id": "int-ff097456-0c64-42e9-80c6-d6cf9fc100d7",
+      "composicaoId": "comp-6e7bf52b-27aa-4c5e-9be9-ea141e42fcb0",
+      "pessoaId": "pes-2da9897b-75b7-4013-a7c8-b38151cdc6a3"
+    },
+    {
+      "id": "int-7d3c715a-4651-422c-b695-afb2e9e68863",
+      "composicaoId": "comp-a170a54c-993a-47c4-9795-a11cd5cf8a4e",
+      "pessoaId": "pes-661d69d4-22ed-4f30-8a11-1dcced6622e1"
+    },
+    {
+      "id": "int-b4660052-ea47-462f-a377-8ce1d9b20df1",
+      "composicaoId": "comp-2d5bebd9-b9a9-4f7d-9809-078d49f8fcfc",
+      "pessoaId": "pes-bd0d81d6-eff3-4f8c-a396-19295b4363a6"
+    }
+  ],
+  "eventosEquipe": [
+    {
+      "id": "evento-00becc15-fc50-4f6b-b57c-e13f5e038aa9",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-362271e5-e9ef-4b7c-8ac6-ee6fb59bde26",
+      "pessoasAdicionadas": [
+        "pes-3dce880d-76ee-4655-bd45-fd6b5b3f43e5"
+      ]
+    },
+    {
+      "id": "evento-e4a0634c-5320-4dca-b4d3-a153bbba56d6",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-2c2374d4-41c2-4144-be6a-1080fcad311e",
+      "pessoasAdicionadas": [
+        "pes-d6cf0e03-c3ea-44dc-be93-705844a963bc"
+      ]
+    },
+    {
+      "id": "evento-3becc688-0f9b-4707-b79c-532324c90307",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-bb25d783-2459-4633-81fb-dc89ecd6b2bc",
+      "pessoasAdicionadas": [
+        "pes-3eaab501-a100-4b96-a88d-0daedb9cf662"
+      ]
+    },
+    {
+      "id": "evento-a371c93a-9d23-4b63-90af-46978b9200dd",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-594e531b-e691-403e-aec9-97babdf6087b",
+      "pessoasAdicionadas": [
+        "pes-c86f733e-5f8b-40c4-803c-552efee214b7"
+      ]
+    },
+    {
+      "id": "evento-6c136961-b903-4b84-8ff7-ee5c0c5f61fb",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-00f3f91e-1313-43ac-8178-8ad3ffeba5fe",
+      "pessoasAdicionadas": [
+        "pes-69e8f4b5-5403-4876-95e4-547071e322df"
+      ]
+    },
+    {
+      "id": "evento-aa3f4523-3f0f-4a36-aeeb-18afe0aad5ec",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-8c81682a-c854-4519-8c91-ab33c9d05d08",
+      "pessoasAdicionadas": [
+        "pes-06fe86fd-6235-4277-9303-3a593092c902"
+      ]
+    },
+    {
+      "id": "evento-c74f2044-38fa-49a2-9600-b73e00527298",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-f9c0fe6c-98e9-4f88-b2fc-0e147f8d4ef8",
+      "pessoasAdicionadas": [
+        "pes-4b81c4b6-e099-4c92-a1d6-d903929ebf21"
+      ]
+    },
+    {
+      "id": "evento-a4e42ff3-6327-452f-a423-b70fab042808",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-1d1274f8-56fc-4f71-a88b-79f09ce0db88",
+      "pessoasAdicionadas": [
+        "pes-6fcea2c5-69b3-4b9d-a32f-fa8ecc52be30"
+      ]
+    },
+    {
+      "id": "evento-6bcd0c47-ede0-4dd1-8220-bca95adeca90",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-a7edc7de-93b1-4ca9-91d0-5d77c1243efd",
+      "pessoasAdicionadas": [
+        "pes-6d4328c9-e47d-41a9-b521-620c7ee64271"
+      ]
+    },
+    {
+      "id": "evento-d0ef2437-b514-4527-bcdd-dd4cf604aae7",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-8b36452e-1107-45e5-a9bd-98099be6ec0d",
+      "pessoasAdicionadas": [
+        "pes-20886f2a-782a-45fd-bc0f-6dc7d4ac4193"
+      ]
+    },
+    {
+      "id": "evento-19dd5ef9-4cd8-458e-8150-ff1c6496391e",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-44f1820a-be86-4664-a4f1-969a46bdc12e",
+      "pessoasAdicionadas": [
+        "pes-c9a928e5-62f2-4654-877d-74fb3abfca0f"
+      ]
+    },
+    {
+      "id": "evento-10a884d6-f6e9-4d8c-9f0b-dbd60b8ca933",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-f86490eb-39e4-49e0-bddd-398b7a047046",
+      "pessoasAdicionadas": [
+        "pes-b04124cf-4bb1-42b2-9494-078c5c9bf6a2"
+      ]
+    },
+    {
+      "id": "evento-8fa77961-8485-4e9d-92ab-618cd05d3ed0",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-e5b2bf05-8c36-4168-95ef-8624ca0c73d9",
+      "pessoasAdicionadas": [
+        "pes-b78d4e96-0af1-4664-a8f7-c2cc25a8e06d"
+      ]
+    },
+    {
+      "id": "evento-611f1c9a-0b51-425a-9911-187c39fbd331",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-27be06c4-7686-4f6c-bf2a-a4e3eed46599",
+      "pessoasAdicionadas": [
+        "pes-57f3eb0b-0846-412c-9042-3ffe172fe449"
+      ]
+    },
+    {
+      "id": "evento-c96f9ff7-55cb-4f86-a356-ef8943908d5d",
+      "disciplinaId": "dis-5bda5c13-e6d7-4a6f-a519-13a55e694c57",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-066134d3-3289-4704-a7c2-bd43897a318e",
+      "pessoasAdicionadas": [
+        "pes-a574b535-e851-4257-b12d-155978bf7af8"
+      ]
+    },
+    {
+      "id": "evento-dd04294a-182a-4db6-ae46-b4295ea7a014",
+      "disciplinaId": "dis-11c98f03-88c9-40eb-8548-be65d00ac684",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-5ed1c4b8-b4b8-48fe-b8c8-b14a2eb7b355",
+      "pessoasAdicionadas": [
+        "pes-484ce044-d940-4d54-9786-0248ade10c22",
+        "pes-75d954ed-b382-4a74-b3f7-5064f7364433",
+        "pes-8baa26c8-23a0-43c7-8659-43545d533222"
+      ]
+    },
+    {
+      "id": "evento-80776db9-5b5d-4995-b755-14a7895bb2fa",
+      "disciplinaId": "dis-23236c0d-3802-4539-b598-15530b6dc616",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-3eb69d28-4e50-4a8d-907b-dc92c64fa9f5",
+      "pessoasAdicionadas": [
+        "pes-49e94167-3d6b-4d39-87d7-215314dc561d",
+        "pes-b4477a25-d33a-45b2-9e44-6c2646e53eb2",
+        "pes-e4b92efb-0b8c-4551-bf4c-b5e80c05d14e",
+        "pes-fb97a63a-911a-43d4-8e19-5b5d1fcd6b17"
+      ]
+    },
+    {
+      "id": "evento-aa51b8fd-ee29-436e-b478-c43f5500f1d3",
+      "disciplinaId": "dis-53566f7f-04bc-4437-9c7e-069713a95a52",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-c59e4539-fff3-439d-a7fa-9b07b03bf679",
+      "pessoasAdicionadas": [
+        "pes-045d65d0-3ab5-46c7-80bc-a843c71fa480",
+        "pes-6c898a4c-e5c8-4491-aed2-9cfc2d36bf65",
+        "pes-78bde02b-5765-4062-a9f1-69cf3ef75e16",
+        "pes-946b9cf8-ee01-47a7-ac4c-2796b823c197",
+        "pes-be697d76-e8f2-43cb-9941-9daac11f5399"
+      ]
+    },
+    {
+      "id": "evento-37838832-c1d8-42b8-a833-b24c51b7f089",
+      "disciplinaId": "dis-7c724108-4e27-4b12-abb6-c22af3ed44a7",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-a6807467-ce04-45f3-9650-69b060ebc990",
+      "pessoasAdicionadas": [
+        "pes-419942b3-5aa1-4a75-a3f2-1e5748dd81e0"
+      ]
+    },
+    {
+      "id": "evento-d6491281-848a-4437-9964-8c8856fbc36a",
+      "disciplinaId": "dis-d3cc5896-7248-451d-89f8-6de76141d760",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-16cfddf9-b899-4c6b-a013-ca51b24f37d3",
+      "pessoasAdicionadas": [
+        "pes-1b8280e0-9c1b-4328-a66e-674013fe68d6",
+        "pes-1d90dcdd-4027-4554-927d-03b117e78fe6"
+      ]
+    },
+    {
+      "id": "evento-0685df68-6c48-4209-a505-9b29db178d60",
+      "disciplinaId": "dis-f89167ea-01c7-4e4e-b8c9-f4dbecc5b42d",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-f209f8ab-3279-4883-a942-b918a179a71c",
+      "pessoasAdicionadas": [
+        "pes-a33ca26f-b273-4e12-b23a-846c52e45a5a"
+      ]
+    },
+    {
+      "id": "evento-229af97b-84ad-419b-826a-c80b371514c9",
+      "disciplinaId": "dis-dc908c54-57a9-45b1-962d-03f33ecd48ae",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-4aa9eae2-6668-43dd-8148-2484ccb2eea2",
+      "pessoasAdicionadas": [
+        "pes-44bc6a64-6f3a-4225-b660-db9200d66052"
+      ]
+    },
+    {
+      "id": "evento-b739d929-7ba4-44ac-90ab-59d2b65b42a1",
+      "disciplinaId": "dis-11c98f03-88c9-40eb-8548-be65d00ac684",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-1fc4bacf-21e1-42da-a4d7-87dce16eecf1",
+      "pessoasAdicionadas": [
+        "pes-10d18b01-efed-4ef3-9a93-e8a63c79bae8",
+        "pes-70b53268-1dd7-4073-a092-5d1d9232ea21",
+        "pes-fce4710a-1881-4cf1-be91-a79f71aa0361"
+      ]
+    },
+    {
+      "id": "evento-331ef399-6262-4217-801b-385bb10fc6cb",
+      "disciplinaId": "dis-23236c0d-3802-4539-b598-15530b6dc616",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-222a65ea-9593-4d9e-a49e-239761323374",
+      "pessoasAdicionadas": [
+        "pes-1bd79ec6-47b8-4741-9637-89d6ac6aeea2",
+        "pes-275cb88e-5971-41c4-a272-f7103a1118e3",
+        "pes-bc5b7cb8-bb88-478a-9a90-28b392f3fae5",
+        "pes-eae1cc90-c0d4-431d-b0b5-afd4e99d6944"
+      ]
+    },
+    {
+      "id": "evento-0b9fe611-237d-4bff-b155-4bcbd9fb7e33",
+      "disciplinaId": "dis-53566f7f-04bc-4437-9c7e-069713a95a52",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-2535b82d-17b8-4475-a45b-760f23e34e64",
+      "pessoasAdicionadas": [
+        "pes-26d12ede-7446-4241-bb37-ba6508c7c14d",
+        "pes-63409f15-43ac-4f2d-8cf1-e73f6060eb0d",
+        "pes-74563115-3c2f-4012-ac3d-37216fbeb1ea",
+        "pes-83a62327-17aa-46d1-b4ed-4acb4c3ad56f",
+        "pes-84ed65b1-a4f4-469f-94da-e4c204700654"
+      ]
+    },
+    {
+      "id": "evento-ea1ae74a-74ee-4c67-8ea6-12b47cf0c54e",
+      "disciplinaId": "dis-7c724108-4e27-4b12-abb6-c22af3ed44a7",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-9610b509-877b-4e69-9e9f-a9b7822ff776",
+      "pessoasAdicionadas": [
+        "pes-e88f6ec6-b3b4-429c-ad99-e8feb84127e5"
+      ]
+    },
+    {
+      "id": "evento-b5d39e2d-c902-4c30-bf33-e56c4446d1f4",
+      "disciplinaId": "dis-d3cc5896-7248-451d-89f8-6de76141d760",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-06fcd665-a505-4321-9880-8cd095db8434",
+      "pessoasAdicionadas": [
+        "pes-23b6131a-6158-456b-aecf-a5f1aed394a0",
+        "pes-2da9897b-75b7-4013-a7c8-b38151cdc6a3"
+      ]
+    },
+    {
+      "id": "evento-a53c4071-4596-426a-9d52-a3c0689e5e10",
+      "disciplinaId": "dis-f89167ea-01c7-4e4e-b8c9-f4dbecc5b42d",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-37663481-de28-4297-8ea6-b3e811b269f6",
+      "pessoasAdicionadas": [
+        "pes-661d69d4-22ed-4f30-8a11-1dcced6622e1"
+      ]
+    },
+    {
+      "id": "evento-b9a4f6b4-e628-4537-b21d-71db1d920663",
+      "disciplinaId": "dis-dc908c54-57a9-45b1-962d-03f33ecd48ae",
+      "data": "2026-01-01",
+      "simbolo": "marcador",
+      "equipeAdicaoId": "eq-f25c6558-129d-411a-b9b9-2dd7edd23d21",
+      "pessoasAdicionadas": [
+        "pes-bd0d81d6-eff3-4f8c-a396-19295b4363a6"
+      ]
+    }
+  ],
+  "movimentacoesEquipe": [],
+  "fontesImportadas": [
+    "alocacao-equipes-2026",
+    "formacao-equipe-global-v2",
+    "equipes-arq-numeradas-v1"
+  ]
+}

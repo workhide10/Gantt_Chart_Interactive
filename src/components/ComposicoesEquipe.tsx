@@ -5,6 +5,7 @@ import { adicionarIntegrantes, registrarComposicao, registrarMovimentacao, type 
 import { AdicionarIntegrante } from './AdicionarIntegrante'
 import { MovimentarEquipe } from './MovimentarEquipe'
 import { criarIndiceComposicoes } from '../lib/composicao'
+import { equipesDaPessoaNaData } from '../lib/participacoes'
 
 interface Props { dados: Dados; inline?: boolean; onChange: (dados: Dados) => void }
 
@@ -74,7 +75,7 @@ export function FormacaoAtual({ dados, equipeFiltro = '', exibirFiltro = false }
         const pessoas = composicao ? (indice.pessoaIdsPorComposicao.get(composicao.id) ?? []).map((id) => indice.pessoaPorId.get(id)).filter((p) => p !== undefined).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')) : []
         const disciplina = disciplinas.get(equipe.disciplinaId)
         return <article className="equipe-card" key={equipe.id}><div className="equipe-card-topo"><div><span className="equipe-card-disciplina">{disciplina?.sigla ?? 'Sem disciplina'}</span><h4>{equipe.nome || 'Equipe sem nome'}</h4></div><span className="equipe-card-total">{pessoas.length} {pessoas.length === 1 ? 'integrante' : 'integrantes'}</span></div>
-          {!composicao ? <p className="equipe-card-vazio">Sem formação registrada para hoje.</p> : pessoas.length === 0 ? <p className="equipe-card-vazio">Nenhum integrante na formação atual.</p> : <ul className="equipe-card-pessoas">{pessoas.map((pessoa) => <li key={pessoa.id}><span>{pessoa.nome}</span>{pessoa.funcao && <small>{pessoa.funcao}</small>}</li>)}</ul>}
+          {!composicao ? <p className="equipe-card-vazio">Sem formação registrada para hoje.</p> : pessoas.length === 0 ? <p className="equipe-card-vazio">Nenhum integrante na formação atual.</p> : <ul className="equipe-card-pessoas">{pessoas.map((pessoa) => { const equipes = equipesDaPessoaNaData(dados, pessoa.id, hoje); return <li key={pessoa.id}><span>{pessoa.nome}{equipes.length > 1 && <small className="participacao-multipla">Em {equipes.length} equipes: {equipes.join(', ')}</small>}</span>{pessoa.funcao && <small>{pessoa.funcao}</small>}</li> })}</ul>}
           {composicao && <p className="equipe-card-vigencia">Formação vigente desde {formatarBR(composicao.inicio)}</p>}
         </article>
       })}</div>
@@ -114,11 +115,10 @@ function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCan
   const jaNaEquipe = (pessoaId: string) => composicoes.some((c) => c.equipeId === equipeId && (dados.integrantesComposicao ?? []).some((m) => m.composicaoId === c.id && m.pessoaId === pessoaId))
   const movimentos = pessoaIds.flatMap((pessoaId) => composicoes
     .filter((c) => c.equipeId !== equipeId && c.inicio <= inicio && (!c.fim || c.fim >= inicio) &&
-      dados.equipes.find((e) => e.id === c.equipeId)?.disciplinaId === equipe?.disciplinaId &&
       (dados.integrantesComposicao ?? []).some((m) => m.composicaoId === c.id && m.pessoaId === pessoaId))
     .map((c) => ({ pessoa: dados.pessoas.find((p) => p.id === pessoaId)?.nome ?? 'Pessoa', equipe: dados.equipes.find((e) => e.id === c.equipeId)?.nome ?? 'Equipe' })))
   const movimentosUnicos = [...new Map(movimentos.map((m) => [`${m.pessoa}|${m.equipe}`, m])).values()]
-  const erro = !equipeId ? 'Selecione uma equipe.' : !dataISOValida(inicio) ? 'Informe uma data válida para a formação.' : inicio > hojeISO() ? 'Esta plataforma registra apenas alterações históricas.' : !inicial && composicoes.some((c) => c.equipeId === equipeId && c.inicio === inicio) ? 'Já existe uma composição com essa data. Use “Corrigir composição” na lista.' : inicial && movimentosUnicos.length > 0 ? 'Para transferir integrantes entre equipes, use “Troca ou saída de integrante” com a data efetiva da troca.' : !pessoaIds.length ? 'Selecione ao menos um integrante.' : ''
+  const erro = !equipeId ? 'Selecione uma equipe.' : !dataISOValida(inicio) ? 'Informe uma data válida para a formação.' : inicio > hojeISO() ? 'Esta plataforma registra apenas alterações históricas.' : !inicial && composicoes.some((c) => c.equipeId === equipeId && c.inicio === inicio) ? 'Já existe uma composição com essa data. Use “Corrigir composição” na lista.' : !pessoaIds.length ? 'Selecione ao menos um integrante.' : ''
   const salvar = () => { if (erro) return; const resultado = onSalvar({ id: inicial?.id ?? crypto.randomUUID(), equipeId, inicio, fim: inicial?.fim ?? null, origem: 'manual' }, pessoaIds); if (resultado) setErroSalvar(resultado) }
   const pessoasVisiveis = dados.pessoas.filter((p) => `${p.nome} ${p.funcao}`.toLocaleLowerCase('pt-BR').includes(busca.toLocaleLowerCase('pt-BR'))).sort((a, b) => Number(jaNaEquipe(b.id)) - Number(jaNaEquipe(a.id)) || a.nome.localeCompare(b.nome, 'pt-BR'))
   return <dialog ref={dialogoRef} open={inline || undefined} className={inline ? 'central-formulario' : 'modal-fundo dialogo-nativo'} aria-labelledby="composicao-titulo" onKeyDown={(e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); cancelar() } }} onCancel={(e) => { e.preventDefault(); cancelar() }} onClick={(e) => { if (e.target === e.currentTarget) cancelar() }}><form className="modal modal-composicao" onSubmit={(e) => { e.preventDefault(); salvar() }}>
@@ -127,7 +127,7 @@ function FormularioComposicao({ dados, inicial, equipeInicialId, onSalvar, onCan
     {equipe && <p className="texto-suave">Disciplina: {dados.disciplinas.find((d) => d.id === equipe.disciplinaId)?.sigla ?? '—'}</p>}
     <label>{inicial ? 'Início desta versão' : 'Mudança válida a partir de'}<input type="date" value={inicio} max={hojeISO()} disabled={Boolean(inicial)} onChange={(e) => { setInicio(e.target.value); setAlterado(true); setErroSalvar(''); if (!membrosAlterados) carregarAnterior(equipeId, e.target.value) }} /></label>
     {fimProjetado && !inicial && <p className="composicao-fim-projetado">Esta versão terminará em {formatarBR(fimProjetado)}, antes da próxima formação registrada.</p>}
-    {!inicial && movimentosUnicos.length > 0 && <p className="aviso">A data escolhida registrará a transferência e atualizará também a formação de origem: {movimentosUnicos.map((m) => `${m.pessoa} sai de ${m.equipe}`).join('; ')}. As duas equipes terão novas versões a partir da mesma data.</p>}
+    {movimentosUnicos.length > 0 && <p className="aviso">Participação em outras equipes na data: {movimentosUnicos.map((m) => `${m.pessoa} em ${m.equipe}`).join('; ')}. Essas participações serão mantidas.</p>}
     <fieldset className="selecao-participantes"><legend>Integrantes <span>({pessoaIds.length} selecionado(s))</span></legend><p>A formação anterior é carregada para você ajustar quem entrou ou saiu.</p><input type="search" value={busca} onChange={(e) => setBusca(e.target.value)} placeholder="Buscar pessoa ou função" aria-label="Buscar integrante" /><div className="lista-participantes">
       {pessoasVisiveis.map((p) => <label className="participante-selecao participante-item" key={p.id}><input type="checkbox" checked={pessoaIds.includes(p.id)} onChange={(e) => { setMembrosAlterados(true); setAlterado(true); setErroSalvar(''); setPessoaIds((atuais) => e.target.checked ? [...atuais, p.id] : atuais.filter((id) => id !== p.id)) }} /><span>{p.nome}<small>{p.funcao || 'Função não informada'}{jaNaEquipe(p.id) ? ' · já vinculada a esta equipe' : ''}</small></span></label>)}
       {pessoasVisiveis.length === 0 && <p className="vazio">Nenhuma pessoa encontrada. Cadastre-a em Cadastros → Pessoas.</p>}

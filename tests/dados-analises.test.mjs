@@ -215,8 +215,9 @@ test('janela global inclui pausas corridas e disciplina une dias de equipes simu
  assert.equal(janelaGlobalAtividades([], feriados).dias, 0)
 })
 
-test('adicionar integrante preserva formação e impede transferência silenciosa', () => {
+test('adicionar integrante preserva formações simultâneas', () => {
  const d = dadosExemplo()
+ d.equipes[1].disciplinaId = d.equipes[0].disciplinaId
  d.pessoas.push({ id:'pes2', nome:'Bia', funcao:'' }, { id:'pes3', nome:'Cris', funcao:'' })
  d.composicoesEquipe = [{ id:'c1', equipeId:'e1', inicio:'2026-01-01', fim:null }, { id:'c2', equipeId:'e2', inicio:'2026-01-01', fim:null }]
  d.integrantesComposicao = [{ id:'i1', composicaoId:'c1', pessoaId:'pes1' }, { id:'i2', composicaoId:'c2', pessoaId:'pes3' }]
@@ -225,11 +226,29 @@ test('adicionar integrante preserva formação e impede transferência silencios
  const nova=atualizado.composicoesEquipe.find((c) => c.equipeId === 'e1' && c.inicio === '2026-01-05')
  assert.equal(atualizado.composicoesEquipe.find((c) => c.id === 'c1').fim, '2026-01-04')
  assert.deepEqual(atualizado.integrantesComposicao.filter((i) => i.composicaoId === nova.id).map((i) => i.pessoaId).sort(), ['pes1','pes2'])
- assert.throws(() => adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes3'], novoId), /Transferir/)
+ const compartilhado=adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes3'], novoId)
+ const novaCompartilhada=compartilhado.composicoesEquipe.find((c) => c.equipeId === 'e1' && c.inicio === '2026-01-05')
+ assert.ok(compartilhado.integrantesComposicao.some((i) => i.composicaoId === novaCompartilhada.id && i.pessoaId === 'pes3'))
+ assert.ok(compartilhado.integrantesComposicao.some((i) => i.composicaoId === 'c2' && i.pessoaId === 'pes3'))
+ assert.equal(compartilhado.composicoesEquipe.find((c) => c.id === 'c2').fim, null)
  assert.throws(() => adicionarIntegrantes(d, 'e1', '2026-01-05', ['pes1'], novoId), /já pertencem/)
  const mesmoDia=adicionarIntegrantes(d, 'e1', '2026-01-01', ['pes2'], novoId)
  assert.equal(mesmoDia.composicoesEquipe.filter((c) => c.equipeId === 'e1').length, 1)
  assert.equal(mesmoDia.integrantesComposicao.filter((i) => i.composicaoId === 'c1').length, 2)
+})
+
+test('transferência preserva vínculo simultâneo com uma terceira equipe', () => {
+ const d = dadosExemplo()
+ d.equipes[1].disciplinaId = d.equipes[0].disciplinaId
+ d.equipes.push({ id:'e3', nome:'Equipe 3', disciplinaId:d.equipes[0].disciplinaId })
+ d.composicoesEquipe = [{ id:'c1', equipeId:'e1', inicio:'2026-01-01', fim:null }, { id:'c3', equipeId:'e3', inicio:'2026-01-01', fim:null }]
+ d.integrantesComposicao = [{ id:'i1', composicaoId:'c1', pessoaId:'pes1' }, { id:'i3', composicaoId:'c3', pessoaId:'pes1' }]
+ const evento={ id:'ev3', disciplinaId:d.equipes[0].disciplinaId, data:'2026-01-05' }
+ const movimentos=[{ id:'mov3', eventoId:'ev3', pessoaId:'pes1', equipeOrigemId:'e1', equipeDestinoId:'e2' }]
+ let n=0
+ const result=registrarMovimentacao(d, evento, movimentos, [{ equipeId:'e1', pessoaIds:[] }, { equipeId:'e2', pessoaIds:['pes1'] }], () => `terceira-${++n}`)
+ assert.equal(result.composicoesEquipe.find(c => c.id === 'c3').fim, null)
+ assert.ok(result.integrantesComposicao.some(i => i.composicaoId === 'c3' && i.pessoaId === 'pes1'))
 })
 
 test('adição, saída e transferência registram símbolos correspondentes', () => {

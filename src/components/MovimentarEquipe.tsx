@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Dados, EventoEquipe, MovimentacaoIntegrante } from '../types'
 import { dataISOValida, hojeISO } from '../lib/datas'
+import { equipesDaPessoaNaData } from '../lib/participacoes'
+import { ConfirmacaoRegistro } from './ConfirmacaoRegistro'
 
 import type { AtualizacaoEquipe } from '../lib/equipes'
 interface Props {
@@ -32,6 +34,7 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
   const [selecionadosSaida, setSelecionadosSaida] = useState<string[]>([])
   const [saidasPendentes, setSaidasPendentes] = useState<string[]>([])
   const [motivo, setMotivo] = useState('')
+  const [resumoConfirmacao, setResumoConfirmacao] = useState('')
   const dialogoRef = useRef<HTMLDialogElement>(null)
   useEffect(() => {
     const dialogo = dialogoRef.current
@@ -68,14 +71,14 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
     if (!selecionadosA.length) return
     const ids = [...selecionadosA]
     setMovidosBParaA((anteriores) => anteriores.filter((id) => !ids.includes(id)))
-    setMovidosAParaB((anteriores) => [...new Set([...anteriores, ...ids.filter((id) => membrosA.includes(id) && !membrosB.includes(id))])])
+    setMovidosAParaB((anteriores) => [...new Set([...anteriores, ...ids.filter((id) => membrosA.includes(id) && !movidosBParaA.includes(id))])])
     setSelecionadosA([])
   }
   const moverBParaA = () => {
     if (!selecionadosB.length) return
     const ids = [...selecionadosB]
     setMovidosAParaB((anteriores) => anteriores.filter((id) => !ids.includes(id)))
-    setMovidosBParaA((anteriores) => [...new Set([...anteriores, ...ids.filter((id) => membrosB.includes(id) && !membrosA.includes(id))])])
+    setMovidosBParaA((anteriores) => [...new Set([...anteriores, ...ids.filter((id) => membrosB.includes(id) && !movidosAParaB.includes(id))])])
     setSelecionadosB([])
   }
   const enviarParaSaida = () => {
@@ -86,6 +89,19 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
 
   const salvar = () => {
     if (erro) return
+    const nomeEquipe = (id: string) => dados.equipes.find((e) => e.id === id)?.nome ?? 'Equipe'
+    const detalhes = (tipo === 'troca' ? [...transferidosA, ...transferidosB] : saidasPendentes).map((id) => {
+      const nome = dados.pessoas.find((p) => p.id === id)?.nome ?? 'Pessoa'
+      const origem = tipo === 'troca' && transferidosB.includes(id) ? equipeBId : equipeAId
+      const destino = origem === equipeAId ? equipeBId : equipeAId
+      const outras = equipesDaPessoaNaData(dados, id, data)
+      return `${nome}: ${tipo === 'troca' ? `${nomeEquipe(origem)} → ${nomeEquipe(destino)}` : `saída de ${nomeEquipe(origem)}`}; equipes na data: ${outras.join(', ') || 'nenhuma'}`
+    }).join('\n')
+    setResumoConfirmacao(`Data: ${data}\n${detalhes}\nA movimentação altera apenas as equipes indicadas; vínculos com outras equipes permanecem.`)
+  }
+
+  const confirmar = () => {
+    setResumoConfirmacao('')
     const eventoId = crypto.randomUUID()
     const evento: EventoEquipe = { id: eventoId, disciplinaId, data, simbolo: tipo === 'troca' ? 'setas' : 'marcador' }
     const movimentos: MovimentacaoIntegrante[] = []
@@ -127,5 +143,5 @@ export function MovimentarEquipe({ dados, equipeInicialId, tipoInicial, onSalvar
     </>}
     {erro && <p className="erro">{erro}</p>}
     <div className="acoes"><span style={{ flex: 1 }} /><button onClick={cancelar}>Cancelar</button><button className="primario" disabled={Boolean(erro)} onClick={salvar}>Salvar movimentações</button></div>
-  </div></dialog>
+  </div>{resumoConfirmacao && <ConfirmacaoRegistro resumo={resumoConfirmacao} onCancelar={() => setResumoConfirmacao('')} onConfirmar={confirmar} />}</dialog>
 }

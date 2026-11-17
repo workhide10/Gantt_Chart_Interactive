@@ -115,11 +115,11 @@ export function NovoCadastro({ dados, inicial, onCancelar, onSalvar, inline = fa
     <form className="modal" onSubmit={(e) => { e.preventDefault(); salvar() }}>
       <div className="modal-cabecalho"><h2 id="novo-cadastro-titulo">Novo cadastro</h2><button type="button" className="fechar-modal" onClick={cancelar} aria-label="Fechar">×</button></div>
       <label>O que deseja cadastrar?<select value={tipo} onChange={(e) => { if ((nome.trim() || codigo.trim() || funcao.trim() || disciplinaId) && !confirm('Alterar o tipo e descartar os dados preenchidos?')) return; setTipo(e.target.value as Aba); setNome(''); setCodigo(''); setFuncao(''); setDisciplinaId('') }}>{ABAS.map((a) => <option value={a.id} key={a.id}>{a.titulo}</option>)}</select></label>
-      {(tipo === 'escolas' || tipo === 'disciplinas') && <label>{tipo === 'escolas' ? 'Código' : 'Sigla'}<input required value={codigo} onChange={(e) => setCodigo(e.target.value)} /></label>}
-      <label>Nome<input required value={nome} onChange={(e) => setNome(e.target.value)} /></label>
+      {(tipo === 'escolas' || tipo === 'disciplinas') && <label>{tipo === 'escolas' ? 'Código' : 'Sigla'}<input type="text" required value={codigo} onChange={(e) => setCodigo(e.target.value)} /></label>}
+      <label>Nome<input type="text" required value={nome} onChange={(e) => setNome(e.target.value)} /></label>
       {tipo === 'escolas' && <div><span className="cadastro-cor-rotulo">Cor do projeto</span><SeletorCor valor={cor} onChange={setCor} /></div>}
       {tipo === 'equipes' && <label>Disciplina<select required value={disciplinaId} onChange={(e) => setDisciplinaId(e.target.value)}><option value="">Selecione…</option>{dados.disciplinas.map((d) => <option key={d.id} value={d.id}>{d.sigla} – {d.nome}</option>)}</select>{!dados.disciplinas.length && <span>Cadastre uma disciplina antes de criar uma equipe.</span>}</label>}
-      {tipo === 'pessoas' && <label>Função (opcional)<input value={funcao} onChange={(e) => setFuncao(e.target.value)} /></label>}
+      {tipo === 'pessoas' && <label>Função (opcional)<input type="text" value={funcao} onChange={(e) => setFuncao(e.target.value)} /></label>}
       <div className="acoes"><span style={{ flex: 1 }} /><button type="button" onClick={cancelar}>Cancelar</button><button className="primario" type="submit" disabled={!nome.trim() || ((tipo === 'escolas' || tipo === 'disciplinas') && !codigo.trim()) || (tipo === 'equipes' && !disciplinaId)}>Salvar cadastro</button></div>
     </form>
   </dialog>

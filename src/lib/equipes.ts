@@ -23,30 +23,6 @@ export function registrarComposicao(dados: Dados, composicao: ComposicaoEquipe, 
   const nova = { ...composicao, fim: posteriores.length ? somarDias(posteriores[0].inicio, -1) : null }
   let composicoesAtualizadas = composicoes.map((c) => c.id === anteriores[0]?.id ? { ...c, fim: somarDias(composicao.inicio, -1) } : c)
   let integrantesAtualizados = [...integrantes]
-  const equipeDestino = dados.equipes.find((e) => e.id === composicao.equipeId)
-  const transferenciasPorEquipe = new Map<string, Set<string>>()
-  for (const pessoaId of pessoaIds) {
-    const origem = composicoes
-      .filter((c) => c.equipeId !== composicao.equipeId && c.inicio <= composicao.inicio && (!c.fim || c.fim >= composicao.inicio) &&
-        dados.equipes.find((e) => e.id === c.equipeId)?.disciplinaId === equipeDestino?.disciplinaId &&
-        integrantes.some((i) => i.composicaoId === c.id && i.pessoaId === pessoaId))
-      .sort((a, b) => b.inicio.localeCompare(a.inicio))[0]
-    if (origem) transferenciasPorEquipe.set(origem.equipeId, new Set([...(transferenciasPorEquipe.get(origem.equipeId) ?? []), pessoaId]))
-  }
-  for (const [equipeOrigemId, pessoasTransferidas] of transferenciasPorEquipe) {
-    const origem = composicoes.filter((c) => c.equipeId === equipeOrigemId && c.inicio <= composicao.inicio && (!c.fim || c.fim >= composicao.inicio)).sort((a, b) => b.inicio.localeCompare(a.inicio))[0]
-    if (!origem) continue
-    const roster = integrantes.filter((i) => i.composicaoId === origem.id && !pessoasTransferidas.has(i.pessoaId)).map((i) => i.pessoaId)
-    if (origem.inicio === composicao.inicio) {
-      integrantesAtualizados = [...integrantesAtualizados.filter((i) => i.composicaoId !== origem.id), ...roster.map((pessoaId) => ({ id: novoId(), composicaoId: origem.id, pessoaId }))]
-    } else {
-      composicoesAtualizadas = composicoesAtualizadas.map((c) => c.id === origem.id ? { ...c, fim: somarDias(composicao.inicio, -1) } : c)
-      const proxima = composicoes.filter((c) => c.equipeId === equipeOrigemId && c.inicio > composicao.inicio).sort((a, b) => a.inicio.localeCompare(b.inicio))[0]
-      const id = novoId()
-      composicoesAtualizadas.push({ id, equipeId: equipeOrigemId, inicio: composicao.inicio, fim: proxima ? somarDias(proxima.inicio, -1) : null, origem: 'manual' })
-      integrantesAtualizados.push(...roster.map((pessoaId) => ({ id: novoId(), composicaoId: id, pessoaId })))
-    }
-  }
   const novos: IntegranteComposicaoEquipe[] = pessoaIds.map((pessoaId) => ({ id: novoId(), composicaoId: composicao.id, pessoaId }))
   return { ...dados, composicoesEquipe: [...composicoesAtualizadas, nova], integrantesComposicao: [...integrantesAtualizados, ...novos] }
 }
@@ -96,8 +72,6 @@ export function adicionarIntegrantes(dados: Dados, equipeId: string, data: strin
   const vigente = composicoes.find((c) => c.equipeId === equipeId && c.inicio <= data && (!c.fim || c.fim >= data))
   const atuais = integrantes.filter((i) => i.composicaoId === vigente?.id).map((i) => i.pessoaId)
   if (pessoaIds.some((id) => atuais.includes(id))) throw new Error('Há integrantes que já pertencem à equipe nessa data.')
-  const emOutraEquipe = composicoes.some((c) => c.equipeId !== equipeId && c.inicio <= data && (!c.fim || c.fim >= data) && integrantes.some((i) => i.composicaoId === c.id && pessoaIds.includes(i.pessoaId)))
-  if (emOutraEquipe) throw new Error('Há integrante em outra equipe nessa data. Use Transferir integrante para registrar a mudança.')
   const composicao: ComposicaoEquipe = vigente?.inicio === data ? vigente : { id: novoId(), equipeId, inicio: data, fim: null, origem: 'manual' }
   const atualizado = registrarComposicao(dados, composicao, [...atuais, ...pessoaIds], novoId)
   const equipe = dados.equipes.find((e) => e.id === equipeId)!
